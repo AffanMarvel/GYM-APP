@@ -59,30 +59,55 @@ export default function AllWorkouts() {
         </div>
 
         <p className="text-[10px] font-black uppercase tracking-widest text-gym-muted px-1">Found {filtered.length} Exercises</p>
-        <div className="space-y-3">
-          {filtered.map((ex, i) => (
-            <div key={ex.id || i} className="bg-gym-card rounded-2xl border border-white/5 p-3 flex items-center gap-4 active:scale-[0.98] transition-all">
-              <Link to={`/exercise/${ex.id}`} className="flex-1 flex items-center gap-4 min-w-0">
-                <div className="w-14 h-14 rounded-xl overflow-hidden bg-gym-dark border border-white/10 shrink-0">
-                  <img src={getAssetPath(ex.image)} alt="" className="w-full h-full object-cover opacity-80"
-                    onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=200&q=60'; }} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-black text-white text-sm truncate">{ex.name}</h3>
-                  <p className="text-[9px] text-gym-neon font-bold uppercase">{ex.category}</p>
-                  <p className="text-[8px] text-gym-muted font-bold uppercase">{ex.muscleTarget}</p>
-                </div>
-              </Link>
-              <button onClick={() => addToPlan(ex)} className="p-3 bg-white/5 rounded-xl text-gym-neon hover:bg-gym-neon hover:text-white transition-all active:scale-90">
-                <Plus size={20} />
-              </button>
+        <div className="grid grid-cols-1 gap-6 mt-6">
+          {filtered.length === 0 ? (
+            <div className="py-20 text-center border-2 border-dashed border-white/5 rounded-3xl opacity-50">
+              <Dumbbell size={40} className="mx-auto text-gym-muted/50 mb-4" />
+              <p className="text-gym-muted font-bold tracking-widest uppercase text-xs">No workouts match your search</p>
             </div>
-          ))}
-          {filtered.length === 0 && (
-            <div className="py-20 text-center">
-              <Dumbbell size={40} className="mx-auto text-gym-muted/20 mb-4" />
-              <p className="text-gym-muted font-bold italic">No workouts match your search</p>
-            </div>
+          ) : (
+            filtered.map((ex, i) => (
+              <div key={ex.id || i} className="group bg-[#141425] rounded-3xl overflow-hidden border border-white/5 hover:border-gym-neon/30 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
+                {/* Large Thumbnail Section */}
+                <Link to={`/exercise/${ex.id}`} className="block relative h-56 w-full bg-black overflow-hidden cursor-pointer">
+                  <img 
+                    src={getAssetPath(ex.image)} 
+                    alt={ex.name} 
+                    className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"
+                    onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80'; }} 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#141425] via-transparent to-transparent opacity-90" />
+                  <div className="absolute inset-0 bg-gym-neon/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Category Tag Overlays */}
+                  <div className="absolute top-4 left-4 flex gap-2">
+                    <span className="px-3 py-1 bg-gym-neon/90 text-gym-dark text-[9px] font-black uppercase tracking-[0.2em] rounded-lg border border-gym-neon">
+                      {ex.category}
+                    </span>
+                    <span className="px-3 py-1 bg-black/60 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-[0.2em] rounded-lg border border-white/10">
+                      {ex.muscleTarget}
+                    </span>
+                  </div>
+                </Link>
+
+                {/* Details & Action Section */}
+                <div className="p-5 flex items-center justify-between relative z-10 -mt-2">
+                  <div className="flex-1 min-w-0 pr-4">
+                    <Link to={`/exercise/${ex.id}`}>
+                      <h3 className="font-black text-white text-xl truncate hover:text-gym-neon transition-colors">{ex.name}</h3>
+                      <p className="text-[10px] text-gym-muted mt-1 font-medium italic opacity-80">Tap image for instructions</p>
+                    </Link>
+                  </div>
+                  <button 
+                    onClick={() => addToPlan(ex)} 
+                    className="flex-shrink-0 w-14 h-14 bg-gym-neon text-gym-dark rounded-2xl flex items-center justify-center hover:bg-white transition-colors shadow-[0_0_20px_rgba(129,140,248,0.3)] active:scale-90"
+                    title="Add to Workout Plan"
+                  >
+                    <Plus size={24} strokeWidth={3} />
+                  </button>
+                </div>
+              </div>
+            ))
           )}
         </div>
       </div>
