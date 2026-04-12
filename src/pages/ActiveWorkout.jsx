@@ -55,12 +55,12 @@ export default function ActiveWorkout() {
     );
   }
 
-  const exercises = activeSession.exercises || [];
+  const exercises = activeSession.logs || [];
   const currentExercise = exercises[currentIdx];
-  const completedCount = exercises.filter(e => e.isCompleted).length;
-  const totalSetsLogged = exercises.reduce((s, e) => s + (e.completedSets?.length || 0), 0);
+  const completedCount = exercises.filter(e => e.completed).length;
+  const totalSetsLogged = exercises.reduce((s, e) => s + (e.sets?.length || 0), 0);
   const durationMin = (activeSession.elapsedSeconds || 0) / 60;
-  const liveCalories = calcCalories(durationMin);
+  const liveCalories = calcCalories(6, durationMin);
 
   const handleLogSet = () => {
     logSetInSession(currentIdx, weight, reps);
@@ -125,12 +125,12 @@ export default function ActiveWorkout() {
             {summary.logs.map((log, i) => (
               <div key={i} className="bg-gym-card p-4 rounded-2xl border border-white/5 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${log.isCompleted ? 'bg-gym-success/20' : 'bg-gym-danger/20'}`}>
-                    {log.isCompleted ? <Check size={16} className="text-gym-success" /> : <X size={16} className="text-gym-danger" />}
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${log.completed ? 'bg-gym-success/20' : 'bg-gym-danger/20'}`}>
+                    {log.completed ? <Check size={16} className="text-gym-success" /> : <X size={16} className="text-gym-danger" />}
                   </div>
                   <div>
                     <p className="text-sm font-bold text-white">{log.name}</p>
-                    <p className="text-[10px] text-gym-muted">{log.sets.length}/{log.targetSets} sets completed</p>
+                    <p className="text-[10px] text-gym-muted">{log.sets?.length || 0}/{log.targetSets || 3} sets completed</p>
                   </div>
                 </div>
               </div>
@@ -225,7 +225,7 @@ export default function ActiveWorkout() {
         {/* Current Exercise Card */}
         {currentExercise && (
           <div className={`bg-gym-card rounded-3xl border overflow-hidden transition-all ${
-            currentExercise.isCompleted ? 'border-gym-success/30' : 'border-white/5'
+            currentExercise.completed ? 'border-gym-success/30' : 'border-white/5'
           }`}>
             {/* Exercise Image */}
             <div className="h-44 w-full relative overflow-hidden">
@@ -236,7 +236,7 @@ export default function ActiveWorkout() {
                 onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80'; }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gym-card via-transparent to-transparent" />
-              {currentExercise.isCompleted && (
+              {currentExercise.completed && (
                 <div className="absolute inset-0 bg-gym-success/10 flex items-center justify-center">
                   <div className="bg-gym-success/20 backdrop-blur-md p-4 rounded-full">
                     <Check size={40} className="text-gym-success" />
@@ -253,26 +253,26 @@ export default function ActiveWorkout() {
               {/* Target Info */}
               <div className="flex items-center justify-between bg-gym-dark/50 p-4 rounded-2xl">
                 <div className="text-center">
-                  <p className="text-2xl font-black text-white">{currentExercise.targetSets}</p>
+                  <p className="text-2xl font-black text-white">{currentExercise.targetSets || 3}</p>
                   <p className="text-[9px] text-gym-muted uppercase font-bold tracking-widest">Target Sets</p>
                 </div>
                 <div className="w-px h-10 bg-white/10" />
                 <div className="text-center">
-                  <p className="text-2xl font-black text-white">{currentExercise.targetReps}</p>
+                  <p className="text-2xl font-black text-white">{currentExercise.targetReps || 10}</p>
                   <p className="text-[9px] text-gym-muted uppercase font-bold tracking-widest">Target Reps</p>
                 </div>
                 <div className="w-px h-10 bg-white/10" />
                 <div className="text-center">
-                  <p className="text-2xl font-black text-gym-neon">{currentExercise.completedSets?.length || 0}</p>
+                  <p className="text-2xl font-black text-gym-neon">{currentExercise.sets?.length || 0}</p>
                   <p className="text-[9px] text-gym-muted uppercase font-bold tracking-widest">Done</p>
                 </div>
               </div>
 
               {/* Set Progress Dots */}
               <div className="flex items-center justify-center gap-2">
-                {Array.from({ length: currentExercise.targetSets }).map((_, i) => (
+                {Array.from({ length: currentExercise.targetSets || 3 }).map((_, i) => (
                   <div key={i} className={`w-4 h-4 rounded-full transition-all ${
-                    i < (currentExercise.completedSets?.length || 0)
+                    i < (currentExercise.sets?.length || 0)
                       ? 'bg-gym-neon glow-neon scale-110' 
                       : 'bg-gym-dark border border-white/10'
                   }`} />
@@ -289,7 +289,7 @@ export default function ActiveWorkout() {
               )}
 
               {/* Weight & Reps Input */}
-              {!currentExercise.isCompleted && (
+              {!currentExercise.completed && (
                 <div className="space-y-4">
                   {/* Weight */}
                   <div className="flex items-center justify-between bg-gym-dark/50 px-4 py-3 rounded-2xl">
@@ -324,13 +324,13 @@ export default function ActiveWorkout() {
                     className="w-full py-4 bg-gradient-neon text-white font-black text-sm uppercase tracking-[0.15em] rounded-2xl glow-neon active:scale-95 transition-transform flex items-center justify-center gap-2"
                   >
                     <Check size={18} strokeWidth={3} />
-                    Log Set {(currentExercise.completedSets?.length || 0) + 1}
+                    Log Set {(currentExercise.sets?.length || 0) + 1}
                   </button>
                 </div>
               )}
 
               {/* Complete / Next Exercise */}
-              {!currentExercise.isCompleted && (currentExercise.completedSets?.length || 0) >= currentExercise.targetSets && (
+              {!currentExercise.completed && (currentExercise.sets?.length || 0) >= (currentExercise.targetSets || 3) && (
                 <button
                   onClick={handleCompleteExercise}
                   className="w-full py-4 bg-gym-success/20 text-gym-success border border-gym-success/30 font-black text-sm uppercase tracking-[0.15em] rounded-2xl active:scale-95 transition-transform flex items-center justify-center gap-2"
@@ -356,13 +356,13 @@ export default function ActiveWorkout() {
             >
               <div className="flex items-center gap-3">
                 <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-[10px] font-black ${
-                  ex.isCompleted ? 'bg-gym-success/20 text-gym-success' : i === currentIdx ? 'bg-gym-neon/20 text-gym-neon' : 'bg-gym-dark text-gym-muted'
+                  ex.completed ? 'bg-gym-success/20 text-gym-success' : i === currentIdx ? 'bg-gym-neon/20 text-gym-neon' : 'bg-gym-dark text-gym-muted'
                 }`}>
-                  {ex.isCompleted ? <Check size={14} /> : i + 1}
+                  {ex.completed ? <Check size={14} /> : i + 1}
                 </div>
-                <p className={`text-xs font-bold ${ex.isCompleted ? 'text-gym-success line-through' : 'text-white'}`}>{ex.name}</p>
+                <p className={`text-xs font-bold ${ex.completed ? 'text-gym-success line-through' : 'text-white'}`}>{ex.name}</p>
               </div>
-              <p className="text-[10px] text-gym-muted">{ex.completedSets?.length || 0}/{ex.targetSets}</p>
+              <p className="text-[10px] text-gym-muted">{ex.sets?.length || 0}/{ex.targetSets || 3}</p>
             </button>
           ))}
         </div>
