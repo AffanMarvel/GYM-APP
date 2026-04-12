@@ -147,28 +147,48 @@ export default function Dashboard() {
           )}
         </section>
 
-        {(history || []).length > 0 && (
-          <section className="space-y-3">
-            <div className="flex items-center justify-between px-1">
-              <h2 className="text-[10px] font-black uppercase tracking-widest text-white/40 flex items-center gap-2">
-                <ClipboardCheck size={14} style={{ color: NEON }} /> Recent
-              </h2>
-              <Link to="/history" className="text-[9px] font-bold text-gym-neon">View All →</Link>
-            </div>
-            {history.slice(0, 2).map((h, i) => (
-              <div key={i} className="bg-gym-card rounded-2xl border border-white/5 p-4 flex justify-between items-center">
-                <div>
-                  <p className="text-xs font-bold text-white">{h.date}</p>
-                  <div className="flex gap-3 text-[9px] font-bold text-gym-muted mt-1">
-                    <span>⏱ {h.durationFormatted}</span>
-                    <span>🔥 {h.totalCalories} cal</span>
+        {/* Dynamic Timeline of the Selected Day */}
+        <section className="space-y-3 pb-5">
+          <div className="flex items-center justify-between px-1">
+            <h2 className="text-[10px] font-black uppercase tracking-widest text-white/40 flex items-center gap-2">
+              <ClipboardCheck size={14} style={{ color: NEON }} /> {selectedDate.toLocaleDateString() === todayStr ? "Today's Logs" : "Logged Activity"}
+            </h2>
+            <Link to="/history" className="text-[9px] font-bold text-gym-neon">View Full History →</Link>
+          </div>
+          
+          {filteredSessions.length > 0 ? (
+            <div className="space-y-2 relative before:absolute before:inset-y-0 before:left-6 before:w-0.5 before:bg-white/5">
+              {filteredSessions.map((h, i) => (
+                <div key={i} className="relative pl-14 pr-3 py-3">
+                  {/* Timeline Dot */}
+                  <div className="absolute left-[21px] top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gym-neon shadow-[0_0_10px_rgba(129,140,248,0.5)] z-10" />
+                  
+                  <div className="bg-gym-card rounded-2xl border border-white/5 p-4 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-gym-neon/5 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none" />
+                    
+                    <div className="flex justify-between items-center relative z-10">
+                      <div>
+                        <p className="text-[10px] font-black text-gym-neon mb-1 uppercase tracking-widest">{h.finishedAt || h.date}</p>
+                        <div className="flex gap-4 text-xs font-bold text-white mt-1">
+                          <span className="flex items-center gap-1"><Clock size={12} className="text-gym-muted" /> {h.durationFormatted}</span>
+                          <span className="flex items-center gap-1"><Flame size={12} className="text-gym-muted" /> {h.totalCalories} cal</span>
+                        </div>
+                      </div>
+                      <ChevronRight size={16} className="text-gym-muted group-hover:text-gym-neon transition-colors" />
+                    </div>
                   </div>
                 </div>
-                <ChevronRight size={16} className="text-gym-muted" />
+              ))}
+            </div>
+          ) : (
+            <div className="p-8 text-center bg-gym-card/20 rounded-3xl border border-white/5 space-y-3">
+              <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-2">
+                <ClipboardCheck size={20} className="text-gym-muted/50" />
               </div>
-            ))}
-          </section>
-        )}
+              <p className="text-gym-muted text-xs font-bold">No workouts logged on this date.</p>
+            </div>
+          )}
+        </section>
       </div>
     </div>
   );
