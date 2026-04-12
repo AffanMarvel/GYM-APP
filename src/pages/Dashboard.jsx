@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { useWorkout, formatTime } from '../context/WorkoutContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { Play, Trash2, Zap, Flame, ChevronRight, ClipboardCheck, Plus, Dumbbell, Clock, Activity, Shield } from 'lucide-react';
@@ -12,22 +12,32 @@ const ACCENT = '#a855f7';
 const CARD = '#141425';
 
 export default function Dashboard() {
-  const { history = [], plannedExercises = [], activeSession, removeFromPlan } = useWorkout() || {};
+  const { history = [], plannedExercises = [], removeFromPlan } = useWorkout() || {};
   const navigate = useNavigate();
-  const [viewMode, setViewMode] = useState('daily');
-
-  const todayDateStr = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
+  
+  // Date State Setup
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const selectedStr = selectedDate.toLocaleDateString();
+  const selectedDisplayStr = selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
   const todayStr = new Date().toLocaleDateString();
-  const now = new Date();
 
-  const filteredSessions = (history || []).filter(h => {
-    if (viewMode === 'daily') return h.date === todayStr;
-    
-    // Weekly logic (last 7 days)
-    const hDate = new Date(h.date);
-    const diffDays = (now - hDate) / (1000 * 60 * 60 * 24);
-    return diffDays >= 0 && diffDays <= 7;
-  });
+  // Generate sliding calendar dates (-14 days to +7 days)
+  const calendarDates = useMemo(() => {
+    const list = [];
+    const baseDate = new Date();
+    baseDate.setHours(0,0,0,0);
+    for (let i = -14; i <= 7; i++) {
+        const d = new Date(baseDate);
+        d.setDate(d.getDate() + i);
+        list.push(d);
+    }
+    return list;
+  }, []);
+
+  const scrollRef = useRef(null);
+
+  // Filter sessions exactly by the tapped date
+  const filteredSessions = (history || []).filter(h => h.date === selectedStr);
 
   const activeCalories = filteredSessions.reduce((s, h) => s + (h.totalCalories || 0), 0);
   const activeDuration = filteredSessions.reduce((s, h) => s + (h.durationSeconds || 0), 0);
@@ -43,58 +53,58 @@ export default function Dashboard() {
         <header className="flex items-center justify-between pt-2">
           <div>
             <h1 className="text-3xl font-black text-white">Train <span style={{ color: NEON, textShadow: `0 0 20px ${NEON}4D` }}>Hard</span></h1>
-            <p className="text-[10px] font-bold text-gym-muted uppercase tracking-[0.2em] mt-2">{todayDateStr}</p>
+            <p className="text-[10px] font-bold text-gym-neon uppercase tracking-[0.2em] mt-2">{selectedDisplayStr}</p>
           </div>
-          <button onClick={() => navigate('/admin')} className="p-3 rounded-2xl bg-gym-neon/10 border border-gym-neon/20 hover:bg-gym-neon/20 transition-all">
+          <button onClick={() => navigate('/admin')} className="p-3 rounded-2xl bg-gym-neon/10 border border-gym-neon/20 hover:bg-gym-neon/20 transition-all shadow-[0_0_15px_rgba(129,140,248,0.2)]">
             <Shield size={22} style={{ color: NEON }} />
           </button>
         </header>
 
-        <div className="flex items-center justify-between p-4 rounded-3xl border border-white/5" style={{ background: CARD }}>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-3xl" style={{ background: 'rgba(255,255,255,0.03)' }}>{spirit.icon}</div>
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-widest text-gym-muted mb-1">Streak</p>
-              <p className="text-xl font-black text-white">{streak} <span className="text-xs text-gray-400">Days</span></p>
-            </div>
-          </div>
-          <div className="text-right">
-            <p className="text-[10px] font-black uppercase tracking-widest text-gym-neon mb-1">Spirit</p>
-            <p className="text-lg font-black text-white">{spirit.name}</p>
+        {/* Horizontal Scrolling Calendar Strip */}
+        <div className="relative -mx-5 px-5">
+          <div 
+            ref={scrollRef}
+            className="flex overflow-x-auto gap-3 pb-4 snap-x"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {calendarDates.map((dateObj, i) => {
+              const isSelected = dateObj.toLocaleDateString() === selectedStr;
+              const isToday = dateObj.toLocaleDateString() === todayStr;
+              const dayName = dateObj.toLocaleDateString('en-US', { weekday: 'short' });
+              
+              return (
+                <button
+                  key={i}
+                  onClick={() => setSelectedDate(dateObj)}
+                  className={`flex-shrink-0 flex flex-col items-center justify-center w-[60px] h-[76px] rounded-2xl border transition-all snap-center ${
+                    isSelected 
+                      ? 'bg-gym-neon text-gym-dark border-gym-neon shadow-[0_0_20px_rgba(129,140,248,0.4)] scale-105 z-10' 
+                      : 'bg-[#141425] text-gym-muted border-white/5 hover:border-white/20 hover:text-white'
+                  }`}
+                >
+                  <p className={`text-[10px] font-black uppercase tracking-widest ${isSelected ? 'text-gym-dark/70' : (isToday ? 'text-gym-neon' : '')}`}>{dayName}</p>
+                  <p className="text-2xl font-black mt-1 leading-none">{dateObj.getDate()}</p>
+                  {isToday && !isSelected && <div className="w-1 h-1 bg-gym-neon rounded-full mt-1 animate-pulse" />}
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        {/* Daily / Weekly View Toggle */}
-        <div className="w-full space-y-3">
-          <div className="flex bg-[#141425] rounded-xl p-1 border border-white/5 mx-auto max-w-[240px]">
-            <button 
-              onClick={() => setViewMode('daily')} 
-              className={`flex-1 py-2 text-[10px] font-black uppercase tracking-widest rounded-lg transition-all ${viewMode === 'daily' ? 'bg-gym-neon text-gym-dark shadow-md' : 'text-gym-muted hover:text-white'}`}
-            >
-              Daily
-            </button>
-            <button 
-              onClick={() => setViewMode('weekly')} 
-              className={`flex-1 py-2 text-[10px] font-black uppercase tracking-widest rounded-lg transition-all ${viewMode === 'weekly' ? 'bg-gym-neon text-gym-dark shadow-md' : 'text-gym-muted hover:text-white'}`}
-            >
-              Weekly
-            </button>
-          </div>
-
-          <div className="grid grid-cols-4 gap-2">
-            {[
-              { icon: <Flame size={16} style={{ color: FIRE }} />, val: activeCalories, label: 'Cal' },
-              { icon: <Clock size={16} style={{ color: CYAN }} />, val: formatTime(activeDuration), label: 'Time' },
-              { icon: <Activity size={16} style={{ color: ACCENT }} />, val: activeSets, label: 'Sets' },
-              { icon: <Dumbbell size={16} style={{ color: GOLD }} />, val: activeExercises, label: 'Done' },
-            ].map((s, i) => (
-              <div key={i} className="p-3 rounded-2xl border border-white/5 text-center" style={{ background: CARD }}>
-                <div className="mx-auto mb-1 flex justify-center">{s.icon}</div>
-                <p className="text-lg font-black text-white">{s.val}</p>
-                <p className="text-[8px] uppercase font-bold tracking-widest text-gym-muted">{s.label}</p>
-              </div>
-            ))}
-          </div>
+        {/* 4-Stat Performance Grid specific to the tapped date */}
+        <div className="grid grid-cols-4 gap-2">
+          {[
+            { icon: <Flame size={16} style={{ color: FIRE }} />, val: activeCalories, label: 'Cal' },
+            { icon: <Clock size={16} style={{ color: CYAN }} />, val: formatTime(activeDuration), label: 'Time' },
+            { icon: <Activity size={16} style={{ color: ACCENT }} />, val: activeSets, label: 'Sets' },
+            { icon: <Dumbbell size={16} style={{ color: GOLD }} />, val: activeExercises, label: 'Done' },
+          ].map((s, i) => (
+            <div key={i} className="p-3 rounded-2xl border border-white/5 text-center shadow-[0_4px_20px_rgba(0,0,0,0.5)]" style={{ background: CARD }}>
+              <div className="mx-auto mb-1 flex justify-center">{s.icon}</div>
+              <p className="text-xl font-black text-white">{s.val}</p>
+              <p className="text-[8px] uppercase font-black tracking-widest text-gym-muted">{s.label}</p>
+            </div>
+          ))}
         </div>
 
         <section className="space-y-3">
