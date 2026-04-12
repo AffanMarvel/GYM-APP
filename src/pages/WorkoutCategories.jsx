@@ -9,7 +9,7 @@ const muscles = [
   { id: 'biceps', name: 'Biceps', img: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&q=80' },
   { id: 'triceps', name: 'Triceps', img: 'https://images.unsplash.com/photo-1530822847156-5df684ec5ee1?w=400&q=80' },
   { id: 'abs', name: 'Abs', img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80' },
-  { id: 'forearms', name: 'Forearms', img: 'https://images.unsplash.com/photo-1591940742878-13aba4b7a35e?w=400&q=80' },
+  { id: 'forearms', name: 'Forearms', img: 'https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?w=400&q=80' },
   { id: 'cardio', name: 'Cardio', img: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=400&q=80' },
   { id: 'stretching', name: 'Stretching', img: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=400&q=80' },
   { id: 'warmup', name: 'Warm Up', img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&q=80' },
