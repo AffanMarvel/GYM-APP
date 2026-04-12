@@ -7,6 +7,13 @@ import {
   Award, Plus, Dumbbell, Clock, Activity, Trophy
 } from 'lucide-react';
 
+const NEON = '#818cf8';
+const ACCENT = '#a855f7';
+const CYAN = '#22d3ee';
+const FIRE = '#f97316';
+const GOLD = '#fbbf24';
+const CARD = '#141425';
+
 export default function Dashboard() {
   const context = useWorkout();
   const navigate = useNavigate();
@@ -86,13 +93,13 @@ export default function Dashboard() {
         <header className="flex items-center justify-between pt-2">
           <div>
             <h1 className="text-3xl font-black text-white tracking-tight">
-              Train <span className="text-gym-neon text-glow">Hard</span>
+              Train <span style={{ color: NEON, textShadow: `0 0 15px rgba(99,102,241,0.6)` }}>Hard</span>
             </h1>
-            <p className="text-gym-muted text-[10px] font-bold uppercase tracking-[0.2em] mt-1">{todayDateStr}</p>
+            <p style={{ color: '#6b7280' }} className="text-[10px] font-bold uppercase tracking-[0.2em] mt-1">{todayDateStr}</p>
           </div>
-          <div className="flex items-center bg-gym-card border border-white/5 px-4 py-2.5 rounded-2xl gap-3">
+          <div className="flex items-center border border-white/5 px-4 py-2.5 rounded-2xl gap-3" style={{ background: CARD }}>
             <div className="text-right">
-              <p className="text-[9px] font-black text-gym-muted uppercase tracking-widest">{spirit.name}</p>
+              <p className="text-[9px] font-black uppercase tracking-widest" style={{ color: '#6b7280' }}>{spirit.name}</p>
               <p className="text-sm font-black text-white">{streak} Day</p>
             </div>
             <span className="text-2xl">{spirit.icon}</span>
@@ -101,25 +108,25 @@ export default function Dashboard() {
 
         {/* Today's Performance */}
         <div className="grid grid-cols-4 gap-2">
-          <div className="bg-gym-card p-3 rounded-2xl border border-white/5 text-center">
-            <Flame size={16} className="text-gym-fire mx-auto mb-1" />
+          <div className="p-3 rounded-2xl border border-white/5 text-center" style={{ background: CARD }}>
+            <Flame size={16} style={{ color: FIRE }} className="mx-auto mb-1" />
             <p className="text-lg font-black text-white">{todayCalories}</p>
-            <p className="text-[8px] text-gym-muted uppercase font-bold tracking-widest">Cal</p>
+            <p className="text-[8px] uppercase font-bold tracking-widest" style={{ color: '#6b7280' }}>Cal</p>
           </div>
-          <div className="bg-gym-card p-3 rounded-2xl border border-white/5 text-center">
-            <Clock size={16} className="text-gym-cyan mx-auto mb-1" />
+          <div className="p-3 rounded-2xl border border-white/5 text-center" style={{ background: CARD }}>
+            <Clock size={16} style={{ color: CYAN }} className="mx-auto mb-1" />
             <p className="text-lg font-black text-white">{todayDuration > 0 ? formatTime(todayDuration) : '00:00'}</p>
-            <p className="text-[8px] text-gym-muted uppercase font-bold tracking-widest">Time</p>
+            <p className="text-[8px] uppercase font-bold tracking-widest" style={{ color: '#6b7280' }}>Time</p>
           </div>
-          <div className="bg-gym-card p-3 rounded-2xl border border-white/5 text-center">
-            <Activity size={16} className="text-gym-accent mx-auto mb-1" />
+          <div className="p-3 rounded-2xl border border-white/5 text-center" style={{ background: CARD }}>
+            <Activity size={16} style={{ color: ACCENT }} className="mx-auto mb-1" />
             <p className="text-lg font-black text-white">{todaySets}</p>
-            <p className="text-[8px] text-gym-muted uppercase font-bold tracking-widest">Sets</p>
+            <p className="text-[8px] uppercase font-bold tracking-widest" style={{ color: '#6b7280' }}>Sets</p>
           </div>
-          <div className="bg-gym-card p-3 rounded-2xl border border-white/5 text-center">
-            <Dumbbell size={16} className="text-gym-gold mx-auto mb-1" />
+          <div className="p-3 rounded-2xl border border-white/5 text-center" style={{ background: CARD }}>
+            <Dumbbell size={16} style={{ color: GOLD }} className="mx-auto mb-1" />
             <p className="text-lg font-black text-white">{todayExercises}</p>
-            <p className="text-[8px] text-gym-muted uppercase font-bold tracking-widest">Done</p>
+            <p className="text-[8px] uppercase font-bold tracking-widest" style={{ color: '#6b7280' }}>Done</p>
           </div>
         </div>
 
@@ -128,7 +135,7 @@ export default function Dashboard() {
           <div className="flex items-center gap-2 flex-wrap">
             <span className="text-[9px] font-bold text-gym-muted uppercase tracking-widest">Today:</span>
             {todayMuscles.map((m, i) => (
-              <span key={i} className="px-2.5 py-1 bg-gym-neon/10 text-gym-neon text-[9px] font-black uppercase rounded-lg border border-gym-neon/20">
+              <span key={i} className="px-2.5 py-1 text-[9px] font-black uppercase rounded-lg" style={{ background: 'rgba(99,102,241,0.1)', color: NEON, border: '1px solid rgba(99,102,241,0.2)' }}>
                 {m}
               </span>
             ))}
@@ -139,24 +146,24 @@ export default function Dashboard() {
         <section className="glass p-5 rounded-3xl">
           <div className="flex items-center justify-between mb-4 px-1">
             <h2 className="text-[10px] font-black uppercase tracking-widest text-white/40 flex items-center gap-2">
-              <CalendarIcon size={14} className="text-gym-neon" />
+              <CalendarIcon size={14} style={{ color: NEON }} />
               This Week
             </h2>
-            <p className="text-[9px] font-black text-gym-neon uppercase bg-gym-neon/10 px-2 py-1 rounded-md">
+            <p className="text-[9px] font-black uppercase px-2 py-1 rounded-md" style={{ color: NEON, background: 'rgba(99,102,241,0.1)' }}>
               {totalWorkouts} Total
             </p>
           </div>
           <div className="flex justify-between items-center bg-gym-dark/40 p-3 rounded-2xl">
             {weekDays.map((wd, i) => (
               <div key={i} className="flex flex-col items-center gap-1.5">
-                <span className={`text-[9px] font-black uppercase tracking-tighter ${wd.isToday ? 'text-gym-neon' : 'text-gym-muted'}`}>{wd.day}</span>
-                <div className={`w-9 h-9 rounded-xl flex items-center justify-center border-2 transition-all ${
+                <span className="text-[9px] font-black uppercase tracking-tighter" style={{ color: wd.isToday ? NEON : '#6b7280' }}>{wd.day}</span>
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center border-2 transition-all" style={
                   wd.isToday 
-                    ? 'bg-gym-neon border-gym-neon text-white shadow-lg shadow-gym-neon/30 scale-110' 
+                    ? { background: NEON, borderColor: NEON, color: '#fff', boxShadow: `0 0 15px rgba(99,102,241,0.3)`, transform: 'scale(1.1)' } 
                     : wd.isCompleted 
-                      ? 'bg-gym-neon/20 border-gym-neon/40 text-gym-neon'
-                      : 'bg-transparent border-white/5 text-gym-muted'
-                }`}>
+                      ? { background: 'rgba(99,102,241,0.15)', borderColor: 'rgba(99,102,241,0.3)', color: NEON }
+                      : { background: 'transparent', borderColor: 'rgba(255,255,255,0.05)', color: '#6b7280' }
+                }>
                   <span className="text-xs font-black">{wd.date}</span>
                 </div>
               </div>
@@ -168,7 +175,7 @@ export default function Dashboard() {
         <section className="space-y-3">
           <div className="flex items-center justify-between px-1">
             <h2 className="text-[10px] font-black uppercase tracking-widest text-white/40 flex items-center gap-2">
-              <Zap size={14} className="text-gym-neon" />
+              <Zap size={14} style={{ color: NEON }} />
               Today's Mission
             </h2>
             {hasActivePlan && (
@@ -183,7 +190,8 @@ export default function Dashboard() {
               {/* Start Workout */}
               <button
                 onClick={() => navigate('/active-workout')}
-                className="w-full py-5 bg-gradient-neon text-white font-black text-sm uppercase tracking-[0.2em] rounded-2xl glow-neon active:scale-[0.98] transition-transform flex items-center justify-center gap-3"
+                className="w-full py-5 text-white font-black text-sm uppercase tracking-[0.2em] rounded-2xl active:scale-[0.98] transition-transform flex items-center justify-center gap-3"
+                style={{ background: 'linear-gradient(135deg, #6366f1, #a855f7)', boxShadow: '0 0 25px rgba(99,102,241,0.3)' }}
               >
                 <Play size={22} fill="currentColor" />
                 Start Workout

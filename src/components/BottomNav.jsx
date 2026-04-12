@@ -1,6 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Home, Target, Dumbbell, ActivitySquare } from 'lucide-react';
 
+const NEON = '#818cf8';
+
 export default function BottomNav() {
   const location = useLocation();
 
@@ -15,7 +17,7 @@ export default function BottomNav() {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 glass-strong z-50">
+    <div className="fixed bottom-0 left-0 right-0 z-50" style={{ background: 'rgba(14,14,26,0.92)', backdropFilter: 'blur(40px)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       <div className="flex justify-around items-center h-16 max-w-lg mx-auto">
         {navItems.map((item) => {
           const Icon = item.icon;
@@ -25,17 +27,14 @@ export default function BottomNav() {
             <Link 
               key={item.name} 
               to={item.path}
-              className={`flex flex-col items-center justify-center w-full h-full space-y-1 transition-all duration-300 ${
-                isActive ? 'text-gym-neon' : 'text-gym-muted hover:text-gym-text'
-              }`}
+              className="flex flex-col items-center justify-center w-full h-full space-y-1 transition-all duration-300"
+              style={{ color: isActive ? NEON : '#6b7280' }}
             >
-              <div className={`transition-transform duration-300 ${isActive ? 'scale-110' : ''}`}>
+              <div style={{ transform: isActive ? 'scale(1.1)' : 'scale(1)', transition: 'transform 0.3s' }}>
                 <Icon size={22} strokeWidth={isActive ? 2.5 : 1.8} />
               </div>
-              <span className={`text-[9px] font-bold tracking-wider ${isActive ? 'text-gym-neon' : ''}`}>
-                {item.name}
-              </span>
-              {isActive && <div className="w-4 h-0.5 bg-gym-neon rounded-full mt-0.5" />}
+              <span className="text-[9px] font-bold tracking-wider">{item.name}</span>
+              {isActive && <div style={{ width: 16, height: 2, background: NEON, borderRadius: 4, marginTop: 2 }} />}
             </Link>
           );
         })}

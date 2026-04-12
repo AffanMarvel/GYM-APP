@@ -175,15 +175,15 @@ export default function ExerciseDetail() {
         )}
       </div>
 
-      {/* Floating Action */}
-      <div className="fixed bottom-6 left-4 right-4 z-50 max-w-lg mx-auto">
+      {/* Floating Action - positioned above bottom nav */}
+      <div className="fixed bottom-20 left-4 right-4 z-50 max-w-lg mx-auto">
         <button 
           onClick={handlePlanToggle}
-          className={`w-full py-4 rounded-2xl font-black text-sm uppercase tracking-[0.15em] shadow-2xl transition-all duration-300 flex items-center justify-center space-x-3 border-2 active:scale-[0.97] ${
-            isPlanned 
-              ? 'bg-transparent border-gym-neon text-gym-neon'
-              : 'bg-gradient-neon border-gym-neon text-white glow-neon hover:scale-[1.01]'
-          }`}
+          className="w-full py-4 rounded-2xl font-black text-sm uppercase tracking-[0.15em] shadow-2xl transition-all duration-300 flex items-center justify-center space-x-3 border-2 active:scale-[0.97]"
+          style={isPlanned 
+            ? { background: 'transparent', borderColor: '#818cf8', color: '#818cf8' }
+            : { background: 'linear-gradient(135deg, #6366f1, #a855f7)', borderColor: '#6366f1', color: '#fff', boxShadow: '0 0 25px rgba(99,102,241,0.3)' }
+          }
         >
           {isPlanned ? (
             <><CheckCircle2 size={20} strokeWidth={3} /><span>Added to Plan</span></>
