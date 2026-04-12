@@ -1,210 +1,103 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getExerciseById } from '../api/exerciseApi';
 import { useWorkout } from '../context/WorkoutContext';
 import { 
-  ChevronLeft, Play, CheckCircle2, Plus, 
-  Trophy, Flame, Info, Youtube, AlertCircle
+  ChevronLeft, Play, Info, Check, 
+  Dumbbell, Target, ChevronRight, Activity, Plus 
 } from 'lucide-react';
-import { getAssetPath } from '../utils/assetPath';
+import { workoutData } from '../data/exercises';
 
 export default function ExerciseDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { addToPlan, plannedExercises, removeFromPlan, exercises: allExercises } = useWorkout();
-  
+  const { addToPlan } = useWorkout();
   const [exercise, setExercise] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [selectedLevel, setSelectedLevel] = useState('intermediate');
-  const [showSuccess, setShowSuccess] = useState(false);
+  const [activeTab, setActiveTab] = useState('instructions');
 
   useEffect(() => {
-    setLoading(true);
-    // Find exercise in context
+    // Flatten all categories to find the exercise
     let found = null;
-    for (const cat in allExercises) {
-      const match = allExercises[cat].find(ex => (ex.id === id || ex.name.toLowerCase().replace(/ /g, '-') === id));
-      if (match) {
-        found = match;
-        break;
-      }
-    }
+    Object.values(workoutData).forEach(cat => {
+      const ex = cat.find(e => e.id === id);
+      if (ex) found = ex;
+    });
     setExercise(found);
-    setLoading(false);
-  }, [id, allExercises]);
+  }, [id]);
 
-  const exerciseId = exercise?.id || exercise?.name?.toLowerCase().replace(/ /g, '-');
-  const isPlanned = plannedExercises.some(p => (p.id || p.name?.toLowerCase().replace(/ /g, '-')) === exerciseId);
-
-  const handlePlanToggle = () => {
-    if (isPlanned) {
-      removeFromPlan(exerciseId);
-    } else {
-      addToPlan({ ...exercise, id: exerciseId });
-      setShowSuccess(true);
-      setTimeout(() => setShowSuccess(false), 2000);
-    }
-  };
-
-  if (loading) {
-    return <div className="min-h-screen bg-gym-dark flex items-center justify-center">
-      <div className="w-12 h-12 border-4 border-gym-neon border-t-transparent rounded-full animate-spin" />
-    </div>;
-  }
-
-  if (!exercise) {
-    return <div className="min-h-screen bg-gym-dark p-6 flex flex-col items-center justify-center text-center">
-      <h1 className="text-2xl font-bold text-white mb-4">Exercise not found</h1>
-      <button onClick={() => navigate(-1)} className="text-gym-neon underline">Go back</button>
-    </div>;
-  }
-
-  const currentLevelData = exercise.levels?.[selectedLevel] || { sets: 3, reps: "10-12", focus: "Hypertrophy" };
+  if (!exercise) return <div className="p-10 text-center text-white">Exercise not found</div>;
 
   return (
-    <div className="min-h-screen bg-gym-dark pb-32">
-      {/* Hero */}
-      <div className="relative h-[40vh] w-full overflow-hidden">
-        <img 
-          src={getAssetPath(exercise.image)} 
-          alt={exercise.name}
-          className="w-full h-full object-cover"
-          onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1541534741688-6078c64b52d3?w=800&q=80'; }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-gym-dark via-gym-dark/40 to-transparent" />
-        
-        <div className="absolute top-8 left-5 right-5 flex justify-between items-center">
-          <button 
-            onClick={() => navigate(-1)}
-            className="p-2.5 bg-black/40 backdrop-blur-xl rounded-xl border border-white/10 text-white active:scale-95 transition-transform"
-          >
-            <ChevronLeft size={22} />
-          </button>
-          
-          <a 
-            href={exercise.tutorialUrl || `https://www.youtube.com/results?search_query=how+to+do+${exercise.name}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-2 px-4 py-2 bg-red-600/90 backdrop-blur-md rounded-xl text-[10px] font-black uppercase tracking-widest text-white shadow-lg"
-          >
-            <Youtube size={14} />
-            <span>Tutorial</span>
-          </a>
-        </div>
-
-        <div className="absolute bottom-5 left-5 right-5">
-          <div className="flex items-center space-x-2 mb-2">
-            <span className="px-2 py-1 bg-gym-neon text-gym-dark text-[9px] font-black uppercase rounded-md tracking-tighter">
-              {exercise.muscle}
-            </span>
-            <span className="px-2 py-1 bg-white/10 backdrop-blur-md text-white text-[9px] font-bold uppercase rounded-md border border-white/10">
-              {exercise.difficulty}
-            </span>
-          </div>
-          <h1 className="text-3xl font-black text-white leading-tight">{exercise.name}</h1>
-        </div>
-      </div>
-
-      <div className="p-5 space-y-6 slide-up">
-        {/* Level Selection */}
-        <section>
-          <div className="flex items-center gap-2 mb-3">
-            <Trophy size={14} className="text-gym-neon" />
-            <h2 className="text-[10px] font-black uppercase tracking-widest text-gym-muted">Your Level</h2>
-          </div>
-          <div className="grid grid-cols-3 gap-2 p-1 bg-gym-card rounded-xl border border-white/5">
-            {['beginner', 'intermediate', 'advanced'].map((lvl) => (
-              <button
-                key={lvl}
-                onClick={() => setSelectedLevel(lvl)}
-                className={`py-2.5 rounded-lg text-[9px] font-black uppercase tracking-widest transition-all ${
-                  selectedLevel === lvl 
-                    ? 'bg-gym-neon text-gym-dark shadow-lg shadow-gym-neon/20'
-                    : 'text-gym-muted hover:bg-white/5'
-                }`}
-              >
-                {lvl}
-              </button>
-            ))}
-          </div>
-        </section>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 gap-3">
-          <div className="bg-gym-card p-4 rounded-2xl border border-white/5 text-center">
-            <p className="text-[9px] font-bold text-gym-muted uppercase tracking-tighter mb-1">Target Sets</p>
-            <p className="text-2xl font-black text-white">{currentLevelData.sets} <span className="text-sm text-gym-neon">Sets</span></p>
-          </div>
-          <div className="bg-gym-card p-4 rounded-2xl border border-white/5 text-center">
-            <p className="text-[9px] font-bold text-gym-muted uppercase tracking-tighter mb-1">Target Reps</p>
-            <p className="text-2xl font-black text-white">{currentLevelData.reps} <span className="text-sm text-gym-neon">Reps</span></p>
-          </div>
-        </div>
-
-        {/* Focus */}
-        <div className="p-3.5 bg-gym-neon/5 rounded-xl border border-gym-neon/15 flex items-start space-x-3">
-          <Info size={16} className="text-gym-neon mt-0.5 shrink-0" />
-          <div>
-            <p className="text-[9px] font-black text-gym-neon uppercase tracking-widest mb-0.5">Focus</p>
-            <p className="text-xs text-gym-text/80 leading-relaxed">{currentLevelData.focus}</p>
-          </div>
-        </div>
-
-        {/* Instructions */}
-        <section className="space-y-3">
-          <h3 className="text-sm font-black text-white px-2 border-l-4 border-gym-neon">Steps</h3>
-          <div className="space-y-2">
-            {exercise.instructions.map((step, i) => (
-              <div key={i} className="flex space-x-3 p-3 bg-gym-card rounded-xl border border-white/5">
-                <span className="text-gym-neon font-black text-sm w-5 shrink-0">{i + 1}</span>
-                <p className="text-gym-text/80 text-xs leading-relaxed">{step}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Tips */}
-        {exercise.tips && (
-          <section className="space-y-3">
-            <h3 className="text-sm font-black text-white px-2 border-l-4 border-gym-accent">Pro Tips</h3>
-            <div className="bg-gym-card/50 rounded-2xl p-4 border border-dashed border-white/10">
-              <ul className="space-y-3">
-                {exercise.tips.map((tip, i) => (
-                  <li key={i} className="flex items-start space-x-2 text-xs italic text-gym-muted leading-relaxed">
-                    <span className="text-gym-accent mt-0.5 shrink-0">•</span>
-                    <span>{tip}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        )}
-      </div>
-
-      {/* Floating Action - positioned above bottom nav */}
-      <div className="fixed bottom-20 left-4 right-4 z-50 max-w-lg mx-auto">
+    <div className="min-h-screen pb-32" style={{ background: '#06060d' }}>
+      {/* Hero Image */}
+      <div className="relative h-[45vh] w-full overflow-hidden">
+        <img src={exercise.image} alt={exercise.name} className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#06060d] via-transparent to-transparent" />
         <button 
-          onClick={handlePlanToggle}
-          className="w-full py-4 rounded-2xl font-black text-sm uppercase tracking-[0.15em] shadow-2xl transition-all duration-300 flex items-center justify-center space-x-3 border-2 active:scale-[0.97]"
-          style={isPlanned 
-            ? { background: 'transparent', borderColor: '#818cf8', color: '#818cf8' }
-            : { background: 'linear-gradient(135deg, #6366f1, #a855f7)', borderColor: '#6366f1', color: '#fff', boxShadow: '0 0 25px rgba(99,102,241,0.3)' }
-          }
+          onClick={() => navigate(-1)} 
+          className="absolute top-6 left-6 p-3 bg-black/40 backdrop-blur-md rounded-2xl border border-white/10"
         >
-          {isPlanned ? (
-            <><CheckCircle2 size={20} strokeWidth={3} /><span>Added to Plan</span></>
-          ) : (
-            <><Plus size={20} strokeWidth={3} /><span>Add to Today's Plan</span></>
-          )}
+          <ChevronLeft size={22} className="text-white" />
         </button>
       </div>
 
-      {/* Success Toast */}
-      {showSuccess && (
-        <div className="fixed top-10 left-1/2 -translate-x-1/2 z-[60] bg-gradient-neon text-white px-6 py-3 rounded-full font-black text-[10px] uppercase tracking-widest shadow-2xl animate-bounce">
-          Added to plan ✓
+      <div className="px-6 -mt-12 relative z-10 space-y-8">
+        {/* Title & Info */}
+        <div className="space-y-4">
+          <div className="flex items-center gap-2">
+            <span className="px-3 py-1 bg-gym-neon/10 text-gym-neon text-[10px] font-black uppercase rounded-lg border border-gym-neon/20">
+              {exercise.muscle}
+            </span>
+          </div>
+          <h1 className="text-4xl font-black text-white leading-tight">{exercise.name}</h1>
+          <p className="text-gym-muted text-sm font-medium leading-relaxed opacity-80">{exercise.muscleTarget}</p>
         </div>
-      )}
+
+        {/* Action Button */}
+        <button 
+          onClick={() => addToPlan(exercise)}
+          className="w-full py-5 bg-gym-neon text-gym-dark font-black text-sm uppercase tracking-[0.2em] rounded-2xl shadow-lg shadow-gym-neon/20 active:scale-[0.98] transition-all flex items-center justify-center gap-3"
+        >
+          <Plus size={20} />
+          Add To Today's Plan
+        </button>
+
+        {/* Tabs */}
+        <div className="space-y-6">
+          <div className="flex gap-8 border-b border-white/5 pb-2">
+            {['instructions', 'tips'].map(tab => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`text-[10px] font-black uppercase tracking-widest pb-2 transition-all relative ${
+                  activeTab === tab ? 'text-white' : 'text-gym-muted'
+                }`}
+              >
+                {tab}
+                {activeTab === tab && (
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gym-neon rounded-full" />
+                )}
+              </button>
+            ))}
+          </div>
+
+          <div className="text-gym-muted text-sm leading-relaxed space-y-4">
+            {activeTab === 'instructions' ? (
+              <ul className="space-y-4">
+                {exercise.instructions.map((step, i) => (
+                  <li key={i} className="flex gap-4 p-4 bg-gym-card rounded-2xl border border-white/5">
+                    <span className="text-gym-neon font-black text-lg opacity-40">0{i+1}</span>
+                    <p className="font-medium text-white/80">{step}</p>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <div className="bg-gym-card p-6 rounded-3xl border border-white/5 border-dashed">
+                <p className="italic text-center opacity-60 font-medium">Keep your core tight and maintain controlled movements for maximum muscle engagement.</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
