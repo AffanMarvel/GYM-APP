@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useWorkout, formatTime } from '../context/WorkoutContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { Play, Trash2, Zap, Flame, ChevronRight, ClipboardCheck, Plus, Dumbbell, Clock, Activity, Shield } from 'lucide-react';
@@ -13,14 +14,26 @@ const CARD = '#141425';
 export default function Dashboard() {
   const { history = [], plannedExercises = [], activeSession, removeFromPlan } = useWorkout() || {};
   const navigate = useNavigate();
+  const [viewMode, setViewMode] = useState('daily');
 
   const todayDateStr = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
   const todayStr = new Date().toLocaleDateString();
-  const todaySessions = (history || []).filter(h => h.date === todayStr);
-  const todayCalories = todaySessions.reduce((s, h) => s + (h.totalCalories || 0), 0);
-  const todayDuration = todaySessions.reduce((s, h) => s + (h.durationSeconds || 0), 0);
-  const todaySets = todaySessions.reduce((s, h) => s + (h.totalSets || 0), 0);
-  const todayExercises = todaySessions.reduce((s, h) => s + (h.exercisesCompleted || 0), 0);
+  const now = new Date();
+
+  const filteredSessions = (history || []).filter(h => {
+    if (viewMode === 'daily') return h.date === todayStr;
+    
+    // Weekly logic (last 7 days)
+    const hDate = new Date(h.date);
+    const diffDays = (now - hDate) / (1000 * 60 * 60 * 24);
+    return diffDays >= 0 && diffDays <= 7;
+  });
+
+  const activeCalories = filteredSessions.reduce((s, h) => s + (h.totalCalories || 0), 0);
+  const activeDuration = filteredSessions.reduce((s, h) => s + (h.durationSeconds || 0), 0);
+  const activeSets = filteredSessions.reduce((s, h) => s + (h.totalSets || 0), 0);
+  const activeExercises = filteredSessions.reduce((s, h) => s + (h.exercisesCompleted || 0), 0);
+  
   const streak = (history || []).length;
   const spirit = { name: streak >= 7 ? 'Phoenix' : 'Wolf', icon: streak >= 7 ? '🔥' : '🐺' };
 
@@ -32,7 +45,7 @@ export default function Dashboard() {
             <h1 className="text-3xl font-black text-white">Train <span style={{ color: NEON, textShadow: `0 0 20px ${NEON}4D` }}>Hard</span></h1>
             <p className="text-[10px] font-bold text-gym-muted uppercase tracking-[0.2em] mt-2">{todayDateStr}</p>
           </div>
-          <button onClick={() => navigate('/admin')} className="p-3 rounded-2xl bg-gym-neon/10 border border-gym-neon/20">
+          <button onClick={() => navigate('/admin')} className="p-3 rounded-2xl bg-gym-neon/10 border border-gym-neon/20 hover:bg-gym-neon/20 transition-all">
             <Shield size={22} style={{ color: NEON }} />
           </button>
         </header>
@@ -51,19 +64,37 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-2">
-          {[
-            { icon: <Flame size={16} style={{ color: FIRE }} />, val: todayCalories, label: 'Cal' },
-            { icon: <Clock size={16} style={{ color: CYAN }} />, val: formatTime(todayDuration), label: 'Time' },
-            { icon: <Activity size={16} style={{ color: ACCENT }} />, val: todaySets, label: 'Sets' },
-            { icon: <Dumbbell size={16} style={{ color: GOLD }} />, val: todayExercises, label: 'Done' },
-          ].map((s, i) => (
-            <div key={i} className="p-3 rounded-2xl border border-white/5 text-center" style={{ background: CARD }}>
-              <div className="mx-auto mb-1 flex justify-center">{s.icon}</div>
-              <p className="text-lg font-black text-white">{s.val}</p>
-              <p className="text-[8px] uppercase font-bold tracking-widest text-gym-muted">{s.label}</p>
-            </div>
-          ))}
+        {/* Daily / Weekly View Toggle */}
+        <div className="w-full space-y-3">
+          <div className="flex bg-[#141425] rounded-xl p-1 border border-white/5 mx-auto max-w-[240px]">
+            <button 
+              onClick={() => setViewMode('daily')} 
+              className={`flex-1 py-2 text-[10px] font-black uppercase tracking-widest rounded-lg transition-all ${viewMode === 'daily' ? 'bg-gym-neon text-gym-dark shadow-md' : 'text-gym-muted hover:text-white'}`}
+            >
+              Daily
+            </button>
+            <button 
+              onClick={() => setViewMode('weekly')} 
+              className={`flex-1 py-2 text-[10px] font-black uppercase tracking-widest rounded-lg transition-all ${viewMode === 'weekly' ? 'bg-gym-neon text-gym-dark shadow-md' : 'text-gym-muted hover:text-white'}`}
+            >
+              Weekly
+            </button>
+          </div>
+
+          <div className="grid grid-cols-4 gap-2">
+            {[
+              { icon: <Flame size={16} style={{ color: FIRE }} />, val: activeCalories, label: 'Cal' },
+              { icon: <Clock size={16} style={{ color: CYAN }} />, val: formatTime(activeDuration), label: 'Time' },
+              { icon: <Activity size={16} style={{ color: ACCENT }} />, val: activeSets, label: 'Sets' },
+              { icon: <Dumbbell size={16} style={{ color: GOLD }} />, val: activeExercises, label: 'Done' },
+            ].map((s, i) => (
+              <div key={i} className="p-3 rounded-2xl border border-white/5 text-center" style={{ background: CARD }}>
+                <div className="mx-auto mb-1 flex justify-center">{s.icon}</div>
+                <p className="text-lg font-black text-white">{s.val}</p>
+                <p className="text-[8px] uppercase font-bold tracking-widest text-gym-muted">{s.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <section className="space-y-3">

@@ -12,7 +12,7 @@ const gitAutoCommitPlugin = () => ({
 })
 
 // https://vitejs.dev/config/
-// Force commit trigger! Again!
+// Force commit trigger! Daily/Weekly update
 export default defineConfig({
   plugins: [react(), gitAutoCommitPlugin()],
   base: './'
