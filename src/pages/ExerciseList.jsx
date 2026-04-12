@@ -1,27 +1,25 @@
-import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { getExercisesByMuscle } from '../api/exerciseApi';
-import { ChevronLeft, Plus, PlayCircle, Target, Lightbulb, ClipboardList, Check } from 'lucide-react';
+import { ChevronLeft, Plus, PlayCircle, Target, Lightbulb, ClipboardList, Check, AlertCircle } from 'lucide-react';
 import { useWorkout } from '../context/WorkoutContext';
+import { getAssetPath } from '../utils/assetPath';
 
 export default function ExerciseList() {
   const { muscle } = useParams();
   const navigate = useNavigate();
-  const { addToPlan, plannedExercises } = useWorkout();
+  const { addToPlan, plannedExercises, exercises: allExercises } = useWorkout();
   
   const [exercises, setExercises] = useState([]);
   const [loading, setLoading] = useState(true);
   const [addedFeedback, setAddedFeedback] = useState(null);
 
   useEffect(() => {
-    async function loadExercises() {
-      setLoading(true);
-      const data = await getExercisesByMuscle(muscle);
-      setExercises(data || []);
-      setLoading(false);
+    setLoading(true);
+    if (allExercises && allExercises[muscle]) {
+      setExercises(allExercises[muscle]);
+    } else {
+      setExercises([]);
     }
-    loadExercises();
-  }, [muscle]);
+    setLoading(false);
+  }, [muscle, allExercises]);
 
   const isInPlan = (ex) => {
     const exId = ex.id || ex.name.toLowerCase().replace(/ /g, '-');
@@ -58,8 +56,10 @@ export default function ExerciseList() {
             ))}
           </div>
         ) : exercises.length === 0 ? (
-          <div className="text-center py-20 bg-gym-card rounded-3xl border border-dashed border-white/10">
-            <p className="text-gym-muted text-lg">No exercises found for this category.</p>
+          <div className="text-center py-20 bg-gym-card rounded-3xl border border-dashed border-white/10 flex flex-col items-center">
+            <AlertCircle size={48} className="text-white/20 mb-4" />
+            <p className="text-gym-muted text-lg font-bold">No workouts found here.</p>
+            <p className="text-xs text-white/30 max-w-xs mt-2 px-6">Try adding custom exercises in the Admin Panel!</p>
           </div>
         ) : (
           <div className="space-y-8">
@@ -76,7 +76,7 @@ export default function ExerciseList() {
                   {/* Image Section */}
                   <div className="h-64 w-full bg-black relative overflow-hidden cursor-pointer" onClick={() => navigate(`/exercise/${exId}`)}>
                     <img 
-                      src={ex.image} 
+                      src={getAssetPath(ex.image)} 
                       alt={ex.name}
                       className="w-full h-full object-cover opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
                       onError={(e) => {

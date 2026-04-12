@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useEffect, useRef, useCallback } from 'react';
+import { createContext, useContext, useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { workoutData as defaultWorkoutData } from '../data/exercises';
 
 const WorkoutContext = createContext(null);
 
@@ -51,7 +52,23 @@ const formatTime = (seconds) => {
 export { calcCalories, formatTime, WEIGHT_KG };
 
 export const WorkoutProvider = ({ children }) => {
-  // ─── Persisted States ─────────────────────
+  // ─── Exercise Data State (Built-in + Custom) ────────
+  const [exercises, setExercises] = useState(() => {
+    try {
+      const customRaw = localStorage.getItem('gym_custom_exercises');
+      const custom = customRaw ? JSON.parse(customRaw) : {};
+      const merged = { ...defaultWorkoutData };
+      
+      Object.keys(custom).forEach(cat => {
+        const existingIds = new Set(merged[cat]?.map(e => e.id) || []);
+        const newEx = custom[cat].filter(e => !existingIds.has(e.id));
+        merged[cat] = [...(merged[cat] || []), ...newEx];
+      });
+      return merged;
+    } catch { return defaultWorkoutData; }
+  });
+
+  // ─── Persisted User States ─────────────────────
   const [goals, setGoals] = useState(() => {
     try {
       const saved = localStorage.getItem('gym_goals');
@@ -66,13 +83,13 @@ export const WorkoutProvider = ({ children }) => {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) return parsed;
       }
-      // Fallback: try to restore from backup
+      // Fallback: Restore from backup if primary is empty but backup exists
       const backup = localStorage.getItem('gym_history_backup');
       if (backup) {
-        const parsed = JSON.parse(backup);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          localStorage.setItem('gym_history', JSON.stringify(parsed));
-          return parsed;
+        const parsedBackup = JSON.parse(backup);
+        if (Array.isArray(parsedBackup) && parsedBackup.length > 0) {
+          console.log("Restored history from backup storage");
+          return parsedBackup;
         }
       }
       return [];
@@ -121,15 +138,28 @@ export const WorkoutProvider = ({ children }) => {
   const timerRef = useRef(null);
 
   // ─── Persistence Effects ──────────────────
-  useEffect(() => { localStorage.setItem('gym_goals', JSON.stringify(goals)); }, [goals]);
-  useEffect(() => { localStorage.setItem('gym_history', JSON.stringify(history)); }, [history]);
+  // ─── Persistence & Sync Effects ───────────
+  useEffect(() => { 
+    localStorage.setItem('gym_goals', JSON.stringify(goals)); 
+  }, [goals]);
+
+  useEffect(() => { 
+    localStorage.setItem('gym_history', JSON.stringify(history));
+    // Always keep a backup mirrored
+    if (history.length > 0) {
+      localStorage.setItem('gym_history_backup', JSON.stringify(history));
+    }
+  }, [history]);
+
   useEffect(() => { localStorage.setItem('gym_today', JSON.stringify(todaysWorkout)); }, [todaysWorkout]);
+  
   useEffect(() => {
     localStorage.setItem('gym_plan', JSON.stringify({
       date: new Date().toLocaleDateString(),
       exercises: plannedExercises
     }));
   }, [plannedExercises]);
+
   useEffect(() => {
     if (activeSession) {
       localStorage.setItem('gym_active_session', JSON.stringify(activeSession));
@@ -137,6 +167,25 @@ export const WorkoutProvider = ({ children }) => {
       localStorage.removeItem('gym_active_session');
     }
   }, [activeSession]);
+
+  // Sync across tabs
+  useEffect(() => {
+    const handleStorage = (e) => {
+      if (e.key === 'gym_history') setHistory(JSON.parse(e.newValue || '[]'));
+      if (e.key === 'gym_custom_exercises') {
+        const custom = JSON.parse(e.newValue || '{}');
+        const merged = { ...defaultWorkoutData };
+        Object.keys(custom).forEach(cat => {
+          const existingIds = new Set(merged[cat]?.map(ex => ex.id) || []);
+          const newEx = custom[cat].filter(ex => !existingIds.has(ex.id));
+          merged[cat] = [...(merged[cat] || []), ...newEx];
+        });
+        setExercises(merged);
+      }
+    };
+    window.addEventListener('storage', handleStorage);
+    return () => window.removeEventListener('storage', handleStorage);
+  }, []);
 
   // ─── Timer Logic ──────────────────────────
   useEffect(() => {
@@ -331,6 +380,8 @@ export const WorkoutProvider = ({ children }) => {
     <WorkoutContext.Provider value={{
       goals, setGoals,
       history,
+      exercises,
+      setExercises,
       todaysWorkout: todaysWorkout || { logs: [] },
       plannedExercises: plannedExercises || [],
       activeSession,

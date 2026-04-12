@@ -4,13 +4,14 @@ import { getExerciseById } from '../api/exerciseApi';
 import { useWorkout } from '../context/WorkoutContext';
 import { 
   ChevronLeft, Play, CheckCircle2, Plus, 
-  Trophy, Flame, Info, Youtube
+  Trophy, Flame, Info, Youtube, AlertCircle
 } from 'lucide-react';
+import { getAssetPath } from '../utils/assetPath';
 
 export default function ExerciseDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { addToPlan, plannedExercises, removeFromPlan } = useWorkout();
+  const { addToPlan, plannedExercises, removeFromPlan, exercises: allExercises } = useWorkout();
   
   const [exercise, setExercise] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -18,14 +19,19 @@ export default function ExerciseDetail() {
   const [showSuccess, setShowSuccess] = useState(false);
 
   useEffect(() => {
-    async function load() {
-      setLoading(true);
-      const data = await getExerciseById(id);
-      setExercise(data);
-      setLoading(false);
+    setLoading(true);
+    // Find exercise in context
+    let found = null;
+    for (const cat in allExercises) {
+      const match = allExercises[cat].find(ex => (ex.id === id || ex.name.toLowerCase().replace(/ /g, '-') === id));
+      if (match) {
+        found = match;
+        break;
+      }
     }
-    load();
-  }, [id]);
+    setExercise(found);
+    setLoading(false);
+  }, [id, allExercises]);
 
   const exerciseId = exercise?.id || exercise?.name?.toLowerCase().replace(/ /g, '-');
   const isPlanned = plannedExercises.some(p => (p.id || p.name?.toLowerCase().replace(/ /g, '-')) === exerciseId);
@@ -60,7 +66,7 @@ export default function ExerciseDetail() {
       {/* Hero */}
       <div className="relative h-[40vh] w-full overflow-hidden">
         <img 
-          src={exercise.image} 
+          src={getAssetPath(exercise.image)} 
           alt={exercise.name}
           className="w-full h-full object-cover"
           onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1541534741688-6078c64b52d3?w=800&q=80'; }}

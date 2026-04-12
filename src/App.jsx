@@ -12,6 +12,7 @@ import ExerciseDetail from './pages/ExerciseDetail';
 import ActiveWorkout from './pages/ActiveWorkout';
 import HistoryAndProgress from './pages/HistoryAndProgress';
 import AdminPanel from './pages/AdminPanel';
+import AllWorkouts from './pages/AllWorkouts';
 
 function ProtectedApp() {
   const { isAuthenticated } = useAuth();
@@ -32,6 +33,7 @@ function ProtectedApp() {
           <Route path="/active-workout" element={<ActiveWorkout />} />
           <Route path="/history" element={<HistoryAndProgress />} />
           <Route path="/admin" element={<AdminPanel />} />
+          <Route path="/all-workouts" element={<AllWorkouts />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <BottomNav />

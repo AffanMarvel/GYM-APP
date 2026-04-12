@@ -5,6 +5,7 @@ import {
   Activity, Clock, Flame, Dumbbell, Trophy, Check, X,
   ChevronLeft, ChevronRight, Calendar
 } from 'lucide-react';
+import { getAssetPath } from '../utils/assetPath';
 
 const NEON = '#818cf8';
 const ACCENT = '#a855f7';
@@ -195,7 +196,7 @@ export default function HistoryAndProgress() {
                           <div key={li} className="flex items-center gap-3 py-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
                             {log.image ? (
                               <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
-                                <img src={log.image} alt="" className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; }} />
+                                <img src={getAssetPath(log.image)} alt="" className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; }} />
                               </div>
                             ) : (
                               <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: '#06060d', border: '1px solid rgba(255,255,255,0.1)' }}>

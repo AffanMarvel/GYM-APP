@@ -1,10 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import {
+import { useWorkout } from '../context/WorkoutContext';
+import { 
   Plus, Trash2, Edit3, Save, X, ChevronDown, ChevronRight,
   Dumbbell, Image, FileText, Target, Layers, ArrowLeft,
-  Download, Upload, Shield, Database, Check
+  Download, Upload, Shield, Database, Check, AlertCircle
 } from 'lucide-react';
 
 const NEON = '#818cf8';
@@ -54,7 +52,8 @@ const emptyExercise = {
 export default function AdminPanel() {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const [customExercises, setCustomExercises] = useState(loadCustomExercises());
+  const { exercises: customExercises, setExercises } = useWorkout();
+  
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [editingExercise, setEditingExercise] = useState(null); // null = list view, object = editing
   const [isNew, setIsNew] = useState(false);
@@ -91,15 +90,27 @@ export default function AdminPanel() {
     if (exercise.instructions.length === 0) exercise.instructions = ['Perform the exercise with proper form.'];
     if (exercise.tips.length === 0) exercise.tips = ['Focus on mind-muscle connection.'];
 
-    const existingIndex = updated[category].findIndex(e => e.id === id);
+    // Update Context (which updates local storage via effect)
+    const newGlobalExercises = { ...customExercises };
+    if (!newGlobalExercises[category]) newGlobalExercises[category] = [];
+    
+    const existingIndex = newGlobalExercises[category].findIndex(e => e.id === id);
     if (existingIndex >= 0) {
-      updated[category][existingIndex] = exercise;
+      newGlobalExercises[category][existingIndex] = exercise;
     } else {
-      updated[category].push(exercise);
+      newGlobalExercises[category].push(exercise);
     }
 
-    saveCustomExercises(updated);
-    setCustomExercises(updated);
+    setExercises(newGlobalExercises);
+    
+    // Also update the dedicated custom exercises key to keep it clean for merge logic
+    const customOnly = JSON.parse(localStorage.getItem('gym_custom_exercises') || '{}');
+    if (!customOnly[category]) customOnly[category] = [];
+    const coIndex = customOnly[category].findIndex(e => e.id === id);
+    if (coIndex >= 0) customOnly[category][coIndex] = exercise;
+    else customOnly[category].push(exercise);
+    localStorage.setItem('gym_custom_exercises', JSON.stringify(customOnly));
+
     setEditingExercise(null);
     setIsNew(false);
     showToast(`${exercise.name} saved!`);
@@ -110,10 +121,16 @@ export default function AdminPanel() {
     const updated = { ...customExercises };
     if (updated[category]) {
       updated[category] = updated[category].filter(e => e.id !== id);
-      if (updated[category].length === 0) delete updated[category];
     }
-    saveCustomExercises(updated);
-    setCustomExercises(updated);
+    setExercises(updated);
+
+    const customOnly = JSON.parse(localStorage.getItem('gym_custom_exercises') || '{}');
+    if (customOnly[category]) {
+      customOnly[category] = customOnly[category].filter(e => e.id !== id);
+      if (customOnly[category].length === 0) delete customOnly[category];
+    }
+    localStorage.setItem('gym_custom_exercises', JSON.stringify(customOnly));
+    
     showToast('Exercise deleted', 'error');
   };
 

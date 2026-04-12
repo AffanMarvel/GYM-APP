@@ -7,6 +7,7 @@ import {
   Award, Plus, Dumbbell, Clock, Activity, Trophy, Shield, LogOut
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { getAssetPath } from '../utils/assetPath';
 
 const NEON = '#818cf8';
 const ACCENT = '#a855f7';
@@ -219,7 +220,7 @@ export default function Dashboard() {
                   <div key={i} className="flex items-center justify-between bg-gym-card p-3.5 rounded-2xl border border-white/5 group">
                     <div className="flex items-center gap-3 flex-1 cursor-pointer" onClick={() => navigate(`/exercise/${ex.id}`)}>
                       <div className="w-11 h-11 rounded-xl overflow-hidden bg-gym-dark border border-white/10 shrink-0">
-                        <img src={ex.image} alt="" className="w-full h-full object-cover opacity-80" onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=200&q=60'; }} />
+                        <img src={getAssetPath(ex.image)} alt="" className="w-full h-full object-cover opacity-80" onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=200&q=60'; }} />
                       </div>
                       <div className="min-w-0">
                         <p className="text-xs font-black text-white group-hover:text-gym-neon transition-colors truncate">{ex.name}</p>
@@ -313,7 +314,7 @@ export default function Dashboard() {
                           <div key={li} className="flex items-center gap-2 bg-gym-dark/40 px-2.5 py-1.5 rounded-xl border border-white/5 shrink-0">
                             {log.image && (
                               <div className="w-7 h-7 rounded-lg overflow-hidden shrink-0">
-                                <img src={log.image} alt="" className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; }} />
+                                <img src={getAssetPath(log.image)} alt="" className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; }} />
                               </div>
                             )}
                             <div className="min-w-0">
