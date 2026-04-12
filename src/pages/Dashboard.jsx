@@ -35,6 +35,19 @@ export default function Dashboard() {
   }, []);
 
   const scrollRef = useRef(null);
+  
+  // Auto-scroll to "Today" immediately on mount
+  useEffect(() => {
+    if (scrollRef.current) {
+      const todayIndex = 14; // Day 0 in the -14 to +7 array
+      const childWidth = 72; // Approximate width + gap of each calendar pill
+      const centerOffset = (scrollRef.current.clientWidth / 2) - (childWidth / 2);
+      scrollRef.current.scrollTo({
+        left: (todayIndex * childWidth) - centerOffset,
+        behavior: 'smooth'
+      });
+    }
+  }, []);
 
   // Filter sessions exactly by the tapped date
   const filteredSessions = (history || []).filter(h => h.date === selectedStr);

@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import { useWorkout, formatTime } from '../context/WorkoutContext';
 import { Trophy, Flame, Clock, Check, ChevronLeft, Calendar } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -31,6 +31,19 @@ export default function HistoryAndProgress() {
   }, []);
 
   const scrollRef = useRef(null);
+
+  // Auto-scroll to "Today" immediately on mount
+  useEffect(() => {
+    if (scrollRef.current) {
+      const todayIndex = 14; 
+      const childWidth = 72; 
+      const centerOffset = (scrollRef.current.clientWidth / 2) - (childWidth / 2);
+      scrollRef.current.scrollTo({
+        left: (todayIndex * childWidth) - centerOffset,
+        behavior: 'smooth'
+      });
+    }
+  }, []);
 
   // Filter history strictly by the selected date
   const filteredSessions = history.filter(h => h.date === selectedStr);
