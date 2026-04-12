@@ -8,8 +8,11 @@ const muscles = [
   { id: 'shoulders', name: 'Shoulders', img: 'https://images.unsplash.com/photo-1532029837206-abbe2b7620e3?w=400&q=80' },
   { id: 'biceps', name: 'Biceps', img: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&q=80' },
   { id: 'triceps', name: 'Triceps', img: 'https://images.unsplash.com/photo-1530822847156-5df684ec5ee1?w=400&q=80' },
-  { id: 'abs', name: 'Core', img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80' },
-  { id: 'cardio', name: 'Cardio', img: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=400&q=80' }
+  { id: 'forearms', name: 'Forearms', img: 'https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=400&q=80' },
+  { id: 'abs', name: 'Core / Abs', img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80' },
+  { id: 'cardio', name: 'Cardio', img: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=400&q=80' },
+  { id: 'warmup', name: 'Warm Up', img: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=80' },
+  { id: 'stretching', name: 'Stretching', img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&q=80' }
 ];
 
 export default function WorkoutCategories() {
