@@ -1,18 +1,24 @@
+import { useState } from 'react';
 import { useWorkout } from '../context/WorkoutContext';
 import { formatTime } from '../context/WorkoutContext';
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
-import { Activity, Clock, Flame, Dumbbell, Trophy, Check, X } from 'lucide-react';
+import { 
+  Activity, Clock, Flame, Dumbbell, Trophy, Check, X,
+  ChevronLeft, ChevronRight, Calendar
+} from 'lucide-react';
+
+const NEON = '#818cf8';
+const ACCENT = '#a855f7';
+const CYAN = '#22d3ee';
+const FIRE = '#f97316';
+const SUCCESS = '#10b981';
+const DANGER = '#ef4444';
+const CARD = '#141425';
 
 export default function HistoryAndProgress() {
-  const { history, finishWorkout, todaysWorkout } = useWorkout();
+  const { history } = useWorkout();
+  const [selectedDate, setSelectedDate] = useState(null); // null = show all
 
-  const chartData = [...history].reverse().slice(-14).map(h => ({
-    date: h.date ? h.date.substring(0, 5) : '', 
-    sets: h.totalSets || h.logs?.reduce((acc, log) => acc + (log.sets?.length || 0), 0) || 0,
-    cal: h.totalCalories || 0
-  }));
-
-  // Group history by date for a nice display
+  // Group history by date
   const groupedHistory = {};
   history.forEach(h => {
     const dateKey = h.date || 'Unknown';
@@ -22,7 +28,9 @@ export default function HistoryAndProgress() {
     groupedHistory[dateKey].push(h);
   });
 
-  // Weekly summary
+  const dateKeys = Object.keys(groupedHistory);
+
+  // Weekly summary (last 7 days)
   const weekHistory = history.filter(h => {
     if (!h.date) return false;
     const d = new Date(h.date);
@@ -34,102 +42,131 @@ export default function HistoryAndProgress() {
   const weekSets = weekHistory.reduce((s, h) => s + (h.totalSets || h.logs?.reduce((a, l) => a + (l.sets?.length || 0), 0) || 0), 0);
   const weekDuration = weekHistory.reduce((s, h) => s + (h.durationSeconds || 0), 0);
 
+  // Get sessions for selected date
+  const filteredDates = selectedDate ? { [selectedDate]: groupedHistory[selectedDate] || [] } : groupedHistory;
+
+  // Generate date chips for past 14 days
+  const dateChips = [];
+  for (let i = 0; i < 14; i++) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    const dateStr = d.toLocaleDateString();
+    const hasData = groupedHistory[dateStr];
+    dateChips.push({
+      date: dateStr,
+      label: i === 0 ? 'Today' : i === 1 ? 'Yesterday' : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+      hasData: !!hasData,
+      sessions: hasData ? hasData.length : 0,
+    });
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-premium pb-28">
+    <div className="min-h-screen pb-28" style={{ background: 'linear-gradient(160deg, #06060d 0%, #0e0e1a 40%, #0d0a1a 100%)' }}>
       <div className="p-5 slide-up max-w-lg mx-auto space-y-6">
+        
+        {/* Header */}
         <header className="flex items-center justify-between pt-2">
           <div className="flex items-center space-x-3">
-            <div className="p-2.5 bg-gym-neon/10 rounded-xl">
-              <Activity className="text-gym-neon" size={22} />
+            <div className="p-2.5 rounded-xl" style={{ background: 'rgba(129,140,248,0.1)' }}>
+              <Activity style={{ color: NEON }} size={22} />
             </div>
-            <h1 className="text-2xl font-black text-white">Progress</h1>
+            <h1 className="text-2xl font-black text-white">History</h1>
           </div>
-          
-          {!todaysWorkout?.completed && todaysWorkout?.logs?.length > 0 && (
+          {selectedDate && (
             <button 
-              onClick={finishWorkout}
-              className="bg-gym-card border border-gym-neon/30 text-gym-neon px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-gym-neon hover:text-white transition-all active:scale-95"
+              onClick={() => setSelectedDate(null)}
+              className="text-[10px] font-black uppercase tracking-widest px-3 py-2 rounded-xl active:scale-95 transition-transform"
+              style={{ color: NEON, background: 'rgba(129,140,248,0.1)', border: '1px solid rgba(129,140,248,0.2)' }}
             >
-              End Workout
+              Show All
             </button>
           )}
         </header>
 
         {/* Weekly Summary */}
         <div className="grid grid-cols-3 gap-3">
-          <div className="bg-gym-card p-4 rounded-2xl border border-white/5 text-center">
-            <Flame size={18} className="text-gym-fire mx-auto mb-1.5" />
+          <div className="p-4 rounded-2xl text-center" style={{ background: CARD, border: '1px solid rgba(255,255,255,0.05)' }}>
+            <Flame size={18} style={{ color: FIRE }} className="mx-auto mb-1.5" />
             <p className="text-xl font-black text-white">{weekCalories}</p>
-            <p className="text-[8px] text-gym-muted uppercase font-bold tracking-widest">Calories</p>
+            <p className="text-[8px] uppercase font-bold tracking-widest" style={{ color: '#6b7280' }}>Calories</p>
           </div>
-          <div className="bg-gym-card p-4 rounded-2xl border border-white/5 text-center">
-            <Clock size={18} className="text-gym-cyan mx-auto mb-1.5" />
+          <div className="p-4 rounded-2xl text-center" style={{ background: CARD, border: '1px solid rgba(255,255,255,0.05)' }}>
+            <Clock size={18} style={{ color: CYAN }} className="mx-auto mb-1.5" />
             <p className="text-xl font-black text-white">{weekDuration > 0 ? formatTime(weekDuration) : '0:00'}</p>
-            <p className="text-[8px] text-gym-muted uppercase font-bold tracking-widest">Duration</p>
+            <p className="text-[8px] uppercase font-bold tracking-widest" style={{ color: '#6b7280' }}>Duration</p>
           </div>
-          <div className="bg-gym-card p-4 rounded-2xl border border-white/5 text-center">
-            <Dumbbell size={18} className="text-gym-accent mx-auto mb-1.5" />
+          <div className="p-4 rounded-2xl text-center" style={{ background: CARD, border: '1px solid rgba(255,255,255,0.05)' }}>
+            <Dumbbell size={18} style={{ color: ACCENT }} className="mx-auto mb-1.5" />
             <p className="text-xl font-black text-white">{weekSets}</p>
-            <p className="text-[8px] text-gym-muted uppercase font-bold tracking-widest">Sets</p>
+            <p className="text-[8px] uppercase font-bold tracking-widest" style={{ color: '#6b7280' }}>Sets</p>
           </div>
         </div>
 
-        {/* Chart */}
-        <div className="bg-gym-card p-4 rounded-2xl border border-white/5">
-          <h3 className="text-[10px] font-black mb-3 text-gym-muted uppercase tracking-widest">Volume Over Time</h3>
-          <div className="h-40 w-full">
-            {chartData.length > 0 ? (
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={chartData}>
-                  <XAxis dataKey="date" stroke="#6b7280" fontSize={10} tickLine={false} />
-                  <Tooltip 
-                    contentStyle={{ backgroundColor: '#141425', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', fontSize: '11px' }}
-                    itemStyle={{ color: '#6366f1' }}
-                  />
-                  <Line type="monotone" dataKey="sets" stroke="#6366f1" strokeWidth={2} dot={{ fill: '#6366f1', strokeWidth: 0, r: 3 }} />
-                  <Line type="monotone" dataKey="cal" stroke="#f97316" strokeWidth={2} dot={{ fill: '#f97316', strokeWidth: 0, r: 3 }} />
-                </LineChart>
-              </ResponsiveContainer>
-            ) : (
-              <div className="h-full flex items-center justify-center text-gym-muted text-xs">
-                Complete a workout to see your progress!
-              </div>
-            )}
+        {/* Date Selector - Scrollable chips */}
+        <div className="space-y-2">
+          <h3 className="text-[10px] font-black uppercase tracking-widest px-1" style={{ color: 'rgba(255,255,255,0.3)' }}>
+            <Calendar size={12} className="inline mr-1.5" style={{ color: NEON }} />
+            Browse by Date
+          </h3>
+          <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+            {dateChips.map((chip, i) => (
+              <button
+                key={i}
+                onClick={() => setSelectedDate(chip.hasData ? chip.date : null)}
+                className="shrink-0 px-3 py-2 rounded-xl text-[10px] font-bold transition-all active:scale-95"
+                style={{
+                  background: selectedDate === chip.date ? NEON : chip.hasData ? 'rgba(129,140,248,0.1)' : 'rgba(255,255,255,0.03)',
+                  color: selectedDate === chip.date ? '#fff' : chip.hasData ? NEON : '#4b5563',
+                  border: `1px solid ${chip.hasData ? 'rgba(129,140,248,0.2)' : 'rgba(255,255,255,0.05)'}`,
+                }}
+              >
+                {chip.label}
+                {chip.hasData && <span className="ml-1 opacity-60">({chip.sessions})</span>}
+              </button>
+            ))}
           </div>
         </div>
 
         {/* History grouped by date */}
         <div className="space-y-4">
-          <h2 className="text-[10px] font-black uppercase tracking-widest text-white/40 px-1">Workout History</h2>
+          <h2 className="text-[10px] font-black uppercase tracking-widest px-1" style={{ color: 'rgba(255,255,255,0.3)' }}>
+            {selectedDate ? `Sessions on ${selectedDate}` : 'All Sessions'}
+          </h2>
           
-          {Object.keys(groupedHistory).length === 0 ? (
-            <p className="text-gym-muted italic text-xs text-center py-6 bg-gym-card/30 rounded-2xl border border-white/5">Your journey begins today.</p>
+          {Object.keys(filteredDates).length === 0 ? (
+            <div className="p-8 text-center rounded-2xl" style={{ background: 'rgba(20,20,37,0.3)', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <Dumbbell size={40} style={{ color: '#4b5563' }} className="mx-auto mb-3 opacity-30" />
+              <p className="text-xs italic" style={{ color: '#6b7280' }}>
+                {selectedDate ? 'No workouts on this date.' : 'Your journey begins today.'}
+              </p>
+            </div>
           ) : (
-            Object.entries(groupedHistory).map(([date, sessions]) => {
-              // Gather all muscles trained this day
+            Object.entries(filteredDates).map(([date, sessions]) => {
+              if (!sessions || sessions.length === 0) return null;
+              
               const dayMuscles = [...new Set(sessions.flatMap(s => (s.logs || []).map(l => l.muscle).filter(Boolean)))];
               const dayCalories = sessions.reduce((s, h) => s + (h.totalCalories || 0), 0);
               const daySets = sessions.reduce((s, h) => s + (h.totalSets || 0), 0);
               const dayDuration = sessions.reduce((s, h) => s + (h.durationSeconds || 0), 0);
 
               return (
-                <div key={date} className="bg-gym-card rounded-2xl border border-white/5 overflow-hidden">
+                <div key={date} className="rounded-2xl overflow-hidden" style={{ background: CARD, border: '1px solid rgba(255,255,255,0.05)' }}>
                   {/* Date Header */}
-                  <div className="flex items-center justify-between p-4 border-b border-white/5">
+                  <div className="flex items-center justify-between p-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <div className="flex items-center gap-2">
-                      <div className="p-2 bg-gym-neon/10 rounded-lg">
-                        <Trophy size={14} className="text-gym-neon" />
+                      <div className="p-2 rounded-lg" style={{ background: 'rgba(129,140,248,0.1)' }}>
+                        <Trophy size={14} style={{ color: NEON }} />
                       </div>
                       <div>
                         <p className="text-sm font-black text-white">{date}</p>
                         <div className="flex items-center gap-3 mt-0.5">
-                          {dayDuration > 0 && <span className="text-[9px] text-gym-cyan font-bold">⏱ {formatTime(dayDuration)}</span>}
-                          {dayCalories > 0 && <span className="text-[9px] text-gym-fire font-bold">🔥 {dayCalories} cal</span>}
-                          {daySets > 0 && <span className="text-[9px] text-gym-accent font-bold">{daySets} sets</span>}
+                          {dayDuration > 0 && <span className="text-[9px] font-bold" style={{ color: CYAN }}>⏱ {formatTime(dayDuration)}</span>}
+                          {dayCalories > 0 && <span className="text-[9px] font-bold" style={{ color: FIRE }}>🔥 {dayCalories} cal</span>}
+                          {daySets > 0 && <span className="text-[9px] font-bold" style={{ color: ACCENT }}>{daySets} sets</span>}
                         </div>
                       </div>
                     </div>
-                    <span className="text-[9px] text-gym-neon bg-gym-neon/10 px-2 py-1 rounded-md font-bold">
+                    <span className="text-[9px] font-bold px-2 py-1 rounded-md" style={{ color: NEON, background: 'rgba(129,140,248,0.1)' }}>
                       {sessions.length} session{sessions.length > 1 ? 's' : ''}
                     </span>
                   </div>
@@ -138,38 +175,47 @@ export default function HistoryAndProgress() {
                   {dayMuscles.length > 0 && (
                     <div className="px-4 pt-3 flex flex-wrap gap-1.5">
                       {dayMuscles.map((m, mi) => (
-                        <span key={mi} className="px-2.5 py-1 bg-gym-accent/10 text-gym-accent text-[8px] font-black uppercase rounded-md border border-gym-accent/20">
+                        <span key={mi} className="px-2.5 py-1 text-[8px] font-black uppercase rounded-md" style={{ background: 'rgba(168,85,247,0.1)', color: ACCENT, border: '1px solid rgba(168,85,247,0.2)' }}>
                           {m}
                         </span>
                       ))}
                     </div>
                   )}
 
-                  {/* All exercises done on this date */}
+                  {/* Exercises */}
                   <div className="p-4 space-y-2">
                     {sessions.map((session, si) => (
                       <div key={si}>
+                        {session.startTime && sessions.length > 1 && (
+                          <p className="text-[9px] font-bold mb-1.5 pt-2" style={{ color: '#6b7280', borderTop: si > 0 ? '1px solid rgba(255,255,255,0.05)' : 'none' }}>
+                            Session at {session.startTime}
+                          </p>
+                        )}
                         {session.logs && session.logs.map((log, li) => (
-                          <div key={li} className="flex items-center gap-3 py-2 border-b border-white/5 last:border-0">
-                            {/* Exercise Image */}
+                          <div key={li} className="flex items-center gap-3 py-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
                             {log.image ? (
-                              <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 border border-white/10">
+                              <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
                                 <img src={log.image} alt="" className="w-full h-full object-cover" onError={(e) => { e.target.style.display = 'none'; }} />
                               </div>
                             ) : (
-                              <div className="w-10 h-10 rounded-lg bg-gym-dark flex items-center justify-center shrink-0 border border-white/10">
-                                <Dumbbell size={14} className="text-gym-muted" />
+                              <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: '#06060d', border: '1px solid rgba(255,255,255,0.1)' }}>
+                                <Dumbbell size={14} style={{ color: '#6b7280' }} />
                               </div>
                             )}
                             <div className="flex-1 min-w-0">
                               <p className="text-xs font-bold text-white truncate">{log.name}</p>
                               <div className="flex items-center gap-2 mt-0.5">
-                                <span className="text-[9px] text-gym-muted">{log.sets?.length || 0}/{log.targetSets || '?'} sets</span>
-                                {log.muscle && <span className="text-[8px] text-gym-neon/70">{log.muscle}</span>}
+                                <span className="text-[9px]" style={{ color: '#6b7280' }}>{log.sets?.length || 0}/{log.targetSets || '?'} sets</span>
+                                {log.muscle && <span className="text-[8px]" style={{ color: 'rgba(129,140,248,0.7)' }}>{log.muscle}</span>}
+                                {log.sets && log.sets.length > 0 && (
+                                  <span className="text-[8px]" style={{ color: '#6b7280' }}>
+                                    {log.sets.map(s => `${s.weight}kg×${s.reps}`).join(', ')}
+                                  </span>
+                                )}
                               </div>
                             </div>
-                            <div className={`w-6 h-6 rounded-md flex items-center justify-center ${log.isCompleted ? 'bg-gym-success/20' : 'bg-gym-danger/20'}`}>
-                              {log.isCompleted ? <Check size={12} className="text-gym-success" /> : <X size={12} className="text-gym-danger" />}
+                            <div className="w-6 h-6 rounded-md flex items-center justify-center" style={{ background: log.isCompleted ? 'rgba(16,185,129,0.2)' : 'rgba(239,68,68,0.2)' }}>
+                              {log.isCompleted ? <Check size={12} style={{ color: SUCCESS }} /> : <X size={12} style={{ color: DANGER }} />}
                             </div>
                           </div>
                         ))}
