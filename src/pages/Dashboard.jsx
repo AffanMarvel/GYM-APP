@@ -91,23 +91,33 @@ export default function Dashboard() {
       <div className="p-5 slide-up space-y-6 max-w-lg mx-auto">
         
         {/* Header */}
-        <header className="flex items-center justify-between pt-2">
-          <div>
-            <h1 className="text-3xl font-black text-white tracking-tight">
-              Train <span style={{ color: NEON, textShadow: `0 0 15px rgba(99,102,241,0.6)` }}>Hard</span>
-            </h1>
-            <p style={{ color: '#6b7280' }} className="text-[10px] font-bold uppercase tracking-[0.2em] mt-1">{todayDateStr}</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <button onClick={() => navigate('/admin')} className="p-2.5 rounded-xl active:scale-90 transition-transform" style={{ background: 'rgba(129,140,248,0.1)', border: '1px solid rgba(129,140,248,0.15)' }} title="Admin Panel">
-              <Shield size={18} style={{ color: NEON }} />
+        <header className="flex flex-col gap-4 pt-2">
+          <div className="flex items-center justify-between w-full">
+            <div>
+              <h1 className="text-3xl font-black text-white tracking-tight leading-none">
+                Train <span style={{ color: NEON, textShadow: `0 0 20px ${NEON}4D` }}>Hard</span>
+              </h1>
+              <p style={{ color: '#64748b' }} className="text-[10px] font-bold uppercase tracking-[0.2em] mt-2 translate-x-0.5">{todayDateStr}</p>
+            </div>
+            <button onClick={() => navigate('/admin')} className="p-3 rounded-2xl active:scale-95 transition-all bg-gym-neon/10 border border-gym-neon/20 shadow-lg shadow-gym-neon/5" title="Admin Panel">
+              <Shield size={22} style={{ color: NEON }} />
             </button>
-            <div className="flex items-center border border-white/5 px-4 py-2.5 rounded-2xl gap-3" style={{ background: CARD }}>
-              <div className="text-right">
-                <p className="text-[9px] font-black uppercase tracking-widest" style={{ color: '#6b7280' }}>{spirit.name}</p>
-                <p className="text-sm font-black text-white">{streak} Day</p>
+          </div>
+          
+          <div className="flex items-center justify-between w-full p-4 rounded-3xl border border-white/5 relative overflow-hidden group active:scale-[0.98] transition-all" style={{ background: CARD }}>
+            <div className="absolute inset-0 bg-gradient-to-r from-gym-neon/5 to-transparent opacity-0 group-active:opacity-100 transition-opacity" />
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-3xl transition-transform group-active:scale-110" style={{ background: 'rgba(255,255,255,0.03)' }}>
+                {spirit.icon}
               </div>
-              <span className="text-2xl">{spirit.icon}</span>
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-widest leading-none mb-1" style={{ color: '#64748b' }}>Current Streak</p>
+                <p className="text-xl font-black text-white leading-none">{streak} <span className="text-xs text-gray-400 font-bold uppercase">Days</span></p>
+              </div>
+            </div>
+            <div className="text-right">
+              <p className="text-[10px] font-black uppercase tracking-widest leading-none mb-1" style={{ color: NEON }}>Spirit Animal</p>
+              <p className="text-lg font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 leading-none">{spirit.name}</p>
             </div>
           </div>
         </header>

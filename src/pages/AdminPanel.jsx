@@ -196,7 +196,7 @@ export default function AdminPanel() {
               value={editingExercise.name}
               onChange={e => setEditingExercise({ ...editingExercise, name: e.target.value })}
               placeholder="e.g. Barbell Curl"
-              className="w-full px-4 py-3 rounded-xl text-sm font-bold text-white placeholder:text-gray-600 outline-none"
+              className="w-full px-4 py-3 rounded-xl text-base font-bold text-white placeholder:text-gray-600 outline-none"
               style={{ background: CARD, border: '1px solid rgba(255,255,255,0.08)' }}
             />
           </div>
@@ -208,7 +208,7 @@ export default function AdminPanel() {
               <select
                 value={editingExercise.muscle}
                 onChange={e => setEditingExercise({ ...editingExercise, muscle: e.target.value })}
-                className="w-full px-3 py-3 rounded-xl text-sm font-bold text-white outline-none capitalize"
+                className="w-full px-3 py-3 rounded-xl text-base font-bold text-white outline-none capitalize"
                 style={{ background: CARD, border: '1px solid rgba(255,255,255,0.08)' }}
               >
                 {CATEGORIES.map(c => <option key={c} value={c} className="bg-gray-900">{c}</option>)}
@@ -219,7 +219,7 @@ export default function AdminPanel() {
               <select
                 value={editingExercise.difficulty}
                 onChange={e => setEditingExercise({ ...editingExercise, difficulty: e.target.value })}
-                className="w-full px-3 py-3 rounded-xl text-sm font-bold text-white outline-none capitalize"
+                className="w-full px-3 py-3 rounded-xl text-base font-bold text-white outline-none capitalize"
                 style={{ background: CARD, border: '1px solid rgba(255,255,255,0.08)' }}
               >
                 {DIFFICULTIES.map(d => <option key={d} value={d} className="bg-gray-900">{d}</option>)}
@@ -281,7 +281,7 @@ export default function AdminPanel() {
                     levels: { ...editingExercise.levels, [level]: { ...editingExercise.levels[level], sets: parseInt(e.target.value) || 0 } }
                   })}
                   placeholder="Sets"
-                  className="w-16 px-2 py-2 rounded-lg text-xs font-bold text-white text-center outline-none"
+                  className="w-16 px-2 py-2 rounded-lg text-base font-bold text-white text-center outline-none"
                   style={{ background: CARD, border: '1px solid rgba(255,255,255,0.08)' }}
                 />
                 <input
@@ -291,7 +291,7 @@ export default function AdminPanel() {
                     levels: { ...editingExercise.levels, [level]: { ...editingExercise.levels[level], reps: e.target.value } }
                   })}
                   placeholder="Reps"
-                  className="w-20 px-2 py-2 rounded-lg text-xs font-bold text-white text-center outline-none"
+                  className="w-20 px-2 py-2 rounded-lg text-base font-bold text-white text-center outline-none"
                   style={{ background: CARD, border: '1px solid rgba(255,255,255,0.08)' }}
                 />
                 <input
@@ -301,7 +301,7 @@ export default function AdminPanel() {
                     levels: { ...editingExercise.levels, [level]: { ...editingExercise.levels[level], focus: e.target.value } }
                   })}
                   placeholder="Focus"
-                  className="flex-1 px-2 py-2 rounded-lg text-xs font-bold text-white outline-none"
+                  className="flex-1 px-2 py-2 rounded-lg text-base font-bold text-white outline-none"
                   style={{ background: CARD, border: '1px solid rgba(255,255,255,0.08)' }}
                 />
               </div>

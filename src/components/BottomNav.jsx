@@ -17,8 +17,15 @@ export default function BottomNav() {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50" style={{ background: 'rgba(14,14,26,0.92)', backdropFilter: 'blur(40px)', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-      <div className="flex justify-around items-center h-16 max-w-lg mx-auto">
+    <div className="fixed bottom-0 left-0 right-0 z-[100] preserve-3d" 
+      style={{ 
+        background: 'rgba(14,14,26,0.95)', 
+        backdropFilter: 'blur(50px)', 
+        WebkitBackdropFilter: 'blur(50px)',
+        borderTop: '1px solid rgba(255,255,255,0.08)',
+        paddingBottom: 'env(safe-area-inset-bottom)'
+      }}>
+      <div className="flex justify-around items-center h-[72px] max-w-lg mx-auto">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = location.pathname === item.path || (item.path !== '/' && location.pathname.startsWith(item.path));
@@ -27,14 +34,17 @@ export default function BottomNav() {
             <Link 
               key={item.name} 
               to={item.path}
-              className="flex flex-col items-center justify-center w-full h-full space-y-1 transition-all duration-300"
-              style={{ color: isActive ? NEON : '#6b7280' }}
+              className="flex flex-col items-center justify-center w-full h-full space-y-1.5 active:opacity-60 transition-all duration-300"
+              style={{ color: isActive ? NEON : '#94a3b8' }}
             >
-              <div style={{ transform: isActive ? 'scale(1.1)' : 'scale(1)', transition: 'transform 0.3s' }}>
-                <Icon size={22} strokeWidth={isActive ? 2.5 : 1.8} />
+              <div style={{ 
+                transform: isActive ? 'translateY(-2px) scale(1.15)' : 'scale(1)', 
+                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                filter: isActive ? `drop-shadow(0 0 8px ${NEON}4D)` : 'none'
+              }}>
+                <Icon size={24} strokeWidth={isActive ? 2.5 : 2} />
               </div>
-              <span className="text-[9px] font-bold tracking-wider">{item.name}</span>
-              {isActive && <div style={{ width: 16, height: 2, background: NEON, borderRadius: 4, marginTop: 2 }} />}
+              <span className="text-[10px] font-black uppercase tracking-widest">{item.name}</span>
             </Link>
           );
         })}

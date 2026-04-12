@@ -16,11 +16,22 @@
 }
 
 @layer base {
+  html {
+    height: -webkit-fill-available;
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-gym-dark text-gym-text m-0 p-0 pb-20;
-    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-gym-dark text-white m-0 p-0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-height: 100dvh;
+    min-height: 100svh;
+    width: 100%;
+    overflow-x: hidden;
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+    text-rendering: optimizeLegibility;
   }
 
   /* Force override Tailwind's gym-neon to purple/indigo regardless of cache */

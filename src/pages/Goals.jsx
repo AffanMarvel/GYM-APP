@@ -344,7 +344,7 @@ export default function Goals() {
                       onChange={(e) => setTempTarget(e.target.value)}
                       onBlur={() => { updateTarget(i, tempTarget); }}
                       onKeyDown={(e) => { if (e.key === 'Enter') updateTarget(i, tempTarget); }}
-                      className="w-16 h-8 rounded-lg text-center text-xs font-black text-white outline-none"
+                      className="w-16 h-8 rounded-lg text-center text-base font-black text-white outline-none"
                       style={{ background: 'rgba(129,140,248,0.1)', border: `1px solid ${NEON}` }}
                       autoFocus
                     />
@@ -377,7 +377,7 @@ export default function Goals() {
                     placeholder="0"
                     value={inputValues[ex.name] || ''}
                     onChange={(e) => setInputValues({ ...inputValues, [ex.name]: e.target.value })}
-                    className="w-20 h-10 rounded-xl text-center text-sm font-black text-white outline-none transition-all placeholder:text-gray-600"
+                    className="w-20 h-10 rounded-xl text-center text-base font-black text-white outline-none transition-all placeholder:text-gray-600"
                     style={{ 
                       background: 'rgba(255,255,255,0.05)', 
                       border: `2px solid ${inputValues[ex.name] ? 'rgba(129,140,248,0.3)' : 'rgba(255,255,255,0.05)'}` 
