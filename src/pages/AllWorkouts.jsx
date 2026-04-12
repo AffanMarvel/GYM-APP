@@ -91,20 +91,50 @@ export default function AllWorkouts() {
                 </Link>
 
                 {/* Details & Action Section */}
-                <div className="p-5 flex items-center justify-between relative z-10 -mt-2">
-                  <div className="flex-1 min-w-0 pr-4">
-                    <Link to={`/exercise/${ex.id}`}>
-                      <h3 className="font-black text-white text-xl truncate hover:text-gym-neon transition-colors">{ex.name}</h3>
-                      <p className="text-[10px] text-gym-muted mt-1 font-medium italic opacity-80">Tap image for instructions</p>
-                    </Link>
+                <div className="p-5 space-y-4 relative z-10 -mt-2">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1 min-w-0 pr-4">
+                      <Link to={`/exercise/${ex.id}`}>
+                        <h3 className="font-black text-white text-xl truncate hover:text-gym-neon transition-colors leading-tight">{ex.name}</h3>
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className={`text-[8px] font-black uppercase tracking-widest px-1.5 py-0.5 rounded border ${
+                            ex.difficulty === 'beginner' ? 'bg-gym-cyan/10 text-gym-cyan border-gym-cyan/20' :
+                            ex.difficulty === 'intermediate' ? 'bg-orange-500/10 text-orange-400 border-orange-500/20' :
+                            'bg-red-500/10 text-red-400 border-red-500/20'
+                          }`}>
+                            {ex.difficulty || 'Expert'}
+                          </span>
+                          <span className="text-[9px] text-gym-muted font-bold uppercase tracking-widest opacity-60">
+                            {ex.muscleTarget}
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+                    <button 
+                      onClick={(e) => { e.preventDefault(); addToPlan(ex); }} 
+                      className="flex-shrink-0 w-12 h-12 bg-gym-neon text-gym-dark rounded-xl flex items-center justify-center hover:bg-white transition-colors shadow-[0_0_15px_rgba(129,140,248,0.2)] active:scale-90"
+                      title="Add to Workout Plan"
+                    >
+                      <Plus size={20} strokeWidth={3} />
+                    </button>
                   </div>
-                  <button 
-                    onClick={() => addToPlan(ex)} 
-                    className="flex-shrink-0 w-14 h-14 bg-gym-neon text-gym-dark rounded-2xl flex items-center justify-center hover:bg-white transition-colors shadow-[0_0_20px_rgba(129,140,248,0.3)] active:scale-90"
-                    title="Add to Workout Plan"
-                  >
-                    <Plus size={24} strokeWidth={3} />
-                  </button>
+
+                  {/* Glanceable Stats Row */}
+                  <div className="flex items-center gap-4 pt-3 border-t border-white/[0.03]">
+                    <div className="flex items-center gap-1.5">
+                      <Dumbbell size={12} className="text-gym-neon" />
+                      <span className="text-[10px] font-black text-white uppercase tracking-wider">
+                        {ex.levels?.beginner?.sets || 3}x{ex.levels?.beginner?.reps || '10'}
+                      </span>
+                    </div>
+                    <div className="h-3 w-[1px] bg-white/10" />
+                    <div className="flex items-center gap-1.5">
+                      <Search size={12} className="text-gym-muted" />
+                      <span className="text-[10px] font-bold text-gym-muted uppercase tracking-wider">
+                        {ex.instructions?.length || 0} Steps
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))

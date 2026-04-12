@@ -11,7 +11,16 @@ export default function AdminPanel() {
   const { exercises } = useWorkout();
   const [isAdding, setIsAdding] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [newEx, setNewEx] = useState({ name: '', category: 'chest', muscleTarget: '', image: '', instructions: [''] });
+  const [newEx, setNewEx] = useState({ 
+    name: '', 
+    category: 'chest', 
+    muscleTarget: '', 
+    image: '', 
+    difficulty: 'beginner',
+    tutorialUrl: '',
+    instructions: [''],
+    tips: ['']
+  });
 
   const fileInputRef = useRef(null);
 
@@ -20,10 +29,19 @@ export default function AdminPanel() {
     const customRaw = localStorage.getItem('gym_custom_exercises');
     const custom = customRaw ? JSON.parse(customRaw) : {};
     if (!custom[newEx.category]) custom[newEx.category] = [];
-    custom[newEx.category].push({ ...newEx, id: newEx.name.toLowerCase().replace(/ /g, '-'), instructions: newEx.instructions.filter(i => i.trim()) });
+    
+    // Clean up empty instructions and tips
+    const cleanEx = {
+      ...newEx,
+      id: newEx.name.toLowerCase().replace(/ /g, '-'),
+      instructions: newEx.instructions.filter(i => i.trim()),
+      tips: newEx.tips.filter(t => t.trim())
+    };
+
+    custom[newEx.category].push(cleanEx);
     localStorage.setItem('gym_custom_exercises', JSON.stringify(custom));
     setIsAdding(false);
-    setNewEx({ name: '', category: 'chest', muscleTarget: '', image: '', instructions: [''] });
+    setNewEx({ name: '', category: 'chest', muscleTarget: '', image: '', difficulty: 'beginner', tutorialUrl: '', instructions: [''], tips: [''] });
     window.location.reload();
   };
 
@@ -37,6 +55,7 @@ export default function AdminPanel() {
       window.location.reload();
     }
   };
+// ... rest of the component logic stays similar ...
 
   // --- Import / Export Backup Logic ---
   const handleExport = () => {
@@ -184,8 +203,18 @@ export default function AdminPanel() {
                     className="bg-gym-dark border border-white/10 rounded-xl py-3.5 px-4 text-white font-bold">
                     {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
                   </select>
+                  <select value={newEx.difficulty} onChange={(e) => setNewEx({...newEx, difficulty: e.target.value})}
+                    className="bg-gym-dark border border-white/10 rounded-xl py-3.5 px-4 text-white font-bold">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="expert">Expert / Advanced</option>
+                  </select>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
                   <input type="text" value={newEx.muscleTarget} onChange={(e) => setNewEx({...newEx, muscleTarget: e.target.value})}
                     className="bg-gym-dark border border-white/10 rounded-xl py-3.5 px-4 text-white font-bold" placeholder="Target (e.g. Upper Chest)" />
+                  <input type="text" value={newEx.tutorialUrl} onChange={(e) => setNewEx({...newEx, tutorialUrl: e.target.value})}
+                    className="bg-gym-dark border border-white/10 rounded-xl py-3.5 px-4 text-white font-bold" placeholder="YouTube URL (optional)" />
                 </div>
                 <input type="text" value={newEx.image} onChange={(e) => setNewEx({...newEx, image: e.target.value})}
                   className="w-full bg-gym-dark border border-white/10 rounded-xl py-3.5 px-4 text-white font-bold" placeholder="Reference Image URL (optional)" />
@@ -207,26 +236,52 @@ export default function AdminPanel() {
                       className="flex-1 bg-gym-dark border border-white/10 rounded-xl p-3 text-white text-xs leading-relaxed font-medium min-h-[60px]"
                       placeholder={`Step ${idx + 1} technique...`}
                     />
-                    <button 
-                      onClick={() => {
+                    <button onClick={() => {
                         const newInst = newEx.instructions.filter((_, i) => i !== idx);
                         setNewEx({...newEx, instructions: newInst});
-                      }}
-                      className="text-gym-danger/50 hover:text-gym-danger self-start mt-3"
-                    >
+                      }} className="text-gym-danger/50 hover:text-gym-danger self-start mt-3">
                       <X size={16} />
                     </button>
                   </div>
                 ))}
-                
                 <button onClick={() => setNewEx({...newEx, instructions: [...newEx.instructions, '']})} 
-                  className="w-full mt-2 py-3 border border-dashed border-gym-neon/30 text-gym-neon bg-gym-neon/5 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-gym-neon/10 transition-colors">
+                  className="w-full py-3 border border-dashed border-white/10 text-white/40 rounded-xl text-[9px] font-black uppercase tracking-widest hover:text-gym-neon hover:border-gym-neon transition-all">
                   + Add Theory Step
                 </button>
               </div>
 
-              <button onClick={handleSave} className="w-full py-5 bg-gradient-to-r from-gym-neon to-gym-accent text-white font-black text-sm uppercase tracking-widest rounded-2xl shadow-[0_0_20px_rgba(129,140,248,0.3)] mt-6">
-                Publish Exercise
+              {/* Dynamic Tips System */}
+              <div className="space-y-3 pt-4 border-t border-white/5">
+                <label className="text-[10px] font-black uppercase text-gym-cyan tracking-widest">Expert Pro Tips</label>
+                {newEx.tips.map((tip, idx) => (
+                  <div key={idx} className="flex gap-3">
+                    <div className="w-8 h-10 flex items-center justify-center font-black text-gym-muted/20"><Zap size={14} /></div>
+                    <input type="text"
+                      value={tip} 
+                      onChange={(e) => {
+                        const newTips = [...newEx.tips];
+                        newTips[idx] = e.target.value;
+                        setNewEx({...newEx, tips: newTips});
+                      }}
+                      className="flex-1 bg-gym-dark border border-white/10 rounded-xl px-4 text-white text-xs font-medium"
+                      placeholder="Pro Tip (e.g. Keep spine neutral)"
+                    />
+                    <button onClick={() => {
+                        const newTips = newEx.tips.filter((_, i) => i !== idx);
+                        setNewEx({...newEx, tips: newTips});
+                      }} className="text-gym-danger/50 hover:text-gym-danger self-center">
+                      <X size={16} />
+                    </button>
+                  </div>
+                ))}
+                <button onClick={() => setNewEx({...newEx, tips: [...newEx.tips, '']})} 
+                  className="w-full py-3 border border-dashed border-white/10 text-white/40 rounded-xl text-[9px] font-black uppercase tracking-widest hover:text-gym-cyan hover:border-gym-cyan transition-all">
+                  + Add Pro Tip
+                </button>
+              </div>
+
+              <button onClick={handleSave} className="w-full py-5 bg-gradient-to-r from-gym-neon to-gym-accent text-white font-black text-sm uppercase tracking-widest rounded-3xl shadow-[0_0_20px_rgba(129,140,248,0.3)] mt-6 active:scale-95 transition-all">
+                Publish Master Exercise
               </button>
             </div>
           </div>
