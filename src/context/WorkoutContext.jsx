@@ -62,7 +62,20 @@ export const WorkoutProvider = ({ children }) => {
   const [history, setHistory] = useState(() => {
     try {
       const saved = localStorage.getItem('gym_history');
-      return saved ? JSON.parse(saved) : [];
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+      // Fallback: try to restore from backup
+      const backup = localStorage.getItem('gym_history_backup');
+      if (backup) {
+        const parsed = JSON.parse(backup);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          localStorage.setItem('gym_history', JSON.stringify(parsed));
+          return parsed;
+        }
+      }
+      return [];
     } catch { return []; }
   });
 

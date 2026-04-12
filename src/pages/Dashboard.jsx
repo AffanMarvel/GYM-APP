@@ -4,8 +4,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { 
   Play, Trash2, Calendar as CalendarIcon, 
   Zap, Flame, ChevronRight, ClipboardCheck,
-  Award, Plus, Dumbbell, Clock, Activity, Trophy
+  Award, Plus, Dumbbell, Clock, Activity, Trophy, Shield, LogOut
 } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 const NEON = '#818cf8';
 const ACCENT = '#a855f7';
@@ -97,12 +98,17 @@ export default function Dashboard() {
             </h1>
             <p style={{ color: '#6b7280' }} className="text-[10px] font-bold uppercase tracking-[0.2em] mt-1">{todayDateStr}</p>
           </div>
-          <div className="flex items-center border border-white/5 px-4 py-2.5 rounded-2xl gap-3" style={{ background: CARD }}>
-            <div className="text-right">
-              <p className="text-[9px] font-black uppercase tracking-widest" style={{ color: '#6b7280' }}>{spirit.name}</p>
-              <p className="text-sm font-black text-white">{streak} Day</p>
+          <div className="flex items-center gap-2">
+            <button onClick={() => navigate('/admin')} className="p-2.5 rounded-xl active:scale-90 transition-transform" style={{ background: 'rgba(129,140,248,0.1)', border: '1px solid rgba(129,140,248,0.15)' }} title="Admin Panel">
+              <Shield size={18} style={{ color: NEON }} />
+            </button>
+            <div className="flex items-center border border-white/5 px-4 py-2.5 rounded-2xl gap-3" style={{ background: CARD }}>
+              <div className="text-right">
+                <p className="text-[9px] font-black uppercase tracking-widest" style={{ color: '#6b7280' }}>{spirit.name}</p>
+                <p className="text-sm font-black text-white">{streak} Day</p>
+              </div>
+              <span className="text-2xl">{spirit.icon}</span>
             </div>
-            <span className="text-2xl">{spirit.icon}</span>
           </div>
         </header>
 
