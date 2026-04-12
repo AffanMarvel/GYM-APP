@@ -5,6 +5,12 @@ const WorkoutContext = createContext();
 
 export const useWorkout = () => useContext(WorkoutContext);
 
+export const WEIGHT_KG = 75;
+
+export const calcCalories = (met, durationMinutes, weightKg = WEIGHT_KG) => {
+  return Math.round(met * 3.5 * weightKg / 200 * durationMinutes);
+};
+
 export const formatTime = (seconds) => {
   const h = Math.floor(seconds / 3600);
   const m = Math.floor((seconds % 3600) / 60);
@@ -88,14 +94,14 @@ export const WorkoutProvider = ({ children }) => {
   const removeFromPlan = (id) => setPlannedExercises(plannedExercises.filter(e => e.id !== id));
   const updateGoals = (newGoals) => setGoals({ ...goals, ...newGoals });
 
-  const startWorkout = () => {
+  const startSession = () => {
     setActiveSession({
       startTime: new Date().toISOString(), isRunning: true, elapsedSeconds: 0,
       logs: plannedExercises.map(ex => ({ ...ex, sets: [] }))
     });
   };
-  const pauseWorkout = () => setActiveSession(prev => ({ ...prev, isRunning: false }));
-  const resumeWorkout = () => setActiveSession(prev => ({ ...prev, isRunning: true }));
+  const pauseSession = () => setActiveSession(prev => ({ ...prev, isRunning: false }));
+  const resumeSession = () => setActiveSession(prev => ({ ...prev, isRunning: true }));
 
   const finishSession = (sessionData) => {
     const newSession = {
@@ -107,11 +113,20 @@ export const WorkoutProvider = ({ children }) => {
     setPlannedExercises([]);
   };
 
-  const addLogToActiveSession = (exerciseId, set) => {
+  const logSetInSession = (exerciseId, set) => {
     setActiveSession(prev => ({
       ...prev,
       logs: prev.logs.map(log =>
         log.id === exerciseId ? { ...log, sets: [...log.sets, { ...set, id: Date.now() }] } : log
+      )
+    }));
+  };
+
+  const completeExerciseInSession = (exerciseId) => {
+    setActiveSession(prev => ({
+      ...prev,
+      logs: prev.logs.map(log =>
+        log.id === exerciseId ? { ...log, completed: true } : log
       )
     }));
   };
@@ -133,8 +148,8 @@ export const WorkoutProvider = ({ children }) => {
   return (
     <WorkoutContext.Provider value={{
       exercises, updateExerciseData, history, goals, plannedExercises, activeSession,
-      addToPlan, removeFromPlan, updateGoals, startWorkout, pauseWorkout, resumeWorkout,
-      finishSession, addLogToActiveSession, removeSetFromLog
+      addToPlan, removeFromPlan, updateGoals, startSession, pauseSession, resumeSession,
+      finishSession, logSetInSession, completeExerciseInSession, removeSetFromLog
     }}>
       {children}
     </WorkoutContext.Provider>
