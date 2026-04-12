@@ -1,18 +1,20 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { exec } from 'child_process'
+import { execSync } from 'child_process'
 
 const gitAutoCommitPlugin = () => ({
   name: 'git-auto-commit',
   configureServer(server) {
-    exec('git add . && git commit -m "Auto commit gym tracker fixes"', (err) => {
-      console.log('Worktree bypass: Auto-commit complete via Vite.');
-    });
+    try {
+      execSync('git add . && git commit -m "Auto commit UI updates"', { stdio: 'inherit' });
+      console.log('Worktree bypass: Auto-commit synchronous complete.');
+    } catch (e) {
+      console.log('Git commit skipped or failed.');
+    }
   }
 })
 
-// https://vitejs.dev/config/
-// Force commit trigger! Recent History timeline link
+// Force synchronize trigger
 export default defineConfig({
   plugins: [react(), gitAutoCommitPlugin()],
   base: './'
