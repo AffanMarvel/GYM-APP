@@ -154,27 +154,40 @@ export default function ActiveWorkout() {
     <div className="min-h-screen bg-gym-dark pb-32">
       <div className="p-4 space-y-5 max-w-lg mx-auto slide-up">
 
-        {/* Top Bar: Timer & Controls */}
-        <div className="flex items-center justify-between">
-          <button onClick={() => navigate('/')} className="p-2.5 bg-gym-card rounded-xl border border-white/5 active:scale-95 transition-transform">
-            <ChevronLeft size={22} className="text-white" />
-          </button>
+        {/* Advanced Head Section */}
+        <div className="bg-[#141425] rounded-3xl p-5 border border-gym-neon/20 shadow-[0_8px_30px_rgba(129,140,248,0.15)] relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gym-neon/5 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none" />
           
-          <div className="flex items-center gap-3 bg-gym-card px-5 py-3 rounded-2xl border border-white/5">
-            <Timer size={18} className="text-gym-neon" />
-            <span className="text-2xl font-black text-white timer-display text-glow">
-              {formatTime(activeSession.elapsedSeconds || 0)}
-            </span>
-          </div>
+          <div className="flex items-center justify-between relative z-10">
+            <button onClick={() => navigate('/')} className="p-3 bg-black/40 rounded-xl border border-white/5 active:scale-95 transition-all hover:border-gym-neon/30">
+              <ChevronLeft size={22} className="text-white" />
+            </button>
+            
+            <div className="text-center flex-1">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gym-neon mb-1 flex items-center justify-center gap-1">
+                {activeSession.isRunning ? (
+                  <><span className="w-1.5 h-1.5 bg-gym-neon rounded-full animate-pulse" /> Live Session</>
+                ) : (
+                  <><span className="w-1.5 h-1.5 bg-gym-danger rounded-full" /> Paused</>
+                )}
+              </p>
+              <div className="flex items-center justify-center gap-2">
+                <Timer size={20} className={activeSession.isRunning ? "text-white" : "text-gym-muted"} />
+                <span className={`text-4xl font-black timer-display transition-colors ${!activeSession.isRunning ? 'text-gym-muted' : 'text-white text-glow'}`}>
+                  {formatTime(activeSession.elapsedSeconds || 0)}
+                </span>
+              </div>
+            </div>
 
-          <button
-            onClick={activeSession.isPaused ? resumeSession : pauseSession}
-            className={`p-2.5 rounded-xl border active:scale-95 transition-transform ${
-              activeSession.isPaused ? 'bg-gym-neon/10 border-gym-neon/30 text-gym-neon' : 'bg-gym-card border-white/5 text-white'
-            }`}
-          >
-            {activeSession.isPaused ? <Play size={22} /> : <Pause size={22} />}
-          </button>
+            <button
+              onClick={activeSession.isRunning ? pauseSession : resumeSession}
+              className={`p-3 rounded-xl border active:scale-95 transition-all shadow-lg ${
+                !activeSession.isRunning ? 'bg-gym-neon border-gym-neon text-gym-dark shadow-[0_0_20px_rgba(129,140,248,0.4)]' : 'bg-black/40 border-white/5 text-white hover:border-gym-danger hover:text-gym-danger'
+              }`}
+            >
+              {!activeSession.isRunning ? <Play size={22} fill="currentColor" /> : <Pause size={22} fill="currentColor" />}
+            </button>
+          </div>
         </div>
 
         {/* Live Stats Bar */}

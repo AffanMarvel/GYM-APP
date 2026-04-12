@@ -96,48 +96,91 @@ export const WorkoutProvider = ({ children }) => {
 
   const startSession = () => {
     setActiveSession({
-      startTime: new Date().toISOString(), isRunning: true, elapsedSeconds: 0,
+      startTime: new Date().toLocaleTimeString([], { hour: '2-digit', minute:'2-digit' }), 
+      isRunning: true, 
+      elapsedSeconds: 0,
       logs: plannedExercises.map(ex => ({ ...ex, sets: [] }))
     });
   };
-  const pauseSession = () => setActiveSession(prev => ({ ...prev, isRunning: false }));
-  const resumeSession = () => setActiveSession(prev => ({ ...prev, isRunning: true }));
+  const pauseSession = () => setActiveSession(prev => prev ? ({ ...prev, isRunning: false }) : null);
+  const resumeSession = () => setActiveSession(prev => prev ? ({ ...prev, isRunning: true }) : null);
 
-  const finishSession = (sessionData) => {
-    const newSession = {
-      ...sessionData, id: Date.now(), date: new Date().toLocaleDateString(),
-      finishedAt: new Date().toLocaleTimeString(), durationFormatted: formatTime(sessionData.durationSeconds)
+  const finishSession = () => {
+    if (!activeSession) return null;
+    
+    const durationMin = activeSession.elapsedSeconds / 60;
+    const totalCalories = calcCalories(6, durationMin);
+    
+    let exercisesCompleted = 0;
+    let totalSets = 0;
+    
+    activeSession.logs.forEach(log => {
+      if (log.completed) exercisesCompleted++;
+      totalSets += (log.sets?.length || 0);
+    });
+
+    const summaryData = {
+      startTime: activeSession.startTime,
+      durationSeconds: activeSession.elapsedSeconds,
+      durationFormatted: formatTime(activeSession.elapsedSeconds),
+      totalCalories,
+      exercisesCompleted,
+      totalExercises: activeSession.logs.length,
+      totalSets,
+      logs: activeSession.logs
     };
+
+    const newSession = {
+      ...summaryData,
+      id: Date.now(),
+      date: new Date().toLocaleDateString(),
+      finishedAt: new Date().toLocaleTimeString([], { hour: '2-digit', minute:'2-digit' })
+    };
+    
     setHistory([newSession, ...history]);
     setActiveSession(null);
     setPlannedExercises([]);
+    
+    return newSession;
   };
 
-  const logSetInSession = (exerciseId, set) => {
-    setActiveSession(prev => ({
-      ...prev,
-      logs: prev.logs.map(log =>
-        log.id === exerciseId ? { ...log, sets: [...log.sets, { ...set, id: Date.now() }] } : log
-      )
-    }));
+  const logSetInSession = (exerciseIdx, weight, reps) => {
+    setActiveSession(prev => {
+      if (!prev) return null;
+      const newLogs = [...prev.logs];
+      if (newLogs[exerciseIdx]) {
+        newLogs[exerciseIdx] = { 
+          ...newLogs[exerciseIdx], 
+          sets: [...(newLogs[exerciseIdx].sets || []), { weight, reps, id: Date.now() }] 
+        };
+      }
+      return { ...prev, logs: newLogs };
+    });
   };
 
-  const completeExerciseInSession = (exerciseId) => {
-    setActiveSession(prev => ({
-      ...prev,
-      logs: prev.logs.map(log =>
-        log.id === exerciseId ? { ...log, completed: true } : log
-      )
-    }));
+  const completeExerciseInSession = (exerciseIdx) => {
+    setActiveSession(prev => {
+      if (!prev) return null;
+      const newLogs = [...prev.logs];
+      if (newLogs[exerciseIdx]) {
+        newLogs[exerciseIdx] = { ...newLogs[exerciseIdx], completed: true };
+      }
+      return { ...prev, logs: newLogs };
+    });
   };
 
-  const removeSetFromLog = (exerciseId, setId) => {
-    setActiveSession(prev => ({
-      ...prev,
-      logs: prev.logs.map(log =>
-        log.id === exerciseId ? { ...log, sets: log.sets.filter(s => s.id !== setId) } : log
-      )
-    }));
+  const removeSetFromLog = (exerciseIdx, setId) => {
+    setActiveSession(prev => {
+      if (!prev) return null;
+      const newLogs = [...prev.logs];
+      if (newLogs[exerciseIdx]) {
+        newLogs[exerciseIdx] = { 
+          ...newLogs[exerciseIdx], 
+          sets: newLogs[exerciseIdx].sets.filter(s => s.id !== setId) 
+        };
+      }
+      return { ...prev, logs: newLogs };
+    });
   };
 
   const updateExerciseData = (newData) => {
