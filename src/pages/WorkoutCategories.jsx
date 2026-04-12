@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Dumbbell, ChevronRight } from 'lucide-react';
+import { Dumbbell, ChevronRight, Search, Zap } from 'lucide-react';
 
 const muscles = [
   { id: 'chest', name: 'Chest', img: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=80' },
@@ -14,25 +14,42 @@ const muscles = [
 
 export default function WorkoutCategories() {
   return (
-    <div className="min-h-screen pb-28" style={{ background: 'linear-gradient(160deg, #06060d 0%, #0e0e1a 40%, #0d0a1a 100%)' }}>
-      <div className="p-5 slide-up max-w-lg mx-auto">
-        <header className="mb-6 flex items-center space-x-3">
-          <div className="p-2.5 rounded-xl" style={{ background: 'rgba(99,102,241,0.1)' }}>
-            <Dumbbell style={{ color: '#818cf8' }} size={24} />
+    <div className="min-h-screen pb-28" style={{ background: '#06060d' }}>
+      <div className="p-5 slide-up max-w-lg mx-auto space-y-6">
+        <header className="flex items-center justify-between pt-2">
+          <div className="flex items-center space-x-3">
+            <div className="p-2.5 rounded-xl bg-gym-neon/10 border border-gym-neon/20">
+              <Dumbbell className="text-gym-neon" size={24} />
+            </div>
+            <div>
+              <h1 className="text-2xl font-black text-white">Target Muscle</h1>
+              <p className="text-[10px] font-bold text-gym-muted uppercase tracking-widest mt-1">Select target area</p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-2xl font-black text-white">Target Muscle</h1>
-            <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#6b7280' }}>Select a category to browse exercises</p>
-          </div>
+          <Link to="/all-workouts" className="p-3 bg-white/5 rounded-2xl border border-white/5 text-gym-neon">
+            <Search size={22} />
+          </Link>
         </header>
+
+        <Link to="/all-workouts" className="block p-5 rounded-3xl bg-gym-card border border-white/5 group">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-gym-neon/10 border border-gym-neon/20 flex items-center justify-center">
+                <Zap size={22} className="text-gym-neon" fill="currentColor" />
+              </div>
+              <div>
+                <p className="text-base font-black text-white">Browse All Workouts</p>
+                <p className="text-[10px] font-bold text-gym-muted uppercase tracking-widest">Search 240+ Exercises</p>
+              </div>
+            </div>
+            <ChevronRight size={18} className="text-gym-muted" />
+          </div>
+        </Link>
 
         <div className="grid grid-cols-2 gap-4">
           {muscles.map((m) => (
-            <Link 
-              key={m.id} 
-              to={`/workout/${m.id}`}
-              className="group relative h-48 rounded-3xl overflow-hidden border border-white/5 active:scale-95 transition-all shadow-lg"
-            >
+            <Link key={m.id} to={`/workout/${m.id}`}
+              className="group relative h-48 rounded-3xl overflow-hidden border border-white/5 active:scale-95 transition-all">
               <img src={m.img} alt={m.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60" />
               <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black via-black/40 to-transparent">
                 <div className="flex items-center justify-between">
