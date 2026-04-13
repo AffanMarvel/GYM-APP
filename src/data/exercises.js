@@ -38,14 +38,28 @@ export function getWorkoutData() {
   const custom = getCustomExercises();
   const merged = { ...builtInData };
 
+  // Ensure ALL built-in exercises have IDs (fallback for missing fields)
+  Object.keys(merged).forEach(category => {
+    merged[category] = merged[category].map(ex => ({
+      ...ex,
+      id: ex.id || ex.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+    }));
+  });
+
   Object.keys(custom).forEach(category => {
     if (merged[category]) {
       // Append custom exercises, avoiding duplicates by ID
       const existingIds = new Set(merged[category].map(e => e.id));
-      const newExercises = custom[category].filter(e => !existingIds.has(e.id));
+      const newExercises = custom[category].filter(e => !existingIds.has(e.id)).map(ex => ({
+        ...ex,
+        id: ex.id || ex.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+      }));
       merged[category] = [...merged[category], ...newExercises];
     } else {
-      merged[category] = custom[category];
+      merged[category] = custom[category].map(ex => ({
+        ...ex,
+        id: ex.id || ex.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+      }));
     }
   });
 
@@ -55,11 +69,17 @@ export function getWorkoutData() {
 // Static reference (for backward compatibility) — re-reads each time
 export const workoutData = new Proxy(builtInData, {
   get(target, prop) {
-    const custom = getCustomExercises();
-    const builtIn = target[prop] || [];
-    const customCat = custom[prop] || [];
-    
     if (typeof prop === 'symbol' || prop === 'toJSON') return target[prop];
+    
+    const custom = getCustomExercises();
+    const builtIn = (target[prop] || []).map(ex => ({
+      ...ex,
+      id: ex.id || ex.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+    }));
+    const customCat = (custom[prop] || []).map(ex => ({
+      ...ex,
+      id: ex.id || ex.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+    }));
     
     if (customCat.length > 0) {
       const existingIds = new Set(builtIn.map(e => e.id));
