@@ -151,5 +151,205 @@ export const cardioExercises = [
       "Keep belly tight every jump."
     ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1473-SaDOwk7.gif"
+  },
+  {
+    "id": "jumping-jacks",
+    "name": "Jumping Jacks",
+    "muscle": "cardio",
+    "muscleTarget": "Full Body",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "30 sec", "focus": "Rhythm" },
+      "intermediate": { "sets": 4, "reps": "60 sec", "focus": "Speed" },
+      "advanced": { "sets": 5, "reps": "2 mins", "focus": "Endurance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+jumping+jacks",
+    "instructions": [
+      "Stand with feet together, arms at sides.",
+      "Jump, spreading legs and clapping hands overhead.",
+      "Jump back to start."
+    ],
+    "tips": ["Keep a steady pace"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0492-4jT7fDq.gif"
+  },
+  {
+    "id": "butt-kicks",
+    "name": "Butt Kicks",
+    "muscle": "cardio",
+    "muscleTarget": "Hamstrings, Cardio",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "30 sec", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "45 sec", "focus": "Speed" },
+      "advanced": { "sets": 5, "reps": "60 sec", "focus": "Intensity" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+butt+kicks",
+    "instructions": [
+      "Run in place.",
+      "Kick heels back toward glutes.",
+      "Pump arms."
+    ],
+    "tips": ["Warm up the hamstrings"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0810-p7fJOnA.gif"
+  },
+  {
+    "id": "shadow-boxing",
+    "name": "Shadow Boxing",
+    "muscle": "cardio",
+    "muscleTarget": "Shoulders, Core",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "1 min", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "2 mins", "focus": "Intensity" },
+      "advanced": { "sets": 5, "reps": "3 mins", "focus": "Combinations" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+shadow+box",
+    "instructions": [
+      "Adopt boxing stance.",
+      "Throw jabs, crosses, hooks.",
+      "Stay light on feet."
+    ],
+    "tips": ["Keep your core tight"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3647-RJgzwny.gif"
+  },
+  {
+    "id": "skip-rope",
+    "name": "Skip Rope",
+    "muscle": "cardio",
+    "muscleTarget": "Calves, Cardio",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "1 min", "focus": "Coordination" },
+      "intermediate": { "sets": 4, "reps": "2 mins", "focus": "Stamina" },
+      "advanced": { "sets": 5, "reps": "5 mins", "focus": "Speed" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+skip+rope",
+    "instructions": [
+      "Hold rope ends.",
+      "Jump as rope passes under feet.",
+      "Repeat."
+    ],
+    "tips": ["Land on your toes"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0711-UKWTJWR.gif"
+  },
+  {
+    "id": "bear-crawl",
+    "name": "Bear Crawl",
+    "muscle": "cardio",
+    "muscleTarget": "Full Body, Core",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "20 ft", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "40 ft", "focus": "Speed" },
+      "advanced": { "sets": 5, "reps": "60 ft", "focus": "Agility" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+bear+crawl",
+    "instructions": [
+      "Start on all fours, knees off ground.",
+      "Crawl forward, keeping hips low.",
+      "Stay active throughout."
+    ],
+    "tips": ["Excellent full body stability"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3646-SaDOwk7.gif"
+  },
+  {
+    "id": "skate-jump",
+    "name": "Skate Jump",
+    "muscle": "cardio",
+    "muscleTarget": "Quads, Glutes",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "20", "focus": "Side Landing" },
+      "intermediate": { "sets": 4, "reps": "30", "focus": "Explosion" },
+      "advanced": { "sets": 5, "reps": "50", "focus": "Lateral Power" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+skate+jump",
+    "instructions": [
+      "Jump sideways from one foot to other.",
+      "Swing arms for momentum.",
+      "Land soft."
+    ],
+    "tips": ["Great for lateral agility"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1780-yn8yg1r.gif"
+  },
+  {
+    "id": "kettlebell-swing",
+    "name": "Kettlebell Swing",
+    "muscle": "cardio",
+    "muscleTarget": "Glutes, Hamstrings",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Hinge" },
+      "intermediate": { "sets": 4, "reps": "20", "focus": "Power" },
+      "advanced": { "sets": 5, "reps": "30", "focus": "Endurance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+kettlebell+swing",
+    "instructions": [
+      "Swing kettlebell between legs.",
+      "Thrust hips forward to swing it up.",
+      "Keep back straight."
+    ],
+    "tips": ["Power comes from the hips"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0526-0JtKWum.gif"
+  },
+  {
+    "id": "battle-ropes",
+    "name": "Battle Ropes",
+    "muscle": "cardio",
+    "muscleTarget": "Shoulders, Core",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "20 sec", "focus": "Waves" },
+      "intermediate": { "sets": 4, "reps": "40 sec", "focus": "Intensity" },
+      "advanced": { "sets": 5, "reps": "60 sec", "focus": "Sprints" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+battle+ropes",
+    "instructions": [
+      "Hold rope ends.",
+      "Move arms up and down to create waves.",
+      "Stay in squat position."
+    ],
+    "tips": ["Excellent high-intensity calorie burner"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3645-hCjGsRQ.gif"
+  },
+  {
+    "id": "treadmill-run",
+    "name": "Treadmill Run",
+    "muscle": "cardio",
+    "muscleTarget": "Cardio",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "10 mins", "focus": "Pace" },
+      "intermediate": { "sets": 1, "reps": "20 mins", "focus": "Steady State" },
+      "advanced": { "sets": 1, "reps": "45 mins", "focus": "Endurance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+treadmill+run",
+    "instructions": [
+      "Set treadmill speed.",
+      "Run with upright posture.",
+      "Breathe rhythmically."
+    ],
+    "tips": ["Intermittent incline for challenge"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0810-p7fJOnA.gif"
+  },
+  {
+    "id": "elliptical-trainer",
+    "name": "Elliptical Trainer",
+    "muscle": "cardio",
+    "muscleTarget": "Cardio",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "15 mins", "focus": "Motion" },
+      "intermediate": { "sets": 1, "reps": "30 mins", "focus": "Stamina" },
+      "advanced": { "sets": 1, "reps": "1 hour", "focus": "High Resistance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+use+elliptical",
+    "instructions": [
+      "Step onto elliptical.",
+      "Move legs in gliding motion.",
+      "Use arms for full body work."
+    ],
+    "tips": ["Lower impact on joints"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0430-DpWMFP5.gif"
   }
 ];

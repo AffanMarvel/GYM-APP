@@ -264,5 +264,135 @@ export const legExercises = [
       "Tempo: 3 sec down → 1 sec pause → 2 sec up"
     ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0046-5VCj6iH.gif"
+  },
+  {
+    "name": "Cable Hip Adduction",
+    "muscle": "legs",
+    "muscleTarget": "Inner Thighs",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Stand sideways to machine, ankle strap on inner leg.",
+      "Pull leg across body.",
+      "Controlled return."
+    ],
+    "tips": ["Keep your core stable"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1709-H7Y1Iia.gif"
+  },
+  {
+    "name": "Cable Hip Extension",
+    "muscle": "legs",
+    "muscleTarget": "Glutes",
+    "difficulty": "beginner",
+    "instructions": [
+      "Face machine, ankle strap on.",
+      "Kick leg back, squeezing glute.",
+      "Return slow."
+    ],
+    "tips": ["Don't arch your lower back"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1710-Ff18ItA.gif"
+  },
+  {
+    "name": "Cable One Arm Lunges",
+    "muscle": "legs",
+    "muscleTarget": "Quads, Glutes",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Face away from machine, hold handle.",
+      "Step forward into lunge.",
+      "Push back to start."
+    ],
+    "tips": ["Maintains constant tension on legs"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1711-vpp9Ku2.gif"
+  },
+  {
+    "name": "Cable Pull Through",
+    "muscle": "legs",
+    "muscleTarget": "Hamstrings, Glutes",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Stand away from machine, rope between legs.",
+      "Hinge at hips, reach back.",
+      "Thrust hips forward, squeeze glutes."
+    ],
+    "tips": ["Excellent for posterior chain"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1714-XU3ePuv.gif"
+  },
+  {
+    "name": "Cable Reverse Lunges",
+    "muscle": "legs",
+    "muscleTarget": "Glutes, Quads",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Hold cable handles, step back into lunge.",
+      "Lower knee toward floor.",
+      "Return to standing."
+    ],
+    "tips": ["Easier on the knees than forward lunges"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1715-B6r1Y9V.gif"
+  },
+  {
+    "name": "Cable Step Up",
+    "muscle": "legs",
+    "muscleTarget": "Quads",
+    "difficulty": "beginner",
+    "instructions": [
+      "Step onto box while holding cable handles.",
+      "Drive through heel.",
+      "Step down controlled."
+    ],
+    "tips": ["Keep your chest upright"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1718-DpWMFP5.gif"
+  },
+  {
+    "name": "Kettlebell One Arm Lunge",
+    "muscle": "legs",
+    "muscleTarget": "Quads, Balance",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Hold one kettlebell at side.",
+      "Step forward and lower.",
+      "Return to start."
+    ],
+    "tips": ["Challenges core and balance"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0521-BfPgnOn.gif"
+  },
+  {
+    "name": "Kettlebell Goblet Squat",
+    "muscle": "legs",
+    "muscleTarget": "Quads",
+    "difficulty": "beginner",
+    "instructions": [
+      "Hold kettlebell at chest.",
+      "Squat down deep.",
+      "Push back up."
+    ],
+    "tips": ["Great for improving squat depth"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0519-DpWMFP5.gif"
+  },
+  {
+    "name": "Dumbbell High Box Step Up",
+    "muscle": "legs",
+    "muscleTarget": "Glutes",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Step onto a high box with dumbbells.",
+      "Drive through the leading leg.",
+      "Lower with control."
+    ],
+    "tips": ["High box targets glutes more"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0315-hCjGsRQ.gif"
+  },
+  {
+    "name": "Lever Leg Press (Machine)",
+    "muscle": "legs",
+    "muscleTarget": "Quads",
+    "difficulty": "beginner",
+    "instructions": [
+      "Sit in machine, push platform.",
+      "Lower slowly.",
+      "Don't lock knees at top."
+    ],
+    "tips": ["Controlled and safe for lower back"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0589-2Qh2J1e.gif"
   }
 ];

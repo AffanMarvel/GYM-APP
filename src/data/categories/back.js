@@ -318,5 +318,138 @@ export const backExercises = [
       "Use slower reps (2s up, 3s down) for deeper activation."
     ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1317-8d8qJQI.gif"
+  },
+  {
+    "name": "Cable Seated High Row (V-Bar)",
+    "muscle": "back",
+    "muscleTarget": "Upper Back, Lats, Rhomboids",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Sit on cable machine, feet flat.",
+      "Grasp v-bar with overhand grip.",
+      "Pull towards torso, retracting shoulder blades.",
+      "Squeeze and return slowly."
+    ],
+    "tips": ["Keep back straight", "Focus on mid-back contraction"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0213-pwt0pnM.gif"
+  },
+  {
+    "name": "Cable Seated One Arm Alternate Row",
+    "muscle": "back",
+    "muscleTarget": "Upper Back, Lats",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Sit facing machine, grasp handle with one hand.",
+      "Pull towards body, elbow close to side.",
+      "Alternate arms."
+    ],
+    "tips": ["Avoid twisting torso", "Full stretch every rep"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0214-vpp9Ku2.gif"
+  },
+  {
+    "name": "Cable Shrug",
+    "muscle": "back",
+    "muscleTarget": "Traps",
+    "difficulty": "beginner",
+    "instructions": [
+      "Stand facing machine, grasp handles.",
+      "Shrug shoulders toward ears.",
+      "Hold contraction and lower."
+    ],
+    "tips": ["Don't roll shoulders", "Use controlled weight"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0220-Eg98Ft9.gif"
+  },
+  {
+    "name": "Cable Squat Row",
+    "muscle": "back",
+    "muscleTarget": "Lats, Full Back",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Attach rope at waist height.",
+      "Squat down, grasp rope.",
+      "Pull rope towards chest while maintaining squat.",
+      "Squeeze blades."
+    ],
+    "tips": ["Keep core engaged", "Maintain posture"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1717-f7fnAIB.gif"
+  },
+  {
+    "name": "Cable Thibaudeau Kayak Row",
+    "muscle": "back",
+    "muscleTarget": "Lats (Isolation)",
+    "difficulty": "expert",
+    "instructions": [
+      "Unilateral cable row with a kayak-like motion.",
+      "Pull down and back in an arc.",
+      "Focus on the lat stretch."
+    ],
+    "tips": ["Advanced mind-muscle connection required"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/2464-ZgwWBoC.gif"
+  },
+  {
+    "name": "Cable Standing Row (V-Bar)",
+    "muscle": "back",
+    "muscleTarget": "Upper Back, Rhomboids",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Stand facing machine, grasp v-bar.",
+      "Pull towards chest, squeezing blades.",
+      "Return with control."
+    ],
+    "tips": ["Don't use momentum", "Keep knees slightly bent"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0234-4f8RXP8.gif"
+  },
+  {
+    "name": "Assisted Chin Up",
+    "muscle": "back",
+    "muscleTarget": "Lats, Biceps",
+    "difficulty": "beginner",
+    "instructions": [
+      "Use assisted machine, knees on pad.",
+      "Grasp bar with underhand grip.",
+      "Pull up until chin clears bar.",
+      "Lower slowly."
+    ],
+    "tips": ["Keep elbows in", "Don't let the weight slam"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0008-p7fJOnA.gif"
+  },
+  {
+    "name": "Assisted Pull Up",
+    "muscle": "back",
+    "muscleTarget": "Lats",
+    "difficulty": "beginner",
+    "instructions": [
+      "Wide overhand grip on assisted machine.",
+      "Pull up, chest to bar.",
+      "Slow eccentric (downward phase)."
+    ],
+    "tips": ["Widens the back appearance"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0015-o9R7fnO.gif"
+  },
+  {
+    "name": "Band Assisted Pull Up",
+    "muscle": "back",
+    "muscleTarget": "Lats, Core",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Loop band around pull up bar.",
+      "Place foot or knee in band loop.",
+      "Perform pull ups with assistance."
+    ],
+    "tips": ["Band provides most help at the bottom"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0967-n7fJOnA.gif"
+  },
+  {
+    "name": "Lever Lat Pulldown (Machine)",
+    "muscle": "back",
+    "muscleTarget": "Lats",
+    "difficulty": "beginner",
+    "instructions": [
+      "Sit in machine, grab handles.",
+      "Pull down toward chest.",
+      "Controlled return."
+    ],
+    "tips": ["Consistent path provided by machine"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0575-Pwt0pnM.gif"
   }
 ];

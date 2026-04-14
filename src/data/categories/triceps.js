@@ -237,5 +237,205 @@ export const tricepsExercises = [
       "Tempo: 2 sec down → 1 sec pause → 2 sec up"
     ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1755-bZq4bwK.gif"
+  },
+  {
+    "id": "cable-one-arm-ext",
+    "name": "Cable Standing One Arm Triceps Extension",
+    "muscle": "triceps",
+    "muscleTarget": "Lateral Head",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Unilateral" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Isolation" },
+      "advanced": { "sets": 5, "reps": "15", "focus": "Burn" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=cable+one+arm+tricep+extension",
+    "instructions": [
+      "Stand facing machine, one hand on handle.",
+      "Push handle down until arm is straight.",
+      "Side focus on triceps."
+    ],
+    "tips": ["Keep elbow tucked in"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0231-m18t69a.gif"
+  },
+  {
+    "id": "cable-vbar-pushdown",
+    "name": "Cable Triceps Pushdown (V-bar)",
+    "muscle": "triceps",
+    "muscleTarget": "Medial + Lateral Head",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Strength" },
+      "advanced": { "sets": 5, "reps": "10", "focus": "Load" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=cable+vbar+pushdown",
+    "instructions": [
+      "Grasp v-bar overhand.",
+      "Push down until arms locked.",
+      "Controlled return."
+    ],
+    "tips": ["V-bar allows for heavy weights"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0241-p6Yl0vP.gif"
+  },
+  {
+    "id": "cable-rev-overhead",
+    "name": "Cable Standing Reverse Grip Overhead Triceps Extension",
+    "muscle": "triceps",
+    "muscleTarget": "Long Head",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Stretch" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Thickness" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Stability" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=cable+reverse+overhead+tricep",
+    "instructions": [
+      "Face away from machine, reverse grip.",
+      "Extend arms overhead.",
+      "Keep elbows high."
+    ],
+    "tips": ["Targets the long head uniquely"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1727-vPwt0pn.gif"
+  },
+  {
+    "id": "bench-dip-weight",
+    "name": "Bench Dip (Weighted)",
+    "muscle": "triceps",
+    "muscleTarget": "Medial Head",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Depth" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Load" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Power" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=weighted+bench+dips",
+    "instructions": [
+      "Place weight on thighs.",
+      "Lower body between benches.",
+      "Push back up."
+    ],
+    "tips": ["Keep your back close to the bench"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0096-7oVpAta.gif"
+  },
+  {
+    "id": "db-one-arm-ext",
+    "name": "Dumbbell One Arm Triceps Extension",
+    "muscle": "triceps",
+    "muscleTarget": "Long Head",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Unilateral" },
+      "advanced": { "sets": 5, "reps": "15", "focus": "Endurance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=dumbbell+one+arm+tricep+extension",
+    "instructions": [
+      "Hold dumbbell overhead in one hand.",
+      "Lower behind head, elbow up.",
+      "Extend back to start."
+    ],
+    "tips": ["Support your elbow if needed"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0371-LBEORIq.gif"
+  },
+  {
+    "id": "ez-bar-ext",
+    "name": "EZ-Bar Triceps Extension",
+    "muscle": "triceps",
+    "muscleTarget": "All 3 Heads",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Grip" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Strength" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Density" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=ez+bar+tricep+extension",
+    "instructions": [
+      "Hold EZ-bar overhead.",
+      "Lower behind head, then extend.",
+      "Keep upper arms still."
+    ],
+    "tips": ["Use EZ-bar for wrist safety"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0441-3XFdb1Z.gif"
+  },
+  {
+    "id": "pushup-close",
+    "name": "Push-Up (Close Grip)",
+    "muscle": "triceps",
+    "muscleTarget": "Medial + Lateral Head",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "10", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "20", "focus": "Endurance" },
+      "advanced": { "sets": 5, "reps": "30", "focus": "Repetition" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=close+grip+pushup",
+    "instructions": [
+      "Pushup position, hands close.",
+      "Keep elbows tucked to sides.",
+      "Lower and push up."
+    ],
+    "tips": ["Excellent tricep builder"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0664-OVTZ65k.gif"
+  },
+  {
+    "id": "assisted-tricep-dip",
+    "name": "Assisted Triceps Dip",
+    "muscle": "triceps",
+    "muscleTarget": "Triceps",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Control" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Strength" },
+      "advanced": { "sets": 5, "reps": "15", "focus": "Volume" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=assisted+tricep+dip",
+    "instructions": [
+      "Use assisted machine.",
+      "Push down handles, keeping chest up.",
+      "Squeeze triceps at bottom."
+    ],
+    "tips": ["Concentrate on the push"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0018-p7fJOnA.gif"
+  },
+  {
+    "id": "machine-seated-dip",
+    "name": "Seated Dip (Machine)",
+    "muscle": "triceps",
+    "muscleTarget": "Triceps",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Isolation" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Tension" },
+      "advanced": { "sets": 5, "reps": "10 (Heavy)", "focus": "Density" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=machine+seated+dip",
+    "instructions": [
+      "Sit in machine, grab handles.",
+      "Push handles down, locking arms.",
+      "Controlled release."
+    ],
+    "tips": ["Constant tension through the range"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0716-pwt0pnM.gif"
+  },
+  {
+    "id": "cable-pushdown-straight",
+    "name": "Triceps Pushdown (Cable)",
+    "muscle": "triceps",
+    "muscleTarget": "Lateral Head",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Pump" },
+      "advanced": { "sets": 5, "reps": "10", "focus": "Hardness" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=cable+tricep+pushdown",
+    "instructions": [
+      "Straight bar attached to high pulley.",
+      "Push down until arms are straight.",
+      "Squeeze triceps."
+    ],
+    "tips": ["Ideal for defining the triceps"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1269-UKWTJWR.gif"
   }
 ];

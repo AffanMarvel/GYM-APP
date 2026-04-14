@@ -237,5 +237,206 @@ export const bicepsExercises = [
       "Tempo: 2 sec up → 1 sec hold → 3 sec down"
     ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0070-qOgPVf6.gif"
+  },
+  {
+    "id": "cable-seated-curl",
+    "name": "Cable Seated Curl",
+    "muscle": "biceps",
+    "muscleTarget": "Biceps",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Hypertrophy" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Squeeze" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+seated+curl",
+    "instructions": [
+      "Sit on cable machine, back straight.",
+      "Grasp handle with underhand grip.",
+      "Curl towards shoulders.",
+      "Lower slowly."
+    ],
+    "tips": ["Keep upper arms stationary"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1641-8oYqOt9.gif"
+  },
+  {
+    "id": "cable-concentration-curl",
+    "name": "Cable Seated One Arm Concentration Curl",
+    "muscle": "biceps",
+    "muscleTarget": "Biceps Peak",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Peak" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Isolation" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Depth" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=cable+concentration+curl",
+    "instructions": [
+      "Sit on bench, elbow on thigh.",
+      "Curl cable handle towards shoulder.",
+      "Squeeze at top."
+    ],
+    "tips": ["Full range of motion"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1642-rZ80Gbp.gif"
+  },
+  {
+    "id": "cable-overhead-curl",
+    "name": "Cable Seated Overhead Curl",
+    "muscle": "biceps",
+    "muscleTarget": "Biceps Peak",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Pace" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Shape" },
+      "advanced": { "sets": 5, "reps": "10", "focus": "Strength" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=cable+overhead+curl",
+    "instructions": [
+      "Sit facing machine, grasp overhead handles.",
+      "Curl towards shoulders.",
+      "Keep elbows close to sides."
+    ],
+    "tips": ["Don't swing weights"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1643-DpWMFP5.gif"
+  },
+  {
+    "id": "cable-squatting-curl",
+    "name": "Cable Squatting Curl",
+    "muscle": "biceps",
+    "muscleTarget": "Biceps",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Balance" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Power" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Stability" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=cable+squatting+curl",
+    "instructions": [
+      "Squat down, hold cable handles.",
+      "Curl towards shoulders while maintaining squat.",
+      "Squeeze biceps."
+    ],
+    "tips": ["Keep back straight"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1644-3XFdb1Z.gif"
+  },
+  {
+    "id": "cable-standing-inner-curl",
+    "name": "Cable Standing Inner Curl",
+    "muscle": "biceps",
+    "muscleTarget": "Inner Biceps",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Pump" },
+      "advanced": { "sets": 5, "reps": "10", "focus": "Width" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=cable+standing+inner+curl",
+    "instructions": [
+      "Stand facing machine.",
+      "Grasp handle with underhand grip.",
+      "Curl towards shoulders."
+    ],
+    "tips": ["Isolate the inner head"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0229-YwnI4ja.gif"
+  },
+  {
+    "id": "cable-rope-pulldown",
+    "name": "Cable Standing Pulldown (Rope)",
+    "muscle": "biceps",
+    "muscleTarget": "Biceps, Forearms",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Grip" },
+      "intermediate": { "sets": 4, "reps": "15", "focus": "Squeeze" },
+      "advanced": { "sets": 5, "reps": "10", "focus": "Tear" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=cable+rope+pulldown+bicep",
+    "instructions": [
+      "High pulley, grab rope.",
+      "Pull down towards thighs, squeezing biceps.",
+      "Controlled return."
+    ],
+    "tips": ["Excellent finisher exercise"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0232-CvPn9WV.gif"
+  },
+  {
+    "id": "db-alternate-curl",
+    "name": "Dumbbell Alternate Bicep Curl",
+    "muscle": "biceps",
+    "muscleTarget": "Biceps",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Unilateral" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Load" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=dumbbell+alternate+curl",
+    "instructions": [
+      "Stand tall, dumbbells in hand.",
+      "Curl one arm up, then the other.",
+      "Avoid swinging."
+    ],
+    "tips": ["Rotate wrists as you curl up"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0286-BfPgnOn.gif"
+  },
+  {
+    "id": "db-concentration-curl",
+    "name": "Dumbbell Concentration Curl",
+    "muscle": "biceps",
+    "muscleTarget": "Biceps Peak",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Peak" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Isolation" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Slow" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=dumbbell+concentration+curl",
+    "instructions": [
+      "Sit on bench, elbow on inner thigh.",
+      "Curl dumbbell up towards chest.",
+      "Pause and squeeze."
+    ],
+    "tips": ["Keep your shoulder steady"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0309-8xUv4J7.gif"
+  },
+  {
+    "id": "lever-preacher-curl",
+    "name": "Lever Preacher Curl (Machine)",
+    "muscle": "biceps",
+    "muscleTarget": "Lower Biceps",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Constant Tension" },
+      "advanced": { "sets": 5, "reps": "10", "focus": "Burn" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=machine+preacher+curl",
+    "instructions": [
+      "Sit at machine, elbows on pad.",
+      "Grasp handles, curl upward.",
+      "Full stretch at bottom."
+    ],
+    "tips": ["Excellent for peak construction"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0651-OVTZ65k.gif"
+  },
+  {
+    "id": "reverse-curl-cable",
+    "name": "Reverse Curl (Cable)",
+    "muscle": "biceps",
+    "muscleTarget": "Brachialis, Forearms",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Grip" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Thickness" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Strength" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=reverse+curl+cable",
+    "instructions": [
+      "Face machine, grab handle overhand.",
+      "Curl towards shoulders.",
+      "Keep elbows in."
+    ],
+    "tips": ["Targets the outer arm thickness"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1201-0JtKWum.gif"
   }
 ];

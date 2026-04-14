@@ -151,5 +151,205 @@ export const stretchingExercises = [
       "Hold for 30-45 seconds per leg."
     ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1511-99rWm7w.gif"
+  },
+  {
+    "id": "childs-pose",
+    "name": "Child's Pose",
+    "muscle": "stretching",
+    "muscleTarget": "Back, Shoulders",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "30 sec", "focus": "Relaxation" },
+      "intermediate": { "sets": 2, "reps": "45 sec", "focus": "Breath" },
+      "advanced": { "sets": 2, "reps": "60 sec", "focus": "Depth" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+childs+pose",
+    "instructions": [
+      "Kneel on floor, sit on heels.",
+      "Fold forward, arms extended.",
+      "Rest forehead on floor."
+    ],
+    "tips": ["Deep breaths into the back"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1407-PXTIwgu.gif"
+  },
+  {
+    "id": "butterfly-stretch",
+    "name": "Butterfly Stretch",
+    "muscle": "stretching",
+    "muscleTarget": "Inner Thighs, Hips",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "20 sec", "focus": "Gently" },
+      "intermediate": { "sets": 2, "reps": "30 sec", "focus": "Posture" },
+      "advanced": { "sets": 2, "reps": "45 sec", "focus": "Opening" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+butterfly+stretch",
+    "instructions": [
+      "Sit with soles of feet together.",
+      "Pull heels toward body.",
+      "Push knees down gently."
+    ],
+    "tips": ["Keep your back straight"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1301-PXTIwgu.gif"
+  },
+  {
+    "id": "triceps-stretch",
+    "name": "Triceps Stretch",
+    "muscle": "stretching",
+    "muscleTarget": "Triceps",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "20 sec each", "focus": "Alignment" },
+      "intermediate": { "sets": 2, "reps": "30 sec each", "focus": "Push" },
+      "advanced": { "sets": 2, "reps": "45 sec each", "focus": "Hold" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+triceps+stretch",
+    "instructions": [
+      "Reach one arm overhead, bend elbow.",
+      "Push elbow down with other hand.",
+      "Hold and switch."
+    ],
+    "tips": ["Don't arch your back"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1399-PXTIwgu.gif"
+  },
+  {
+    "id": "quad-stretch",
+    "name": "Quadriceps Stretch",
+    "muscle": "stretching",
+    "muscleTarget": "Quads",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "20 sec each", "focus": "Balance" },
+      "intermediate": { "sets": 2, "reps": "30 sec each", "focus": "Stability" },
+      "advanced": { "sets": 2, "reps": "45 sec each", "focus": "Pull" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+quad+stretch",
+    "instructions": [
+      "Stand on one leg, grab other ankle.",
+      "Pull heel toward glute.",
+      "Keep knees together."
+    ],
+    "tips": ["Hold onto a wall for balance if needed"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1332-PXTIwgu.gif"
+  },
+  {
+    "id": "neck-side-stretch",
+    "name": "Neck Side Stretch",
+    "muscle": "stretching",
+    "muscleTarget": "Neck, Traps",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "15 sec each", "focus": "Gentle" },
+      "intermediate": { "sets": 1, "reps": "25 sec each", "focus": "Release" },
+      "advanced": { "sets": 1, "reps": "40 sec each", "focus": "Hold" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+neck+side+stretch",
+    "instructions": [
+      "Tilt head toward one shoulder.",
+      "Apply light pressure with hand.",
+      "Hold and switch."
+    ],
+    "tips": ["Keep your shoulders down"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1435-PXTIwgu.gif"
+  },
+  {
+    "id": "cross-body-shoulder",
+    "name": "Cross Body Shoulder Stretch",
+    "muscle": "stretching",
+    "muscleTarget": "Shoulders",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "20 sec each", "focus": "Arm Straight" },
+      "intermediate": { "sets": 2, "reps": "30 sec each", "focus": "Pull" },
+      "advanced": { "sets": 2, "reps": "45 sec each", "focus": "Squeeze" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+shoulder+stretch",
+    "instructions": [
+      "Pull one arm across chest.",
+      "Hold above or below elbow.",
+      "Switch sides."
+    ],
+    "tips": ["Don't pull on the elbow joint"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1216-PXTIwgu.gif"
+  },
+  {
+    "id": "seated-glute-stretch",
+    "name": "Seated Glute Stretch",
+    "muscle": "stretching",
+    "muscleTarget": "Glutes",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "20 sec each", "focus": "Cross Leg" },
+      "intermediate": { "sets": 2, "reps": "30 sec each", "focus": "Leaning" },
+      "advanced": { "sets": 2, "reps": "45 sec each", "focus": "Depth" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+seated+glute+stretch",
+    "instructions": [
+      "Sit, cross one ankle over other knee.",
+      "Lean forward slightly.",
+      "Hold and switch."
+    ],
+    "tips": ["Excellent for releasing hip tension"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1323-PXTIwgu.gif"
+  },
+  {
+    "id": "wrist-extensor-stretch2",
+    "name": "Wrist Extensor Stretch",
+    "muscle": "stretching",
+    "muscleTarget": "Forearms",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "15 sec each", "focus": "Palms Down" },
+      "intermediate": { "sets": 1, "reps": "25 sec each", "focus": "Pull" },
+      "advanced": { "sets": 1, "reps": "40 sec each", "focus": "Hold" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+wrist+stretch",
+    "instructions": [
+      "Extend arm, palm down.",
+      "Pull fingers down with other hand.",
+      "Keep arm straight."
+    ],
+    "tips": ["Reduces wrist strain"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1409-PXTIwgu.gif"
+  },
+  {
+    "id": "wall-lat-stretch",
+    "name": "Wall Lat Stretch",
+    "muscle": "stretching",
+    "muscleTarget": "Lats",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "20 sec each", "focus": "Alignment" },
+      "intermediate": { "sets": 2, "reps": "30 sec each", "focus": "Lean" },
+      "advanced": { "sets": 2, "reps": "45 sec each", "focus": "Full Extension" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+wall+lat+stretch",
+    "instructions": [
+      "Place hand on wall at shoulder height.",
+      "Lean forward and rotate slightly away.",
+      "Feel stretch in side."
+    ],
+    "tips": ["Great for back mobility"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1333-PXTIwgu.gif"
+  },
+  {
+    "id": "standing-calf-stretch2",
+    "name": "Standing Calf Stretch",
+    "muscle": "stretching",
+    "muscleTarget": "Calves",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "20 sec each", "focus": "Heel Down" },
+      "intermediate": { "sets": 2, "reps": "30 sec each", "focus": "Leaning" },
+      "advanced": { "sets": 2, "reps": "45 sec each", "focus": "Hold" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+calf+stretch",
+    "instructions": [
+      "Face wall, one foot back.",
+      "Keep back heel on ground.",
+      "Lean into wall."
+    ],
+    "tips": ["Prevents calf tightness"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1371-PXTIwgu.gif"
   }
 ];

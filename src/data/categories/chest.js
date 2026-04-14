@@ -330,6 +330,178 @@ export const chestExercises = [
       "Don’t slam weights.",
       "Keep shoulders down and chest up."
     ],
-    "image": "/assets/exercises/chest_image_12.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0644-8O8pA7O.gif"
+  },
+  {
+    "id": "3294-archer-push-up",
+    "name": "Archer Push Up",
+    "muscle": "chest",
+    "muscleTarget": "Pectorals",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "8-10", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "10-12", "focus": "Hypertrophy" },
+      "advanced": { "sets": 5, "reps": "12-15", "focus": "Strength" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+archer+push+up",
+    "instructions": [
+      "Start in a push-up position with your hands slightly wider than shoulder-width apart.",
+      "Extend one arm straight out to the side, parallel to the ground.",
+      "Lower your body by bending your elbows, keeping your back straight and core engaged.",
+      "Push back up to the starting position.",
+      "Repeat on the other side, extending the opposite arm out to the side.",
+      "Continue alternating sides for the desired number of repetitions."
+    ],
+    "tips": ["Keep your core tight", "Control the descent", "Focus on chest"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3294-A9qxk2F.gif"
+  },
+  {
+    "id": "0009-assisted-chest-dip",
+    "name": "Assisted Chest Dip (Kneeling)",
+    "muscle": "chest",
+    "muscleTarget": "Pectorals",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "10-12", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "12-15", "focus": "Hypertrophy" },
+      "advanced": { "sets": 5, "reps": "6-10", "focus": "Weighted equivalent" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+assisted+chest+dip",
+    "instructions": [
+      "Adjust machine height and secure knees on pad.",
+      "Grasp handles with palms down, arms extended.",
+      "Lower body until upper arms are parallel to floor.",
+      "Push back up to starting position."
+    ],
+    "tips": ["Lean forward to target chest", "Control the descent"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0009-PAgTVaK.gif"
+  },
+  {
+    "id": "2364-wide-dip",
+    "name": "Assisted Wide Grip Chest Dip",
+    "muscle": "chest",
+    "muscleTarget": "Pectorals",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "10", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Stretch" },
+      "advanced": { "sets": 5, "reps": "15", "focus": "Power" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=wide+grip+chest+dip",
+    "instructions": ["Set wide grip", "Lower slowly", "Push explosive"],
+    "tips": ["Wide grip targets outer chest"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/2364-PnZJIrk.gif"
+  },
+  {
+    "id": "1254-band-bench",
+    "name": "Band Bench Press",
+    "muscle": "chest",
+    "muscleTarget": "Pectorals",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Tension" },
+      "intermediate": { "sets": 4, "reps": "20", "focus": "Pump" },
+      "advanced": { "sets": 5, "reps": "25", "focus": "Fatigue" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=band+bench+press",
+    "instructions": ["Lie on bench", "Hold band handles", "Press upward"],
+    "tips": ["Keep band tension consistent"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1254-khlHMqs.gif"
+  },
+  {
+    "id": "0989-band-twist-press",
+    "name": "Band One Arm Twisting Chest Press",
+    "muscle": "chest",
+    "muscleTarget": "Pectorals",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "10", "focus": "Twist" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Core" },
+      "advanced": { "sets": 5, "reps": "15", "focus": "Power" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=band+twisting+chest+press",
+    "instructions": ["Stand sideways to anchor", "Press across body", "Twist torso"],
+    "tips": ["Great for inner chest and core"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0989-c16nYGA.gif"
+  },
+  {
+    "id": "0227-cable-stand-fly",
+    "name": "Cable Standing Fly",
+    "muscle": "chest",
+    "muscleTarget": "Pectorals",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "15", "focus": "Pump" },
+      "advanced": { "sets": 5, "reps": "10", "focus": "Slow Negatives" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+standing+fly",
+    "instructions": [
+      "Attach handles at chest height.",
+      "Step forward and push handles together.",
+      "Control the return motion."
+    ],
+    "tips": ["Don't let the handles go too far back"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0227-Pr9Rhf4.gif"
+  },
+  {
+    "id": "1269-cable-crossovers",
+    "name": "Cable Standing Up Straight Crossovers",
+    "muscle": "chest",
+    "muscleTarget": "Pectorals",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Contraction" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Shape" },
+      "advanced": { "sets": 5, "reps": "10", "focus": "Isolation" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+straight+crossovers",
+    "instructions": [
+      "Stand tall, palms down.",
+      "Bring hands together in front, crossing them.",
+      "Return slowly."
+    ],
+    "tips": ["Keep elbows slightly bent"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1269-UKWTJWR.gif"
+  },
+  {
+    "id": "0308-db-fly",
+    "name": "Dumbbell Fly",
+    "muscle": "chest",
+    "muscleTarget": "Pectorals",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Stretch" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Tension" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+dumbbell+fly",
+    "instructions": [
+      "Lie on flat bench.",
+      "Lower dumbbells in arc motion.",
+      "Hug the tree motion to return."
+    ],
+    "tips": ["Don't overstretch shoulders"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0308-H0nJInS.gif"
+  },
+  {
+    "id": "0151-cable-bench-press",
+    "name": "Cable Bench Press",
+    "muscle": "chest",
+    "muscleTarget": "Pectorals",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Control" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Power" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Stability" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+bench+press",
+    "instructions": [
+      "Place bench between cable towers.",
+      "Press handles upward.",
+      "Constant tension throughout."
+    ],
+    "tips": ["Great for stability training"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0151-D9T1P0n.gif"
   }
 ];

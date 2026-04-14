@@ -425,5 +425,135 @@ export const shoulderExercises = [
       "3 sets of 12–20 reps per arm."
     ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0341-gSw59a4.gif"
+  },
+  {
+    "name": "Cable Standing Rear Delt Row",
+    "muscle": "shoulders",
+    "muscleTarget": "Rear Delts",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Stand facing machine, grab handle.",
+      "Pull towards chest, elbows high.",
+      "Squeeze rear delts."
+    ],
+    "tips": ["Keep core tight"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0233-ZgwWBoC.gif"
+  },
+  {
+    "name": "Cable Standing Shoulder Press",
+    "muscle": "shoulders",
+    "muscleTarget": "Front & Side Delts",
+    "difficulty": "beginner",
+    "instructions": [
+      "Stand facing machine, grab handles.",
+      "Press upward until arms extended.",
+      "Controlled return."
+    ],
+    "tips": ["Excellent for stability"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0235-pwt0pnM.gif"
+  },
+  {
+    "name": "Lever Lateral Raise (Machine)",
+    "muscle": "shoulders",
+    "muscleTarget": "Side Delts",
+    "difficulty": "beginner",
+    "instructions": [
+      "Sit in machine, arms in pads.",
+      "Raise arms out to side.",
+      "Squeeze and return slow."
+    ],
+    "tips": ["Constant tension machine path"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0576-o9R7fnO.gif"
+  },
+  {
+    "name": "Lever Military Press (Machine)",
+    "muscle": "shoulders",
+    "muscleTarget": "Front Delts",
+    "difficulty": "beginner",
+    "instructions": [
+      "Sit in machine, grab handles.",
+      "Press upward.",
+      "Slow negative."
+    ],
+    "tips": ["Great for mass builder"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0591-BfPgnOn.gif"
+  },
+  {
+    "name": "Reverse Fly (Machine)",
+    "muscle": "shoulders",
+    "muscleTarget": "Rear Delts",
+    "difficulty": "beginner",
+    "instructions": [
+      "Sit facing machine, grab handles.",
+      "Open arms wide, squeeze blades.",
+      "Return slow."
+    ],
+    "tips": ["Maintain slight elbow bend"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0696-pwt0pnM.gif"
+  },
+  {
+    "name": "Kettlebell Alternate Press",
+    "muscle": "shoulders",
+    "muscleTarget": "Front & Side Delts",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Hold kettlebells at shoulders.",
+      "Press one up, then the other.",
+      "Stable core."
+    ],
+    "tips": ["Kettlebells challenge stability"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0518-0JtKWum.gif"
+  },
+  {
+    "name": "Kettlebell One Arm Shoulder Press",
+    "muscle": "shoulders",
+    "muscleTarget": "Front Deltoids",
+    "difficulty": "beginner",
+    "instructions": [
+      "Hold one kettlebell at shoulder.",
+      "Press up vertically.",
+      "Lower controlled."
+    ],
+    "tips": ["Focus on the side being worked"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0523-UKWTJWR.gif"
+  },
+  {
+    "name": "Kettlebell Alternate Deltoid Raise",
+    "muscle": "shoulders",
+    "muscleTarget": "Side Delts",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Raise kettlebells out to side.",
+      "Alternate arms.",
+      "Keep palms down."
+    ],
+    "tips": ["Excellent for lateral head"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0486-JOZhu2h.gif"
+  },
+  {
+    "name": "Dumbbell External Rotation",
+    "muscle": "shoulders",
+    "muscleTarget": "Rotator Cuff",
+    "difficulty": "beginner",
+    "instructions": [
+      "Lie on side, elbow on hip.",
+      "Rotate dumbbell away from body.",
+      "Shoulder health focus."
+    ],
+    "tips": ["Essential for shoulder health"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0307-8xUv4J7.gif"
+  },
+  {
+    "name": "Cable Seated Rear Delt Fly",
+    "muscle": "shoulders",
+    "muscleTarget": "Rear Delts",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Sit facing cable machine.",
+      "Cross handles, pull back.",
+      "Squeeze rear delts."
+    ],
+    "tips": ["Keep your chest against the support"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0211-qatbkEd.gif"
   }
 ];

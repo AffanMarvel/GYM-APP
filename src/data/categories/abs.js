@@ -189,5 +189,208 @@ export const absExercises = [
       "Focus on the twist."
     ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0972-tZkGYZ9.gif"
+  },
+  {
+    "id": "cable-seated-crunch",
+    "name": "Cable Seated Crunch",
+    "muscle": "abs",
+    "muscleTarget": "Upper Abs",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Hypertrophy" },
+      "advanced": { "sets": 5, "reps": "10", "focus": "Tension" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+seated+crunch",
+    "instructions": [
+      "Sit on cable machine, feet flat.",
+      "Grasp handle behind head.",
+      "Crunch forward towards knees.",
+      "Return slow."
+    ],
+    "tips": ["Don't pull with arms", "Focus on core"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0212-8xUv4J7.gif"
+  },
+  {
+    "id": "cable-standing-crunch",
+    "name": "Cable Standing Crunch",
+    "muscle": "abs",
+    "muscleTarget": "Upper Abs",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Control" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Thickness" },
+      "advanced": { "sets": 5, "reps": "10", "focus": "Strength" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+standing+crunch",
+    "instructions": [
+      "Stand away from high pulley.",
+      "Hold handles behind head.",
+      "Crunch down towards knees.",
+      "Return controlled."
+    ],
+    "tips": ["Keep hips stable"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0874-XU3ePuv.gif"
+  },
+  {
+    "id": "cable-lift",
+    "name": "Cable Standing Lift",
+    "muscle": "abs",
+    "muscleTarget": "Obliques",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "10", "focus": "Balance" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Power" },
+      "advanced": { "sets": 5, "reps": "15", "focus": "Stability" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+standing+lift",
+    "instructions": [
+      "Stand facing machine.",
+      "Lift handle towards opposite shoulder.",
+      "Rotate torso."
+    ],
+    "tips": ["Keep arms straight"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0230-qFpAkpP.gif"
+  },
+  {
+    "id": "cable-twist",
+    "name": "Cable Seated Twist",
+    "muscle": "abs",
+    "muscleTarget": "Obliques",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Coordination" },
+      "intermediate": { "sets": 4, "reps": "15", "focus": "Squeeze" },
+      "advanced": { "sets": 5, "reps": "20", "focus": "Endurance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+seated+twist",
+    "instructions": [
+      "Sit on cable machine.",
+      "Hold handle in front.",
+      "Rotate torso side to side."
+    ],
+    "tips": ["Isolate obliques"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/2399-UEjSrKI.gif"
+  },
+  {
+    "id": "cable-side-bend",
+    "name": "Cable Side Bend",
+    "muscle": "abs",
+    "muscleTarget": "Obliques",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Flexibility" },
+      "intermediate": { "sets": 4, "reps": "20", "focus": "Tension" },
+      "advanced": { "sets": 5, "reps": "25", "focus": "Strength" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+side+bend",
+    "instructions": [
+      "Stand with feet shoulder width.",
+      "Grasp handle one hand.",
+      "Bend sideways towards handle.",
+      "Return to center."
+    ],
+    "tips": ["Avoid leaning forward"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0222-wPypxFY.gif"
+  },
+  {
+    "id": "cable-side-bend-crunch",
+    "name": "Cable Side Bend Crunch",
+    "muscle": "abs",
+    "muscleTarget": "Obliques",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Squeeze" },
+      "intermediate": { "sets": 4, "reps": "15", "focus": "Detail" },
+      "advanced": { "sets": 5, "reps": "18", "focus": "Power" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=side+bend+crunch",
+    "instructions": [
+      "Stand with handle in one hand.",
+      "Bend sideways, then crunch.",
+      "Focus on oblique contraction."
+    ],
+    "tips": ["Keep back straight"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0221-qatbkEd.gif"
+  },
+  {
+    "id": "cable-side-crunch",
+    "name": "Cable Side Crunch",
+    "muscle": "abs",
+    "muscleTarget": "Obliques",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "15", "focus": "Hypertrophy" },
+      "advanced": { "sets": 5, "reps": "20", "focus": "Strict" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+side+crunch",
+    "instructions": [
+      "Low pulley, stand sideways.",
+      "Grasp handle, bend at waist.",
+      "Lower elbow to hip."
+    ],
+    "tips": ["Don't use arms to pull"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0223-q2ADGqV.gif"
+  },
+  {
+    "id": "air-bike",
+    "name": "Air Bike",
+    "muscle": "abs",
+    "muscleTarget": "Obliques, Lower Abs",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "20", "focus": "Pace" },
+      "intermediate": { "sets": 4, "reps": "30", "focus": "Coordination" },
+      "advanced": { "sets": 5, "reps": "40", "focus": "Sprints" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+air+bike+abs",
+    "instructions": [
+      "Lie on back, hands head.",
+      "Bring elbow to opposite knee.",
+      "Switch in cycling motion."
+    ],
+    "tips": ["Reach for the knees"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0002-U0p9KjG.gif"
+  },
+  {
+    "id": "cable-twist-row",
+    "name": "Cable Standing Twist Row",
+    "muscle": "abs",
+    "muscleTarget": "Obliques, Lower Back",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "10", "focus": "Twist" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Core" },
+      "advanced": { "sets": 5, "reps": "15", "focus": "Stability" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+twist+row+abs",
+    "instructions": [
+      "Face machine, grab handle.",
+      "Pull and twist away.",
+      "Keep core tight."
+    ],
+    "tips": ["Focus on the rotation"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0236-JOZhu2h.gif"
+  },
+  {
+    "id": "leg-raise",
+    "name": "Leg Raise",
+    "muscle": "abs",
+    "muscleTarget": "Lower Abs",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "15", "focus": "Strength" },
+      "advanced": { "sets": 5, "reps": "20", "focus": "Control" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+leg+raise",
+    "instructions": [
+      "Lie on back, hands under glutes.",
+      "Raise legs together to 90 degrees.",
+      "Lower slowly without touching ground."
+    ],
+    "tips": ["Keep lower back flat"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0558-Pwt0pnM.gif"
   }
 ];

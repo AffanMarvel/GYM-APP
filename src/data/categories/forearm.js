@@ -153,5 +153,205 @@ export const forearmExercises = [
       "Tempo: 1 sec up -> 1 sec squeeze -> 2-3 sec down"
     ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0104-2qTvJAZ.gif"
+  },
+  {
+    "id": "cable-seated-wrist-curl",
+    "name": "Cable Seated One Arm Wrist Curl",
+    "muscle": "forearms",
+    "muscleTarget": "Wrist Flexors",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Isolation" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Strength" },
+      "advanced": { "sets": 5, "reps": "20", "focus": "Endurance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=cable+seated+wrist+curl",
+    "instructions": [
+      "Sit on bench, forearm on thigh.",
+      "Grasp cable handle, curl wrist upward.",
+      "Squeeze and return slow."
+    ],
+    "tips": ["Full range of motion"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1646-rZ80Gbp.gif"
+  },
+  {
+    "id": "cable-standing-back-wrist",
+    "name": "Cable Standing Back Wrist Curl",
+    "muscle": "forearms",
+    "muscleTarget": "Wrist Extensors",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Squeeze" },
+      "advanced": { "sets": 5, "reps": "10", "focus": "Power" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=cable+back+wrist+curl",
+    "instructions": [
+      "Stand facing machine, arms behind back.",
+      "Grasp handle, curl wrist upward.",
+      "Controlled return."
+    ],
+    "tips": ["Good for forearm thickness"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1647-DpWMFP5.gif"
+  },
+  {
+    "id": "cable-standing-wrist-curl",
+    "name": "Cable Standing Wrist Curl",
+    "muscle": "forearms",
+    "muscleTarget": "Wrist Flexors",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Contraction" },
+      "intermediate": { "sets": 4, "reps": "20", "focus": "Pump" },
+      "advanced": { "sets": 5, "reps": "25", "focus": "Endurance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=cable+standing+wrist+curl",
+    "instructions": [
+      "Stand holding cable bar in front.",
+      "Curl wrists upward toward forearms.",
+      "Lower slowly."
+    ],
+    "tips": ["Maintain arm extension"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0248-wPypxFY.gif"
+  },
+  {
+    "id": "db-one-arm-rev-wrist",
+    "name": "Dumbbell One Arm Reverse Wrist Curl",
+    "muscle": "forearms",
+    "muscleTarget": "Wrist Extensors",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "15", "focus": "Repetition" },
+      "advanced": { "sets": 5, "reps": "20", "focus": "Strict" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=dumbbell+reverse+wrist+curl",
+    "instructions": [
+      "Rest forearm on bench, palm down.",
+      "Curl wrist upward with dumbbell.",
+      "Focus on top contraction."
+    ],
+    "tips": ["Strengthens the top of the forearm"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0361-LBEORIq.gif"
+  },
+  {
+    "id": "db-over-bench-wrist",
+    "name": "Dumbbell Over Bench One Arm Wrist Curl",
+    "muscle": "forearms",
+    "muscleTarget": "Wrist Flexors",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Stretch" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Squeeze" },
+      "advanced": { "sets": 5, "reps": "20", "focus": "Burn" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=dumbbell+wrist+curl+over+bench",
+    "instructions": [
+      "Rest forearm on bench, palm up.",
+      "Curl wrist upward, let it roll to fingers.",
+      "Squeeze at top."
+    ],
+    "tips": ["Allows for great isolation"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0372-3XFdb1Z.gif"
+  },
+  {
+    "id": "db-over-bench-rev-wrist",
+    "name": "Dumbbell Over Bench Reverse Wrist Curl",
+    "muscle": "forearms",
+    "muscleTarget": "Wrist Extensors",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Control" },
+      "intermediate": { "sets": 4, "reps": "15", "focus": "Strength" },
+      "advanced": { "sets": 5, "reps": "18", "focus": "Power" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=db+reverse+wrist+curl+over+bench",
+    "instructions": [
+      "Dumbbells in hand, palms down over bench.",
+      "Curl upward.",
+      "Return slow."
+    ],
+    "tips": ["Excellent for forearm symmetry"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0431-qatbkEd.gif"
+  },
+  {
+    "id": "db-over-bench-wrist-both",
+    "name": "Dumbbell Over Bench Wrist Curl (Both)",
+    "muscle": "forearms",
+    "muscleTarget": "Wrist Flexors",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Pump" },
+      "intermediate": { "sets": 4, "reps": "20", "focus": "Mass" },
+      "advanced": { "sets": 5, "reps": "25", "focus": "Conditioning" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=db+wrist+curl+over+bench",
+    "instructions": [
+      "Both arms on bench, palms up.",
+      "Curl dumbbells toward face.",
+      "Full range."
+    ],
+    "tips": ["High volume works best"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0432-8xUv4J7.gif"
+  },
+  {
+    "id": "reverse-barbell-curl",
+    "name": "Reverse Barbell Curl",
+    "muscle": "forearms",
+    "muscleTarget": "Brachioradialis",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Grip" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Thickness" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Strength" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=reverse+barbell+curl",
+    "instructions": [
+      "Stand holding barbell overhand.",
+      "Curl towards shoulders.",
+      "Keep wrists straight."
+    ],
+    "tips": ["Targets the top of the forearm and biceps"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0676-pwt0pnM.gif"
+  },
+  {
+    "id": "reverse-cable-curl",
+    "name": "Reverse Cable Curl",
+    "muscle": "forearms",
+    "muscleTarget": "Forearms",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Pump" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Constant Tension" },
+      "advanced": { "sets": 5, "reps": "10", "focus": "Vascularity" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=reverse+cable+curl",
+    "instructions": [
+      "Stand facing machine, overhand grip on bar.",
+      "Curl towards shoulders.",
+      "Hold peak."
+    ],
+    "tips": ["Maintain tension at bottom"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1217-0JtKWum.gif"
+  },
+  {
+    "id": "wrist-roller",
+    "name": "Wrist Roller",
+    "muscle": "forearms",
+    "muscleTarget": "Forearms & Grip",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "3 Rolls", "focus": "Control" },
+      "intermediate": { "sets": 4, "reps": "5 Rolls", "focus": "Burn" },
+      "advanced": { "sets": 5, "reps": "To Failure", "focus": "Stamina" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+wrist+roller",
+    "instructions": [
+      "Hold roller bar with both hands.",
+      "Roll weight up using wrists.",
+      "Slowly unroll back down."
+    ],
+    "tips": ["Ultimate forearm finisher"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0856-BfPgnOn.gif"
   }
 ];
