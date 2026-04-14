@@ -1,383 +1,429 @@
 export const shoulderExercises = [
   {
-    name: "Barbell Overhead Press",
-    muscle: "shoulders",
-    muscleTarget: "Front & Side Deltoids",
-    difficulty: "expert",
-    instructions: [
-      "Stand straight, feet shoulder-width apart.",
-      "Hold the barbell just above your chest.",
-      "Press the bar straight overhead until arms are fully extended.",
-      "Slowly lower it down to chin level."
+    "name": "Barbell Overhead Press",
+    "muscle": "shoulders",
+    "muscleTarget": "Front & Side Deltoids",
+    "difficulty": "expert",
+    "instructions": [
+      "Sit on a bench with your back straight and feet flat on the ground.",
+      "Hold the barbell with an overhand grip, slightly wider than shoulder-width apart.",
+      "Lift the barbell off the rack and bring it to shoulder level, with your elbows bent and palms facing forward.",
+      "Press the barbell overhead by extending your arms fully.",
+      "Pause for a moment at the top, then slowly lower the barbell back to shoulder level.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Keep your core tight and glutes engaged.",
       "Don’t arch your back too much.",
       "Inhale down, exhale up. Go slow on the way down.",
       "Tempo: 2–3 sec down → 1 sec up"
     ],
-    image: "/assets/exercises/shoulder_image.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0091-kTbSH9h.gif"
   },
   {
-    name: "Dumbbell Shoulder Press",
-    muscle: "shoulders",
-    muscleTarget: "Front & Side Deltoids",
-    difficulty: "intermediate",
-    instructions: [
-      "Sit on a bench with back support, dumbbells in each hand at ear level.",
-      "Palms facing forward, elbows under wrists.",
-      "Press both dumbbells overhead till arms almost straight (don’t lock).",
-      "Slowly lower to starting position."
+    "name": "Dumbbell Shoulder Press",
+    "muscle": "shoulders",
+    "muscleTarget": "Front & Side Deltoids",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Sit on a bench with a dumbbell in each hand, resting on your thighs.",
+      "Raise the dumbbells to shoulder height, palms facing forward.",
+      "Press the dumbbells upward until your arms are fully extended overhead.",
+      "Pause for a moment at the top, then slowly lower the dumbbells back to shoulder height.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Seated version isolates shoulders better than standing.",
       "Focus on slow lowering — that’s where delts grow.",
       "Keep dumbbells slightly angled inward — joint-safe position.",
       "3–4 sets of 10–12 reps."
     ],
-    image: "/assets/exercises/shoulder_image_2.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0405-znQUdHY.gif"
   },
   {
-    name: "Arnold Press",
-    muscle: "shoulders",
-    muscleTarget: "All 3 Shoulder Heads (Front, Side, Rear)",
-    difficulty: "intermediate",
-    instructions: [
-      "Sit upright with dumbbells at chest level, palms facing toward you.",
-      "As you press upward, rotate wrists so palms face forward at top.",
-      "Lower slowly while rotating back to start position."
+    "name": "Arnold Press",
+    "muscle": "shoulders",
+    "muscleTarget": "All 3 Shoulder Heads (Front, Side, Rear)",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Sit on a bench with back support and hold a dumbbell in each hand at shoulder level, palms facing your body and elbows bent.",
+      "Press the dumbbells upward until your arms are fully extended and your palms are facing forward.",
+      "Rotate your wrists as you lift, so that your palms are facing forward at the top of the movement.",
+      "Pause for a moment at the top, then slowly lower the dumbbells back to the starting position.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Invented by Arnold Schwarzenegger 🦾",
       "Focus on smooth wrist rotation.",
       "Mind-muscle connection is key here.",
       "3–4 sets of 10–12 reps."
     ],
-    image: "/assets/exercises/shoulder_image_3.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/2137-Xy4jlWA.gif"
   },
   {
-    name: "Front Plate Raise",
-    muscle: "shoulders",
-    muscleTarget: "Front Delts",
-    difficulty: "beginner",
-    instructions: [
-      "Hold a weight plate at 3 & 9 o’clock grip position.",
-      "With straight arms, lift to eye level.",
-      "Lower slowly (3 seconds down)."
+    "name": "Front Plate Raise",
+    "muscle": "shoulders",
+    "muscleTarget": "Front Delts",
+    "difficulty": "beginner",
+    "instructions": [
+      "Stand with your feet shoulder-width apart and hold the band in front of your thighs with your palms facing down.",
+      "Keep your arms straight and slowly raise them forward until they are parallel to the ground.",
+      "Pause for a moment at the top, then slowly lower your arms back down to the starting position.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Slight bend in elbows — protects joints.",
       "Keep constant tension; don’t rest at bottom.",
       "Excellent for shoulder definition.",
       "3 sets of 12–15 reps."
     ],
-    image: "/assets/exercises/shoulder_image_4.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0978-TFA88iB.gif"
   },
   {
-    name: "Barbell Front Raise",
-    muscle: "shoulders",
-    muscleTarget: "Front Delts (emphasizes symmetry)",
-    difficulty: "beginner",
-    instructions: [
-      "Hold barbell in front of thighs, palms down.",
-      "Raise till shoulder height.",
-      "Lower slowly without resting bar on thighs."
+    "name": "Barbell Front Raise",
+    "muscle": "shoulders",
+    "muscleTarget": "Front Delts (emphasizes symmetry)",
+    "difficulty": "beginner",
+    "instructions": [
+      "Stand with your feet shoulder-width apart and hold a barbell in front of your thighs with an overhand grip.",
+      "Keep your arms straight and lift the barbell forward and upward until it reaches shoulder level.",
+      "Pause for a moment at the top, then slowly lower the barbell back down to the starting position.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Keep body upright — don’t lean back.",
       "Use light weight — focus on control.",
       "3x12–15 reps."
     ],
-    image: "/assets/exercises/shoulder_image_5.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0041-b2Uoz54.gif"
   },
   {
-    name: "Dumbbell Front Raise (Alternating)",
-    muscle: "shoulders",
-    muscleTarget: "Front Delts",
-    difficulty: "beginner",
-    instructions: [
-      "Hold dumbbells at sides.",
-      "Raise one arm at a time to shoulder level.",
-      "Lower under control."
+    "name": "Dumbbell Front Raise (Alternating)",
+    "muscle": "shoulders",
+    "muscleTarget": "Front Delts",
+    "difficulty": "beginner",
+    "instructions": [
+      "Sit on a bench with your feet flat on the ground and a dumbbell in each hand, resting on your thighs.",
+      "Keep your back straight and core engaged.",
+      "Raise the dumbbells in front of you, with your palms facing down, until they are at shoulder level.",
+      "Pause for a moment at the top, then slowly lower the dumbbells back down to the starting position.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Alternate arms for better concentration.",
       "Slow negatives = best muscle fiber engagement.",
       "Perfect for symmetry."
     ],
-    image: "/assets/exercises/shoulder_image_6.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0392-Ys97II0.gif"
   },
   {
-    name: "Cable Front Raise",
-    muscle: "shoulders",
-    muscleTarget: "Front Delts",
-    difficulty: "intermediate",
-    instructions: [
-      "Attach straight bar or rope to low pulley.",
-      "Stand back, hold with both hands.",
-      "Raise bar to shoulder height, pause, lower slowly."
+    "name": "Cable Front Raise",
+    "muscle": "shoulders",
+    "muscleTarget": "Front Delts",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Stand with your feet shoulder-width apart and grasp the cable handle with an overhand grip.",
+      "Keep your back straight and your core engaged.",
+      "Raise the cable handle in front of you, keeping your arms straight and your palms facing down.",
+      "Continue lifting until your arms are parallel to the floor.",
+      "Pause for a moment at the top, then slowly lower the cable handle back to the starting position.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Advantage: Constant tension throughout movement.",
       "Slight forward lean for balance.",
       "3 sets of 12–15 reps."
     ],
-    image: "/assets/exercises/shoulder_image_7.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0162-u2X71Np.gif"
   },
   {
-    name: "Landmine Press",
-    muscle: "shoulders",
-    muscleTarget: "Front & Upper Chest",
-    difficulty: "intermediate",
-    instructions: [
-      "Anchor one end of barbell in landmine base or corner.",
-      "Hold the free end at shoulder height, press forward-up.",
-      "Slowly bring back to shoulder."
+    "name": "Landmine Press",
+    "muscle": "shoulders",
+    "muscleTarget": "Front & Upper Chest",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Stand with your feet shoulder-width apart and hold the barbell with both hands in front of your chest.",
+      "Bend your knees slightly and rotate your torso to the right, swinging the barbell down towards your right hip.",
+      "As you reach the bottom of the movement, quickly reverse the motion and rotate your torso to the left, swinging the barbell up and across your body towards your left shoulder.",
+      "Continue this twisting motion, alternating sides, for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Joint-safe press option.",
       "Great alternative to overhead press if you have shoulder tightness.",
       "3 sets of 10 reps each arm."
     ],
-    image: "/assets/exercises/shoulder_image_8.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0562-QYysSLV.gif"
   },
   {
-    name: "Push Press",
-    muscle: "shoulders",
-    muscleTarget: "Front Delts (power movement)",
-    difficulty: "expert",
-    instructions: [
-      "Stand with barbell at shoulder height.",
-      "Slightly bend knees and drive bar overhead using legs & shoulders.",
-      "Lower under control."
+    "name": "Push Press",
+    "muscle": "shoulders",
+    "muscleTarget": "Front Delts (power movement)",
+    "difficulty": "expert",
+    "instructions": [
+      "Stand with your feet shoulder-width apart, holding a dumbbell in each hand at shoulder level.",
+      "Bend your knees slightly and dip your body down, then explosively extend your legs and press the dumbbells overhead.",
+      "Lock out your arms at the top of the movement, then lower the dumbbells back to shoulder level.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Use moderate weight, focus on power.",
       "Engage core to avoid back bending.",
       "3–4 sets of 6–8 reps."
     ],
-    image: "/assets/exercises/shoulder_image_10.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1700-FS63wTN.gif"
   },
   {
-    name: "Barbell Z Press",
-    muscle: "shoulders",
-    muscleTarget: "Front + Core",
-    difficulty: "expert",
-    instructions: [
-      "Sit on floor legs straight.",
-      "Press barbell overhead."
+    "name": "Barbell Z Press",
+    "muscle": "shoulders",
+    "muscleTarget": "Front + Core",
+    "difficulty": "expert",
+    "instructions": [
+      "Lie flat on a bench with your feet flat on the ground and your back pressed against the bench.",
+      "Grasp the barbell with an overhand grip slightly wider than shoulder-width apart.",
+      "Lift the barbell off the rack and hold it directly above your chest with your arms fully extended.",
+      "Lower the barbell slowly towards your chest, keeping your elbows tucked in.",
+      "Pause for a moment when the barbell touches your chest.",
+      "Push the barbell back up to the starting position by extending your arms.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Builds stability and shoulder control.",
       "Keep spine tall and bar path vertical."
     ],
-    image: "/assets/exercises/shoulder_image_11.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0025-EIeI8Vf.gif"
   },
   {
-    name: "Machine Shoulder Press",
-    muscle: "shoulders",
-    muscleTarget: "Full Shoulders",
-    difficulty: "beginner",
-    instructions: [
-      "Sit in machine, handles at shoulder height.",
-      "Press overhead."
+    "name": "Machine Shoulder Press",
+    "muscle": "shoulders",
+    "muscleTarget": "Full Shoulders",
+    "difficulty": "beginner",
+    "instructions": [
+      "Stand with your feet shoulder-width apart and place the band under your feet.",
+      "Hold the band with your palms facing forward and raise your hands to shoulder height, elbows bent.",
+      "Press the band overhead, fully extending your arms.",
+      "Pause for a moment at the top, then slowly lower the band back to shoulder height.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Great for isolation and beginner safety.",
       "Don’t bounce off seat; full control each rep."
     ],
-    image: "/assets/exercises/shoulder_image_13.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0997-peAeMR3.gif"
   },
   {
-    name: "Incline Bench Front Raise",
-    muscle: "shoulders",
-    muscleTarget: "Front Delts",
-    difficulty: "intermediate",
-    instructions: [
-      "Lie chest-down on incline bench.",
-      "Raise dumbbells forward."
+    "name": "Incline Bench Front Raise",
+    "muscle": "shoulders",
+    "muscleTarget": "Front Delts",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Stand with your feet shoulder-width apart and hold the band in front of your thighs with your palms facing down.",
+      "Keep your arms straight and lift the band up in front of you until your arms are parallel to the ground.",
+      "Pause for a moment at the top, then slowly lower the band back down to the starting position.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Prevents cheating.",
       "Excellent isolation for front head."
     ],
-    image: "/assets/exercises/shoulder_image_14.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0977-sTg7iys.gif"
   },
   {
-    name: "Dumbbell Lateral Raise (Strict)",
-    muscle: "shoulders",
-    muscleTarget: "Lateral deltoid",
-    difficulty: "intermediate",
-    instructions: [
-      "Stand tall, feet hip-width, slight bend in knees.",
-      "Hinge slightly at hips (~10°).",
-      "Raise the weights out to the side to shoulder height.",
-      "Pause for 0.5–1s at top, lower slowly (3 seconds)."
+    "name": "Dumbbell Lateral Raise (Strict)",
+    "muscle": "shoulders",
+    "muscleTarget": "Lateral deltoid",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Stand with your feet shoulder-width apart and hold a dumbbell in each hand, palms facing your body.",
+      "Bend your knees slightly and hinge forward at the hips, keeping your back straight and core engaged.",
+      "Raise your arms out to the sides, keeping a slight bend in your elbows, until they are parallel to the floor.",
+      "Pause for a moment at the top, then slowly lower your arms back down to the starting position.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Lead with your elbow, not your hand.",
       "Tempo: 1-0-3 (up-pause-down).",
       "Imagine moving elbow in slightly diagonal path.",
       "3–5 sets of 12–15 reps."
     ],
-    image: "/assets/exercises/shoulder_image_17.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0380-v1qBec9.gif"
   },
   {
-    name: "Cable Lateral Raise (Single-Arm)",
-    muscle: "shoulders",
-    muscleTarget: "Lateral deltoid",
-    difficulty: "intermediate",
-    instructions: [
-      "Set cable at lowest setting, stand side-on.",
-      "With elbow slightly bent, raise arm laterally to shoulder height.",
-      "Control back down — cable keeps tension even at bottom."
+    "name": "Cable Lateral Raise (Single-Arm)",
+    "muscle": "shoulders",
+    "muscleTarget": "Lateral deltoid",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Stand with your feet shoulder-width apart, facing the cable machine.",
+      "Hold the cable handle with one hand, palm facing down, and stand far enough away from the machine so that there is tension on the cable.",
+      "Keep your arm straight and slowly raise it out to the side until it is parallel to the ground.",
+      "Pause for a moment at the top, then slowly lower your arm back down to the starting position.",
+      "Repeat for the desired number of repetitions, then switch sides."
     ],
-    tips: [
+    "tips": [
       "Advantage: Constant tension.",
       "Pause 1s at top, focus on squeezing.",
       "3–4 sets of 10–15 per side."
     ],
-    image: "/assets/exercises/shoulder_image_18.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0192-wEulIzp.gif"
   },
   {
-    name: "Leaning Cable Lateral Raise",
-    muscle: "shoulders",
-    muscleTarget: "Lateral delts",
-    difficulty: "intermediate",
-    instructions: [
-      "Hold cable with hand farthest from machine.",
-      "Step away and lean away from the tower.",
-      "Raise arm laterally to shoulder level.",
-      "Lower under control while keeping the lean."
+    "name": "Leaning Cable Lateral Raise",
+    "muscle": "shoulders",
+    "muscleTarget": "Lateral delts",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Stand with your feet shoulder-width apart and grasp the cable handles with an overhand grip.",
+      "Keep your arms straight and your core engaged.",
+      "Raise your arms out to the sides until they are parallel to the floor.",
+      "Pause for a moment at the top, then slowly lower your arms back down to the starting position.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "The lean increases stretch at bottom.",
       "Great for finishing sets.",
       "3 sets of 12–15 per side."
     ],
-    image: "/assets/exercises/shoulder_image_19.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0178-goJ6ezq.gif"
   },
   {
-    name: "Upright Row (Barbell)",
-    muscle: "shoulders",
-    muscleTarget: "Lateral delts & traps",
-    difficulty: "intermediate",
-    instructions: [
-      "Grip barbell with hands shoulder-width.",
-      "Pull bar close to body toward upper chest.",
-      "Elbows lead and flare out.",
-      "Lower under control."
+    "name": "Upright Row (Barbell)",
+    "muscle": "shoulders",
+    "muscleTarget": "Lateral delts & traps",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Stand with your feet shoulder-width apart and hold a barbell with an overhand grip, hands slightly wider than shoulder-width apart.",
+      "Let the barbell hang in front of your thighs, arms fully extended.",
+      "Keeping your back straight and core engaged, exhale and lift the barbell straight up towards your chin, leading with your elbows.",
+      "Pause for a moment at the top, then inhale and slowly lower the barbell back down to the starting position.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Stop pull when elbows reach shoulder line to protect joint.",
       "Gives lateral width and trap thickness.",
       "3–4 sets of 8–12 reps."
     ],
-    image: "/assets/exercises/shoulder_image_20.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0120-UDlhcO8.gif"
   },
   {
-    name: "Cable Upright Row",
-    muscle: "shoulders",
-    muscleTarget: "Lateral delts",
-    difficulty: "intermediate",
-    instructions: [
-      "Attach small straight bar to low pulley.",
-      "Pull vertically keeping the bar close to your body.",
-      "Return slowly."
+    "name": "Cable Upright Row",
+    "muscle": "shoulders",
+    "muscleTarget": "Lateral delts",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Stand with your feet shoulder-width apart, knees slightly bent, and hold the cable attachment with an overhand grip.",
+      "Keep your back straight and your core engaged throughout the exercise.",
+      "Pull the cable attachment straight up towards your chin, leading with your elbows.",
+      "Pause for a moment at the top, squeezing your shoulder blades together.",
+      "Slowly lower the cable attachment back down to the starting position.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Continuous tension reduces barbell wobble.",
       "Great for supersetting with lateral raises.",
       "3 sets of 10–12 reps."
     ],
-    image: "/assets/exercises/shoulder_image_21.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0246-cALKspW.gif"
   },
   {
-    name: "Incline-Supported Dumbbell Lateral Raise",
-    muscle: "shoulders",
-    muscleTarget: "Lateral delts",
-    difficulty: "intermediate",
-    instructions: [
-      "Set bench at 10–20° incline, lie on side.",
-      "Raise dumbbell laterally to shoulder height.",
-      "Lower slowly."
+    "name": "Incline-Supported Dumbbell Lateral Raise",
+    "muscle": "shoulders",
+    "muscleTarget": "Lateral delts",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Set up an incline bench at a 45-degree angle.",
+      "Sit on the bench with your chest against the backrest and hold a dumbbell in each hand.",
+      "Extend your arms straight down with your palms facing each other.",
+      "Keeping a slight bend in your elbows, raise your arms out to the sides until they are parallel to the ground.",
+      "Pause for a moment at the top, then slowly lower your arms back down to the starting position.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Eliminates torso cheating.",
       "Extremely strict — targets lateral head immediately.",
       "3 sets of 10–15 per side."
     ],
-    image: "/assets/exercises/shoulder_image_22.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0326-vYk8lqw.gif"
   },
   {
-    name: "Rear Delt Dumbbell Fly (Bent-Over)",
-    muscle: "shoulders",
-    muscleTarget: "Rear delts",
-    difficulty: "intermediate",
-    instructions: [
-      "Hinge at hips until torso is almost parallel to floor.",
-      "Hold dumbbells under chest, palms facing each other.",
-      "Raise arms outward like 'opening wings'.",
-      "Pause at top 1s, lower slowly 3s."
+    "name": "Rear Delt Dumbbell Fly (Bent-Over)",
+    "muscle": "shoulders",
+    "muscleTarget": "Rear delts",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Stand with your feet shoulder-width apart, holding a dumbbell in one hand with your palm facing your body.",
+      "Bend your knees slightly and hinge forward at the hips, keeping your back straight and your core engaged.",
+      "Let the dumbbell hang straight down towards the floor, with your arm fully extended.",
+      "Pull the dumbbell up towards your chest, keeping your elbow close to your body and squeezing your shoulder blades together.",
+      "Pause for a moment at the top, then slowly lower the dumbbell back down to the starting position.",
+      "Repeat for the desired number of repetitions, then switch sides."
     ],
-    tips: [
+    "tips": [
       "Keep elbows in line with shoulders — NOT behind body.",
       "Think 'rear delt squeezing back', not 'lifting weight'.",
       "3–4 sets of 12–15 reps."
     ],
-    image: "/assets/exercises/shoulder_image_23.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0292-C0MA9bC.gif"
   },
   {
-    name: "Cable Rear Delt Fly (High Crossover)",
-    muscle: "shoulders",
-    muscleTarget: "Rear delts",
-    difficulty: "intermediate",
-    instructions: [
-      "Set pulleys to shoulder height.",
-      "Cross hands (L holds R cable, R holds L cable).",
-      "Pull arms outward in reverse fly motion.",
-      "Pause briefly, return under control."
+    "name": "Cable Rear Delt Fly (High Crossover)",
+    "muscle": "shoulders",
+    "muscleTarget": "Rear delts",
+    "difficulty": "intermediate",
+    "instructions": [
+      "Attach a rope handle to a low pulley cable machine.",
+      "Stand facing the machine with your feet shoulder-width apart.",
+      "Grasp the rope handle with an overhand grip, palms facing each other.",
+      "Bend your knees slightly and hinge forward at the hips, keeping your back straight.",
+      "Keep your elbows slightly bent and pull the rope towards your chest, squeezing your shoulder blades together.",
+      "Pause for a moment at the top of the movement, then slowly release the tension and return to the starting position.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Keep elbows slightly higher than hands.",
       "Ideal for shaping and definition.",
       "3–4 sets of 15–20 reps."
     ],
-    image: "/assets/exercises/shoulder_image_24.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0203-wqNPGCg.gif"
   },
   {
-    name: "Face Pull (Rope Attachment)",
-    muscle: "shoulders",
-    muscleTarget: "Rear delts + rotator cuff",
-    difficulty: "beginner",
-    instructions: [
-      "Set rope at face height.",
-      "Pull rope toward face, lead with elbows.",
-      "Rotate wrists so knuckles point behind at the end.",
-      "Return slowly."
+    "name": "Face Pull (Rope Attachment)",
+    "muscle": "shoulders",
+    "muscleTarget": "Rear delts + rotator cuff",
+    "difficulty": "beginner",
+    "instructions": [
+      "Attach a rope attachment to the cable machine at a high position.",
+      "Stand facing the machine with your feet shoulder-width apart.",
+      "Grasp the rope with an overhand grip, palms facing each other.",
+      "Keep your back straight and lean slightly back.",
+      "Pull the rope down towards your sides, squeezing your shoulder blades together.",
+      "Pause for a moment at the bottom of the movement.",
+      "Slowly release the tension and allow the rope to return to the starting position.",
+      "Repeat for the desired number of repetitions."
     ],
-    tips: [
+    "tips": [
       "Imagine 'ripping the rope apart'.",
       "Essential for shoulder health.",
       "3 sets of 12–15 reps."
     ],
-    image: "/assets/exercises/shoulder_image_25.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0177-CuaWCmC.gif"
   },
   {
-    name: "Cable Rear Delt Pull (One-Arm)",
-    muscle: "shoulders",
-    muscleTarget: "Rear delt isolation",
-    difficulty: "beginner",
-    instructions: [
-      "Stand sideways to cable.",
-      "Pull handle outward behind you.",
-      "Focus on shoulder movement, not elbow."
+    "name": "Cable Rear Delt Pull (One-Arm)",
+    "muscle": "shoulders",
+    "muscleTarget": "Rear delt isolation",
+    "difficulty": "beginner",
+    "instructions": [
+      "Lie face down on a flat bench with a dumbbell in one hand, palm facing inwards.",
+      "Extend your arm straight down towards the floor, keeping it close to your body.",
+      "Raise your arm up and back, squeezing your shoulder blade towards your spine.",
+      "Pause for a moment at the top, then slowly lower your arm back down to the starting position.",
+      "Repeat for the desired number of repetitions, then switch arms."
     ],
-    tips: [
+    "tips": [
       "Excellent for mind-muscle connection.",
       "Ultra-clean isolated motion.",
       "3 sets of 12–20 reps per arm."
     ],
-    image: "/assets/exercises/shoulder_image_26.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0341-gSw59a4.gif"
   }
 ];
