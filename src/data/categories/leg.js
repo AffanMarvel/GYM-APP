@@ -20,7 +20,7 @@ export const legExercises = [
       "Brace your core before every rep.",
       "Tempo: 2 sec down → 1 sec hold → 1 sec up"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0026-W9pFVv1.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0026-W9pFVv1.gif"
   },
   {
     "name": "Leg Press (45° Leg Press Machine)",
@@ -41,7 +41,7 @@ export const legExercises = [
       "Don’t ego lift.",
       "Tempo: 2 sec down → 1 sec stretch → 1.5 sec up"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1463-2Qh2J1e.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1463-2Qh2J1e.gif"
   },
   {
     "name": "Walking Lunges",
@@ -62,7 +62,7 @@ export const legExercises = [
       "Short steps → quads",
       "Tempo: 1 sec step → 2 sec down → 1 sec up"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1460-IZVHb27.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1460-IZVHb27.gif"
   },
   {
     "name": "Leg Extension Machine",
@@ -83,7 +83,7 @@ export const legExercises = [
       "High reps = best pump",
       "Tempo: 1 sec up → 2 sec squeeze → 3 sec down"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0585-my33uHU.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0585-my33uHU.gif"
   },
   {
     "name": "Hamstring Curl Machine (Lying)",
@@ -104,7 +104,7 @@ export const legExercises = [
       "Slow controlled reps",
       "Tempo: 1.5 sec curl up → 1 sec squeeze → 3 sec down"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0059-SYJ4Bkt.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0059-SYJ4Bkt.gif"
   },
   {
     "name": "Goblet Squat",
@@ -124,7 +124,7 @@ export const legExercises = [
       "Knees outward rakho.",
       "Tempo: 2 sec down → 1 sec pause → 1 sec up"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1760-yn8yg1r.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1760-yn8yg1r.gif"
   },
   {
     "name": "Bulgarian Split Squat",
@@ -144,7 +144,7 @@ export const legExercises = [
       "Start with no weight.",
       "Tempo: 2–3 sec down → 1 sec up"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0809-QpXqiq8.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0809-QpXqiq8.gif"
   },
   {
     "name": "Calf Raise (Standing Machine)",
@@ -162,7 +162,7 @@ export const legExercises = [
       "Use pause at bottom",
       "Tempo: 1 sec up → 1 sec squeeze → 2 sec down"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1372-8ozhUIZ.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1372-8ozhUIZ.gif"
   },
   {
     "name": "Seated Calf Raise",
@@ -182,7 +182,7 @@ export const legExercises = [
       "Constant tension maintain.",
       "Tempo: 1 sec up → 2 sec squeeze → 3 sec down"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0088-ktsFQAZ.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0088-ktsFQAZ.gif"
   },
   {
     "name": "Hip Thrust (Barbell)",
@@ -202,7 +202,7 @@ export const legExercises = [
       "Full lockout with squeeze",
       "Tempo: 1 sec up → 2 sec squeeze → 3 sec down"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3305-f7Y9eDZ.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3305-f7Y9eDZ.gif"
   },
   {
     "name": "Sumo Squat (Dumbbell / Barbell)",
@@ -223,7 +223,7 @@ export const legExercises = [
       "Keep knees tracking toes",
       "Tempo: 2 sec down → 1 sec hold → 2 sec up"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0029-qi996YS.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0029-qi996YS.gif"
   },
   {
     "name": "Standing Calf Raise",
@@ -242,7 +242,7 @@ export const legExercises = [
       "Don’t bounce.",
       "Tempo: 2 sec up → 1 sec squeeze → 3 sec stretch down"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1372-8ozhUIZ.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1372-8ozhUIZ.gif"
   },
   {
     "name": "Hack Squat (Machine)",
@@ -263,7 +263,7 @@ export const legExercises = [
       "Control weight, don’t bounce",
       "Tempo: 3 sec down → 1 sec pause → 2 sec up"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0046-5VCj6iH.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0046-5VCj6iH.gif"
   },
   {
     "name": "Cable Hip Adduction",
@@ -276,7 +276,7 @@ export const legExercises = [
       "Controlled return."
     ],
     "tips": ["Keep your core stable"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1709-H7Y1Iia.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1709-H7Y1Iia.gif"
   },
   {
     "name": "Cable Hip Extension",
@@ -289,7 +289,7 @@ export const legExercises = [
       "Return slow."
     ],
     "tips": ["Don't arch your lower back"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1710-Ff18ItA.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1710-Ff18ItA.gif"
   },
   {
     "name": "Cable One Arm Lunges",
@@ -302,7 +302,7 @@ export const legExercises = [
       "Push back to start."
     ],
     "tips": ["Maintains constant tension on legs"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1711-vpp9Ku2.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1711-vpp9Ku2.gif"
   },
   {
     "name": "Cable Pull Through",
@@ -315,7 +315,7 @@ export const legExercises = [
       "Thrust hips forward, squeeze glutes."
     ],
     "tips": ["Excellent for posterior chain"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1714-XU3ePuv.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1714-XU3ePuv.gif"
   },
   {
     "name": "Cable Reverse Lunges",
@@ -328,7 +328,7 @@ export const legExercises = [
       "Return to standing."
     ],
     "tips": ["Easier on the knees than forward lunges"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1715-B6r1Y9V.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1715-B6r1Y9V.gif"
   },
   {
     "name": "Cable Step Up",
@@ -341,7 +341,7 @@ export const legExercises = [
       "Step down controlled."
     ],
     "tips": ["Keep your chest upright"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1718-DpWMFP5.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1718-DpWMFP5.gif"
   },
   {
     "name": "Kettlebell One Arm Lunge",
@@ -354,7 +354,7 @@ export const legExercises = [
       "Return to start."
     ],
     "tips": ["Challenges core and balance"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0521-BfPgnOn.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0521-BfPgnOn.gif"
   },
   {
     "name": "Kettlebell Goblet Squat",
@@ -367,7 +367,7 @@ export const legExercises = [
       "Push back up."
     ],
     "tips": ["Great for improving squat depth"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0519-DpWMFP5.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0519-DpWMFP5.gif"
   },
   {
     "name": "Dumbbell High Box Step Up",
@@ -380,7 +380,7 @@ export const legExercises = [
       "Lower with control."
     ],
     "tips": ["High box targets glutes more"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0315-hCjGsRQ.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0315-hCjGsRQ.gif"
   },
   {
     "name": "Lever Leg Press (Machine)",
@@ -393,6 +393,6 @@ export const legExercises = [
       "Don't lock knees at top."
     ],
     "tips": ["Controlled and safe for lower back"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0589-2Qh2J1e.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0589-2Qh2J1e.gif"
   }
 ];

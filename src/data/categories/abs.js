@@ -35,7 +35,7 @@ export const absExercises = [
       "Upper abs se squeeze feel karo.",
       "Best beginner upper-abs builder."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0635-QUDd8WS.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0635-QUDd8WS.gif"
   },
   {
     "id": "cable-crunch",
@@ -73,7 +73,7 @@ export const absExercises = [
       "Weight add kar sakte ho bodybuilding results ke liye.",
       "Slow return to start position."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0175-WW95auq.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0175-WW95auq.gif"
   },
   {
     "id": "hanging-leg-raises",
@@ -111,7 +111,7 @@ export const absExercises = [
       "Momentum mat use karo (no swing).",
       "Breath out at the top."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0472-I3tsCnC.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0472-I3tsCnC.gif"
   },
   {
     "id": "plank",
@@ -150,7 +150,7 @@ export const absExercises = [
       "Don't let hips drop or peak too high.",
       "Breathe consistently."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3665-hCjGsRQ.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3665-hCjGsRQ.gif"
   },
   {
     "id": "bicycle-crunch",
@@ -188,7 +188,7 @@ export const absExercises = [
       "Slow and controlled is better than fast.",
       "Focus on the twist."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0972-tZkGYZ9.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0972-tZkGYZ9.gif"
   },
   {
     "id": "cable-seated-crunch",
@@ -209,7 +209,7 @@ export const absExercises = [
       "Return slow."
     ],
     "tips": ["Don't pull with arms", "Focus on core"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0212-8xUv4J7.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0212-8xUv4J7.gif"
   },
   {
     "id": "cable-standing-crunch",
@@ -230,7 +230,7 @@ export const absExercises = [
       "Return controlled."
     ],
     "tips": ["Keep hips stable"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0874-XU3ePuv.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0874-XU3ePuv.gif"
   },
   {
     "id": "cable-lift",
@@ -250,7 +250,7 @@ export const absExercises = [
       "Rotate torso."
     ],
     "tips": ["Keep arms straight"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0230-qFpAkpP.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0230-qFpAkpP.gif"
   },
   {
     "id": "cable-twist",
@@ -270,7 +270,7 @@ export const absExercises = [
       "Rotate torso side to side."
     ],
     "tips": ["Isolate obliques"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/2399-UEjSrKI.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2399-UEjSrKI.gif"
   },
   {
     "id": "cable-side-bend",
@@ -291,7 +291,7 @@ export const absExercises = [
       "Return to center."
     ],
     "tips": ["Avoid leaning forward"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0222-wPypxFY.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0222-wPypxFY.gif"
   },
   {
     "id": "cable-side-bend-crunch",
@@ -311,7 +311,7 @@ export const absExercises = [
       "Focus on oblique contraction."
     ],
     "tips": ["Keep back straight"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0221-qatbkEd.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0221-qatbkEd.gif"
   },
   {
     "id": "cable-side-crunch",
@@ -331,7 +331,7 @@ export const absExercises = [
       "Lower elbow to hip."
     ],
     "tips": ["Don't use arms to pull"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0223-q2ADGqV.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0223-q2ADGqV.gif"
   },
   {
     "id": "air-bike",
@@ -351,7 +351,7 @@ export const absExercises = [
       "Switch in cycling motion."
     ],
     "tips": ["Reach for the knees"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0002-U0p9KjG.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0002-U0p9KjG.gif"
   },
   {
     "id": "cable-twist-row",
@@ -371,7 +371,7 @@ export const absExercises = [
       "Keep core tight."
     ],
     "tips": ["Focus on the rotation"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0236-JOZhu2h.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0236-JOZhu2h.gif"
   },
   {
     "id": "leg-raise",
@@ -391,6 +391,6 @@ export const absExercises = [
       "Lower slowly without touching ground."
     ],
     "tips": ["Keep lower back flat"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0558-Pwt0pnM.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0558-Pwt0pnM.gif"
   }
 ];

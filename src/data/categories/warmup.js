@@ -34,7 +34,7 @@ export const warmupExercises = [
       "Keep core tight and shoulders relaxed.",
       "Slow and controlled movement is key."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/2333-PXTIwgu.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2333-PXTIwgu.gif"
   },
   {
     "id": "wrist-circles",
@@ -71,7 +71,7 @@ export const warmupExercises = [
       "Prevents sudden wrist snapping.",
       "Do 2 sets of 15 reps."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1428-2zNKRUB.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1428-2zNKRUB.gif"
   },
   {
     "id": "jumping-jacks",
@@ -111,7 +111,7 @@ export const warmupExercises = [
       "Soft landing is mandatory to protect joints.",
       "Maintain a steady rhythmic pace."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1431-7OeHptV.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1431-7OeHptV.gif"
   },
   {
     "id": "cat-cow-stretch",
@@ -151,7 +151,7 @@ export const warmupExercises = [
       "Exhale on Cat, inhale on Cow.",
       "Reduces lower back stiffness."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1405-chfnQnM.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1405-chfnQnM.gif"
   },
   {
     "id": "neck-circles",
@@ -171,7 +171,7 @@ export const warmupExercises = [
       "Keep shoulders down."
     ],
     "tips": ["Move slowly to avoid dizziness"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1426-PXTIwgu.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1426-PXTIwgu.gif"
   },
   {
     "id": "shoulder-rolls",
@@ -191,7 +191,7 @@ export const warmupExercises = [
       "Reverse direction after 15 reps."
     ],
     "tips": ["Warms up the traps and delts"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1430-PXTIwgu.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1430-PXTIwgu.gif"
   },
   {
     "id": "hip-circles",
@@ -211,7 +211,7 @@ export const warmupExercises = [
       "Reverse direction."
     ],
     "tips": ["Loosens the lower back and hips"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1424-PXTIwgu.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1424-PXTIwgu.gif"
   },
   {
     "id": "leg-swings-forward",
@@ -231,7 +231,7 @@ export const warmupExercises = [
       "Keep body upright."
     ],
     "tips": ["Excellent for lower body prep"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1404-PXTIwgu.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1404-PXTIwgu.gif"
   },
   {
     "id": "leg-swings-side",
@@ -251,7 +251,7 @@ export const warmupExercises = [
       "Keep toes forward."
     ],
     "tips": ["Focus on hip mobility"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1403-PXTIwgu.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1403-PXTIwgu.gif"
   },
   {
     "id": "torso-twist",
@@ -271,7 +271,7 @@ export const warmupExercises = [
       "Allow heels to lift slightly."
     ],
     "tips": ["Warms up the obliques and spine"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1411-PXTIwgu.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1411-PXTIwgu.gif"
   },
   {
     "id": "dynamic-chest-stretch",
@@ -291,7 +291,7 @@ export const warmupExercises = [
       "Repeat rhythmically."
     ],
     "tips": ["Perfect before chest day"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1410-PXTIwgu.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1410-PXTIwgu.gif"
   },
   {
     "id": "ankle-circles",
@@ -311,7 +311,7 @@ export const warmupExercises = [
       "Repeat on other side."
     ],
     "tips": ["Prevents ankle strains"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1425-PXTIwgu.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1425-PXTIwgu.gif"
   },
   {
     "id": "bird-dog",
@@ -331,7 +331,7 @@ export const warmupExercises = [
       "Keep back flat and hips level."
     ],
     "tips": ["Engages the deep core muscles"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1406-PXTIwgu.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1406-PXTIwgu.gif"
   },
   {
     "id": "butt-kicks-warmup",
@@ -351,6 +351,6 @@ export const warmupExercises = [
       "Maintain upright posture."
     ],
     "tips": ["Warms up the hamstrings dynamically"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3655-J9zIWig.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3655-J9zIWig.gif"
   }
 ];

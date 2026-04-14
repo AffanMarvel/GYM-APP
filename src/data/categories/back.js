@@ -38,7 +38,7 @@ export const backExercises = [
       "Don’t jerk the bar — engage tension first.",
       "Always reset your position before each rep."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0032-ila4NZS.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0032-ila4NZS.gif"
   },
   {
     "name": "Barbell Bent-Over Rows",
@@ -59,7 +59,7 @@ export const backExercises = [
       "Keep your core tight to protect lower back.",
       "Avoid overusing arms — lead with elbows, not biceps."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0027-eZyBC3j.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0027-eZyBC3j.gif"
   },
   {
     "name": "Lat Pulldown (Front Grip or Neutral Grip)",
@@ -80,7 +80,7 @@ export const backExercises = [
       "Pull with elbows, not hands.",
       "Full stretch = better lat activation."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/2330-LEprlgG.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2330-LEprlgG.gif"
   },
   {
     "name": "Neutral Grip Lat Pulldown (aka V-Grip Pulldown)",
@@ -100,7 +100,7 @@ export const backExercises = [
       "Focus on the stretch and contraction — not speed.",
       "Keep elbows pointing down and slightly back."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/2330-LEprlgG.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2330-LEprlgG.gif"
   },
   {
     "name": "Reverse Grip Lat Pulldown",
@@ -120,7 +120,7 @@ export const backExercises = [
       "Focus on lower part of lats — pull slightly toward sternum.",
       "Maintain controlled tempo."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/2330-LEprlgG.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2330-LEprlgG.gif"
   },
   {
     "name": "Dumbbell Single-Arm Row",
@@ -139,7 +139,7 @@ export const backExercises = [
       "Focus on stretch at bottom and squeeze at top.",
       "Keep core engaged."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0363-6cKQC5E.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0363-6cKQC5E.gif"
   },
   {
     "name": "Straight-Arm Cable Pullover",
@@ -159,7 +159,7 @@ export const backExercises = [
       "Focus on moving from shoulder joint, not arms.",
       "Maintain tension throughout."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0238-x69MAlq.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0238-x69MAlq.gif"
   },
   {
     "name": "T-Bar Row (with chest support if available)",
@@ -178,7 +178,7 @@ export const backExercises = [
       "Pull smoothly; don’t jerk weight.",
       "Keep neck neutral."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3200-LuBEORI.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3200-LuBEORI.gif"
   },
   {
     "name": "Seated Cable Row (Close Grip)",
@@ -199,7 +199,7 @@ export const backExercises = [
       "Keep movement controlled and steady.",
       "Full stretch = full contraction."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0218-qcY50ZD.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0218-qcY50ZD.gif"
   },
   {
     "name": "Dumbbell Shrugs",
@@ -220,7 +220,7 @@ export const backExercises = [
       "Shrugs = up and down only, not circles.",
       "Don't rotate your shoulders."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1201-0JtKWum.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1201-0JtKWum.gif"
   },
   {
     "name": "Face Pulls",
@@ -255,7 +255,7 @@ export const backExercises = [
       "Pull bar along your body line, not straight up.",
       "Use straps for better grip."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1313-oROuvrX.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1313-oROuvrX.gif"
   },
   {
     "name": "Incline Bench Dumbbell Row",
@@ -276,7 +276,7 @@ export const backExercises = [
       "Don’t swing arms.",
       "Full stretch at bottom, full squeeze at top."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1318-yaMIo4D.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1318-yaMIo4D.gif"
   },
   {
     "name": "Reverse Pec Deck / Cable Rear Delt Fly",
@@ -317,7 +317,7 @@ export const backExercises = [
       "Focus on lower lats contraction.",
       "Use slower reps (2s up, 3s down) for deeper activation."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1317-8d8qJQI.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1317-8d8qJQI.gif"
   },
   {
     "name": "Cable Seated High Row (V-Bar)",
@@ -331,7 +331,7 @@ export const backExercises = [
       "Squeeze and return slowly."
     ],
     "tips": ["Keep back straight", "Focus on mid-back contraction"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0213-pwt0pnM.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0213-pwt0pnM.gif"
   },
   {
     "name": "Cable Seated One Arm Alternate Row",
@@ -344,7 +344,7 @@ export const backExercises = [
       "Alternate arms."
     ],
     "tips": ["Avoid twisting torso", "Full stretch every rep"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0214-vpp9Ku2.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0214-vpp9Ku2.gif"
   },
   {
     "name": "Cable Shrug",
@@ -357,7 +357,7 @@ export const backExercises = [
       "Hold contraction and lower."
     ],
     "tips": ["Don't roll shoulders", "Use controlled weight"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0220-Eg98Ft9.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0220-Eg98Ft9.gif"
   },
   {
     "name": "Cable Squat Row",
@@ -371,7 +371,7 @@ export const backExercises = [
       "Squeeze blades."
     ],
     "tips": ["Keep core engaged", "Maintain posture"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1717-f7fnAIB.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1717-f7fnAIB.gif"
   },
   {
     "name": "Cable Thibaudeau Kayak Row",
@@ -384,7 +384,7 @@ export const backExercises = [
       "Focus on the lat stretch."
     ],
     "tips": ["Advanced mind-muscle connection required"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/2464-ZgwWBoC.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2464-ZgwWBoC.gif"
   },
   {
     "name": "Cable Standing Row (V-Bar)",
@@ -397,7 +397,7 @@ export const backExercises = [
       "Return with control."
     ],
     "tips": ["Don't use momentum", "Keep knees slightly bent"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0234-4f8RXP8.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0234-4f8RXP8.gif"
   },
   {
     "name": "Assisted Chin Up",
@@ -411,7 +411,7 @@ export const backExercises = [
       "Lower slowly."
     ],
     "tips": ["Keep elbows in", "Don't let the weight slam"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0008-p7fJOnA.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0008-p7fJOnA.gif"
   },
   {
     "name": "Assisted Pull Up",
@@ -424,7 +424,7 @@ export const backExercises = [
       "Slow eccentric (downward phase)."
     ],
     "tips": ["Widens the back appearance"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0015-o9R7fnO.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0015-o9R7fnO.gif"
   },
   {
     "name": "Band Assisted Pull Up",
@@ -437,7 +437,7 @@ export const backExercises = [
       "Perform pull ups with assistance."
     ],
     "tips": ["Band provides most help at the bottom"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0967-n7fJOnA.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0967-n7fJOnA.gif"
   },
   {
     "name": "Lever Lat Pulldown (Machine)",
@@ -450,6 +450,6 @@ export const backExercises = [
       "Controlled return."
     ],
     "tips": ["Consistent path provided by machine"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0575-Pwt0pnM.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0575-Pwt0pnM.gif"
   }
 ];

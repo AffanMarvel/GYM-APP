@@ -35,7 +35,7 @@ export const chestExercises = [
       "Don’t bounce the bar off your chest.",
       "Control the movement (2 seconds down, 1 second up)."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0033-GrO65fd.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0033-GrO65fd.gif"
   },
   {
     "id": "dumbbell-bench-press",
@@ -72,7 +72,7 @@ export const chestExercises = [
       "Keep wrists straight, don’t let them bend backward.",
       "Move in a controlled path — dumbbells allow a deeper stretch."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0289-SpYC0Kp.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0289-SpYC0Kp.gif"
   },
   {
     "id": "incline-barbell-bench-press",
@@ -110,7 +110,7 @@ export const chestExercises = [
       "Don’t go too high incline — 30° is ideal.",
       "Focus on squeezing your upper chest at top."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0047-3TZduzM.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0047-3TZduzM.gif"
   },
   {
     "id": "incline-dumbbell-press",
@@ -148,7 +148,7 @@ export const chestExercises = [
       "Don’t lock elbows completely.",
       "Imagine “bringing the dumbbells together” by chest squeeze."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3545-TVdivgY.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3545-TVdivgY.gif"
   },
   {
     "id": "decline-barbell-bench-press",
@@ -185,7 +185,7 @@ export const chestExercises = [
       "Keep head neutral.",
       "Perfect for rounding lower pecs and thickness."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0033-GrO65fd.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0033-GrO65fd.gif"
   },
   {
     "id": "chest-dips",
@@ -221,7 +221,7 @@ export const chestExercises = [
       "Lean forward, don’t stay upright (upright = triceps focus).",
       "Go slow — don’t bounce."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0251-9WTm7dq.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0251-9WTm7dq.gif"
   },
   {
     "id": "push-ups-classic",
@@ -257,7 +257,7 @@ export const chestExercises = [
       "Keep core tight, body straight.",
       "Go full range of motion."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0662-I4hDWkc.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0662-I4hDWkc.gif"
   },
   {
     "id": "cable-crossover-high-to-low",
@@ -296,7 +296,7 @@ export const chestExercises = [
       "Slight bend in elbows.",
       "Focus on chest squeeze, not arms."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0188-xLYSdtg.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0188-xLYSdtg.gif"
   },
   {
     "id": "pec-deck-fly",
@@ -330,7 +330,7 @@ export const chestExercises = [
       "Don’t slam weights.",
       "Keep shoulders down and chest up."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0644-8O8pA7O.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0644-8O8pA7O.gif"
   },
   {
     "id": "3294-archer-push-up",
@@ -353,7 +353,7 @@ export const chestExercises = [
       "Continue alternating sides for the desired number of repetitions."
     ],
     "tips": ["Keep your core tight", "Control the descent", "Focus on chest"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3294-A9qxk2F.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3294-A9qxk2F.gif"
   },
   {
     "id": "0009-assisted-chest-dip",
@@ -374,7 +374,7 @@ export const chestExercises = [
       "Push back up to starting position."
     ],
     "tips": ["Lean forward to target chest", "Control the descent"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0009-PAgTVaK.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0009-PAgTVaK.gif"
   },
   {
     "id": "2364-wide-dip",
@@ -390,7 +390,7 @@ export const chestExercises = [
     "tutorialUrl": "https://www.youtube.com/results?search_query=wide+grip+chest+dip",
     "instructions": ["Set wide grip", "Lower slowly", "Push explosive"],
     "tips": ["Wide grip targets outer chest"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/2364-PnZJIrk.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2364-PnZJIrk.gif"
   },
   {
     "id": "1254-band-bench",
@@ -406,7 +406,7 @@ export const chestExercises = [
     "tutorialUrl": "https://www.youtube.com/results?search_query=band+bench+press",
     "instructions": ["Lie on bench", "Hold band handles", "Press upward"],
     "tips": ["Keep band tension consistent"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1254-khlHMqs.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1254-khlHMqs.gif"
   },
   {
     "id": "0989-band-twist-press",
@@ -422,7 +422,7 @@ export const chestExercises = [
     "tutorialUrl": "https://www.youtube.com/results?search_query=band+twisting+chest+press",
     "instructions": ["Stand sideways to anchor", "Press across body", "Twist torso"],
     "tips": ["Great for inner chest and core"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0989-c16nYGA.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0989-c16nYGA.gif"
   },
   {
     "id": "0227-cable-stand-fly",
@@ -442,7 +442,7 @@ export const chestExercises = [
       "Control the return motion."
     ],
     "tips": ["Don't let the handles go too far back"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0227-Pr9Rhf4.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0227-Pr9Rhf4.gif"
   },
   {
     "id": "1269-cable-crossovers",
@@ -462,7 +462,7 @@ export const chestExercises = [
       "Return slowly."
     ],
     "tips": ["Keep elbows slightly bent"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1269-UKWTJWR.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1269-UKWTJWR.gif"
   },
   {
     "id": "0308-db-fly",
@@ -482,7 +482,7 @@ export const chestExercises = [
       "Hug the tree motion to return."
     ],
     "tips": ["Don't overstretch shoulders"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0308-H0nJInS.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0308-H0nJInS.gif"
   },
   {
     "id": "0151-cable-bench-press",
@@ -502,6 +502,6 @@ export const chestExercises = [
       "Constant tension throughout."
     ],
     "tips": ["Great for stability training"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0151-D9T1P0n.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0151-D9T1P0n.gif"
   }
 ];

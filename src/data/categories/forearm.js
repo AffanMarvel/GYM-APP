@@ -36,7 +36,7 @@ export const forearmExercises = [
       "Stretch is 50% of the growth.",
       "Tempo: 1 sec up -> 1 sec squeeze -> 3 sec slow down"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0082-LsZkfU6.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0082-LsZkfU6.gif"
   },
   {
     "id": "hammer-curl-forearm",
@@ -77,7 +77,7 @@ export const forearmExercises = [
       "Don't swing your arms.",
       "Tempo: 1.5 sec up -> 3 sec down"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0320-ByX0WxV.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0320-ByX0WxV.gif"
   },
   {
     "id": "plate-pinch-hold",
@@ -152,7 +152,7 @@ export const forearmExercises = [
       "High reps (15-20) recommended.",
       "Tempo: 1 sec up -> 1 sec squeeze -> 2-3 sec down"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0104-2qTvJAZ.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0104-2qTvJAZ.gif"
   },
   {
     "id": "cable-seated-wrist-curl",
@@ -172,7 +172,7 @@ export const forearmExercises = [
       "Squeeze and return slow."
     ],
     "tips": ["Full range of motion"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1646-rZ80Gbp.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1646-rZ80Gbp.gif"
   },
   {
     "id": "cable-standing-back-wrist",
@@ -192,7 +192,7 @@ export const forearmExercises = [
       "Controlled return."
     ],
     "tips": ["Good for forearm thickness"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1647-DpWMFP5.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1647-DpWMFP5.gif"
   },
   {
     "id": "cable-standing-wrist-curl",
@@ -212,7 +212,7 @@ export const forearmExercises = [
       "Lower slowly."
     ],
     "tips": ["Maintain arm extension"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0248-wPypxFY.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0248-wPypxFY.gif"
   },
   {
     "id": "db-one-arm-rev-wrist",
@@ -232,7 +232,7 @@ export const forearmExercises = [
       "Focus on top contraction."
     ],
     "tips": ["Strengthens the top of the forearm"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0361-LBEORIq.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0361-LBEORIq.gif"
   },
   {
     "id": "db-over-bench-wrist",
@@ -252,7 +252,7 @@ export const forearmExercises = [
       "Squeeze at top."
     ],
     "tips": ["Allows for great isolation"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0372-3XFdb1Z.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0372-3XFdb1Z.gif"
   },
   {
     "id": "db-over-bench-rev-wrist",
@@ -272,7 +272,7 @@ export const forearmExercises = [
       "Return slow."
     ],
     "tips": ["Excellent for forearm symmetry"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0431-qatbkEd.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0431-qatbkEd.gif"
   },
   {
     "id": "db-over-bench-wrist-both",
@@ -292,7 +292,7 @@ export const forearmExercises = [
       "Full range."
     ],
     "tips": ["High volume works best"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0432-8xUv4J7.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0432-8xUv4J7.gif"
   },
   {
     "id": "reverse-barbell-curl",
@@ -312,7 +312,7 @@ export const forearmExercises = [
       "Keep wrists straight."
     ],
     "tips": ["Targets the top of the forearm and biceps"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0676-pwt0pnM.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0676-pwt0pnM.gif"
   },
   {
     "id": "reverse-cable-curl",
@@ -332,7 +332,7 @@ export const forearmExercises = [
       "Hold peak."
     ],
     "tips": ["Maintain tension at bottom"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1217-0JtKWum.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1217-0JtKWum.gif"
   },
   {
     "id": "wrist-roller",
@@ -352,6 +352,6 @@ export const forearmExercises = [
       "Slowly unroll back down."
     ],
     "tips": ["Ultimate forearm finisher"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0856-BfPgnOn.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0856-BfPgnOn.gif"
   }
 ];

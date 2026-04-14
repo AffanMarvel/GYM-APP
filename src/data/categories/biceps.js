@@ -116,7 +116,7 @@ export const bicepsExercises = [
       "Short head grow = width increase.",
       "Tempo: 1–2 sec up → 2 sec squeeze → 3 sec down"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/2741-OVTZ65k.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2741-OVTZ65k.gif"
   },
   {
     "id": "incline-dumbbell-curl",
@@ -154,7 +154,7 @@ export const bicepsExercises = [
       "Full ROM mandatory.",
       "Tempo: 2 sec up → 1–2 sec hold → 4 sec down (slow stretch)"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1437-mtXengz.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1437-mtXengz.gif"
   },
   {
     "id": "hammer-curl-dumbbell",
@@ -196,7 +196,7 @@ export const bicepsExercises = [
       "Makes arms look BIGGER.",
       "Tempo: 1 sec up → 1 sec squeeze → 3 sec down"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0313-slDvUAU.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0313-slDvUAU.gif"
   },
   {
     "id": "preacher-curl-machine",
@@ -236,7 +236,7 @@ export const bicepsExercises = [
       "Perfect exercise for beginners.",
       "Tempo: 2 sec up → 1 sec hold → 3 sec down"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0070-qOgPVf6.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0070-qOgPVf6.gif"
   },
   {
     "id": "cable-seated-curl",
@@ -257,7 +257,7 @@ export const bicepsExercises = [
       "Lower slowly."
     ],
     "tips": ["Keep upper arms stationary"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1641-8oYqOt9.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1641-8oYqOt9.gif"
   },
   {
     "id": "cable-concentration-curl",
@@ -277,7 +277,7 @@ export const bicepsExercises = [
       "Squeeze at top."
     ],
     "tips": ["Full range of motion"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1642-rZ80Gbp.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1642-rZ80Gbp.gif"
   },
   {
     "id": "cable-overhead-curl",
@@ -297,7 +297,7 @@ export const bicepsExercises = [
       "Keep elbows close to sides."
     ],
     "tips": ["Don't swing weights"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1643-DpWMFP5.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1643-DpWMFP5.gif"
   },
   {
     "id": "cable-squatting-curl",
@@ -317,7 +317,7 @@ export const bicepsExercises = [
       "Squeeze biceps."
     ],
     "tips": ["Keep back straight"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1644-3XFdb1Z.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1644-3XFdb1Z.gif"
   },
   {
     "id": "cable-standing-inner-curl",
@@ -337,7 +337,7 @@ export const bicepsExercises = [
       "Curl towards shoulders."
     ],
     "tips": ["Isolate the inner head"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0229-YwnI4ja.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0229-YwnI4ja.gif"
   },
   {
     "id": "cable-rope-pulldown",
@@ -357,7 +357,7 @@ export const bicepsExercises = [
       "Controlled return."
     ],
     "tips": ["Excellent finisher exercise"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0232-CvPn9WV.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0232-CvPn9WV.gif"
   },
   {
     "id": "db-alternate-curl",
@@ -377,7 +377,7 @@ export const bicepsExercises = [
       "Avoid swinging."
     ],
     "tips": ["Rotate wrists as you curl up"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0286-BfPgnOn.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0286-BfPgnOn.gif"
   },
   {
     "id": "db-concentration-curl",
@@ -397,7 +397,7 @@ export const bicepsExercises = [
       "Pause and squeeze."
     ],
     "tips": ["Keep your shoulder steady"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0309-8xUv4J7.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0309-8xUv4J7.gif"
   },
   {
     "id": "lever-preacher-curl",
@@ -417,7 +417,7 @@ export const bicepsExercises = [
       "Full stretch at bottom."
     ],
     "tips": ["Excellent for peak construction"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0651-OVTZ65k.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0651-OVTZ65k.gif"
   },
   {
     "id": "reverse-curl-cable",
@@ -437,6 +437,6 @@ export const bicepsExercises = [
       "Keep elbows in."
     ],
     "tips": ["Targets the outer arm thickness"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1201-0JtKWum.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1201-0JtKWum.gif"
   }
 ];

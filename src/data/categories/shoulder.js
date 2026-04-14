@@ -18,7 +18,7 @@ export const shoulderExercises = [
       "Inhale down, exhale up. Go slow on the way down.",
       "Tempo: 2–3 sec down → 1 sec up"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0091-kTbSH9h.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0091-kTbSH9h.gif"
   },
   {
     "name": "Dumbbell Shoulder Press",
@@ -38,7 +38,7 @@ export const shoulderExercises = [
       "Keep dumbbells slightly angled inward — joint-safe position.",
       "3–4 sets of 10–12 reps."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0405-znQUdHY.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0405-znQUdHY.gif"
   },
   {
     "name": "Arnold Press",
@@ -58,7 +58,7 @@ export const shoulderExercises = [
       "Mind-muscle connection is key here.",
       "3–4 sets of 10–12 reps."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/2137-Xy4jlWA.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2137-Xy4jlWA.gif"
   },
   {
     "name": "Front Plate Raise",
@@ -77,7 +77,7 @@ export const shoulderExercises = [
       "Excellent for shoulder definition.",
       "3 sets of 12–15 reps."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0978-TFA88iB.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0978-TFA88iB.gif"
   },
   {
     "name": "Barbell Front Raise",
@@ -95,7 +95,7 @@ export const shoulderExercises = [
       "Use light weight — focus on control.",
       "3x12–15 reps."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0041-b2Uoz54.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0041-b2Uoz54.gif"
   },
   {
     "name": "Dumbbell Front Raise (Alternating)",
@@ -114,7 +114,7 @@ export const shoulderExercises = [
       "Slow negatives = best muscle fiber engagement.",
       "Perfect for symmetry."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0392-Ys97II0.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0392-Ys97II0.gif"
   },
   {
     "name": "Cable Front Raise",
@@ -134,7 +134,7 @@ export const shoulderExercises = [
       "Slight forward lean for balance.",
       "3 sets of 12–15 reps."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0162-u2X71Np.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0162-u2X71Np.gif"
   },
   {
     "name": "Landmine Press",
@@ -152,7 +152,7 @@ export const shoulderExercises = [
       "Great alternative to overhead press if you have shoulder tightness.",
       "3 sets of 10 reps each arm."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0562-QYysSLV.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0562-QYysSLV.gif"
   },
   {
     "name": "Push Press",
@@ -170,7 +170,7 @@ export const shoulderExercises = [
       "Engage core to avoid back bending.",
       "3–4 sets of 6–8 reps."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1700-FS63wTN.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1700-FS63wTN.gif"
   },
   {
     "name": "Barbell Z Press",
@@ -190,7 +190,7 @@ export const shoulderExercises = [
       "Builds stability and shoulder control.",
       "Keep spine tall and bar path vertical."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0025-EIeI8Vf.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0025-EIeI8Vf.gif"
   },
   {
     "name": "Machine Shoulder Press",
@@ -208,7 +208,7 @@ export const shoulderExercises = [
       "Great for isolation and beginner safety.",
       "Don’t bounce off seat; full control each rep."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0997-peAeMR3.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0997-peAeMR3.gif"
   },
   {
     "name": "Incline Bench Front Raise",
@@ -225,7 +225,7 @@ export const shoulderExercises = [
       "Prevents cheating.",
       "Excellent isolation for front head."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0977-sTg7iys.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0977-sTg7iys.gif"
   },
   {
     "name": "Dumbbell Lateral Raise (Strict)",
@@ -245,7 +245,7 @@ export const shoulderExercises = [
       "Imagine moving elbow in slightly diagonal path.",
       "3–5 sets of 12–15 reps."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0380-v1qBec9.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0380-v1qBec9.gif"
   },
   {
     "name": "Cable Lateral Raise (Single-Arm)",
@@ -264,7 +264,7 @@ export const shoulderExercises = [
       "Pause 1s at top, focus on squeezing.",
       "3–4 sets of 10–15 per side."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0192-wEulIzp.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0192-wEulIzp.gif"
   },
   {
     "name": "Leaning Cable Lateral Raise",
@@ -283,7 +283,7 @@ export const shoulderExercises = [
       "Great for finishing sets.",
       "3 sets of 12–15 per side."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0178-goJ6ezq.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0178-goJ6ezq.gif"
   },
   {
     "name": "Upright Row (Barbell)",
@@ -302,7 +302,7 @@ export const shoulderExercises = [
       "Gives lateral width and trap thickness.",
       "3–4 sets of 8–12 reps."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0120-UDlhcO8.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0120-UDlhcO8.gif"
   },
   {
     "name": "Cable Upright Row",
@@ -322,7 +322,7 @@ export const shoulderExercises = [
       "Great for supersetting with lateral raises.",
       "3 sets of 10–12 reps."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0246-cALKspW.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0246-cALKspW.gif"
   },
   {
     "name": "Incline-Supported Dumbbell Lateral Raise",
@@ -342,7 +342,7 @@ export const shoulderExercises = [
       "Extremely strict — targets lateral head immediately.",
       "3 sets of 10–15 per side."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0326-vYk8lqw.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0326-vYk8lqw.gif"
   },
   {
     "name": "Rear Delt Dumbbell Fly (Bent-Over)",
@@ -362,7 +362,7 @@ export const shoulderExercises = [
       "Think 'rear delt squeezing back', not 'lifting weight'.",
       "3–4 sets of 12–15 reps."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0292-C0MA9bC.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0292-C0MA9bC.gif"
   },
   {
     "name": "Cable Rear Delt Fly (High Crossover)",
@@ -383,7 +383,7 @@ export const shoulderExercises = [
       "Ideal for shaping and definition.",
       "3–4 sets of 15–20 reps."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0203-wqNPGCg.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0203-wqNPGCg.gif"
   },
   {
     "name": "Face Pull (Rope Attachment)",
@@ -405,7 +405,7 @@ export const shoulderExercises = [
       "Essential for shoulder health.",
       "3 sets of 12–15 reps."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0177-CuaWCmC.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0177-CuaWCmC.gif"
   },
   {
     "name": "Cable Rear Delt Pull (One-Arm)",
@@ -424,7 +424,7 @@ export const shoulderExercises = [
       "Ultra-clean isolated motion.",
       "3 sets of 12–20 reps per arm."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0341-gSw59a4.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0341-gSw59a4.gif"
   },
   {
     "name": "Cable Standing Rear Delt Row",
@@ -437,7 +437,7 @@ export const shoulderExercises = [
       "Squeeze rear delts."
     ],
     "tips": ["Keep core tight"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0233-ZgwWBoC.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0233-ZgwWBoC.gif"
   },
   {
     "name": "Cable Standing Shoulder Press",
@@ -450,7 +450,7 @@ export const shoulderExercises = [
       "Controlled return."
     ],
     "tips": ["Excellent for stability"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0235-pwt0pnM.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0235-pwt0pnM.gif"
   },
   {
     "name": "Lever Lateral Raise (Machine)",
@@ -463,7 +463,7 @@ export const shoulderExercises = [
       "Squeeze and return slow."
     ],
     "tips": ["Constant tension machine path"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0576-o9R7fnO.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0576-o9R7fnO.gif"
   },
   {
     "name": "Lever Military Press (Machine)",
@@ -476,7 +476,7 @@ export const shoulderExercises = [
       "Slow negative."
     ],
     "tips": ["Great for mass builder"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0591-BfPgnOn.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0591-BfPgnOn.gif"
   },
   {
     "name": "Reverse Fly (Machine)",
@@ -489,7 +489,7 @@ export const shoulderExercises = [
       "Return slow."
     ],
     "tips": ["Maintain slight elbow bend"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0696-pwt0pnM.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0696-pwt0pnM.gif"
   },
   {
     "name": "Kettlebell Alternate Press",
@@ -502,7 +502,7 @@ export const shoulderExercises = [
       "Stable core."
     ],
     "tips": ["Kettlebells challenge stability"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0518-0JtKWum.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0518-0JtKWum.gif"
   },
   {
     "name": "Kettlebell One Arm Shoulder Press",
@@ -515,7 +515,7 @@ export const shoulderExercises = [
       "Lower controlled."
     ],
     "tips": ["Focus on the side being worked"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0523-UKWTJWR.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0523-UKWTJWR.gif"
   },
   {
     "name": "Kettlebell Alternate Deltoid Raise",
@@ -528,7 +528,7 @@ export const shoulderExercises = [
       "Keep palms down."
     ],
     "tips": ["Excellent for lateral head"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0486-JOZhu2h.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0486-JOZhu2h.gif"
   },
   {
     "name": "Dumbbell External Rotation",
@@ -541,7 +541,7 @@ export const shoulderExercises = [
       "Shoulder health focus."
     ],
     "tips": ["Essential for shoulder health"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0307-8xUv4J7.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0307-8xUv4J7.gif"
   },
   {
     "name": "Cable Seated Rear Delt Fly",
@@ -554,6 +554,6 @@ export const shoulderExercises = [
       "Squeeze rear delts."
     ],
     "tips": ["Keep your chest against the support"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0211-qatbkEd.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0211-qatbkEd.gif"
   }
 ];

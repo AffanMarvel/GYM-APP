@@ -38,7 +38,7 @@ export const cardioExercises = [
       "Belly tight rakho for extra lower abs activation.",
       "Duration: 45 sec ON, 15 sec REST."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3655-J9zIWig.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3655-J9zIWig.gif"
   },
   {
     "id": "mountain-climbers",
@@ -76,7 +76,7 @@ export const cardioExercises = [
       "Exhale on knee drive.",
       "Belly ko squeeze rakho."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0630-RJgzwny.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0630-RJgzwny.gif"
   },
   {
     "id": "burpees",
@@ -150,7 +150,7 @@ export const cardioExercises = [
       "Land softly on toes.",
       "Keep belly tight every jump."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1473-SaDOwk7.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1473-SaDOwk7.gif"
   },
   {
     "id": "jumping-jacks",
@@ -170,7 +170,7 @@ export const cardioExercises = [
       "Jump back to start."
     ],
     "tips": ["Keep a steady pace"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0492-4jT7fDq.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0492-4jT7fDq.gif"
   },
   {
     "id": "butt-kicks",
@@ -190,7 +190,7 @@ export const cardioExercises = [
       "Pump arms."
     ],
     "tips": ["Warm up the hamstrings"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0810-p7fJOnA.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0810-p7fJOnA.gif"
   },
   {
     "id": "shadow-boxing",
@@ -210,7 +210,7 @@ export const cardioExercises = [
       "Stay light on feet."
     ],
     "tips": ["Keep your core tight"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3647-RJgzwny.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3647-RJgzwny.gif"
   },
   {
     "id": "skip-rope",
@@ -230,7 +230,7 @@ export const cardioExercises = [
       "Repeat."
     ],
     "tips": ["Land on your toes"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0711-UKWTJWR.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0711-UKWTJWR.gif"
   },
   {
     "id": "bear-crawl",
@@ -250,7 +250,7 @@ export const cardioExercises = [
       "Stay active throughout."
     ],
     "tips": ["Excellent full body stability"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3646-SaDOwk7.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3646-SaDOwk7.gif"
   },
   {
     "id": "skate-jump",
@@ -270,7 +270,7 @@ export const cardioExercises = [
       "Land soft."
     ],
     "tips": ["Great for lateral agility"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1780-yn8yg1r.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1780-yn8yg1r.gif"
   },
   {
     "id": "kettlebell-swing",
@@ -290,7 +290,7 @@ export const cardioExercises = [
       "Keep back straight."
     ],
     "tips": ["Power comes from the hips"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0526-0JtKWum.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0526-0JtKWum.gif"
   },
   {
     "id": "battle-ropes",
@@ -310,7 +310,7 @@ export const cardioExercises = [
       "Stay in squat position."
     ],
     "tips": ["Excellent high-intensity calorie burner"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3645-hCjGsRQ.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3645-hCjGsRQ.gif"
   },
   {
     "id": "treadmill-run",
@@ -330,7 +330,7 @@ export const cardioExercises = [
       "Breathe rhythmically."
     ],
     "tips": ["Intermittent incline for challenge"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0810-p7fJOnA.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0810-p7fJOnA.gif"
   },
   {
     "id": "elliptical-trainer",
@@ -350,6 +350,6 @@ export const cardioExercises = [
       "Use arms for full body work."
     ],
     "tips": ["Lower impact on joints"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0430-DpWMFP5.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0430-DpWMFP5.gif"
   }
 ];
