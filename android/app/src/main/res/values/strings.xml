@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">GYM Tracker</string>
+    <string name="title_activity_main">GYM Tracker</string>
+    <string name="package_name">com.affan.gymtracker</string>
+    <string name="custom_url_scheme">com.affan.gymtracker</string>
+</resources>
