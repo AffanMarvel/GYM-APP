@@ -503,5 +503,185 @@ export const chestExercises = [
     ],
     "tips": ["Great for stability training"],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0151-D9T1P0n.gif"
+  },
+  {
+    "id": "barbell-decline-pullover",
+    "name": "Barbell Decline Pullover",
+    "muscle": "chest",
+    "muscleTarget": "Lower Chest, Lats",
+    "difficulty": "advanced",
+    "levels": {
+      "beginner": { "sets": 2, "reps": "12", "focus": "Stretch" },
+      "intermediate": { "sets": 3, "reps": "10", "focus": "Feel" },
+      "advanced": { "sets": 4, "reps": "8", "focus": "Mass" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+barbell+decline+pullover",
+    "instructions": [
+      "Lie on decline bench.",
+      "Lower barbell behind head with slight elbow bend.",
+      "Pull bar back to chest height."
+    ],
+    "tips": ["Excellent for lower chest definition"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0036-z1fAD3a.gif"
+  },
+  {
+    "id": "barbell-decline-wide-grip-press",
+    "name": "Barbell Decline Wide-Grip Press",
+    "muscle": "chest",
+    "muscleTarget": "Outer Lower Chest",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Thickness" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Power" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+decline+wide+grip+press",
+    "instructions": [
+      "Wide grip on barbell.",
+      "Lower to lower chest area.",
+      "Press upward aggressively."
+    ],
+    "tips": ["Targets the lower outer sweep of the pecs"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0033-GrO65fd.gif"
+  },
+  {
+    "id": "barbell-front-raise-pullover",
+    "name": "Barbell Front Raise and Pullover",
+    "muscle": "chest",
+    "muscleTarget": "Pectorals, Shoulders",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Mobility" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Control" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Depth" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=barbell+front+raise+pullover",
+    "instructions": [
+      "Lying on bench, move bar from waist to overhead.",
+      "Keep arms slightly bent.",
+      "Control the eccentric phase."
+    ],
+    "tips": ["Combined move for upper body expansion"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0040-3TZduzM.gif"
+  },
+  {
+    "id": "cable-decline-fly",
+    "name": "Cable Decline Fly",
+    "muscle": "chest",
+    "muscleTarget": "Lower Pecs",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Squeeze" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Detail" },
+      "advanced": { "sets": 5, "reps": "10", "focus": "Strict" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+decline+fly",
+    "instructions": [
+      "High pulley, lean forward or use decline bench.",
+      "Bring handles together in downward arc.",
+      "Feel the lower pec contraction."
+    ],
+    "tips": ["Don't let handles go above shoulder height"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0158-PAgTVaK.gif"
+  },
+  {
+    "id": "cable-decline-one-arm-press",
+    "name": "Cable Decline One Arm Press",
+    "muscle": "chest",
+    "muscleTarget": "Lower Chest, Core Stability",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Balance" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Unilateral Power" },
+      "advanced": { "sets": 5, "reps": "15", "focus": "Strength" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=cable+one+arm+chest+press",
+    "instructions": [
+      "Stand sideways or use decline bench.",
+      "Press handle across chest with one arm.",
+      "Isolate the lower chest."
+    ],
+    "tips": ["Engage core to prevent rotation"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1260-rYOWIqS.gif"
+  },
+  {
+    "id": "db-around-the-world",
+    "name": "Dumbbell Around the World",
+    "muscle": "chest",
+    "muscleTarget": "Pectorals, Shoulders",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "10", "focus": "ROM" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Stretch" },
+      "advanced": { "sets": 5, "reps": "15", "focus": "Muscle Endurance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+db+around+the+world",
+    "instructions": [
+      "Lie on bench, palms up.",
+      "Move dumbbells in circular arc from hips to overhead.",
+      "Maintain contact with bench."
+    ],
+    "tips": ["Excellent for overall chest flexibility"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0288-SpYC0Kp.gif"
+  },
+  {
+    "id": "barbell-medium-grip-bench-press",
+    "name": "Barbell Bench Press (Medium Grip)",
+    "muscle": "chest",
+    "muscleTarget": "Full Chest",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "10", "focus": "Repetition" },
+      "advanced": { "sets": 5, "reps": "8", "focus": "Strength" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=medium+grip+bench+press",
+    "instructions": [
+      "Lie on flat bench.",
+      "Grip bar slightly wider than shoulder width.",
+      "Press weight up evenly."
+    ],
+    "tips": ["Less shoulder strain than wide grip"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0025-p2qXy8A.gif"
+  },
+  {
+    "id": "incline-cable-fly",
+    "name": "Incline Cable Fly",
+    "muscle": "chest",
+    "muscleTarget": "Upper Pecs",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Activation" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Squeeze" },
+      "advanced": { "sets": 5, "reps": "10 (Slow)", "focus": "Hypertrophy" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+incline+cable+fly",
+    "instructions": [
+      "Low pulley, incline bench in middle.",
+      "Fly cables up and together at chest level.",
+      "Control the eccentric."
+    ],
+    "tips": ["Focus on the upper inner pec intersection"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1265-DpWMFP5.gif"
+  },
+  {
+    "id": "machine-chest-press-unilateral",
+    "name": "Machine Chest Press (Unilateral)",
+    "muscle": "chest",
+    "muscleTarget": "Pectorals",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "15", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Balance" },
+      "advanced": { "sets": 5, "reps": "10", "focus": "Isolation" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=machine+unilateral+chest+press",
+    "instructions": [
+      "Sit at machine.",
+      "Press handle forward with one arm.",
+      "Isolate the side fully."
+    ],
+    "tips": ["Great for fixing muscle imbalances"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0644-8O8pA7O.gif"
   }
 ];

@@ -17,7 +17,7 @@ export const backExercises = [
       "Focus on pulling from your elbows — not your biceps.",
       "Get full stretch at the bottom for maximum lat growth."
     ],
-    "image": "/assets/exercises/back_image.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0652-lBDjFxJ.gif"
   },
   {
     "name": "Barbell Deadlift",
@@ -236,7 +236,7 @@ export const backExercises = [
       "Elbows high, rope apart at face.",
       "Great posture corrector."
     ],
-    "image": "/assets/exercises/back_image_11.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0203-wqNPGCg.gif"
   },
   {
     "name": "Meadows Row (Advanced Unilateral Row)",
@@ -294,7 +294,7 @@ export const backExercises = [
       "Don’t swing — slow and controlled reps.",
       "Go light and slow — higher reps work best here."
     ],
-    "image": "/assets/exercises/back_image_15.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0602-myfUsKf.gif"
   },
   {
     "name": "Incline Bench Underhand Barbell Row",

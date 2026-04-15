@@ -392,5 +392,152 @@ export const absExercises = [
     ],
     "tips": ["Keep lower back flat"],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0558-Pwt0pnM.gif"
+  },
+  {
+    "id": "3-4-sit-up",
+    "name": "3/4 Sit-up",
+    "muscle": "abs",
+    "muscleTarget": "Upper Abs",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "15", "focus": "Upper Core" },
+      "advanced": { "sets": 5, "reps": "20+", "focus": "Endurance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+3/4+sit-up",
+    "instructions": [
+      "Lie flat on your back with your knees bent and feet flat on the ground.",
+      "Place your hands behind your head with your elbows pointing outwards.",
+      "Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle.",
+      "Pause for a moment at the top, then slowly lower back down."
+    ],
+    "tips": ["Don't pull on your neck", "Keep feet flat"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0001-2gPfomN.gif"
+  },
+  {
+    "id": "alternate-heel-touchers",
+    "name": "Alternate Heel Touchers",
+    "muscle": "abs",
+    "muscleTarget": "Obliques",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "20", "focus": "Side Flex" },
+      "intermediate": { "sets": 4, "reps": "30", "focus": "Oblique Burn" },
+      "advanced": { "sets": 5, "reps": "50", "focus": "Core Endurance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+alternate+heel+touchers",
+    "instructions": [
+      "Lie flat on your back with your knees bent and feet flat on the ground.",
+      "Engaging your abs, lift your shoulders off the ground and reach your right hand towards your right heel.",
+      "Return and reach your left hand towards your left heel.",
+      "Continue alternating sides."
+    ],
+    "tips": ["Keep core tight", "Maintain shoulder elevation"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0006-qaZVsGk.gif"
+  },
+  {
+    "id": "arm-slingers-hanging",
+    "name": "Arm Slingers Hanging",
+    "muscle": "abs",
+    "muscleTarget": "Full Core, Shoulders",
+    "difficulty": "advanced",
+    "levels": {
+      "beginner": { "sets": 2, "reps": "8", "focus": "Grip" },
+      "intermediate": { "sets": 3, "reps": "12", "focus": "Swing Control" },
+      "advanced": { "sets": 4, "reps": "15", "focus": "Dynamic Stability" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+arm+slingers+hanging",
+    "instructions": [
+      "Hang from a pull-up bar with your arms fully extended.",
+      "Engage your core and lift your knees towards your chest.",
+      "Slowly lower your legs back down with control.",
+      "Focus on stability throughout the move."
+    ],
+    "tips": ["Avoid excessive swinging", "Keep elbows slightly bent if needed"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2355-uWpxD4v.gif"
+  },
+  {
+    "id": "assisted-motion-russian-twist",
+    "name": "Assisted Motion Russian Twist",
+    "muscle": "abs",
+    "muscleTarget": "Obliques",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "10", "focus": "Rotation" },
+      "intermediate": { "sets": 4, "reps": "15", "focus": "Weighted Twist" },
+      "advanced": { "sets": 5, "reps": "20", "focus": "Core Power" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+russian+twist+with+ball",
+    "instructions": [
+      "Sit on the ground with your knees bent and feet flat.",
+      "Hold a medicine ball or weight in front of your chest.",
+      "Slowly twist your torso to the right, then to the left.",
+      "Repeat for the desired repetitions."
+    ],
+    "tips": ["Keep your back straight", "Twist from the core, not just arms"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0014-vW9pX2A.gif"
+  },
+  {
+    "id": "dead-bug",
+    "name": "Dead Bug",
+    "muscle": "abs",
+    "muscleTarget": "Deep Core Stability",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "10", "focus": "Coordination" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Stability" },
+      "advanced": { "sets": 5, "reps": "15", "focus": "Slow Control" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+dead+bug+exercise",
+    "instructions": [
+      "Lie on your back with arms reaching for ceiling, knees at 90 degrees.",
+      "Slowly lower right arm and left leg toward floor.",
+      "Return to start and repeat on opposite side.",
+      "Maintain flat lower back throughout."
+    ],
+    "tips": ["Push lower back into the floor", "Exhale as you lower limbs"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1205-BfPgnOn.gif"
+  },
+  {
+    "id": "v-sit-hold",
+    "name": "V-Sit Hold",
+    "muscle": "abs",
+    "muscleTarget": "Full Core, Hip Flexors",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "20 sec", "focus": "Balance" },
+      "intermediate": { "sets": 4, "reps": "45 sec", "focus": "Core Strength" },
+      "advanced": { "sets": 5, "reps": "60 sec", "focus": "Stability" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+v-sit+hold",
+    "instructions": [
+      "Sit on floor, lift legs and lean back into V shape.",
+      "Balance on your tailbone, arms reaching forward.",
+      "Hold the position with a straight back.",
+      "Keep core tight and breathe."
+    ],
+    "tips": ["Don't round your back", "Keep legs straight for harder variant"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0003-1ZFqTDN.gif"
+  },
+  {
+    "id": "knee-to-elbow-plank",
+    "name": "Knee to Elbow Plank",
+    "muscle": "abs",
+    "muscleTarget": "Obliques, Core",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "10 total", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "16 total", "focus": "Squeeze" },
+      "advanced": { "sets": 5, "reps": "20 total", "focus": "Endurance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+knee+to+elbow+plank",
+    "instructions": [
+      "Start in a high plank position.",
+      "Bring your right knee to your right elbow.",
+      "Return and repeat with left knee to left elbow.",
+      "Keep hips level throughout."
+    ],
+    "tips": ["Exhale as knee moves to elbow", "Don't let hips sag"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0011-03lzqwk.gif"
   }
 ];

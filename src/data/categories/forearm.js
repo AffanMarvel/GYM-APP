@@ -113,7 +113,7 @@ export const forearmExercises = [
       "Don't drop the plates.",
       "Maintain thumb pressure."
     ],
-    "image": "/assets/exercises/forearm_image_6.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2288-mKwcrHn.gif"
   },
   {
     "id": "behind-the-back-wrist-curl",

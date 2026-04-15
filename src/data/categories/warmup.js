@@ -111,7 +111,7 @@ export const warmupExercises = [
       "Soft landing is mandatory to protect joints.",
       "Maintain a steady rhythmic pace."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1431-7OeHptV.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3224-1g5bPpA.gif"
   },
   {
     "id": "cat-cow-stretch",
@@ -151,7 +151,7 @@ export const warmupExercises = [
       "Exhale on Cat, inhale on Cow.",
       "Reduces lower back stiffness."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1405-chfnQnM.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3147-NKJ8o6x.gif"
   },
   {
     "id": "neck-circles",
@@ -171,7 +171,7 @@ export const warmupExercises = [
       "Keep shoulders down."
     ],
     "tips": ["Move slowly to avoid dizziness"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1426-PXTIwgu.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1403-x2chWLO.gif"
   },
   {
     "id": "shoulder-rolls",
@@ -191,7 +191,7 @@ export const warmupExercises = [
       "Reverse direction after 15 reps."
     ],
     "tips": ["Warms up the traps and delts"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1430-PXTIwgu.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0864-x306lCW.gif"
   },
   {
     "id": "hip-circles",
@@ -211,7 +211,7 @@ export const warmupExercises = [
       "Reverse direction."
     ],
     "tips": ["Loosens the lower back and hips"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1424-PXTIwgu.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0257-X7jbxra.gif"
   },
   {
     "id": "leg-swings-forward",
@@ -231,7 +231,7 @@ export const warmupExercises = [
       "Keep body upright."
     ],
     "tips": ["Excellent for lower body prep"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1404-PXTIwgu.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0549-UHJlbu3.gif"
   },
   {
     "id": "leg-swings-side",
@@ -351,6 +351,186 @@ export const warmupExercises = [
       "Maintain upright posture."
     ],
     "tips": ["Warms up the hamstrings dynamically"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3655-J9zIWig.gif"
+  },
+  {
+    "id": "dynamic-arm-swings",
+    "name": "Dynamic Arm Swings",
+    "muscle": "warmup",
+    "muscleTarget": "Shoulders, Chest",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "15", "focus": "Range" },
+      "intermediate": { "sets": 2, "reps": "20", "focus": "Fluidity" },
+      "advanced": { "sets": 2, "reps": "30", "focus": "Mobility" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+arm+swings+warmup",
+    "instructions": [
+      "Swing arms forward and backward.",
+      "Cross arms in front of body.",
+      "Gradually increase range of motion."
+    ],
+    "tips": ["Great for shoulder joint lubrication"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0858-SaDOwk7.gif"
+  },
+  {
+    "id": "side-hip-circles",
+    "name": "Side Hip Circles",
+    "muscle": "warmup",
+    "muscleTarget": "Hips",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "15 each way", "focus": "Control" },
+      "intermediate": { "sets": 2, "reps": "20 each way", "focus": "ROM" },
+      "advanced": { "sets": 2, "reps": "30 each way", "focus": "Rotation" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+side+hip+circles",
+    "instructions": [
+      "Stand with hands on hips.",
+      "Rotate hips in a large circular motion.",
+      "Focus on the outer edges."
+    ],
+    "tips": ["Relieves tension in the pelvic area"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3230-RJgzwny.gif"
+  },
+  {
+    "id": "knee-rotation-warmup",
+    "name": "Knee Rotation",
+    "muscle": "warmup",
+    "muscleTarget": "Knees",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "15 each way", "focus": "Gentle" },
+      "intermediate": { "sets": 1, "reps": "20 each way", "focus": "Mobility" },
+      "advanced": { "sets": 1, "reps": "25 each way", "focus": "Joint Health" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+knee+rotation",
+    "instructions": [
+      "Place hands on knees, feet together.",
+      "Rotate knees in a circle.",
+      "Reverse direction."
+    ],
+    "tips": ["Essential prep for squats and lunges"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3231-SaDOwk7.gif"
+  },
+  {
+    "id": "scapular-pull-up-warmup",
+    "name": "Scapular Pull-up (Warmup)",
+    "muscle": "warmup",
+    "muscleTarget": "Scapula, Rotator Cuff",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "8", "focus": "Hang" },
+      "intermediate": { "sets": 2, "reps": "12", "focus": "Retraction" },
+      "advanced": { "sets": 2, "reps": "15", "focus": "Strength" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=scapular+pull+ups+form",
+    "instructions": [
+      "Hang from pull-up bar.",
+      "Pull shoulder blades down and back without bending elbows.",
+      "Return to dead hang."
+    ],
+    "tips": ["Prepares the shoulders for heavy pulling"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0725-rYOWIqS.gif"
+  },
+  {
+    "id": "dynamic-overhead-reach",
+    "name": "Dynamic Overhead Reach",
+    "muscle": "warmup",
+    "muscleTarget": "Lats, Obliques",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "15", "focus": "Length" },
+      "intermediate": { "sets": 2, "reps": "20", "focus": "Stretch" },
+      "advanced": { "sets": 2, "reps": "25", "focus": "Mobility" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=dynamic+overhead+stretch+tutorial",
+    "instructions": [
+      "Reach one arm overhead and lean to the side.",
+      "Switch sides rhythmically.",
+      "Breathe through the stretch."
+    ],
+    "tips": ["Warms up the entire side body"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0155-YwnI4ja.gif"
+  },
+  {
+    "id": "walking-knee-hugs",
+    "name": "Walking Knee Hugs",
+    "muscle": "warmup",
+    "muscleTarget": "Glutes, Hips",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "10 per leg", "focus": "Balance" },
+      "intermediate": { "sets": 2, "reps": "12 per leg", "focus": "Stretch" },
+      "advanced": { "sets": 2, "reps": "15 per leg", "focus": "Drive" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+do+walking+knee+hugs",
+    "instructions": [
+      "Walk forward, lifting one knee toward chest.",
+      "Hug knee with both hands and pull close.",
+      "Release and step forward with other leg."
+    ],
+    "tips": ["Great for glute activation and balance"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3655-J9zIWig.gif"
+  },
+  {
+    "id": "t-spine-rotations-warmup",
+    "name": "T-Spine Rotations",
+    "muscle": "warmup",
+    "muscleTarget": "Thoracic Spine, Shoulders",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "10 each side", "focus": "Form" },
+      "intermediate": { "sets": 2, "reps": "12 each side", "focus": "Mobility" },
+      "advanced": { "sets": 2, "reps": "15 each side", "focus": "Opening" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=thoracic+spine+rotations+dynamic",
+    "instructions": [
+      "On all fours or kneeling position.",
+      "Place one hand behind head.",
+      "Rotate elbow toward ceiling, then toward opposite wrist."
+    ],
+    "tips": ["Crucial for upper back health and mobility"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1411-PXTIwgu.gif"
+  },
+  {
+    "id": "world-greatest-stretch-warmup",
+    "name": "World's Greatest Stretch",
+    "muscle": "warmup",
+    "muscleTarget": "Full Body, Hips",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "5 each side", "focus": "Form" },
+      "intermediate": { "sets": 2, "reps": "8 each side", "focus": "Flow" },
+      "advanced": { "sets": 2, "reps": "10 each side", "focus": "Depth" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=world+greatest+stretch+tutorial",
+    "instructions": [
+      "Step into deep lunge.",
+      "Place inside elbow to ground beside foot.",
+      "Rotate torso toward ceiling."
+    ],
+    "tips": ["The all-in-one dynamic warmup move"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1410-PXTIwgu.gif"
+  },
+  {
+    "id": "dynamic-quad-stretch-warmup",
+    "name": "Dynamic Quad Stretch",
+    "muscle": "warmup",
+    "muscleTarget": "Quads",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "10 per leg", "focus": "Balance" },
+      "intermediate": { "sets": 2, "reps": "12 per leg", "focus": "Stretch" },
+      "advanced": { "sets": 2, "reps": "15 per leg", "focus": "Drive" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+dynamic+quad+stretch",
+    "instructions": [
+      "While walking, grab foot behind glute.",
+      "Hold for 1 sec, then step forward.",
+      "Repeat on other side."
+    ],
+    "tips": ["Prepares the quads for squats and jumps"],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3655-J9zIWig.gif"
   }
 ];

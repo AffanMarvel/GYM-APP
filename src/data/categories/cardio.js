@@ -113,7 +113,7 @@ export const cardioExercises = [
       "Exhale while jumping up.",
       "Start slow if beginner."
     ],
-    "image": "/assets/exercises/cardio_image_3.png"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1160-dK9394r.gif"
   },
   {
     "id": "jump-squats",
@@ -351,5 +351,205 @@ export const cardioExercises = [
     ],
     "tips": ["Lower impact on joints"],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0430-DpWMFP5.gif"
+  },
+  {
+    "id": "astride-jump",
+    "name": "Astride Jump",
+    "muscle": "cardio",
+    "muscleTarget": "Full Body, Legs",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "30 sec", "focus": "Rhythm" },
+      "intermediate": { "sets": 4, "reps": "45 sec", "focus": "Pace" },
+      "advanced": { "sets": 5, "reps": "60 sec", "focus": "Intensity" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+astride+jump",
+    "instructions": [
+      "Jump with legs wide apart and then back together.",
+      "Coordinate with arm movements.",
+      "Maintain a bouncy rhythm."
+    ],
+    "tips": ["Great for warming up the whole body"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3220-NUnK3xS.gif"
+  },
+  {
+    "id": "running-high-knee",
+    "name": "Running High Knee",
+    "muscle": "cardio",
+    "muscleTarget": "Core, Legs",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "20 sec", "focus": "Knee Lift" },
+      "intermediate": { "sets": 4, "reps": "40 sec", "focus": "Speed" },
+      "advanced": { "sets": 5, "reps": "60 sec", "focus": "Explosive" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=running+high+knees",
+    "instructions": [
+      "Run in place while lifting knees high.",
+      "Pump your arms for better momentum.",
+      "Land soft on the balls of your feet."
+    ],
+    "tips": ["Engage your core for better balance"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0480-hCjGsRQ.gif"
+  },
+  {
+    "id": "jumping-jack-male",
+    "name": "Jumping Jacks (Fast)",
+    "muscle": "cardio",
+    "muscleTarget": "Full Body",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "30 sec", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "60 sec", "focus": "Speed" },
+      "advanced": { "sets": 5, "reps": "90 sec", "focus": "Endurance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+fast+jumping+jacks",
+    "instructions": [
+      "Perform standard jumping jacks at a rapid pace.",
+      "Ensure full arm extension.",
+      "Continuous movement."
+    ],
+    "tips": ["Classic for a reason—keeps heart rate up"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3222-S0E5L8q.gif"
+  },
+  {
+    "id": "mountain-climber-fast",
+    "name": "Mountain Climber (Fast)",
+    "muscle": "cardio",
+    "muscleTarget": "Core, Cardio",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "20 sec", "focus": "Stability" },
+      "intermediate": { "sets": 4, "reps": "40 sec", "focus": "Speed" },
+      "advanced": { "sets": 5, "reps": "60 sec", "focus": "Max Effort" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=fast+mountain+climbers",
+    "instructions": [
+      "Standard mountain climber position.",
+      "Drive knees toward chest as fast as possible.",
+      "Maintain a flat back."
+    ],
+    "tips": ["Keep your hips level throughout"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0005-RJgzwny.gif"
+  },
+  {
+    "id": "rope-jumping-male",
+    "name": "Rope Jumping (Intense)",
+    "muscle": "cardio",
+    "muscleTarget": "Cardio, Calves",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "1 min", "focus": "Timing" },
+      "intermediate": { "sets": 4, "reps": "3 mins", "focus": "Pace" },
+      "advanced": { "sets": 5, "reps": "5 mins", "focus": "Double Unders" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=jump+rope+training",
+    "instructions": [
+      "Jump continuously over a rope.",
+      "Stay on your toes.",
+      "Use wrist flick for rope speed."
+    ],
+    "tips": ["Excellent for coordination and stamina"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3223-DpWMFP5.gif"
+  },
+  {
+    "id": "running-male",
+    "name": "Running (Outdoor Style)",
+    "muscle": "cardio",
+    "muscleTarget": "Cardio",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "1 mile", "focus": "Steady" },
+      "intermediate": { "sets": 1, "reps": "3 miles", "focus": "Pace" },
+      "advanced": { "sets": 1, "reps": "5 miles", "focus": "Endurance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=proper+running+form",
+    "instructions": [
+      "Run with a natural strike.",
+      "Keep head up and shoulders relaxed.",
+      "Breathe through nose and mouth."
+    ],
+    "tips": ["The simplest and most effective cardio"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3224-DpWMFP5.gif"
+  },
+  {
+    "id": "side-reaching-jump",
+    "name": "Side Reaching Jump",
+    "muscle": "cardio",
+    "muscleTarget": "Full Body, Obliques",
+    "difficulty": "intermediate",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "30 sec", "focus": "Reach" },
+      "intermediate": { "sets": 4, "reps": "45 sec", "focus": "Balance" },
+      "advanced": { "sets": 5, "reps": "60 sec", "focus": "Explosion" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+side+reaching+jump",
+    "instructions": [
+      "Jump sideways while reaching across your body.",
+      "Land on one foot and balance.",
+      "Continue alternating sides."
+    ],
+    "tips": ["Improves lateral agility and balance"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3225-yn8yg1r.gif"
+  },
+  {
+    "id": "walking-male",
+    "name": "Power Walking",
+    "muscle": "cardio",
+    "muscleTarget": "Cardio, Recovery",
+    "difficulty": "beginner",
+    "levels": {
+      "beginner": { "sets": 1, "reps": "15 mins", "focus": "Posture" },
+      "intermediate": { "sets": 1, "reps": "30 mins", "focus": "Speed" },
+      "advanced": { "sets": 1, "reps": "1 hour", "focus": "Distance" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=benefits+of+power+walking",
+    "instructions": [
+      "Walk at a fast, steady pace.",
+      "Pump your arms rhythmically.",
+      "Maintain upright posture."
+    ],
+    "tips": ["Great low-impact option for active recovery"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3226-DpWMFP5.gif"
+  },
+  {
+    "id": "burpee-power",
+    "name": "Power Burpees",
+    "muscle": "cardio",
+    "muscleTarget": "Full Body",
+    "difficulty": "advanced",
+    "levels": {
+      "beginner": { "sets": 3, "reps": "8", "focus": "Form" },
+      "intermediate": { "sets": 4, "reps": "12", "focus": "Volume" },
+      "advanced": { "sets": 5, "reps": "15", "focus": "Speed" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=power+burpees+workout",
+    "instructions": [
+      "Standard burpee motion with a tuck jump.",
+      "Maximize jump height.",
+      "Move transition as fast as possible."
+    ],
+    "tips": ["The ultimate calorie burner"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0145-TVdivgY.gif"
+  },
+  {
+    "id": "sprint-high-intensity",
+    "name": "High Intensity Sprints",
+    "muscle": "cardio",
+    "muscleTarget": "Leg Power, Cardio",
+    "difficulty": "advanced",
+    "levels": {
+      "beginner": { "sets": 4, "reps": "50m", "focus": "Stride" },
+      "intermediate": { "sets": 6, "reps": "100m", "focus": "Speed" },
+      "advanced": { "sets": 10, "reps": "100m", "focus": "Recovery" }
+    },
+    "tutorialUrl": "https://www.youtube.com/results?search_query=sprint+training+basics",
+    "instructions": [
+      "Sprint as fast as possible over a short distance.",
+      "Full arm drive.",
+      "Stay on balls of feet."
+    ],
+    "tips": ["Explosive leg drive is key"],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3224-DpWMFP5.gif"
   }
 ];
