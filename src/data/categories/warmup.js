@@ -111,7 +111,7 @@ export const warmupExercises = [
       "Soft landing is mandatory to protect joints.",
       "Maintain a steady rhythmic pace."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3224-1g5bPpA.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3224-1g5bPpA.gif"
   },
   {
     "id": "cat-cow-stretch",
@@ -151,7 +151,7 @@ export const warmupExercises = [
       "Exhale on Cat, inhale on Cow.",
       "Reduces lower back stiffness."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/3147-NKJ8o6x.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3147-NKJ8o6x.gif"
   },
   {
     "id": "neck-circles",
@@ -171,7 +171,7 @@ export const warmupExercises = [
       "Keep shoulders down."
     ],
     "tips": ["Move slowly to avoid dizziness"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/1403-x2chWLO.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1403-x2chWLO.gif"
   },
   {
     "id": "shoulder-rolls",
@@ -191,7 +191,7 @@ export const warmupExercises = [
       "Reverse direction after 15 reps."
     ],
     "tips": ["Warms up the traps and delts"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0864-x306lCW.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0864-x306lCW.gif"
   },
   {
     "id": "hip-circles",
@@ -211,7 +211,7 @@ export const warmupExercises = [
       "Reverse direction."
     ],
     "tips": ["Loosens the lower back and hips"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0257-X7jbxra.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0257-X7jbxra.gif"
   },
   {
     "id": "leg-swings-forward",
@@ -231,7 +231,7 @@ export const warmupExercises = [
       "Keep body upright."
     ],
     "tips": ["Excellent for lower body prep"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/main/videos/0549-UHJlbu3.gif"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0549-UHJlbu3.gif"
   },
   {
     "id": "leg-swings-side",

@@ -8,18 +8,16 @@ Write-Host "========================================" -ForegroundColor Yellow
 
 # Clean V-3
 if (Test-Path $v3) {
-    Write-Host "1. Cleaning V-3_APP main workspace..." -ForegroundColor Cyan
+    Write-Host "1. Stashing uncommitted changes in V-3_APP main workspace..." -ForegroundColor Cyan
     Set-Location $v3
-    git add .
-    git commit -m "Finalized Workout GIF Upgrades"
+    git stash
 }
 
 # Clean V-4
 if (Test-Path $v4) {
-    Write-Host "2. Cleaning V-4 worktree..." -ForegroundColor Cyan
+    Write-Host "2. Stashing uncommitted changes in V-4 worktree..." -ForegroundColor Cyan
     Set-Location $v4
-    git add .
-    git commit -m "Prepared Worktree for Sync"
+    git stash
 }
 
 Write-Host "========================================" -ForegroundColor Green
