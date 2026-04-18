@@ -184,7 +184,7 @@ export const cardioExercises = [
     "tips": [
       "Keep a steady pace"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3655-J9zIWig.gif"
   },
   {
     "id": "butt-kicks",
@@ -218,7 +218,7 @@ export const cardioExercises = [
     "tips": [
       "Warm up the hamstrings"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0870-qcNN2FN.gif"
   },
   {
     "id": "shadow-boxing",
@@ -252,7 +252,7 @@ export const cardioExercises = [
     "tips": [
       "Keep your core tight"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2271-hoXt6wv.gif"
   },
   {
     "id": "skip-rope",
@@ -286,7 +286,7 @@ export const cardioExercises = [
     "tips": [
       "Land on your toes"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0165-HPlPoQA.gif"
   },
   {
     "id": "bear-crawl",
@@ -354,7 +354,7 @@ export const cardioExercises = [
     "tips": [
       "Great for lateral agility"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1473-SaDOwk7.gif"
   },
   {
     "id": "kettlebell-swing",
@@ -422,7 +422,7 @@ export const cardioExercises = [
     "tips": [
       "Excellent high-intensity calorie burner"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0128-RJa4tCo.gif"
   },
   {
     "id": "treadmill-run",
@@ -490,7 +490,7 @@ export const cardioExercises = [
     "tips": [
       "Lower impact on joints"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2141-rjtuP6X.gif"
   },
   {
     "id": "astride-jump",
@@ -592,7 +592,7 @@ export const cardioExercises = [
     "tips": [
       "Classic for a reason—keeps heart rate up"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3655-J9zIWig.gif"
   },
   {
     "id": "mountain-climber-fast",
@@ -660,7 +660,7 @@ export const cardioExercises = [
     "tips": [
       "Excellent for coordination and stamina"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0165-HPlPoQA.gif"
   },
   {
     "id": "running-male",
@@ -728,7 +728,7 @@ export const cardioExercises = [
     "tips": [
       "Improves lateral agility and balance"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0002-Hy9D21L.gif"
   },
   {
     "id": "walking-male",
@@ -762,7 +762,7 @@ export const cardioExercises = [
     "tips": [
       "Great low-impact option for active recovery"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0648-SiWCcTN.gif"
   },
   {
     "id": "burpee-power",
@@ -830,6 +830,6 @@ export const cardioExercises = [
     "tips": [
       "Explosive leg drive is key"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1436-Gnfo4FM.gif"
   }
 ];

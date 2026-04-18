@@ -80,7 +80,7 @@ export const backExercises = [
       "Pull with elbows, not hands.",
       "Full stretch = better lat activation."
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0673-ecpY0rH.gif"
   },
   {
     "name": "Neutral Grip Lat Pulldown (aka V-Grip Pulldown)",
@@ -100,7 +100,7 @@ export const backExercises = [
       "Focus on the stretch and contraction — not speed.",
       "Keep elbows pointing down and slightly back."
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0673-ecpY0rH.gif"
   },
   {
     "name": "Reverse Grip Lat Pulldown",
@@ -120,7 +120,7 @@ export const backExercises = [
       "Focus on lower part of lats — pull slightly toward sternum.",
       "Maintain controlled tempo."
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0673-ecpY0rH.gif"
   },
   {
     "name": "Dumbbell Single-Arm Row",
@@ -178,7 +178,7 @@ export const backExercises = [
       "Pull smoothly; don’t jerk weight.",
       "Keep neck neutral."
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3200-LuBEORI.gif"
   },
   {
     "name": "Seated Cable Row (Close Grip)",
@@ -476,6 +476,6 @@ export const backExercises = [
     "tips": [
       "Consistent path provided by machine"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0673-ecpY0rH.gif"
   }
 ];

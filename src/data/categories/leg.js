@@ -202,7 +202,7 @@ export const legExercises = [
       "Full lockout with squeeze",
       "Tempo: 1 sec up → 2 sec squeeze → 3 sec down"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0058-SNFfUff.gif"
   },
   {
     "name": "Sumo Squat (Dumbbell / Barbell)",
@@ -293,7 +293,7 @@ export const legExercises = [
     "tips": [
       "Don't arch your lower back"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0228-Kpajagk.gif"
   },
   {
     "name": "Cable One Arm Lunges",
@@ -308,7 +308,7 @@ export const legExercises = [
     "tips": [
       "Maintains constant tension on legs"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1260-KHGNa16.gif"
   },
   {
     "name": "Cable Pull Through",
@@ -338,7 +338,7 @@ export const legExercises = [
     "tips": [
       "Easier on the knees than forward lunges"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1635-ZXnjcOQ.gif"
   },
   {
     "name": "Cable Step Up",
@@ -353,7 +353,7 @@ export const legExercises = [
     "tips": [
       "Keep your chest upright"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3672-fNGumX0.gif"
   },
   {
     "name": "Kettlebell One Arm Lunge",
@@ -368,7 +368,7 @@ export const legExercises = [
     "tips": [
       "Challenges core and balance"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0531-rseLfH3.gif"
   },
   {
     "name": "Kettlebell Goblet Squat",
@@ -398,7 +398,7 @@ export const legExercises = [
     "tips": [
       "High box targets glutes more"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1664-qAmNMJY.gif"
   },
   {
     "name": "Lever Leg Press (Machine)",
@@ -413,6 +413,6 @@ export const legExercises = [
     "tips": [
       "Controlled and safe for lower back"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1385-IeDEXTe.gif"
   }
 ];

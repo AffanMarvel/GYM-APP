@@ -39,7 +39,7 @@ export const tricepsExercises = [
       "Perfect for warm-up, pump, and finishing.",
       "Tempo: 1 sec down → 1 sec squeeze → 3 sec slow up"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1723-qRZ5S1N.gif"
   },
   {
     "id": "straight-bar-pushdown",
@@ -77,7 +77,7 @@ export const tricepsExercises = [
       "Slight forward lean okay (BUT no swinging).",
       "Tempo: 1 sec down → 1 sec squeeze → 2–3 sec up"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0199-PskORrA.gif"
   },
   {
     "id": "overhead-rope-extension",
@@ -118,7 +118,7 @@ export const tricepsExercises = [
       "Full stretch = maximum growth.",
       "Tempo: 1–2 sec up → 1 sec squeeze → 3 sec down"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0194-2IxROQ1.gif"
   },
   {
     "id": "skull-crushers-ez-bar",
@@ -157,7 +157,7 @@ export const tricepsExercises = [
       "Elbows slightly inward angle.",
       "Tempo: 1 sec up → 1 sec hold → 3 sec slow negative"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0035-LMGXZn8.gif"
   },
   {
     "id": "close-grip-bench-press",
@@ -236,7 +236,7 @@ export const tricepsExercises = [
       "Weighted dips = monster triceps.",
       "Tempo: 2 sec down → 1 sec pause → 2 sec up"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1755-bZq4bwK.gif"
   },
   {
     "id": "cable-one-arm-ext",
@@ -338,7 +338,7 @@ export const tricepsExercises = [
     "tips": [
       "Targets the long head uniquely"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1727-i11JWU7.gif"
   },
   {
     "id": "bench-dip-weight",
@@ -372,7 +372,7 @@ export const tricepsExercises = [
     "tips": [
       "Keep your back close to the bench"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0830-MU9HnE7.gif"
   },
   {
     "id": "db-one-arm-ext",
@@ -440,7 +440,7 @@ export const tricepsExercises = [
     "tips": [
       "Use EZ-bar for wrist safety"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1748-6CKUx7o.gif"
   },
   {
     "id": "pushup-close",
@@ -542,7 +542,7 @@ export const tricepsExercises = [
     "tips": [
       "Constant tension through the range"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1451-BRImeP8.gif"
   },
   {
     "id": "cable-pushdown-straight",

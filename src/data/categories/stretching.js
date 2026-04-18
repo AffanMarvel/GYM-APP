@@ -184,7 +184,7 @@ export const stretchingExercises = [
     "tips": [
       "Deep breaths into the back"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1494-bWlZvXh.gif"
   },
   {
     "id": "butterfly-stretch",
@@ -218,7 +218,7 @@ export const stretchingExercises = [
     "tips": [
       "Keep your back straight"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1512-qBcKorM.gif"
   },
   {
     "id": "triceps-stretch",
@@ -286,7 +286,7 @@ export const stretchingExercises = [
     "tips": [
       "Hold onto a wall for balance if needed"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1512-qBcKorM.gif"
   },
   {
     "id": "neck-side-stretch",
@@ -354,7 +354,7 @@ export const stretchingExercises = [
     "tips": [
       "Don't pull on the elbow joint"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2466-9c6T1YX.gif"
   },
   {
     "id": "seated-glute-stretch",
@@ -422,7 +422,7 @@ export const stretchingExercises = [
     "tips": [
       "Reduces wrist strain"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0721-UtmIqcI.gif"
   },
   {
     "id": "wall-lat-stretch",
@@ -456,7 +456,7 @@ export const stretchingExercises = [
     "tips": [
       "Great for back mobility"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1407-PzNxakt.gif"
   },
   {
     "id": "standing-calf-stretch2",
@@ -490,6 +490,6 @@ export const stretchingExercises = [
     "tips": [
       "Prevents calf tightness"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1398-qOKcgVP.gif"
   }
 ];

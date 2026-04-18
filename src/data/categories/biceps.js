@@ -116,7 +116,7 @@ export const bicepsExercises = [
       "Short head grow = width increase.",
       "Tempo: 1–2 sec up → 2 sec squeeze → 3 sec down"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1629-faHKVkK.gif"
   },
   {
     "id": "incline-dumbbell-curl",
@@ -475,7 +475,7 @@ export const bicepsExercises = [
     "tips": [
       "Rotate wrists as you curl up"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0285-BU15nH4.gif"
   },
   {
     "id": "db-concentration-curl",
@@ -747,7 +747,7 @@ export const bicepsExercises = [
     "tips": [
       "Maximum stretch for the inner bicep"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0322-LCtQPn8.gif"
   },
   {
     "id": "barbell-alternate-biceps-curl",
@@ -815,7 +815,7 @@ export const bicepsExercises = [
     "tips": [
       "Keep back against seat"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0072-WLvTAv5.gif"
   },
   {
     "id": "cable-hammer-curl",
@@ -883,6 +883,6 @@ export const bicepsExercises = [
     "tips": [
       "Harder than it looks!"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1769-gscGLOU.gif"
   }
 ];

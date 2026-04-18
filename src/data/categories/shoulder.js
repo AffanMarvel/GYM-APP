@@ -454,7 +454,7 @@ export const shoulderExercises = [
     "tips": [
       "Excellent for stability"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0148-KHPZL0b.gif"
   },
   {
     "name": "Lever Lateral Raise (Machine)",
@@ -499,7 +499,7 @@ export const shoulderExercises = [
     "tips": [
       "Maintain slight elbow bend"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0993-sTfvVsG.gif"
   },
   {
     "name": "Kettlebell Alternate Press",
@@ -514,7 +514,7 @@ export const shoulderExercises = [
     "tips": [
       "Kettlebells challenge stability"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0148-KHPZL0b.gif"
   },
   {
     "name": "Kettlebell One Arm Shoulder Press",
@@ -529,7 +529,7 @@ export const shoulderExercises = [
     "tips": [
       "Focus on the side being worked"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0361-84RyJf8.gif"
   },
   {
     "name": "Kettlebell Alternate Deltoid Raise",
@@ -544,7 +544,7 @@ export const shoulderExercises = [
     "tips": [
       "Excellent for lateral head"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2799-G7xoEzr.gif"
   },
   {
     "name": "Dumbbell External Rotation",
@@ -559,7 +559,7 @@ export const shoulderExercises = [
     "tips": [
       "Essential for shoulder health"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0863-bmBf7LN.gif"
   },
   {
     "name": "Cable Seated Rear Delt Fly",
@@ -574,6 +574,6 @@ export const shoulderExercises = [
     "tips": [
       "Keep your chest against the support"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3697-G61cXLk.gif"
   }
 ];

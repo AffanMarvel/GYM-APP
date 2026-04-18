@@ -113,7 +113,7 @@ export const forearmExercises = [
       "Don't drop the plates.",
       "Maintain thumb pressure."
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0082-LsZkfU6.gif"
   },
   {
     "id": "behind-the-back-wrist-curl",
@@ -186,7 +186,7 @@ export const forearmExercises = [
     "tips": [
       "Full range of motion"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1642-rZ80Gbp.gif"
   },
   {
     "id": "cable-standing-back-wrist",
@@ -254,7 +254,7 @@ export const forearmExercises = [
     "tips": [
       "Maintain arm extension"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0224-VhX2JdE.gif"
   },
   {
     "id": "db-one-arm-rev-wrist",
@@ -356,7 +356,7 @@ export const forearmExercises = [
     "tips": [
       "Excellent for forearm symmetry"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1441-4Jc36XM.gif"
   },
   {
     "id": "db-over-bench-wrist-both",

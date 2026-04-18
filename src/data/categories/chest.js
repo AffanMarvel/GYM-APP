@@ -148,7 +148,7 @@ export const chestExercises = [
       "Don’t lock elbows completely.",
       "Imagine “bringing the dumbbells together” by chest squeeze."
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3545-TVdivgY.gif"
   },
   {
     "id": "decline-barbell-bench-press",
@@ -330,7 +330,7 @@ export const chestExercises = [
       "Don’t slam weights.",
       "Keep shoulders down and chest up."
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1405-chfnQnM.gif"
   },
   {
     "id": "3294-archer-push-up",
@@ -847,7 +847,7 @@ export const chestExercises = [
     "tips": [
       "Excellent for overall chest flexibility"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2143-RSOsp5d.gif"
   },
   {
     "id": "barbell-medium-grip-bench-press",
@@ -915,7 +915,7 @@ export const chestExercises = [
     "tips": [
       "Focus on the upper inner pec intersection"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0171-tBWXbIT.gif"
   },
   {
     "id": "machine-chest-press-unilateral",
@@ -949,6 +949,6 @@ export const chestExercises = [
     "tips": [
       "Great for fixing muscle imbalances"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1301-wDN97Ca.gif"
   }
 ];
