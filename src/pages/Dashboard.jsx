@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useRef } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useWorkout, formatTime } from '../context/WorkoutContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { Play, Trash2, Zap, Flame, ChevronRight, ChevronLeft, ClipboardCheck, Plus, Dumbbell, Clock, Activity, Shield } from 'lucide-react';
@@ -37,25 +37,18 @@ export default function Dashboard() {
     });
   }, [viewDate]);
 
-  const scrollRef = useRef(null);
-  
-  // Auto-scroll to center of the week
-  useEffect(() => {
-    if (scrollRef.current) {
-      const centerIndex = 3; // Center of 7 days
-      const childWidth = 72; 
-      const centerOffset = (scrollRef.current.clientWidth / 2) - (childWidth / 2);
-      scrollRef.current.scrollTo({
-        left: (centerIndex * childWidth) - centerOffset,
-        behavior: 'smooth'
-      });
-    }
-  }, [viewDate]);
-
   const navigateWeek = (days) => {
     const nextView = new Date(viewDate);
     nextView.setDate(nextView.getDate() + days);
-    setViewDate(nextView);
+    
+    // Calculate Monday of the new week to ensure strict alignment
+    const day = nextView.getDay();
+    const diff = nextView.getDate() - (day === 0 ? 6 : day - 1);
+    const nextMonday = new Date(nextView.setDate(diff));
+    nextMonday.setHours(0,0,0,0);
+    
+    setViewDate(nextMonday);
+    setSelectedDate(nextMonday); // Auto-jump to start of the week so data updates
   };
 
   // Filter sessions exactly by the tapped date
@@ -82,8 +75,8 @@ export default function Dashboard() {
           </button>
         </header>
 
-        {/* Horizontal Scrolling Calendar Strip with Nav Arrows */}
-        <div className="relative -mx-5 px-5 flex items-center gap-2">
+        {/* Fixed 7-Day Grid Calendar Strip with Nav Arrows */}
+        <div className="relative -mx-3 px-3 flex items-center gap-1.5">
           <button 
             onClick={() => navigateWeek(-7)} 
             className="shrink-0 w-8 h-[76px] flex items-center justify-center bg-white/5 rounded-xl border border-white/5 active:scale-90 transition-all text-white/40 hover:text-white"
@@ -91,11 +84,7 @@ export default function Dashboard() {
             <ChevronLeft size={18} />
           </button>
 
-          <div 
-            ref={scrollRef}
-            className="flex-1 flex overflow-x-auto gap-3 pb-2 snap-x scroll-smooth"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
+          <div className="flex-1 grid grid-cols-7 gap-1">
             {calendarDates.map((dateObj, i) => {
               const isSelected = dateObj.toLocaleDateString() === selectedStr;
               const isToday = dateObj.toLocaleDateString() === todayStr;
@@ -105,14 +94,14 @@ export default function Dashboard() {
                 <button
                   key={i}
                   onClick={() => setSelectedDate(dateObj)}
-                  className={`flex-shrink-0 flex flex-col items-center justify-center w-[60px] h-[76px] rounded-2xl border transition-all snap-center ${
+                  className={`flex flex-col items-center justify-center h-[76px] rounded-xl border transition-all ${
                     isSelected 
-                      ? 'bg-gym-neon text-gym-dark border-gym-neon shadow-[0_0_20px_rgba(129,140,248,0.4)] scale-105 z-10' 
+                      ? 'bg-gym-neon text-gym-dark border-gym-neon shadow-[0_0_20px_rgba(129,140,248,0.4)] z-10' 
                       : 'bg-[#141425] text-gym-muted border-white/5 hover:border-white/20 hover:text-white'
                   }`}
                 >
-                  <p className={`text-[10px] font-black uppercase tracking-widest ${isSelected ? 'text-gym-dark/70' : (isToday ? 'text-gym-neon' : '')}`}>{dayName}</p>
-                  <p className="text-2xl font-black mt-1 leading-none">{dateObj.getDate()}</p>
+                  <p className={`text-[8px] font-black uppercase tracking-tighter ${isSelected ? 'text-gym-dark/70' : (isToday ? 'text-gym-neon' : '')}`}>{dayName[0]}</p>
+                  <p className="text-xl font-black mt-1 leading-none">{dateObj.getDate()}</p>
                   {isToday && !isSelected && <div className="w-1 h-1 bg-gym-neon rounded-full mt-1 animate-pulse" />}
                 </button>
               );
