@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Plus, Search, Trash2, X, Image as ImageIcon, ChevronLeft, AlertCircle, Dumbbell, Shield, Download, Upload } from 'lucide-react';
+import { Plus, Search, Trash2, X, Image as ImageIcon, ChevronLeft, AlertCircle, Dumbbell, Shield, Download, Upload, Clock, RotateCcw, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useWorkout } from '../context/WorkoutContext';
 import { getAssetPath } from '../utils/assetPath';
@@ -57,42 +57,58 @@ export default function AdminPanel() {
   };
 // ... rest of the component logic stays similar ...
 
-  // --- Import / Export Backup Logic ---
-  const handleExport = () => {
-    const backupData = {
-      history: localStorage.getItem('gym_history'),
-      goals: localStorage.getItem('gym_goals'),
-      custom: localStorage.getItem('gym_custom_exercises'),
-      plan: localStorage.getItem('gym_active_plan')
-    };
-    const blob = new Blob([JSON.stringify(backupData)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `gym_tracker_backup_${new Date().toISOString().split('T')[0]}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
+  // --- Internal Backup History System (Android Friendly) ---
+  const getBackups = () => {
+    const raw = localStorage.getItem('gym_backups');
+    return raw ? JSON.parse(raw) : [];
   };
 
-  const handleImport = (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      try {
-        const data = JSON.parse(event.target.result);
-        if (data.history) localStorage.setItem('gym_history', data.history);
-        if (data.goals) localStorage.setItem('gym_goals', data.goals);
-        if (data.custom) localStorage.setItem('gym_custom_exercises', data.custom);
-        if (data.plan) localStorage.setItem('gym_active_plan', data.plan);
-        alert('Data successfully restored!');
-        window.location.reload();
-      } catch (err) {
-        alert('Invalid backup file format');
+  const createBackup = () => {
+    const currentData = {
+      timestamp: new Date().getTime(),
+      label: new Date().toLocaleString(),
+      payload: {
+        history: localStorage.getItem('gym_history'),
+        goals: localStorage.getItem('gym_goals'),
+        custom: localStorage.getItem('gym_custom_exercises'),
+        plan: localStorage.getItem('gym_active_plan'),
+        session: localStorage.getItem('gym_active_session')
       }
     };
-    reader.readAsText(file);
+    
+    const backups = getBackups();
+    // Keep only last 7 backups to save storage
+    const updatedBackups = [currentData, ...backups].slice(0, 7);
+    localStorage.setItem('gym_backups', JSON.stringify(updatedBackups));
+    alert('System state captured in backup history!');
+    window.location.reload();
   };
+
+  const restoreBackup = (backup) => {
+    if (!window.confirm(`Restore data from ${backup.label}? Current data will be overwritten.`)) return;
+    
+    const { payload } = backup;
+    if (payload.history) localStorage.setItem('gym_history', payload.history);
+    if (payload.goals) localStorage.setItem('gym_goals', payload.goals);
+    if (payload.custom) localStorage.setItem('gym_custom_exercises', payload.custom);
+    if (payload.plan) localStorage.setItem('gym_active_plan', payload.plan);
+    if (payload.session) {
+      localStorage.setItem('gym_active_session', payload.session);
+    } else {
+      localStorage.removeItem('gym_active_session');
+    }
+    
+    alert('Data restored successfully!');
+    window.location.reload();
+  };
+
+  const deleteBackup = (timestamp) => {
+    const backups = getBackups().filter(b => b.timestamp !== timestamp);
+    localStorage.setItem('gym_backups', JSON.stringify(backups));
+    window.location.reload();
+  };
+
+  const backups = getBackups();
 
   const customRaw = localStorage.getItem('gym_custom_exercises');
   const customData = customRaw ? JSON.parse(customRaw) : {};
@@ -118,24 +134,39 @@ export default function AdminPanel() {
           </div>
         </header>
 
-        {/* Data Sync & Backup Console */}
+        {/* New Android-Friendly Backup Timeline */}
         <div className="p-5 rounded-3xl bg-gym-card border border-white/5 space-y-4">
            <h2 className="text-[10px] font-black uppercase tracking-widest text-white/40 flex items-center gap-2">
-             <AlertCircle size={14} className="text-gym-neon" /> Data Portability
+             <Clock size={14} className="text-gym-neon" /> System Snapshots
            </h2>
-           <p className="text-xs font-medium text-gym-muted">Export your local database to transfer your statistics, goals, and custom exercises to another device.</p>
+           <p className="text-xs font-medium text-gym-muted">Backups are stored internally. Create a snapshot before making big changes or to save your previous day's history.</p>
            
-           <div className="flex gap-3">
-             <button onClick={handleExport} className="flex-1 py-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/5 flex items-center justify-center gap-2 transition-all">
-               <Download size={16} className="text-gym-cyan" />
-               <span className="text-[10px] font-black uppercase tracking-widest text-white">Export JSON</span>
-             </button>
-             <input type="file" accept=".json" onChange={handleImport} ref={fileInputRef} className="hidden" />
-             <button onClick={() => fileInputRef.current.click()} className="flex-1 py-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/5 flex items-center justify-center gap-2 transition-all">
-               <Upload size={16} className="text-gym-neon" />
-               <span className="text-[10px] font-black uppercase tracking-widest text-white">Import JSON</span>
-             </button>
-           </div>
+           <button onClick={createBackup} className="w-full py-4 bg-gym-neon/10 hover:bg-gym-neon/20 rounded-2xl border border-gym-neon/20 flex items-center justify-center gap-2 transition-all group">
+             <Plus size={18} className="text-gym-neon group-hover:rotate-90 transition-transform" />
+             <span className="text-[10px] font-black uppercase tracking-widest text-white">Capture Current State</span>
+           </button>
+
+           {backups.length > 0 && (
+             <div className="space-y-2 pt-2">
+               {backups.map((b) => (
+                 <div key={b.timestamp} className="p-3 bg-white/5 rounded-xl border border-white/5 flex items-center justify-between gap-3 group">
+                   <div className="flex items-center gap-3">
+                     <div className="w-8 h-8 rounded-lg bg-gym-dark flex items-center justify-center">
+                       <RotateCcw size={14} className="text-gym-cyan" />
+                     </div>
+                     <div>
+                       <p className="text-[10px] font-black text-white leading-none">{b.label.split(',')[0]}</p>
+                       <p className="text-[8px] font-bold text-gym-muted uppercase mt-1 tracking-tighter">{b.label.split(',')[1]}</p>
+                     </div>
+                   </div>
+                   <div className="flex gap-2">
+                     <button onClick={() => restoreBackup(b)} className="px-3 py-1.5 bg-gym-cyan/10 text-gym-cyan text-[8px] font-bold uppercase rounded-lg border border-gym-cyan/20">Restore</button>
+                     <button onClick={() => deleteBackup(b.timestamp)} className="p-1.5 text-gym-danger hover:bg-gym-danger/10 rounded-lg"><Trash2 size={14} /></button>
+                   </div>
+                 </div>
+               ))}
+             </div>
+           )}
         </div>
 
         <div className="flex items-center gap-3">
