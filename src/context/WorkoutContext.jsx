@@ -54,6 +54,11 @@ export const WorkoutProvider = ({ children }) => {
     };
   });
 
+  const [dailyGoals, setDailyGoals] = useState(() => {
+    const saved = localStorage.getItem('gym_daily_goals') || localStorage.getItem('gym_target_goals');
+    return saved ? JSON.parse(saved) : null;
+  });
+
   const [plannedExercises, setPlannedExercises] = useState(() => {
     const saved = localStorage.getItem('gym_active_plan');
     return saved ? JSON.parse(saved) : [];
@@ -80,6 +85,9 @@ export const WorkoutProvider = ({ children }) => {
   }, [history]);
 
   useEffect(() => { localStorage.setItem('gym_goals', JSON.stringify(goals)); }, [goals]);
+  useEffect(() => { 
+    if (dailyGoals) localStorage.setItem('gym_daily_goals', JSON.stringify(dailyGoals)); 
+  }, [dailyGoals]);
   useEffect(() => { localStorage.setItem('gym_active_plan', JSON.stringify(plannedExercises)); }, [plannedExercises]);
   useEffect(() => {
     if (activeSession) localStorage.setItem('gym_active_session', JSON.stringify(activeSession));
@@ -93,6 +101,7 @@ export const WorkoutProvider = ({ children }) => {
   };
   const removeFromPlan = (id) => setPlannedExercises(plannedExercises.filter(e => e.id !== id));
   const updateGoals = (newGoals) => setGoals({ ...goals, ...newGoals });
+  const updateDailyGoals = (newDaily) => setDailyGoals(newDaily);
 
   const startSession = () => {
     setActiveSession({
@@ -190,8 +199,8 @@ export const WorkoutProvider = ({ children }) => {
 
   return (
     <WorkoutContext.Provider value={{
-      exercises, updateExerciseData, history, goals, plannedExercises, activeSession,
-      addToPlan, removeFromPlan, updateGoals, startSession, pauseSession, resumeSession,
+      exercises, updateExerciseData, history, goals, dailyGoals, plannedExercises, activeSession,
+      addToPlan, removeFromPlan, updateGoals, updateDailyGoals, startSession, pauseSession, resumeSession,
       finishSession, logSetInSession, completeExerciseInSession, removeSetFromLog
     }}>
       {children}

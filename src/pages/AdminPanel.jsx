@@ -77,6 +77,7 @@ export default function AdminPanel() {
       payload: {
         history: localStorage.getItem('gym_history'),
         goals: localStorage.getItem('gym_goals'),
+        dailyGoals: localStorage.getItem('gym_daily_goals') || localStorage.getItem('gym_target_goals'),
         custom: localStorage.getItem('gym_custom_exercises'),
         plan: localStorage.getItem('gym_active_plan'),
         session: localStorage.getItem('gym_active_session')
@@ -97,6 +98,8 @@ export default function AdminPanel() {
     const { payload } = backup;
     if (payload.history) localStorage.setItem('gym_history', payload.history);
     if (payload.goals) localStorage.setItem('gym_goals', payload.goals);
+    if (payload.dailyGoals) localStorage.setItem('gym_daily_goals', payload.dailyGoals);
+    else if (payload.goals && payload.goals.includes('dailyLogs')) localStorage.setItem('gym_daily_goals', payload.goals);
     if (payload.custom) localStorage.setItem('gym_custom_exercises', payload.custom);
     if (payload.plan) localStorage.setItem('gym_active_plan', payload.plan);
     if (payload.session) {
@@ -120,6 +123,7 @@ export default function AdminPanel() {
     const backupData = {
       history: localStorage.getItem('gym_history'),
       goals: localStorage.getItem('gym_goals'),
+      dailyGoals: localStorage.getItem('gym_daily_goals') || localStorage.getItem('gym_target_goals'),
       custom: localStorage.getItem('gym_custom_exercises'),
       plan: localStorage.getItem('gym_active_plan'),
       session: localStorage.getItem('gym_active_session')
@@ -163,6 +167,7 @@ export default function AdminPanel() {
         const data = JSON.parse(event.target.result);
         if (data.history) localStorage.setItem('gym_history', data.history);
         if (data.goals) localStorage.setItem('gym_goals', data.goals);
+        if (data.dailyGoals) localStorage.setItem('gym_daily_goals', data.dailyGoals);
         if (data.custom) localStorage.setItem('gym_custom_exercises', data.custom);
         if (data.plan) localStorage.setItem('gym_active_plan', data.plan);
         if (data.session) localStorage.setItem('gym_active_session', data.session);

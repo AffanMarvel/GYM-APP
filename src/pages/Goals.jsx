@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useWorkout } from '../context/WorkoutContext';
 import { 
   Target, Flame, Trophy, Check, Calendar, 
-  TrendingUp, ChevronUp, ChevronDown, Dumbbell, Star, AlertTriangle, Plus, Minus, Save, X 
+  TrendingUp, ChevronUp, ChevronDown, Dumbbell, Star, AlertTriangle, Plus, Minus, Save, X, ChevronLeft, ChevronRight, History
 } from 'lucide-react';
 
 const NEON = '#818cf8';
@@ -10,11 +10,9 @@ const ACCENT = '#a855f7';
 const FIRE = '#f97316';
 const SUCCESS = '#10b981';
 const WARN = '#f59e0b';
-const DANGER = '#ef4444';
 const CARD = '#141425';
 const CYAN = '#22d3ee';
 
-// Default exercises with starting targets
 const DEFAULT_EXERCISES = [
   { name: 'Push-Ups', icon: '💪', defaultTarget: 100, unit: 'reps' },
   { name: 'Pull-Ups', icon: '🏋️', defaultTarget: 50, unit: 'reps' },
@@ -25,538 +23,422 @@ const DEFAULT_EXERCISES = [
   { name: 'Running', icon: '🏃', defaultTarget: 5, unit: 'km' },
 ];
 
-const GOALS_KEY = 'gym_target_goals';
-
-function loadGoals() {
-  try {
-    const raw = localStorage.getItem(GOALS_KEY);
-    return raw ? JSON.parse(raw) : null;
-  } catch { return null; }
-}
-
-function saveGoals(data) {
-  localStorage.setItem(GOALS_KEY, JSON.stringify(data));
-}
-
-function getTodayKey() {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-}
-
-function initGoals() {
-  const existing = loadGoals();
-  const defaults = DEFAULT_EXERCISES.map(ex => ({
-    name: ex.name,
-    icon: ex.icon,
-    unit: ex.unit,
-    target: ex.defaultTarget,
-  }));
-
-  if (!existing) {
-    const initial = { exercises: defaults, dailyLogs: {} };
-    saveGoals(initial);
-    return initial;
-  }
-
-  // Sync Logic: Check if any default exercises are missing from existing list
-  let changed = false;
-  defaults.forEach(def => {
-    const isMissing = !existing.exercises.find(e => e.name === def.name);
-    if (isMissing) {
-      existing.exercises.push(def);
-      changed = true;
-    }
-  });
-
-  if (changed) saveGoals(existing);
-  return existing;
-}
-
 export default function Goals() {
-  const { history } = useWorkout();
-  const [goals, setGoals] = useState(initGoals);
-  const [editingTarget, setEditingTarget] = useState(null); // index of exercise being edited
+  const { history = [], dailyGoals, updateDailyGoals } = useWorkout();
+  
+  // Local state for UI
+  const [activeTab, setActiveTab] = useState('today'); // 'today' or 'history'
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [editingTarget, setEditingTarget] = useState(null);
   const [tempTarget, setTempTarget] = useState('');
-  const [inputValues, setInputValues] = useState({}); // current input values for today
+  const [inputValues, setInputValues] = useState({});
   const [isAdding, setIsAdding] = useState(false);
   const [newGoal, setNewGoal] = useState({ name: '', icon: '🔥', target: 50, unit: 'reps' });
-  const todayKey = getTodayKey();
 
-  // Load today's performed values into input state
+  const selectedKey = useMemo(() => {
+    const d = selectedDate;
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  }, [selectedDate]);
+
+  const todayKey = useMemo(() => {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  }, []);
+
+  // Initialize dailyGoals if empty
   useEffect(() => {
-    const todayLog = goals.dailyLogs?.[todayKey] || {};
+    if (!dailyGoals) {
+      updateDailyGoals({
+        exercises: DEFAULT_EXERCISES.map(ex => ({
+          name: ex.name,
+          icon: ex.icon,
+          unit: ex.unit,
+          target: ex.defaultTarget,
+        })),
+        dailyLogs: {}
+      });
+    }
+  }, [dailyGoals]);
+
+  // Load selected day's values into input state
+  useEffect(() => {
+    if (!dailyGoals) return;
+    const log = dailyGoals.dailyLogs?.[selectedKey] || {};
     const vals = {};
-    goals.exercises.forEach(ex => {
-      vals[ex.name] = todayLog[ex.name]?.performed ?? '';
+    dailyGoals.exercises?.forEach(ex => {
+      vals[ex.name] = log[ex.name]?.performed ?? '';
     });
     setInputValues(vals);
-  }, [todayKey]);
+  }, [selectedKey, dailyGoals]);
 
-  const updateGoals = (newGoals) => {
-    setGoals(newGoals);
-    saveGoals(newGoals);
+  if (!dailyGoals) return null;
+
+  const handleUpdateDailyGoals = (newDaily) => {
+    updateDailyGoals(newDaily);
   };
 
-  // Save performed reps for an exercise
   const savePerformed = (exerciseName, performed) => {
     const num = parseInt(performed) || 0;
-    const updated = { ...goals };
-    if (!updated.dailyLogs[todayKey]) updated.dailyLogs[todayKey] = {};
+    const updated = { ...dailyGoals };
+    if (!updated.dailyLogs) updated.dailyLogs = {};
+    if (!updated.dailyLogs[selectedKey]) updated.dailyLogs[selectedKey] = {};
     
-    const exercise = goals.exercises.find(e => e.name === exerciseName);
-    updated.dailyLogs[todayKey][exerciseName] = {
+    const exercise = updated.exercises.find(e => e.name === exerciseName);
+    updated.dailyLogs[selectedKey][exerciseName] = {
       performed: num,
       target: exercise?.target || 0,
       timestamp: new Date().toLocaleTimeString(),
     };
-    updateGoals(updated);
+    handleUpdateDailyGoals(updated);
   };
 
-  // Change target for an exercise
   const updateTarget = (index, newTarget) => {
     const num = parseInt(newTarget);
     if (isNaN(num) || num < 1) return;
-    const updated = { ...goals };
+    const updated = { ...dailyGoals };
     updated.exercises[index].target = num;
-    updateGoals(updated);
+    handleUpdateDailyGoals(updated);
     setEditingTarget(null);
   };
 
+  const adjustTarget = (index, delta) => {
+    const updated = { ...dailyGoals };
+    const current = updated.exercises[index].target;
+    updated.exercises[index].target = Math.max(1, current + delta);
+    handleUpdateDailyGoals(updated);
+  };
+
   const addNewGoal = () => {
-    if (!newGoal.name.trim()) return alert('Name required!');
-    const updated = { ...goals };
+    if (!newGoal.name.trim()) return;
+    const updated = { ...dailyGoals };
     updated.exercises.push({
       ...newGoal,
       target: parseInt(newGoal.target) || 50
     });
-    updateGoals(updated);
+    handleUpdateDailyGoals(updated);
     setIsAdding(false);
     setNewGoal({ name: '', icon: '🔥', target: 50, unit: 'reps' });
   };
 
   const removeGoal = (index) => {
-    if (!window.confirm('Remove this goal? History for today will be kept.')) return;
-    const updated = { ...goals };
+    if (!window.confirm('Remove this goal?')) return;
+    const updated = { ...dailyGoals };
     updated.exercises = updated.exercises.filter((_, i) => i !== index);
-    updateGoals(updated);
+    handleUpdateDailyGoals(updated);
   };
 
-  // Quick increment/decrement target
-  const adjustTarget = (index, delta) => {
-    const updated = { ...goals };
-    const current = updated.exercises[index].target;
-    updated.exercises[index].target = Math.max(1, current + delta);
-    updateGoals(updated);
-  };
-
-  // Get today's data
-  const todayLog = goals.dailyLogs?.[todayKey] || {};
-
-  // Calculate completion stats
-  const exerciseStats = goals.exercises.map(ex => {
-    const log = todayLog[ex.name];
+  // Stats Logic
+  const selectedLog = dailyGoals.dailyLogs?.[selectedKey] || {};
+  const exerciseStats = (dailyGoals.exercises || []).map(ex => {
+    const log = selectedLog[ex.name];
     const performed = log?.performed ?? 0;
-    const target = ex.target;
+    const target = log?.target ?? ex.target;
     const progress = target > 0 ? Math.min(100, Math.round((performed / target) * 100)) : 0;
-    const remaining = Math.max(0, target - performed);
     const isComplete = performed >= target;
     const isPartial = performed > 0 && performed < target;
-    return { ...ex, performed, target, progress, remaining, isComplete, isPartial, hasLogged: log !== undefined };
+    return { ...ex, performed, target, progress, isComplete, isPartial, hasLogged: log !== undefined };
   });
 
-  const totalComplete = exerciseStats.filter(e => e.isComplete).length;
   const totalProgress = exerciseStats.length > 0 
     ? Math.round(exerciseStats.reduce((s, e) => s + e.progress, 0) / exerciseStats.length) 
     : 0;
-  const allDone = totalComplete === exerciseStats.length;
-  const hasAlerts = exerciseStats.some(e => e.isPartial);
 
-  // Streak calculation
-  const calcStreak = () => {
-    let streak = 0;
-    for (let i = 1; i < 365; i++) {
-      const d = new Date();
-      d.setDate(d.getDate() - i);
-      const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-      const dayLog = goals.dailyLogs?.[key];
-      if (dayLog) {
-        const dayComplete = goals.exercises.every(ex => (dayLog[ex.name]?.performed || 0) >= (dayLog[ex.name]?.target || ex.target));
-        if (dayComplete) streak++;
-        else break;
-      } else break;
+  const streak = useMemo(() => {
+    let s = 0;
+    const dates = Object.keys(dailyGoals.dailyLogs || {}).sort().reverse();
+    for (const dKey of dates) {
+      const dayLog = dailyGoals.dailyLogs[dKey];
+      const dayComplete = dailyGoals.exercises.every(ex => (dayLog[ex.name]?.performed || 0) >= (dayLog[ex.name]?.target || ex.target));
+      if (dayComplete) s++;
+      else break;
     }
-    if (allDone) streak++;
-    return streak;
-  };
-  const streak = calcStreak();
+    return s;
+  }, [dailyGoals]);
 
-  // Past 7 days visualization
-  const weekData = [];
-  for (let i = 6; i >= 0; i--) {
-    const d = new Date();
-    d.setDate(d.getDate() - i);
-    const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-    const dayLog = goals.dailyLogs?.[key] || {};
-    const dayExercises = goals.exercises.map(ex => {
-      const log = dayLog[ex.name];
-      return log ? Math.min(100, Math.round((log.performed / (log.target || ex.target)) * 100)) : 0;
-    });
-    const avgProgress = dayExercises.length > 0 ? Math.round(dayExercises.reduce((s, v) => s + v, 0) / dayExercises.length) : 0;
-    weekData.push({
-      day: d.toLocaleDateString('en-US', { weekday: 'short' }),
-      date: d.getDate(),
-      progress: avgProgress,
-      isToday: i === 0,
-    });
-  }
+  const changeDate = (days) => {
+    const next = new Date(selectedDate);
+    next.setDate(next.getDate() + days);
+    setSelectedDate(next);
+  };
 
   return (
-    <div className="min-h-screen pb-28" style={{ background: 'linear-gradient(160deg, #06060d 0%, #0e0e1a 40%, #0d0a1a 100%)' }}>
-      <div className="p-5 slide-up max-w-lg mx-auto space-y-5">
+    <div className="min-h-screen pb-32">
+      <div className="p-5 slide-up max-w-lg mx-auto space-y-6">
         
-        {/* Header */}
-        <header className="flex items-center justify-between pt-2">
-          <div className="flex items-center space-x-3">
-            <div className="p-2.5 rounded-xl" style={{ background: 'rgba(129,140,248,0.1)' }}>
-              <Target style={{ color: NEON }} size={22} />
-            </div>
-            <div>
-              <h1 className="text-2xl font-black text-white">Daily Targets</h1>
-              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#6b7280' }}>Track your performance</p>
+        {/* Header (The "Gold Panel" style) */}
+        <header className="flex items-center justify-between pt-6 preserve-3d">
+          <div className="space-y-1">
+            <h1 className="text-4xl font-black text-white italic tracking-tighter">
+              TARGETS <span className="text-[#fbbf24] text-glow-beast">GOLD</span>
+            </h1>
+            <div className="flex items-center gap-2">
+              <span className="w-8 h-[2px] bg-[#fbbf24]/30" />
+              <p className="text-[10px] font-bold text-[#fbbf24]/60 uppercase tracking-[0.3em]">
+                {selectedKey === todayKey ? 'Active Daily Mission' : selectedDate.toDateString()}
+              </p>
             </div>
           </div>
-          <div className="flex items-center gap-2 px-3 py-2 rounded-xl" style={{ background: CARD, border: '1px solid rgba(255,255,255,0.05)' }}>
-            <Flame size={16} style={{ color: FIRE }} />
-            <span className="text-sm font-black text-white">{streak}</span>
-            <span className="text-[8px] font-bold uppercase" style={{ color: '#6b7280' }}>Streak</span>
+          <div className="flex items-center gap-3">
+             <div className="flex flex-col items-end">
+               <span className="text-xs font-black text-white">{streak}</span>
+               <span className="text-[7px] font-black uppercase text-[#fbbf24]">STREAK</span>
+             </div>
+             <div className="p-3 rounded-2xl glass-beast border-[#fbbf24]/20 shadow-beast shadow-[#fbbf24]/10">
+               <Trophy size={20} className="text-[#fbbf24]" />
+             </div>
           </div>
         </header>
 
-        {/* Overall Progress Ring */}
-        <div className="rounded-3xl p-6 text-center" style={{ background: CARD, border: '1px solid rgba(255,255,255,0.05)' }}>
-          <div className="relative w-28 h-28 mx-auto mb-4">
-            <svg className="w-28 h-28 -rotate-90" viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="42" stroke="rgba(255,255,255,0.05)" strokeWidth="8" fill="none" />
-              <circle 
-                cx="50" cy="50" r="42" 
-                stroke={allDone ? SUCCESS : hasAlerts ? WARN : NEON} 
-                strokeWidth="8" fill="none" strokeLinecap="round"
-                strokeDasharray={`${2 * Math.PI * 42}`}
-                strokeDashoffset={`${2 * Math.PI * 42 * (1 - totalProgress / 100)}`}
-                style={{ transition: 'stroke-dashoffset 0.8s ease' }}
-              />
-            </svg>
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-2xl font-black text-white">{totalProgress}%</span>
-              <span className="text-[8px] font-bold uppercase tracking-widest" style={{ color: '#6b7280' }}>Overall</span>
-            </div>
-          </div>
-          <p className="text-xs font-bold" style={{ color: allDone ? SUCCESS : hasAlerts ? WARN : '#6b7280' }}>
-            {allDone ? '🎉 All targets smashed! Beast mode!' : `${totalComplete}/${exerciseStats.length} targets hit`}
-          </p>
+        {/* Tab Toggle */}
+        <div className="flex p-1.5 glass-beast rounded-[2rem] border-white/5 shadow-beast">
+          <button 
+            onClick={() => { setActiveTab('today'); setSelectedDate(new Date()); }}
+            className={`flex-1 py-3 rounded-[1.5rem] text-[10px] font-black uppercase tracking-[0.2em] transition-all ${activeTab === 'today' ? 'bg-gradient-beast text-white shadow-beast' : 'text-white/40'}`}
+          >
+            Today
+          </button>
+          <button 
+            onClick={() => setActiveTab('history')}
+            className={`flex-1 py-3 rounded-[1.5rem] text-[10px] font-black uppercase tracking-[0.2em] transition-all ${activeTab === 'history' ? 'bg-gradient-beast text-white shadow-beast' : 'text-white/40'}`}
+          >
+            History
+          </button>
         </div>
 
-        {/* Alert Banner */}
-        {hasAlerts && (
-          <div className="rounded-2xl p-4 flex items-start gap-3" style={{ background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.2)' }}>
-            <AlertTriangle size={20} style={{ color: WARN }} className="shrink-0 mt-0.5" />
-            <div>
-              <p className="text-xs font-black text-white mb-1">Targets Not Met!</p>
-              <div className="space-y-1">
-                {exerciseStats.filter(e => e.isPartial).map((ex, i) => (
-                  <p key={i} className="text-[11px] font-bold" style={{ color: WARN }}>
-                    {ex.name}: Did {ex.performed}, need {ex.remaining} more {ex.unit} to hit {ex.target}
-                  </p>
-                ))}
-              </div>
+        {/* Date Selector for History */}
+        {activeTab === 'history' && (
+          <div className="flex items-center justify-between glass-beast p-2 rounded-3xl border-white/5 shadow-beast animate-in fade-in slide-in-from-top-2">
+            <button onClick={() => changeDate(-1)} className="p-4 glass-beast rounded-2xl border-white/5 active:scale-75 transition-all">
+              <ChevronLeft size={20} className="text-white" />
+            </button>
+            <div className="text-center">
+               <p className="text-sm font-black text-white italic">{selectedDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+               <p className="text-[8px] font-black uppercase tracking-widest text-[#fbbf24]/60 mt-0.5">Mission Recap</p>
             </div>
+            <button onClick={() => changeDate(1)} disabled={selectedKey === todayKey} className="p-4 glass-beast rounded-2xl border-white/5 active:scale-75 transition-all disabled:opacity-20">
+              <ChevronRight size={20} className="text-white" />
+            </button>
           </div>
         )}
 
-        {/* Weekly Progress Bars */}
-        <div className="rounded-2xl p-4" style={{ background: CARD, border: '1px solid rgba(255,255,255,0.05)' }}>
-          <h3 className="text-[10px] font-black uppercase tracking-widest mb-3" style={{ color: 'rgba(255,255,255,0.3)' }}>This Week</h3>
-          <div className="flex justify-between items-end gap-1.5">
-            {weekData.map((wd, i) => (
-              <div key={i} className="flex flex-col items-center gap-1.5 flex-1">
-                <span className="text-[8px] font-bold" style={{ color: '#6b7280' }}>{wd.progress}%</span>
-                <div className="w-full h-16 rounded-lg overflow-hidden relative" style={{ background: 'rgba(255,255,255,0.03)' }}>
-                  <div 
-                    className="absolute bottom-0 w-full rounded-lg transition-all duration-500"
-                    style={{ 
-                      height: `${wd.progress}%`, 
-                      background: wd.progress >= 100 
-                        ? `linear-gradient(to top, ${SUCCESS}, ${CYAN})` 
-                        : wd.progress > 0 
-                          ? `linear-gradient(to top, ${NEON}, ${ACCENT})`
-                          : 'transparent',
-                      border: wd.isToday ? `2px solid ${NEON}` : 'none'
-                    }}
+        {/* Progress Display */}
+        <div className="glass-beast p-8 rounded-[3rem] border-white/5 shadow-beast-heavy relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#fbbf24]/5 rounded-full blur-[60px] animate-pulse" />
+          <div className="relative z-10 flex items-center justify-between">
+            <div className="space-y-1">
+              <p className="text-4xl font-black text-white italic">{totalProgress}%</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#fbbf24]">Efficiency</p>
+            </div>
+            <div className="w-20 h-20 relative">
+               <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.05)" strokeWidth="12" fill="none" />
+                  <circle 
+                    cx="50" cy="50" r="40" 
+                    stroke={totalProgress >= 100 ? SUCCESS : '#fbbf24'} 
+                    strokeWidth="12" fill="none" strokeLinecap="round"
+                    strokeDasharray="251"
+                    strokeDashoffset={251 - (251 * totalProgress) / 100}
+                    style={{ transition: 'stroke-dashoffset 1s ease' }}
                   />
+               </svg>
+               <div className="absolute inset-0 flex items-center justify-center">
+                  <Target size={20} className="text-white/20" />
+               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Goal Cards */}
+        <div className="space-y-4">
+          <div className="flex items-center justify-between px-2">
+            <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30 flex items-center gap-2">
+              <Dumbbell size={14} className="text-[#fbbf24]" /> {activeTab === 'today' ? 'Active Matrix' : 'Archived Results'}
+            </h2>
+            {activeTab === 'today' && (
+              <button 
+                onClick={() => setIsAdding(true)}
+                className="p-3 glass-beast rounded-2xl border-[#fbbf24]/20 text-[#fbbf24] shadow-beast tap-3d transition-all hover:bg-[#fbbf24]/10"
+              >
+                <Plus size={16} />
+              </button>
+            )}
+          </div>
+
+          <div className="grid grid-cols-1 gap-4">
+            {exerciseStats.map((ex, i) => (
+              <div 
+                key={i} 
+                className={`glass-beast rounded-[2.5rem] border transition-all duration-500 shadow-beast overflow-hidden preserve-3d ${
+                  ex.isComplete ? 'border-SUCCESS/30 shadow-SUCCESS/5' : 'border-white/5'
+                }`}
+              >
+                <div className="p-6 flex items-center justify-between">
+                   <div className="flex items-center gap-5">
+                      <div className="w-14 h-14 rounded-2xl glass-beast flex items-center justify-center text-2xl shadow-beast relative">
+                        {ex.isComplete ? <Check size={28} className="text-SUCCESS" strokeWidth={3} /> : <span className="animate-beast-float">{ex.icon}</span>}
+                      </div>
+                      <div className="space-y-1">
+                        <h3 className="text-sm font-black text-white italic uppercase tracking-wider flex items-center gap-2">
+                          {ex.name}
+                          {activeTab === 'today' && !DEFAULT_EXERCISES.find(d => d.name === ex.name) && (
+                            <button onClick={() => removeGoal(i)} className="p-1 opacity-20 hover:opacity-100 text-gym-danger transition-all">
+                              <X size={12} />
+                            </button>
+                          )}
+                        </h3>
+                        <p className={`text-[9px] font-black uppercase tracking-[0.2em] ${ex.isComplete ? 'text-SUCCESS' : 'text-white/30'}`}>
+                          {ex.isComplete ? 'Target Smashed' : `Objective: ${ex.target} ${ex.unit}`}
+                        </p>
+                      </div>
+                   </div>
+                   <div className="text-right">
+                      <p className="text-2xl font-black text-white italic">{ex.progress}%</p>
+                      <p className="text-[7px] font-black text-white/20 uppercase tracking-widest mt-1">Completion</p>
+                   </div>
                 </div>
-                <span className="text-[8px] font-bold" style={{ color: wd.isToday ? NEON : '#6b7280' }}>{wd.day}</span>
+
+                {/* Progress Bar */}
+                <div className="px-6 pb-2">
+                   <div className="h-1.5 w-full glass-beast rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-gradient-beast transition-all duration-1000"
+                        style={{ width: `${ex.progress}%`, background: ex.isComplete ? SUCCESS : '#fbbf24' }}
+                      />
+                   </div>
+                </div>
+
+                {/* Interaction Row (Only if active or looking at history) */}
+                <div className="p-6 flex items-center justify-between pt-2">
+                   {activeTab === 'today' && editingTarget === i ? (
+                     <div className="flex items-center gap-2 w-full animate-in slide-in-from-left-2">
+                        <input 
+                          type="number"
+                          autoFocus
+                          value={tempTarget}
+                          onChange={(e) => setTempTarget(e.target.value)}
+                          onBlur={() => updateTarget(i, tempTarget)}
+                          onKeyDown={(e) => e.key === 'Enter' && updateTarget(i, tempTarget)}
+                          className="flex-1 glass-beast h-12 rounded-2xl px-4 text-white font-black italic border-[#fbbf24]/30 outline-none"
+                        />
+                        <button onClick={() => updateTarget(i, tempTarget)} className="p-3 bg-SUCCESS rounded-2xl text-white shadow-beast"><Save size={18} /></button>
+                     </div>
+                   ) : (
+                     <div className="flex items-center gap-3">
+                        {activeTab === 'today' && (
+                          <div className="flex items-center gap-1.5 glass-beast p-1.5 rounded-2xl border-white/5">
+                            <button onClick={() => adjustTarget(i, -5)} className="w-10 h-10 glass-beast rounded-xl flex items-center justify-center opacity-40 hover:opacity-100"><Minus size={14} /></button>
+                            <button onClick={() => { setEditingTarget(i); setTempTarget(ex.target.toString()); }} className="px-4 text-[10px] font-black text-white italic">{ex.target}</button>
+                            <button onClick={() => adjustTarget(i, 5)} className="w-10 h-10 glass-beast rounded-xl flex items-center justify-center opacity-40 hover:opacity-100"><Plus size={14} /></button>
+                          </div>
+                        )}
+                        {activeTab === 'history' && (
+                          <p className="text-[10px] font-black text-white/40 uppercase tracking-widest italic">Target: {ex.target} {ex.unit}</p>
+                        )}
+                     </div>
+                   )}
+
+                   {/* Data Entry */}
+                   <div className="flex items-center gap-3">
+                      <input 
+                        type="number"
+                        placeholder="0"
+                        value={inputValues[ex.name] || ''}
+                        onChange={(e) => setInputValues({...inputValues, [ex.name]: e.target.value})}
+                        className="w-16 h-12 glass-beast rounded-2xl text-center text-white font-black italic outline-none border-white/10 focus:border-[#fbbf24]/40"
+                      />
+                      <button 
+                        onClick={() => savePerformed(ex.name, inputValues[ex.name])}
+                        className="p-3 bg-gradient-beast rounded-2xl text-white shadow-beast tap-3d"
+                      >
+                        <Save size={18} />
+                      </button>
+                   </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Exercise Target Cards */}
-        <div className="space-y-3">
-          <div className="flex items-center justify-between px-1">
-            <h2 className="text-[10px] font-black uppercase tracking-widest flex items-center gap-2" style={{ color: 'rgba(255,255,255,0.3)' }}>
-              <Dumbbell size={12} style={{ color: NEON }} />
-              Today's Exercise Targets
-            </h2>
-            <button onClick={() => setIsAdding(true)} className="p-1 px-2.5 rounded-lg bg-gym-neon/10 border border-gym-neon/20 hover:bg-gym-neon/20 transition-all active:scale-95 flex items-center gap-1.5">
-              <Plus size={12} style={{ color: NEON }} />
-              <span className="text-[9px] font-black uppercase tracking-widest" style={{ color: NEON }}>Add Goal</span>
-            </button>
-          </div>
-
-          {exerciseStats.map((ex, i) => (
-            <div 
-              key={i} 
-              className="rounded-2xl overflow-hidden transition-all"
-              style={{ 
-                background: ex.isComplete ? 'rgba(16,185,129,0.06)' : CARD, 
-                border: `1px solid ${ex.isComplete ? 'rgba(16,185,129,0.15)' : ex.isPartial ? 'rgba(245,158,11,0.15)' : 'rgba(255,255,255,0.05)'}` 
-              }}
-            >
-              {/* Exercise Header */}
-              <div className="p-4 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl" style={{ 
-                    background: ex.isComplete ? 'rgba(16,185,129,0.15)' : 'rgba(129,140,248,0.1)' 
-                  }}>
-                    {ex.isComplete ? <Check size={24} style={{ color: SUCCESS }} /> : ex.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-black text-white flex items-center gap-2">
-                       {ex.name}
-                       {!DEFAULT_EXERCISES.find(d => d.name === ex.name) && (
-                         <button onClick={() => removeGoal(i)} className="p-1 text-red-500/40 hover:text-red-500 transition-colors">
-                           <X size={12} />
-                         </button>
-                       )}
-                    </h3>
-                    <p className="text-[10px] font-bold" style={{ color: ex.isComplete ? SUCCESS : ex.isPartial ? WARN : '#6b7280' }}>
-                      {ex.isComplete ? '✅ Target hit!' : ex.isPartial ? `⚠️ ${ex.remaining} ${ex.unit} remaining` : `Target: ${ex.target} ${ex.unit}`}
-                    </p>
-                  </div>
-                </div>
-                
-                {/* Status Badge */}
-                <div className="text-right">
-                  {ex.hasLogged && (
-                    <span className="text-lg font-black" style={{ color: ex.isComplete ? SUCCESS : ex.isPartial ? WARN : '#6b7280' }}>
-                      {ex.progress}%
-                    </span>
-                  )}
-                </div>
+        {/* Lifetime Matrix */}
+        <section className="glass-beast p-8 rounded-[3rem] border-white/5 shadow-beast-heavy preserve-3d">
+           <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20 mb-6">Tactical Lifetime Matrix</p>
+           <div className="grid grid-cols-3 gap-6">
+              <div className="text-center space-y-2">
+                 <div className="w-12 h-12 mx-auto glass-beast rounded-2xl flex items-center justify-center text-gym-neon shadow-beast"><History size={20} /></div>
+                 <p className="text-2xl font-black text-white italic">{history?.length || 0}</p>
+                 <p className="text-[8px] font-black text-white/30 uppercase tracking-widest">Missions</p>
               </div>
-
-              {/* Progress Bar */}
-              <div className="px-4 pb-2">
-                <div className="h-2 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.05)' }}>
-                  <div 
-                    className="h-full rounded-full transition-all duration-700"
-                    style={{ 
-                      width: `${Math.min(100, ex.progress)}%`,
-                      background: ex.isComplete 
-                        ? `linear-gradient(90deg, ${SUCCESS}, ${CYAN})` 
-                        : ex.isPartial 
-                          ? `linear-gradient(90deg, ${WARN}, ${FIRE})`
-                          : `linear-gradient(90deg, ${NEON}, ${ACCENT})`
-                    }}
-                  />
-                </div>
+              <div className="text-center space-y-2">
+                 <div className="w-12 h-12 mx-auto glass-beast rounded-2xl flex items-center justify-center text-[#fbbf24] shadow-beast"><TrendingUp size={20} /></div>
+                 <p className="text-2xl font-black text-white italic">{Object.keys(dailyGoals.dailyLogs || {}).length}</p>
+                 <p className="text-[8px] font-black text-white/30 uppercase tracking-widest">Logs</p>
               </div>
-
-              {/* Target + Input Row */}
-              <div className="px-4 pb-4 pt-2 flex items-center gap-3">
-                {/* Target Adjuster */}
-                <div className="flex items-center gap-1">
-                  <button 
-                    onClick={() => adjustTarget(i, -5)}
-                    className="w-8 h-8 rounded-lg flex items-center justify-center active:scale-90 transition-transform"
-                    style={{ background: 'rgba(255,255,255,0.05)' }}
-                  >
-                    <Minus size={14} style={{ color: '#6b7280' }} />
-                  </button>
-                  
-                  {editingTarget === i ? (
-                    <input
-                      type="number"
-                      value={tempTarget}
-                      onChange={(e) => setTempTarget(e.target.value)}
-                      onBlur={() => { updateTarget(i, tempTarget); }}
-                      onKeyDown={(e) => { if (e.key === 'Enter') updateTarget(i, tempTarget); }}
-                      className="w-16 h-8 rounded-lg text-center text-base font-black text-white outline-none"
-                      style={{ background: 'rgba(129,140,248,0.1)', border: `1px solid ${NEON}` }}
-                      autoFocus
-                    />
-                  ) : (
-                    <button 
-                      onClick={() => { setEditingTarget(i); setTempTarget(ex.target.toString()); }}
-                      className="w-16 h-8 rounded-lg text-center text-xs font-black transition-all active:scale-95"
-                      style={{ color: NEON, background: 'rgba(129,140,248,0.08)', border: '1px solid rgba(129,140,248,0.15)' }}
-                    >
-                      {ex.target}
-                    </button>
-                  )}
-                  
-                  <button 
-                    onClick={() => adjustTarget(i, 5)}
-                    className="w-8 h-8 rounded-lg flex items-center justify-center active:scale-90 transition-transform"
-                    style={{ background: 'rgba(255,255,255,0.05)' }}
-                  >
-                    <Plus size={14} style={{ color: '#6b7280' }} />
-                  </button>
-                  <span className="text-[8px] font-bold uppercase" style={{ color: '#6b7280' }}>Target</span>
-                </div>
-
-                <div className="flex-1" />
-
-                {/* Performed Input */}
-                <div className="flex items-center gap-2">
-                  <input
-                    type="number"
-                    placeholder="0"
-                    value={inputValues[ex.name] || ''}
-                    onChange={(e) => setInputValues({ ...inputValues, [ex.name]: e.target.value })}
-                    className="w-20 h-10 rounded-xl text-center text-base font-black text-white outline-none transition-all placeholder:text-gray-600"
-                    style={{ 
-                      background: 'rgba(255,255,255,0.05)', 
-                      border: `2px solid ${inputValues[ex.name] ? 'rgba(129,140,248,0.3)' : 'rgba(255,255,255,0.05)'}` 
-                    }}
-                  />
-                  <button
-                    onClick={() => savePerformed(ex.name, inputValues[ex.name])}
-                    className="h-10 px-3 rounded-xl font-black text-[10px] uppercase tracking-wider transition-all active:scale-95"
-                    style={{ 
-                      background: `linear-gradient(135deg, ${NEON}, ${ACCENT})`, 
-                      color: '#fff',
-                      boxShadow: '0 0 15px rgba(129,140,248,0.2)'
-                    }}
-                  >
-                    <Save size={14} />
-                  </button>
-                </div>
+              <div className="text-center space-y-2">
+                 <div className="w-12 h-12 mx-auto glass-beast rounded-2xl flex items-center justify-center text-accent shadow-beast"><Star size={20} /></div>
+                 <p className="text-2xl font-black text-white italic">{streak}</p>
+                 <p className="text-[8px] font-black text-white/30 uppercase tracking-widest">Streak</p>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Lifetime Stats */}
-        <div className="rounded-2xl p-5" style={{ background: CARD, border: '1px solid rgba(255,255,255,0.05)' }}>
-          <h3 className="text-[10px] font-black uppercase tracking-widest mb-4" style={{ color: 'rgba(255,255,255,0.3)' }}>Lifetime Stats</h3>
-          <div className="grid grid-cols-3 gap-3">
-            <div className="text-center">
-              <Trophy size={18} style={{ color: NEON }} className="mx-auto mb-1" />
-              <p className="text-xl font-black text-white">{history?.length || 0}</p>
-              <p className="text-[8px] font-bold uppercase tracking-widest" style={{ color: '#6b7280' }}>Workouts</p>
-            </div>
-            <div className="text-center">
-              <TrendingUp size={18} style={{ color: ACCENT }} className="mx-auto mb-1" />
-              <p className="text-xl font-black text-white">{Object.keys(goals.dailyLogs || {}).length}</p>
-              <p className="text-[8px] font-bold uppercase tracking-widest" style={{ color: '#6b7280' }}>Days Logged</p>
-            </div>
-            <div className="text-center">
-              <Star size={18} style={{ color: FIRE }} className="mx-auto mb-1" />
-              <p className="text-xl font-black text-white">{streak}</p>
-              <p className="text-[8px] font-bold uppercase tracking-widest" style={{ color: '#6b7280' }}>Best Streak</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Info */}
-        <div className="p-4 rounded-2xl" style={{ background: 'rgba(129,140,248,0.05)', border: '1px solid rgba(129,140,248,0.1)' }}>
-          <div className="flex items-start gap-3">
-            <TrendingUp size={18} style={{ color: NEON }} className="mt-0.5 shrink-0" />
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-widest mb-1" style={{ color: NEON }}>How It Works</p>
-              <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                Set your daily target for each exercise. Log what you performed. If you fall short, you'll get an alert showing how many remain. Increase targets daily to push harder! 💪
-              </p>
-            </div>
-          </div>
-        </div>
+           </div>
+        </section>
 
         {/* Add Goal Modal */}
         {isAdding && (
-          <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md p-5 flex items-end animate-in fade-in transition-all">
-            <div className="w-full max-w-lg mx-auto bg-[#141425] rounded-t-[40px] border-t border-x border-white/10 p-8 space-y-8 slide-up scrollbar-hide">
-              <div className="flex items-center justify-between border-b border-white/5 pb-5">
+          <div className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-md p-5 flex items-end animate-in fade-in transition-all">
+            <div className="w-full max-w-lg mx-auto glass-beast rounded-t-[3rem] border-t border-white/10 p-10 space-y-8 slide-up">
+              <div className="flex justify-between items-center border-b border-white/5 pb-6">
                 <div>
-                  <h2 className="text-2xl font-black text-white">Forge New Goal</h2>
-                  <p className="text-[10px] text-gym-muted font-bold tracking-widest uppercase">Expand your targets</p>
+                  <h2 className="text-3xl font-black text-white italic">NEW <span className="text-[#fbbf24]">MISSION</span></h2>
+                  <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em]">Configure Daily Objective</p>
                 </div>
-                <button onClick={() => setIsAdding(false)} className="p-3 bg-white/5 rounded-full text-gym-muted hover:text-white transition-all"><X size={20} /></button>
+                <button onClick={() => setIsAdding(false)} className="p-4 glass-beast rounded-full text-white/40 hover:text-white transition-all"><X size={20} /></button>
               </div>
 
               <div className="space-y-6">
-                <div className="space-y-3">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-[#818cf8]">Exercise Identity</label>
-                  <div className="flex gap-4">
+                 <div className="grid grid-cols-4 gap-4">
                     <input 
-                      type="text" 
-                      placeholder="Icon (e.g. 🏃)" 
-                      value={newGoal.icon} 
-                      onChange={(e) => setNewGoal({...newGoal, icon: e.target.value})}
-                      className="w-16 h-14 bg-black/40 border border-white/10 rounded-2xl text-center text-xl focus:border-[#818cf8]/50 outline-none transition-all"
+                       type="text" 
+                       placeholder="🔥" 
+                       value={newGoal.icon} 
+                       onChange={(e) => setNewGoal({...newGoal, icon: e.target.value})}
+                       className="h-16 glass-beast rounded-2xl text-center text-2xl focus:border-[#fbbf24]/50 outline-none"
                     />
                     <input 
-                      type="text" 
-                      placeholder="Goal Name (e.g. Running)" 
-                      value={newGoal.name} 
-                      onChange={(e) => setNewGoal({...newGoal, name: e.target.value})}
-                      className="flex-1 h-14 bg-black/40 border border-white/10 rounded-2xl px-5 text-white font-bold focus:border-[#818cf8]/50 outline-none transition-all"
+                       type="text" 
+                       placeholder="Exercise Name" 
+                       value={newGoal.name} 
+                       onChange={(e) => setNewGoal({...newGoal, name: e.target.value})}
+                       className="col-span-3 h-16 glass-beast rounded-2xl px-6 text-white font-black italic focus:border-[#fbbf24]/50 outline-none"
                     />
-                  </div>
-                </div>
+                 </div>
+                 <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <p className="text-[9px] font-black text-[#fbbf24] uppercase tracking-widest px-1">Daily Target</p>
+                      <input 
+                        type="number" 
+                        value={newGoal.target} 
+                        onChange={(e) => setNewGoal({...newGoal, target: e.target.value})}
+                        className="w-full h-16 glass-beast rounded-2xl px-6 text-white font-black italic outline-none"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-[9px] font-black text-[#fbbf24] uppercase tracking-widest px-1">Unit</p>
+                      <select 
+                        value={newGoal.unit} 
+                        onChange={(e) => setNewGoal({...newGoal, unit: e.target.value})}
+                        className="w-full h-16 glass-beast rounded-2xl px-6 text-white font-black italic outline-none appearance-none"
+                      >
+                        {['reps','sets','km','meters','sec','min'].map(u => <option key={u} value={u}>{u}</option>)}
+                      </select>
+                    </div>
+                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-3">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-[#818cf8]">Daily Target</label>
-                    <input 
-                      type="number" 
-                      value={newGoal.target} 
-                      onChange={(e) => setNewGoal({...newGoal, target: e.target.value})}
-                      className="w-full h-14 bg-black/40 border border-white/10 rounded-2xl px-5 text-white font-bold focus:border-[#818cf8]/50 outline-none transition-all"
-                    />
-                  </div>
-                  <div className="space-y-3">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-[#818cf8]">Metric</label>
-                    <select 
-                      value={newGoal.unit} 
-                      onChange={(e) => setNewGoal({...newGoal, unit: e.target.value})}
-                      className="w-full h-14 bg-black/40 border border-white/10 rounded-2xl px-5 text-white font-bold focus:border-[#818cf8]/50 outline-none transition-all appearance-none"
-                    >
-                      <option value="km">km</option>
-                      <option value="meters">meters</option>
-                      <option value="reps">reps</option>
-                      <option value="sets">sets</option>
-                      <option value="sec">seconds</option>
-                      <option value="min">minutes</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="pt-4 flex gap-3">
-                  <button onClick={() => setNewGoal({...newGoal, name: 'Running', icon: '🏃', target: 5, unit: 'km'})} className="flex-1 py-3 bg-white/5 rounded-xl border border-white/5 text-[9px] font-black uppercase tracking-widest text-gym-muted hover:text-[#818cf8] transition-all">
-                    Load Running
-                  </button>
-                  <button onClick={() => setNewGoal({...newGoal, name: 'Cycling', icon: '🚴', target: 15, unit: 'km'})} className="flex-1 py-3 bg-white/5 rounded-xl border border-white/5 text-[9px] font-black uppercase tracking-widest text-gym-muted hover:text-[#818cf8] transition-all">
-                    Load Cycling
-                  </button>
-                </div>
-
-                <button 
-                  onClick={addNewGoal}
-                  className="w-full py-5 bg-gradient-to-r from-[#818cf8] to-[#a855f7] text-white font-black text-sm uppercase tracking-widest rounded-3xl shadow-xl shadow-[#818cf8]/20 active:scale-95 transition-all mt-4"
-                >
-                  Activate Goal
-                </button>
+                 <button 
+                   onClick={addNewGoal}
+                   className="w-full py-6 bg-gradient-beast text-white font-black text-sm uppercase tracking-[0.4em] rounded-[2rem] shadow-beast active:scale-95 transition-all mt-6 relative overflow-hidden"
+                 >
+                   <div className="absolute inset-0 shimmer-beast opacity-30" />
+                   AUTHENTICATE GOAL
+                 </button>
               </div>
             </div>
           </div>

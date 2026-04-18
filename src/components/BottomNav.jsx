@@ -17,15 +17,11 @@ export default function BottomNav() {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[100] preserve-3d" 
-      style={{ 
-        background: 'rgba(14,14,26,0.95)', 
-        backdropFilter: 'blur(50px)', 
-        WebkitBackdropFilter: 'blur(50px)',
-        borderTop: '1px solid rgba(255,255,255,0.08)',
-        paddingBottom: 'env(safe-area-inset-bottom)'
-      }}>
-      <div className="flex justify-around items-center h-[72px] max-w-lg mx-auto">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-[400px] preserve-3d">
+      <div className="glass-beast-floating rounded-[2rem] px-6 h-20 flex justify-around items-center relative overflow-hidden group">
+        {/* Shimmer Effect */}
+        <div className="absolute inset-0 shimmer-beast opacity-20 pointer-events-none" />
+        
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = location.pathname === item.path || (item.path !== '/' && location.pathname.startsWith(item.path));
@@ -34,17 +30,27 @@ export default function BottomNav() {
             <Link 
               key={item.name} 
               to={item.path}
-              className="flex flex-col items-center justify-center w-full h-full space-y-1.5 active:opacity-60 transition-all duration-300"
+              className="flex flex-col items-center justify-center relative w-12 h-12 tap-3d transition-all duration-300"
               style={{ color: isActive ? NEON : '#94a3b8' }}
             >
-              <div style={{ 
-                transform: isActive ? 'translateY(-2px) scale(1.15)' : 'scale(1)', 
+              {/* Active Glow Indicator */}
+              {isActive && (
+                <div className="absolute inset-0 bg-gym-neon/20 blur-xl rounded-full scale-150 animate-pulse" />
+              )}
+              
+              <div className="relative z-10" style={{ 
+                transform: isActive ? 'translateY(-4px) scale(1.2) rotateX(10deg)' : 'scale(1)', 
                 transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-                filter: isActive ? `drop-shadow(0 0 8px ${NEON}4D)` : 'none'
+                filter: isActive ? `drop-shadow(0 0 12px ${NEON}CC)` : 'none'
               }}>
                 <Icon size={24} strokeWidth={isActive ? 2.5 : 2} />
               </div>
-              <span className="text-[10px] font-black uppercase tracking-widest">{item.name}</span>
+              
+              {isActive && (
+                <span className="absolute -bottom-4 text-[8px] font-black uppercase tracking-[0.2em] text-gym-neon animate-beast-float">
+                  {item.name}
+                </span>
+              )}
             </Link>
           );
         })}

@@ -25,14 +25,12 @@ export default function ActiveWorkout() {
   const [isResting, setIsResting] = useState(false);
   const restRef = useRef(null);
 
-  // Start session if not active
   useEffect(() => {
     if (!activeSession && plannedExercises.length > 0) {
       startSession();
     }
   }, []);
 
-  // Rest timer
   useEffect(() => {
     if (isResting && restTimer > 0) {
       restRef.current = setTimeout(() => setRestTimer(r => r - 1), 1000);
@@ -44,12 +42,12 @@ export default function ActiveWorkout() {
 
   if (!activeSession) {
     return (
-      <div className="min-h-screen bg-gym-dark flex flex-col items-center justify-center p-6 text-center">
-        <Dumbbell size={64} className="text-gym-muted mb-6 opacity-30" />
-        <h1 className="text-2xl font-black text-white mb-2">No Active Session</h1>
-        <p className="text-gym-muted mb-8">Add exercises to your plan first, then start a workout.</p>
-        <button onClick={() => navigate('/workout')} className="px-8 py-4 bg-gradient-neon text-white font-black rounded-2xl text-sm uppercase tracking-widest glow-neon">
-          Browse Exercises
+      <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center">
+        <Dumbbell size={80} className="text-white/10 mb-8 animate-beast-float" />
+        <h1 className="text-3xl font-black text-white italic tracking-tighter mb-4">NO ACTIVE MISSION</h1>
+        <p className="text-gym-muted/80 text-sm max-w-[200px] leading-relaxed mb-10 uppercase tracking-widest font-black">Plan your exercises first, then commence training.</p>
+        <button onClick={() => navigate('/workout')} className="px-10 py-5 bg-gradient-beast text-white font-black rounded-2xl text-[10px] uppercase tracking-[0.3em] shadow-beast glow-beast active:scale-95 transition-all">
+          Browse Arsenal
         </button>
       </div>
     );
@@ -81,312 +79,271 @@ export default function ActiveWorkout() {
     setShowSummary(true);
   };
 
-  // ── Summary Screen ────────────────────────
   if (showSummary && summary) {
     return (
-      <div className="min-h-screen bg-gym-dark pb-32">
-        <div className="p-6 slide-up space-y-8 max-w-lg mx-auto">
-          {/* Header */}
-          <div className="text-center pt-8 space-y-4">
-            <div className="w-24 h-24 mx-auto bg-gym-neon/10 rounded-full flex items-center justify-center glow-neon">
-              <Trophy size={48} className="text-gym-neon" />
+      <div className="min-h-screen pb-32 overflow-y-auto">
+        <div className="p-6 slide-up space-y-10 max-w-lg mx-auto preserve-3d">
+          <div className="text-center pt-10 space-y-6">
+            <div className="w-28 h-28 mx-auto glass-beast rounded-full flex items-center justify-center glow-beast shadow-beast-heavy relative">
+              <div className="absolute inset-0 bg-gym-neon/10 blur-xl animate-pulse rounded-full" />
+              <Trophy size={48} className="text-gym-neon relative z-10" />
             </div>
-            <h1 className="text-4xl font-black text-white">Workout<br/><span className="text-gym-neon text-glow">Complete!</span></h1>
-            <p className="text-gym-muted text-sm">{summary.date} • {summary.startTime} → {summary.finishedAt}</p>
+            <div className="space-y-2">
+              <h1 className="text-5xl font-black text-white italic tracking-tighter">VICTORY <br/><span className="text-gym-neon text-glow-beast font-black uppercase tracking-[0.1em] text-4xl">SECURED</span></h1>
+              <p className="text-gym-muted text-[10px] font-black uppercase tracking-[0.3em] opacity-60">{summary.date} • {summary.startTime} → {summary.finishedAt}</p>
+            </div>
           </div>
 
-          {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-gym-card p-5 rounded-3xl border border-white/5 text-center">
-              <Clock size={22} className="text-gym-neon mx-auto mb-2" />
-              <p className="text-3xl font-black text-white timer-display">{summary.durationFormatted}</p>
-              <p className="text-[10px] text-gym-muted uppercase font-bold tracking-widest mt-1">Duration</p>
-            </div>
-            <div className="bg-gym-card p-5 rounded-3xl border border-white/5 text-center">
-              <Flame size={22} className="text-gym-fire mx-auto mb-2" />
-              <p className="text-3xl font-black text-gym-fire">{summary.totalCalories}</p>
-              <p className="text-[10px] text-gym-muted uppercase font-bold tracking-widest mt-1">Calories</p>
-            </div>
-            <div className="bg-gym-card p-5 rounded-3xl border border-white/5 text-center">
-              <Dumbbell size={22} className="text-gym-accent mx-auto mb-2" />
-              <p className="text-3xl font-black text-white">{summary.exercisesCompleted}<span className="text-lg text-gym-muted">/{summary.totalExercises}</span></p>
-              <p className="text-[10px] text-gym-muted uppercase font-bold tracking-widest mt-1">Exercises</p>
-            </div>
-            <div className="bg-gym-card p-5 rounded-3xl border border-white/5 text-center">
-              <Activity size={22} className="text-gym-gold mx-auto mb-2" />
-              <p className="text-3xl font-black text-white">{summary.totalSets}</p>
-              <p className="text-[10px] text-gym-muted uppercase font-bold tracking-widest mt-1">Total Sets</p>
-            </div>
-          </div>
-
-          {/* Exercise Breakdown */}
-          <div className="space-y-3">
-            <h3 className="text-sm font-black uppercase tracking-widest text-white/40 px-2">Exercise Log</h3>
-            {summary.logs.map((log, i) => (
-              <div key={i} className="bg-gym-card p-4 rounded-2xl border border-white/5 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${log.completed ? 'bg-gym-success/20' : 'bg-gym-danger/20'}`}>
-                    {log.completed ? <Check size={16} className="text-gym-success" /> : <X size={16} className="text-gym-danger" />}
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-white">{log.name}</p>
-                    <p className="text-[10px] text-gym-muted">{log.sets?.length || 0}/{log.targetSets || 3} sets completed</p>
-                  </div>
-                </div>
+            {[
+              { icon: <Clock size={20} className="text-gym-neon" />, val: summary.durationFormatted, label: 'Duration' },
+              { icon: <Flame size={20} className="text-gym-fire" />, val: summary.totalCalories, label: 'Calories' },
+              { icon: <Dumbbell size={20} className="text-gym-accent" />, val: `${summary.exercisesCompleted}/${summary.totalExercises}`, label: 'Exercises' },
+              { icon: <Activity size={20} className="text-gym-gold" />, val: summary.totalSets, label: 'Total Sets' },
+            ].map((s, i) => (
+              <div key={i} className="glass-beast p-6 rounded-[2.5rem] border-white/5 text-center shadow-beast transition-transform hover:scale-105">
+                <div className="mx-auto mb-3 flex justify-center opacity-60">{s.icon}</div>
+                <p className="text-3xl font-black text-white">{s.val}</p>
+                <p className="text-[10px] text-gym-muted uppercase font-black tracking-widest mt-2">{s.label}</p>
               </div>
             ))}
           </div>
 
-          {/* Done Button */}
           <button
             onClick={() => navigate('/')}
-            className="w-full py-5 bg-gradient-neon text-white font-black text-sm uppercase tracking-[0.2em] rounded-2xl glow-neon active:scale-95 transition-transform"
+            className="w-full py-6 bg-gradient-beast text-white font-black text-sm uppercase tracking-[0.4em] rounded-[2rem] shadow-beast-heavy active:scale-95 transition-all overflow-hidden relative"
           >
-            Back To Home
+            <div className="absolute inset-0 shimmer-beast opacity-20" />
+            RETURN TO BASE
           </button>
         </div>
       </div>
     );
   }
 
-  // ── Active Workout Screen ─────────────────
   return (
-    <div className="min-h-screen bg-gym-dark pb-32">
-      <div className="p-4 space-y-5 max-w-lg mx-auto slide-up">
+    <div className="min-h-screen pb-32">
+      <div className="p-4 space-y-6 max-w-lg mx-auto slide-up preserve-3d">
 
-        {/* Advanced Head Section */}
-        <div className="bg-[#141425] rounded-3xl p-5 border border-gym-neon/20 shadow-[0_8px_30px_rgba(129,140,248,0.15)] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gym-neon/5 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none" />
+        {/* 3D Session Title & Timer */}
+        <div className="glass-beast-floating rounded-[2.5rem] p-6 border-white/10 shadow-beast-heavy relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-40 h-40 bg-gym-neon/10 rounded-full blur-[60px] -mr-20 -mt-20 pointer-events-none" />
           
-          <div className="flex items-center justify-between relative z-10">
-            <button onClick={() => navigate('/')} className="p-3 bg-black/40 rounded-xl border border-white/5 active:scale-95 transition-all hover:border-gym-neon/30">
-              <ChevronLeft size={22} className="text-white" />
-            </button>
+          <div className="flex flex-col items-center gap-6 relative z-10">
+            <div className="w-full flex justify-between items-center">
+              <button onClick={() => navigate('/')} className="p-4 glass-beast rounded-2xl border-white/10 active:scale-90 transition-all opacity-60 hover:opacity-100">
+                <ChevronLeft size={20} className="text-white" />
+              </button>
+              <div className="text-center italic">
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-gym-neon/80 mb-1 flex items-center justify-center gap-2">
+                  {activeSession.isRunning ? (
+                    <><span className="w-2 h-2 bg-gym-neon rounded-full animate-pulse shadow-[0_0_10px_#818cf8]" /> IN PROGRESS</>
+                  ) : (
+                    <><span className="w-2 h-2 bg-gym-danger rounded-full" /> PAUSED</>
+                  )}
+                </p>
+              </div>
+              <button
+                onClick={activeSession.isRunning ? pauseSession : resumeSession}
+                className={`p-4 rounded-2xl border transition-all shadow-beast tap-3d ${
+                  !activeSession.isRunning ? 'bg-gym-neon border-gym-neon text-gym-dark glow-beast' : 'glass-beast border-white/10 text-white'
+                }`}
+              >
+                {!activeSession.isRunning ? <Play size={20} fill="currentColor" /> : <Pause size={20} fill="currentColor" />}
+              </button>
+            </div>
             
-            <div className="text-center flex-1">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gym-neon mb-1 flex items-center justify-center gap-1">
-                {activeSession.isRunning ? (
-                  <><span className="w-1.5 h-1.5 bg-gym-neon rounded-full animate-pulse" /> Live Session</>
-                ) : (
-                  <><span className="w-1.5 h-1.5 bg-gym-danger rounded-full" /> Paused</>
-                )}
-              </p>
-              <div className="flex items-center justify-center gap-2">
-                <Timer size={20} className={activeSession.isRunning ? "text-white" : "text-gym-muted"} />
-                <span className={`text-4xl font-black timer-display transition-colors ${!activeSession.isRunning ? 'text-gym-muted' : 'text-white text-glow'}`}>
-                  {formatTime(activeSession.elapsedSeconds || 0)}
-                </span>
+            <div className="text-7xl font-black text-white italic tracking-tighter text-glow-beast transition-colors" style={{ transform: 'rotateX(5deg)' }}>
+              {formatTime(activeSession.elapsedSeconds || 0)}
+            </div>
+          </div>
+        </div>
+
+        {/* Live Performance Matrix */}
+        <div className="grid grid-cols-3 gap-3 preserve-3d">
+          {[
+            { label: 'CAL', val: liveCalories, color: 'text-gym-fire', icon: <Flame size={12} /> },
+            { label: 'EX', val: `${completedCount}/${exercises.length}`, color: 'text-gym-neon', icon: <Dumbbell size={12} /> },
+            { label: 'SETS', val: totalSetsLogged, color: 'text-gym-accent', icon: <Activity size={12} /> },
+          ].map((s, i) => (
+            <div key={i} className="glass-beast px-3 py-4 rounded-3xl border-white/5 text-center shadow-beast relative" style={{ transform: `rotateY(${i === 0 ? '-5deg' : i === 2 ? '5deg' : '0'})` }}>
+              <p className={`text-xl font-black ${s.color}`}>{s.val}</p>
+              <div className="flex items-center justify-center gap-1 mt-1 opacity-40">
+                {s.icon}
+                <p className="text-[8px] text-white uppercase font-black tracking-widest">{s.label}</p>
               </div>
             </div>
-
-            <button
-              onClick={activeSession.isRunning ? pauseSession : resumeSession}
-              className={`p-3 rounded-xl border active:scale-95 transition-all shadow-lg ${
-                !activeSession.isRunning ? 'bg-gym-neon border-gym-neon text-gym-dark shadow-[0_0_20px_rgba(129,140,248,0.4)]' : 'bg-black/40 border-white/5 text-white hover:border-gym-danger hover:text-gym-danger'
-              }`}
-            >
-              {!activeSession.isRunning ? <Play size={22} fill="currentColor" /> : <Pause size={22} fill="currentColor" />}
-            </button>
-          </div>
+          ))}
         </div>
 
-        {/* Live Stats Bar */}
-        <div className="grid grid-cols-3 gap-3">
-          <div className="bg-gym-card px-3 py-3 rounded-2xl border border-white/5 text-center">
-            <p className="text-lg font-black text-gym-fire">{liveCalories}</p>
-            <p className="text-[8px] text-gym-muted uppercase font-bold tracking-widest">Cal</p>
-          </div>
-          <div className="bg-gym-card px-3 py-3 rounded-2xl border border-white/5 text-center">
-            <p className="text-lg font-black text-gym-neon">{completedCount}<span className="text-gym-muted">/{exercises.length}</span></p>
-            <p className="text-[8px] text-gym-muted uppercase font-bold tracking-widest">Exercises</p>
-          </div>
-          <div className="bg-gym-card px-3 py-3 rounded-2xl border border-white/5 text-center">
-            <p className="text-lg font-black text-gym-accent">{totalSetsLogged}</p>
-            <p className="text-[8px] text-gym-muted uppercase font-bold tracking-widest">Sets</p>
-          </div>
-        </div>
-
-        {/* Progress Bar */}
-        <div className="w-full h-2 bg-gym-card rounded-full overflow-hidden">
-          <div
-            className="h-full bg-gradient-neon rounded-full transition-all duration-500"
-            style={{ width: `${exercises.length > 0 ? (completedCount / exercises.length) * 100 : 0}%` }}
-          />
-        </div>
-
-        {/* Exercise Navigator */}
-        <div className="flex items-center justify-between px-2">
-          <button
-            onClick={() => setCurrentIdx(Math.max(0, currentIdx - 1))}
-            disabled={currentIdx === 0}
-            className="p-2 rounded-xl bg-gym-card border border-white/5 disabled:opacity-20 active:scale-90 transition-transform"
-          >
-            <ChevronLeft size={18} className="text-white" />
-          </button>
-          <p className="text-[10px] font-black uppercase tracking-widest text-gym-muted">
-            Exercise {currentIdx + 1} of {exercises.length}
-          </p>
-          <button
-            onClick={() => setCurrentIdx(Math.min(exercises.length - 1, currentIdx + 1))}
-            disabled={currentIdx === exercises.length - 1}
-            className="p-2 rounded-xl bg-gym-card border border-white/5 disabled:opacity-20 active:scale-90 transition-transform"
-          >
-            <ChevronRight size={18} className="text-white" />
-          </button>
-        </div>
-
-        {/* Current Exercise Card */}
+        {/* Exercise Context Card */}
         {currentExercise && (
-          <div className={`bg-gym-card rounded-3xl border overflow-hidden transition-all ${
-            currentExercise.completed ? 'border-gym-success/30' : 'border-white/5'
+          <div className={`glass-beast rounded-[3rem] border transition-all duration-700 shadow-beast-heavy overflow-hidden preserve-3d ${
+            currentExercise.completed ? 'border-gym-success/30' : 'border-white/10'
           }`}>
-            {/* Exercise Image */}
-            <div className="h-44 w-full relative overflow-hidden">
+            <div className="h-56 w-full relative overflow-hidden group">
               <img 
                 src={currentExercise.image} 
                 alt={currentExercise.name}
-                className="w-full h-full object-cover opacity-80"
+                className="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-1000"
                 onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80'; }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-gym-card via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#141425] via-[#141425]/40 to-transparent" />
+              
               {currentExercise.completed && (
-                <div className="absolute inset-0 bg-gym-success/10 flex items-center justify-center">
-                  <div className="bg-gym-success/20 backdrop-blur-md p-4 rounded-full">
-                    <Check size={40} className="text-gym-success" />
+                <div className="absolute inset-0 bg-gym-success/10 flex items-center justify-center backdrop-blur-[2px]">
+                  <div className="bg-gym-success w-16 h-16 rounded-full flex items-center justify-center shadow-[0_0_30px_#10b981]">
+                    <Check size={32} className="text-white" strokeWidth={4} />
                   </div>
                 </div>
               )}
-              <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-[10px] text-gym-neon font-black uppercase tracking-widest mb-1">{currentExercise.muscle}</p>
-                <h2 className="text-xl font-black text-white leading-tight">{currentExercise.name}</h2>
+              
+              <div className="absolute bottom-6 left-8 right-8 space-y-1">
+                <p className="text-[9px] text-gym-neon font-black uppercase tracking-[0.4em] italic mb-1">{currentExercise.muscle}</p>
+                <h2 className="text-3xl font-black text-white italic tracking-tighter leading-none">{currentExercise.name}</h2>
               </div>
             </div>
 
-            <div className="p-5 space-y-5">
-              {/* Target Info */}
-              <div className="flex items-center justify-between bg-gym-dark/50 p-4 rounded-2xl">
-                <div className="text-center">
-                  <p className="text-2xl font-black text-white">{currentExercise.targetSets || 3}</p>
-                  <p className="text-[9px] text-gym-muted uppercase font-bold tracking-widest">Target Sets</p>
-                </div>
-                <div className="w-px h-10 bg-white/10" />
-                <div className="text-center">
-                  <p className="text-2xl font-black text-white">{currentExercise.targetReps || 10}</p>
-                  <p className="text-[9px] text-gym-muted uppercase font-bold tracking-widest">Target Reps</p>
-                </div>
-                <div className="w-px h-10 bg-white/10" />
-                <div className="text-center">
-                  <p className="text-2xl font-black text-gym-neon">{currentExercise.sets?.length || 0}</p>
-                  <p className="text-[9px] text-gym-muted uppercase font-bold tracking-widest">Done</p>
-                </div>
+            <div className="p-8 space-y-8 relative">
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+              
+              {/* Target Specs */}
+              <div className="grid grid-cols-3 gap-2 px-2">
+                {[
+                  { val: currentExercise.targetSets || 3, label: 'TARGET SETS' },
+                  { val: currentExercise.targetReps || 10, label: 'TARGET REPS' },
+                  { val: currentExercise.sets?.length || 0, label: 'COMPLETED', highlight: true },
+                ].map((s, i) => (
+                  <div key={i} className="text-center space-y-1">
+                    <p className={`text-2xl font-black ${s.highlight ? 'text-gym-neon text-glow-beast' : 'text-white/40'}`}>{s.val}</p>
+                    <p className="text-[7px] text-white/30 font-black uppercase tracking-widest leading-tight">{s.label}</p>
+                  </div>
+                ))}
               </div>
 
-              {/* Set Progress Dots */}
-              <div className="flex items-center justify-center gap-2">
+              {/* Progress Dots */}
+              <div className="flex items-center justify-center gap-3">
                 {Array.from({ length: currentExercise.targetSets || 3 }).map((_, i) => (
-                  <div key={i} className={`w-4 h-4 rounded-full transition-all ${
+                  <div key={i} className={`h-1.5 rounded-full transition-all duration-500 ${
                     i < (currentExercise.sets?.length || 0)
-                      ? 'bg-gym-neon glow-neon scale-110' 
-                      : 'bg-gym-dark border border-white/10'
+                      ? 'w-10 bg-gym-neon glow-beast shadow-[0_0_10px_#818cf8]' 
+                      : 'w-6 bg-white/5 border border-white/5'
                   }`} />
                 ))}
               </div>
 
-              {/* Rest Timer */}
+              {/* Rest Mode Glass */}
               {isResting && (
-                <div className="bg-gym-accent/10 p-4 rounded-2xl border border-gym-accent/20 text-center">
-                  <p className="text-[10px] text-gym-accent font-black uppercase tracking-widest mb-1">Rest Timer</p>
-                  <p className="text-3xl font-black text-gym-accent timer-display">{formatTime(restTimer)}</p>
-                  <button onClick={() => { setIsResting(false); setRestTimer(0); }} className="mt-2 text-[10px] text-gym-muted underline">Skip Rest</button>
+                <div className="glass-beast-floating p-6 rounded-[2rem] border-gym-accent/20 text-center animate-beast-float scale-105 z-20">
+                  <div className="absolute inset-0 shimmer-beast opacity-20" />
+                  <p className="text-[10px] text-gym-accent font-black uppercase tracking-[0.3em] mb-3">RECUPERATION</p>
+                  <p className="text-4xl font-black text-gym-accent italic tracking-tighter">{formatTime(restTimer)}</p>
+                  <button onClick={() => { setIsResting(false); setRestTimer(0); }} className="mt-4 px-6 py-2 glass-beast rounded-xl text-[9px] text-white/40 font-black uppercase tracking-widest hover:text-white transition-colors">SKIP REST</button>
                 </div>
               )}
 
-              {/* Weight & Reps Input */}
+              {/* Training Controls */}
               {!currentExercise.completed && (
-                <div className="space-y-4">
-                  {/* Weight */}
-                  <div className="flex items-center justify-between bg-gym-dark/50 px-4 py-3 rounded-2xl">
-                    <span className="text-xs font-bold text-gym-muted uppercase tracking-wider">Weight (kg)</span>
-                    <div className="flex items-center gap-3">
-                      <button onClick={() => setWeight(Math.max(0, weight - 2.5))} className="w-9 h-9 bg-gym-card rounded-xl flex items-center justify-center border border-white/10 active:scale-90 transition-transform">
-                        <Minus size={14} className="text-white" />
-                      </button>
-                      <span className="text-xl font-black text-white w-14 text-center timer-display">{weight}</span>
-                      <button onClick={() => setWeight(weight + 2.5)} className="w-9 h-9 bg-gym-card rounded-xl flex items-center justify-center border border-white/10 active:scale-90 transition-transform">
-                        <Plus size={14} className="text-white" />
-                      </button>
+                <div className="space-y-6">
+                  {/* Weight Control */}
+                  <div className="flex items-center justify-between glass-beast p-3 rounded-[2rem] border-white/5 shadow-beast">
+                    <button onClick={() => setWeight(Math.max(0, weight - 2.5))} className="w-12 h-12 glass-beast rounded-[1.2rem] flex items-center justify-center border-white/10 active:scale-75 transition-all text-white/40 hover:text-white">
+                      <Minus size={16} />
+                    </button>
+                    <div className="text-center">
+                      <p className="text-2xl font-black text-white italic">{weight}</p>
+                      <p className="text-[7px] text-gym-muted font-black uppercase tracking-widest">WEIGHT KG</p>
                     </div>
+                    <button onClick={() => setWeight(weight + 2.5)} className="w-12 h-12 glass-beast rounded-[1.2rem] flex items-center justify-center border-white/10 active:scale-75 transition-all text-white/40 hover:text-white">
+                      <Plus size={16} />
+                    </button>
                   </div>
-                  {/* Reps */}
-                  <div className="flex items-center justify-between bg-gym-dark/50 px-4 py-3 rounded-2xl">
-                    <span className="text-xs font-bold text-gym-muted uppercase tracking-wider">Reps</span>
-                    <div className="flex items-center gap-3">
-                      <button onClick={() => setReps(Math.max(1, reps - 1))} className="w-9 h-9 bg-gym-card rounded-xl flex items-center justify-center border border-white/10 active:scale-90 transition-transform">
-                        <Minus size={14} className="text-white" />
-                      </button>
-                      <span className="text-xl font-black text-white w-14 text-center timer-display">{reps}</span>
-                      <button onClick={() => setReps(reps + 1)} className="w-9 h-9 bg-gym-card rounded-xl flex items-center justify-center border border-white/10 active:scale-90 transition-transform">
-                        <Plus size={14} className="text-white" />
-                      </button>
+                  
+                  {/* Reps Control */}
+                  <div className="flex items-center justify-between glass-beast p-3 rounded-[2rem] border-white/5 shadow-beast">
+                    <button onClick={() => setReps(Math.max(1, reps - 1))} className="w-12 h-12 glass-beast rounded-[1.2rem] flex items-center justify-center border-white/10 active:scale-75 transition-all text-white/40 hover:text-white">
+                      <Minus size={16} />
+                    </button>
+                    <div className="text-center">
+                      <p className="text-2xl font-black text-white italic">{reps}</p>
+                      <p className="text-[7px] text-gym-muted font-black uppercase tracking-widest">REPS</p>
                     </div>
+                    <button onClick={() => setReps(reps + 1)} className="w-12 h-12 glass-beast rounded-[1.2rem] flex items-center justify-center border-white/10 active:scale-75 transition-all text-white/40 hover:text-white">
+                      <Plus size={16} />
+                    </button>
                   </div>
 
-                  {/* Log Set Button */}
                   <button
                     onClick={handleLogSet}
-                    className="w-full py-4 bg-gradient-neon text-white font-black text-sm uppercase tracking-[0.15em] rounded-2xl glow-neon active:scale-95 transition-transform flex items-center justify-center gap-2"
+                    className="w-full py-6 bg-gradient-beast text-white font-black text-xs uppercase tracking-[0.3em] rounded-[2rem] shadow-beast-heavy relative overflow-hidden active:scale-95 transition-all group"
                   >
-                    <Check size={18} strokeWidth={3} />
-                    Log Set {(currentExercise.sets?.length || 0) + 1}
+                    <div className="absolute inset-0 shimmer-beast opacity-30" />
+                    LOG SET {(currentExercise.sets?.length || 0) + 1}
                   </button>
                 </div>
               )}
 
-              {/* Complete / Next Exercise */}
               {!currentExercise.completed && (currentExercise.sets?.length || 0) >= (currentExercise.targetSets || 3) && (
                 <button
                   onClick={handleCompleteExercise}
-                  className="w-full py-4 bg-gym-success/20 text-gym-success border border-gym-success/30 font-black text-sm uppercase tracking-[0.15em] rounded-2xl active:scale-95 transition-transform flex items-center justify-center gap-2"
+                  className="w-full py-6 bg-gym-success/10 text-gym-success border-2 border-gym-success/20 font-black text-xs uppercase tracking-[0.3em] rounded-[2rem] active:scale-95 transition-all group"
                 >
-                  <ArrowRight size={18} strokeWidth={3} />
-                  Complete & Next
+                  COMPLETE & NEXT <ArrowRight size={16} className="inline ml-2 group-hover:translate-x-1 transition-transform" />
                 </button>
               )}
             </div>
           </div>
         )}
 
-        {/* Exercise List Overview */}
-        <div className="space-y-2">
-          <p className="text-[10px] font-black uppercase tracking-widest text-gym-muted px-2">All Exercises</p>
+        {/* Tactical Navigator */}
+        <div className="flex items-center justify-between px-2 pt-4">
+          <p className="text-[9px] font-black uppercase tracking-[0.4em] text-white/20">TACTICAL OVERVIEW</p>
+          <div className="flex gap-2">
+            <button
+               onClick={() => setCurrentIdx(Math.max(0, currentIdx - 1))}
+               disabled={currentIdx === 0}
+               className="p-3 rounded-xl glass-beast border-white/5 disabled:opacity-10 active:scale-75 transition-all"
+            >
+              <ChevronLeft size={16} className="text-white" />
+            </button>
+            <button
+               onClick={() => setCurrentIdx(Math.min(exercises.length - 1, currentIdx + 1))}
+               disabled={currentIdx === exercises.length - 1}
+               className="p-3 rounded-xl glass-beast border-white/5 disabled:opacity-10 active:scale-75 transition-all"
+            >
+              <ChevronRight size={16} className="text-white" />
+            </button>
+          </div>
+        </div>
+
+        <div className="space-y-3">
           {exercises.map((ex, i) => (
             <button
               key={i}
               onClick={() => setCurrentIdx(i)}
-              className={`w-full flex items-center justify-between p-3 rounded-2xl border transition-all ${
-                i === currentIdx ? 'bg-gym-neon/5 border-gym-neon/20' : 'bg-gym-card border-white/5'
+              className={`w-full flex items-center justify-between p-5 rounded-3xl border transition-all duration-500 shadow-beast ${
+                i === currentIdx ? 'glass-beast border-gym-neon/40 shadow-[0_0_20px_rgba(129,140,248,0.15)] scale-[1.02]' : 'glass-beast border-white/5 opacity-50'
               }`}
             >
-              <div className="flex items-center gap-3">
-                <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-[10px] font-black ${
-                  ex.completed ? 'bg-gym-success/20 text-gym-success' : i === currentIdx ? 'bg-gym-neon/20 text-gym-neon' : 'bg-gym-dark text-gym-muted'
+              <div className="flex items-center gap-4">
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-[10px] font-black italic ${
+                  ex.completed ? 'bg-gym-success/20 text-gym-success' : i === currentIdx ? 'bg-gym-neon text-gym-dark' : 'bg-white/5 text-white/20'
                 }`}>
-                  {ex.completed ? <Check size={14} /> : i + 1}
+                  {ex.completed ? <Check size={16} /> : i + 1}
                 </div>
-                <p className={`text-xs font-bold ${ex.completed ? 'text-gym-success line-through' : 'text-white'}`}>{ex.name}</p>
+                <p className={`text-sm font-black italic tracking-tight ${ex.completed ? 'text-white/30 line-through' : 'text-white'}`}>{ex.name}</p>
               </div>
-              <p className="text-[10px] text-gym-muted">{ex.sets?.length || 0}/{ex.targetSets || 3}</p>
+              <p className="text-[10px] font-black text-gym-muted opacity-40">{ex.sets?.length || 0}/{ex.targetSets || 3}</p>
             </button>
           ))}
         </div>
 
-        {/* Finish Workout Button */}
         <button
           onClick={handleFinish}
-          className="w-full py-5 bg-gym-danger/10 border-2 border-gym-danger/30 text-gym-danger font-black text-sm uppercase tracking-[0.2em] rounded-2xl active:scale-95 transition-transform flex items-center justify-center gap-3"
+          className="w-full py-6 mt-8 bg-black/40 border-2 border-gym-danger/40 text-gym-danger font-black text-sm uppercase tracking-[0.5em] rounded-[2.5rem] active:scale-95 transition-all shadow-beast group relative overflow-hidden"
         >
-          <Square size={18} fill="currentColor" />
-          Finish Workout
+          <div className="absolute inset-0 bg-gym-danger/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+          TERMINATE SESSION
         </button>
       </div>
     </div>

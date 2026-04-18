@@ -23,19 +23,24 @@ function ProtectedApp() {
 
   return (
     <WorkoutProvider>
-      <div className="min-h-screen max-w-lg mx-auto relative shadow-2xl overflow-x-hidden" style={{ background: '#06060d' }}>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/goals" element={<Goals />} />
-          <Route path="/workout" element={<WorkoutCategories />} />
-          <Route path="/workout/:muscle" element={<ExerciseList />} />
-          <Route path="/exercise/:id" element={<ExerciseDetail />} />
-          <Route path="/active-workout" element={<ActiveWorkout />} />
-          <Route path="/history" element={<HistoryAndProgress />} />
-          <Route path="/admin" element={<AdminPanel />} />
-          <Route path="/all-workouts" element={<AllWorkouts />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+      <div className="min-h-screen max-w-lg mx-auto relative perspective-1000 overflow-hidden shadow-beast-heavy" style={{ background: '#06060d' }}>
+        {/* Dynamic Beast Background */}
+        <div className="beast-bg-mesh fixed inset-0 pointer-events-none opacity-40" />
+        
+        <div className="relative z-10 min-h-screen preserve-3d">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/goals" element={<Goals />} />
+            <Route path="/workout" element={<WorkoutCategories />} />
+            <Route path="/workout/:muscle" element={<ExerciseList />} />
+            <Route path="/exercise/:id" element={<ExerciseDetail />} />
+            <Route path="/active-workout" element={<ActiveWorkout />} />
+            <Route path="/history" element={<HistoryAndProgress />} />
+            <Route path="/admin" element={<AdminPanel />} />
+            <Route path="/all-workouts" element={<AllWorkouts />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </div>
         <BottomNav />
       </div>
     </WorkoutProvider>
