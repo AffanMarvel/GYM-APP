@@ -18,25 +18,27 @@ export default function HistoryAndProgress() {
   const todayStr = new Date().toLocaleDateString();
   const selectedDisplayStr = selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
 
-  // Generate sliding calendar dates centered around viewDate
+  // Generate strictly Monday to Sunday (7 days)
   const calendarDates = useMemo(() => {
-    const list = [];
-    const baseDate = new Date(viewDate);
-    baseDate.setHours(0,0,0,0);
-    for (let i = -10; i <= 10; i++) {
-        const d = new Date(baseDate);
-        d.setDate(d.getDate() + i);
-        list.push(d);
-    }
-    return list;
+    const d = new Date(viewDate);
+    const day = d.getDay();
+    const diff = d.getDate() - (day === 0 ? 6 : day - 1);
+    const monday = new Date(d.setDate(diff));
+    monday.setHours(0,0,0,0);
+
+    return Array.from({ length: 7 }, (_, i) => {
+        const date = new Date(monday);
+        date.setDate(date.getDate() + i);
+        return date;
+    });
   }, [viewDate]);
 
   const scrollRef = useRef(null);
 
-  // Auto-scroll to center on mount or view change
+  // Auto-scroll to center of the week
   useEffect(() => {
     if (scrollRef.current) {
-      const centerIndex = 10; 
+      const centerIndex = 3; // Center of 7 days
       const childWidth = 72; 
       const centerOffset = (scrollRef.current.clientWidth / 2) - (childWidth / 2);
       scrollRef.current.scrollTo({
