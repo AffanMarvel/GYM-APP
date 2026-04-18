@@ -45,19 +45,31 @@ function getTodayKey() {
 
 function initGoals() {
   const existing = loadGoals();
-  if (existing) return existing;
-  
-  const initial = {
-    exercises: DEFAULT_EXERCISES.map(ex => ({
-      name: ex.name,
-      icon: ex.icon,
-      unit: ex.unit,
-      target: ex.defaultTarget,
-    })),
-    dailyLogs: {},
-  };
-  saveGoals(initial);
-  return initial;
+  const defaults = DEFAULT_EXERCISES.map(ex => ({
+    name: ex.name,
+    icon: ex.icon,
+    unit: ex.unit,
+    target: ex.defaultTarget,
+  }));
+
+  if (!existing) {
+    const initial = { exercises: defaults, dailyLogs: {} };
+    saveGoals(initial);
+    return initial;
+  }
+
+  // Sync Logic: Check if any default exercises are missing from existing list
+  let changed = false;
+  defaults.forEach(def => {
+    const isMissing = !existing.exercises.find(e => e.name === def.name);
+    if (isMissing) {
+      existing.exercises.push(def);
+      changed = true;
+    }
+  });
+
+  if (changed) saveGoals(existing);
+  return existing;
 }
 
 export default function Goals() {
