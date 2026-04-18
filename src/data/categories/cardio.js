@@ -38,7 +38,7 @@ export const cardioExercises = [
       "Belly tight rakho for extra lower abs activation.",
       "Duration: 45 sec ON, 15 sec REST."
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3655-J9zIWig.gif"
   },
   {
     "id": "mountain-climbers",
@@ -159,9 +159,21 @@ export const cardioExercises = [
     "muscleTarget": "Full Body",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "30 sec", "focus": "Rhythm" },
-      "intermediate": { "sets": 4, "reps": "60 sec", "focus": "Speed" },
-      "advanced": { "sets": 5, "reps": "2 mins", "focus": "Endurance" }
+      "beginner": {
+        "sets": 3,
+        "reps": "30 sec",
+        "focus": "Rhythm"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "60 sec",
+        "focus": "Speed"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "2 mins",
+        "focus": "Endurance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+jumping+jacks",
     "instructions": [
@@ -169,7 +181,9 @@ export const cardioExercises = [
       "Jump, spreading legs and clapping hands overhead.",
       "Jump back to start."
     ],
-    "tips": ["Keep a steady pace"],
+    "tips": [
+      "Keep a steady pace"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -179,9 +193,21 @@ export const cardioExercises = [
     "muscleTarget": "Hamstrings, Cardio",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "30 sec", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "45 sec", "focus": "Speed" },
-      "advanced": { "sets": 5, "reps": "60 sec", "focus": "Intensity" }
+      "beginner": {
+        "sets": 3,
+        "reps": "30 sec",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "45 sec",
+        "focus": "Speed"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "60 sec",
+        "focus": "Intensity"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+butt+kicks",
     "instructions": [
@@ -189,7 +215,9 @@ export const cardioExercises = [
       "Kick heels back toward glutes.",
       "Pump arms."
     ],
-    "tips": ["Warm up the hamstrings"],
+    "tips": [
+      "Warm up the hamstrings"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -199,9 +227,21 @@ export const cardioExercises = [
     "muscleTarget": "Shoulders, Core",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "1 min", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "2 mins", "focus": "Intensity" },
-      "advanced": { "sets": 5, "reps": "3 mins", "focus": "Combinations" }
+      "beginner": {
+        "sets": 3,
+        "reps": "1 min",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "2 mins",
+        "focus": "Intensity"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "3 mins",
+        "focus": "Combinations"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+shadow+box",
     "instructions": [
@@ -209,7 +249,9 @@ export const cardioExercises = [
       "Throw jabs, crosses, hooks.",
       "Stay light on feet."
     ],
-    "tips": ["Keep your core tight"],
+    "tips": [
+      "Keep your core tight"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -219,9 +261,21 @@ export const cardioExercises = [
     "muscleTarget": "Calves, Cardio",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "1 min", "focus": "Coordination" },
-      "intermediate": { "sets": 4, "reps": "2 mins", "focus": "Stamina" },
-      "advanced": { "sets": 5, "reps": "5 mins", "focus": "Speed" }
+      "beginner": {
+        "sets": 3,
+        "reps": "1 min",
+        "focus": "Coordination"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "2 mins",
+        "focus": "Stamina"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "5 mins",
+        "focus": "Speed"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+skip+rope",
     "instructions": [
@@ -229,7 +283,9 @@ export const cardioExercises = [
       "Jump as rope passes under feet.",
       "Repeat."
     ],
-    "tips": ["Land on your toes"],
+    "tips": [
+      "Land on your toes"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -239,9 +295,21 @@ export const cardioExercises = [
     "muscleTarget": "Full Body, Core",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "20 ft", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "40 ft", "focus": "Speed" },
-      "advanced": { "sets": 5, "reps": "60 ft", "focus": "Agility" }
+      "beginner": {
+        "sets": 3,
+        "reps": "20 ft",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "40 ft",
+        "focus": "Speed"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "60 ft",
+        "focus": "Agility"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+bear+crawl",
     "instructions": [
@@ -249,8 +317,10 @@ export const cardioExercises = [
       "Crawl forward, keeping hips low.",
       "Stay active throughout."
     ],
-    "tips": ["Excellent full body stability"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Excellent full body stability"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3360-0Yz8WdV.gif"
   },
   {
     "id": "skate-jump",
@@ -259,9 +329,21 @@ export const cardioExercises = [
     "muscleTarget": "Quads, Glutes",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "20", "focus": "Side Landing" },
-      "intermediate": { "sets": 4, "reps": "30", "focus": "Explosion" },
-      "advanced": { "sets": 5, "reps": "50", "focus": "Lateral Power" }
+      "beginner": {
+        "sets": 3,
+        "reps": "20",
+        "focus": "Side Landing"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "30",
+        "focus": "Explosion"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "50",
+        "focus": "Lateral Power"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+skate+jump",
     "instructions": [
@@ -269,7 +351,9 @@ export const cardioExercises = [
       "Swing arms for momentum.",
       "Land soft."
     ],
-    "tips": ["Great for lateral agility"],
+    "tips": [
+      "Great for lateral agility"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -279,9 +363,21 @@ export const cardioExercises = [
     "muscleTarget": "Glutes, Hamstrings",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Hinge" },
-      "intermediate": { "sets": 4, "reps": "20", "focus": "Power" },
-      "advanced": { "sets": 5, "reps": "30", "focus": "Endurance" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Hinge"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "20",
+        "focus": "Power"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "30",
+        "focus": "Endurance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+kettlebell+swing",
     "instructions": [
@@ -289,8 +385,10 @@ export const cardioExercises = [
       "Thrust hips forward to swing it up.",
       "Keep back straight."
     ],
-    "tips": ["Power comes from the hips"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Power comes from the hips"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0549-UHJlbu3.gif"
   },
   {
     "id": "battle-ropes",
@@ -299,9 +397,21 @@ export const cardioExercises = [
     "muscleTarget": "Shoulders, Core",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "20 sec", "focus": "Waves" },
-      "intermediate": { "sets": 4, "reps": "40 sec", "focus": "Intensity" },
-      "advanced": { "sets": 5, "reps": "60 sec", "focus": "Sprints" }
+      "beginner": {
+        "sets": 3,
+        "reps": "20 sec",
+        "focus": "Waves"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "40 sec",
+        "focus": "Intensity"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "60 sec",
+        "focus": "Sprints"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+battle+ropes",
     "instructions": [
@@ -309,7 +419,9 @@ export const cardioExercises = [
       "Move arms up and down to create waves.",
       "Stay in squat position."
     ],
-    "tips": ["Excellent high-intensity calorie burner"],
+    "tips": [
+      "Excellent high-intensity calorie burner"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -319,9 +431,21 @@ export const cardioExercises = [
     "muscleTarget": "Cardio",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "10 mins", "focus": "Pace" },
-      "intermediate": { "sets": 1, "reps": "20 mins", "focus": "Steady State" },
-      "advanced": { "sets": 1, "reps": "45 mins", "focus": "Endurance" }
+      "beginner": {
+        "sets": 1,
+        "reps": "10 mins",
+        "focus": "Pace"
+      },
+      "intermediate": {
+        "sets": 1,
+        "reps": "20 mins",
+        "focus": "Steady State"
+      },
+      "advanced": {
+        "sets": 1,
+        "reps": "45 mins",
+        "focus": "Endurance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+treadmill+run",
     "instructions": [
@@ -329,8 +453,10 @@ export const cardioExercises = [
       "Run with upright posture.",
       "Breathe rhythmically."
     ],
-    "tips": ["Intermittent incline for challenge"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Intermittent incline for challenge"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0685-oLrKqDH.gif"
   },
   {
     "id": "elliptical-trainer",
@@ -339,9 +465,21 @@ export const cardioExercises = [
     "muscleTarget": "Cardio",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "15 mins", "focus": "Motion" },
-      "intermediate": { "sets": 1, "reps": "30 mins", "focus": "Stamina" },
-      "advanced": { "sets": 1, "reps": "1 hour", "focus": "High Resistance" }
+      "beginner": {
+        "sets": 1,
+        "reps": "15 mins",
+        "focus": "Motion"
+      },
+      "intermediate": {
+        "sets": 1,
+        "reps": "30 mins",
+        "focus": "Stamina"
+      },
+      "advanced": {
+        "sets": 1,
+        "reps": "1 hour",
+        "focus": "High Resistance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+use+elliptical",
     "instructions": [
@@ -349,7 +487,9 @@ export const cardioExercises = [
       "Move legs in gliding motion.",
       "Use arms for full body work."
     ],
-    "tips": ["Lower impact on joints"],
+    "tips": [
+      "Lower impact on joints"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -359,9 +499,21 @@ export const cardioExercises = [
     "muscleTarget": "Full Body, Legs",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "30 sec", "focus": "Rhythm" },
-      "intermediate": { "sets": 4, "reps": "45 sec", "focus": "Pace" },
-      "advanced": { "sets": 5, "reps": "60 sec", "focus": "Intensity" }
+      "beginner": {
+        "sets": 3,
+        "reps": "30 sec",
+        "focus": "Rhythm"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "45 sec",
+        "focus": "Pace"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "60 sec",
+        "focus": "Intensity"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+astride+jump",
     "instructions": [
@@ -369,8 +521,10 @@ export const cardioExercises = [
       "Coordinate with arm movements.",
       "Maintain a bouncy rhythm."
     ],
-    "tips": ["Great for warming up the whole body"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Great for warming up the whole body"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3220-f9lVSSI.gif"
   },
   {
     "id": "running-high-knee",
@@ -379,9 +533,21 @@ export const cardioExercises = [
     "muscleTarget": "Core, Legs",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "20 sec", "focus": "Knee Lift" },
-      "intermediate": { "sets": 4, "reps": "40 sec", "focus": "Speed" },
-      "advanced": { "sets": 5, "reps": "60 sec", "focus": "Explosive" }
+      "beginner": {
+        "sets": 3,
+        "reps": "20 sec",
+        "focus": "Knee Lift"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "40 sec",
+        "focus": "Speed"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "60 sec",
+        "focus": "Explosive"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=running+high+knees",
     "instructions": [
@@ -389,8 +555,10 @@ export const cardioExercises = [
       "Pump your arms for better momentum.",
       "Land soft on the balls of your feet."
     ],
-    "tips": ["Engage your core for better balance"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Engage your core for better balance"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0685-oLrKqDH.gif"
   },
   {
     "id": "jumping-jack-male",
@@ -399,9 +567,21 @@ export const cardioExercises = [
     "muscleTarget": "Full Body",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "30 sec", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "60 sec", "focus": "Speed" },
-      "advanced": { "sets": 5, "reps": "90 sec", "focus": "Endurance" }
+      "beginner": {
+        "sets": 3,
+        "reps": "30 sec",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "60 sec",
+        "focus": "Speed"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "90 sec",
+        "focus": "Endurance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+fast+jumping+jacks",
     "instructions": [
@@ -409,7 +589,9 @@ export const cardioExercises = [
       "Ensure full arm extension.",
       "Continuous movement."
     ],
-    "tips": ["Classic for a reason—keeps heart rate up"],
+    "tips": [
+      "Classic for a reason—keeps heart rate up"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -419,9 +601,21 @@ export const cardioExercises = [
     "muscleTarget": "Core, Cardio",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "20 sec", "focus": "Stability" },
-      "intermediate": { "sets": 4, "reps": "40 sec", "focus": "Speed" },
-      "advanced": { "sets": 5, "reps": "60 sec", "focus": "Max Effort" }
+      "beginner": {
+        "sets": 3,
+        "reps": "20 sec",
+        "focus": "Stability"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "40 sec",
+        "focus": "Speed"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "60 sec",
+        "focus": "Max Effort"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=fast+mountain+climbers",
     "instructions": [
@@ -429,8 +623,10 @@ export const cardioExercises = [
       "Drive knees toward chest as fast as possible.",
       "Maintain a flat back."
     ],
-    "tips": ["Keep your hips level throughout"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Keep your hips level throughout"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0630-RJgzwny.gif"
   },
   {
     "id": "rope-jumping-male",
@@ -439,9 +635,21 @@ export const cardioExercises = [
     "muscleTarget": "Cardio, Calves",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "1 min", "focus": "Timing" },
-      "intermediate": { "sets": 4, "reps": "3 mins", "focus": "Pace" },
-      "advanced": { "sets": 5, "reps": "5 mins", "focus": "Double Unders" }
+      "beginner": {
+        "sets": 3,
+        "reps": "1 min",
+        "focus": "Timing"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "3 mins",
+        "focus": "Pace"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "5 mins",
+        "focus": "Double Unders"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=jump+rope+training",
     "instructions": [
@@ -449,7 +657,9 @@ export const cardioExercises = [
       "Stay on your toes.",
       "Use wrist flick for rope speed."
     ],
-    "tips": ["Excellent for coordination and stamina"],
+    "tips": [
+      "Excellent for coordination and stamina"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -459,9 +669,21 @@ export const cardioExercises = [
     "muscleTarget": "Cardio",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "1 mile", "focus": "Steady" },
-      "intermediate": { "sets": 1, "reps": "3 miles", "focus": "Pace" },
-      "advanced": { "sets": 1, "reps": "5 miles", "focus": "Endurance" }
+      "beginner": {
+        "sets": 1,
+        "reps": "1 mile",
+        "focus": "Steady"
+      },
+      "intermediate": {
+        "sets": 1,
+        "reps": "3 miles",
+        "focus": "Pace"
+      },
+      "advanced": {
+        "sets": 1,
+        "reps": "5 miles",
+        "focus": "Endurance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=proper+running+form",
     "instructions": [
@@ -469,8 +691,10 @@ export const cardioExercises = [
       "Keep head up and shoulders relaxed.",
       "Breathe through nose and mouth."
     ],
-    "tips": ["The simplest and most effective cardio"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "The simplest and most effective cardio"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0685-oLrKqDH.gif"
   },
   {
     "id": "side-reaching-jump",
@@ -479,9 +703,21 @@ export const cardioExercises = [
     "muscleTarget": "Full Body, Obliques",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "30 sec", "focus": "Reach" },
-      "intermediate": { "sets": 4, "reps": "45 sec", "focus": "Balance" },
-      "advanced": { "sets": 5, "reps": "60 sec", "focus": "Explosion" }
+      "beginner": {
+        "sets": 3,
+        "reps": "30 sec",
+        "focus": "Reach"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "45 sec",
+        "focus": "Balance"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "60 sec",
+        "focus": "Explosion"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+side+reaching+jump",
     "instructions": [
@@ -489,7 +725,9 @@ export const cardioExercises = [
       "Land on one foot and balance.",
       "Continue alternating sides."
     ],
-    "tips": ["Improves lateral agility and balance"],
+    "tips": [
+      "Improves lateral agility and balance"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -499,9 +737,21 @@ export const cardioExercises = [
     "muscleTarget": "Cardio, Recovery",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "15 mins", "focus": "Posture" },
-      "intermediate": { "sets": 1, "reps": "30 mins", "focus": "Speed" },
-      "advanced": { "sets": 1, "reps": "1 hour", "focus": "Distance" }
+      "beginner": {
+        "sets": 1,
+        "reps": "15 mins",
+        "focus": "Posture"
+      },
+      "intermediate": {
+        "sets": 1,
+        "reps": "30 mins",
+        "focus": "Speed"
+      },
+      "advanced": {
+        "sets": 1,
+        "reps": "1 hour",
+        "focus": "Distance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=benefits+of+power+walking",
     "instructions": [
@@ -509,7 +759,9 @@ export const cardioExercises = [
       "Pump your arms rhythmically.",
       "Maintain upright posture."
     ],
-    "tips": ["Great low-impact option for active recovery"],
+    "tips": [
+      "Great low-impact option for active recovery"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -519,9 +771,21 @@ export const cardioExercises = [
     "muscleTarget": "Full Body",
     "difficulty": "advanced",
     "levels": {
-      "beginner": { "sets": 3, "reps": "8", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Volume" },
-      "advanced": { "sets": 5, "reps": "15", "focus": "Speed" }
+      "beginner": {
+        "sets": 3,
+        "reps": "8",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Volume"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "15",
+        "focus": "Speed"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=power+burpees+workout",
     "instructions": [
@@ -529,8 +793,10 @@ export const cardioExercises = [
       "Maximize jump height.",
       "Move transition as fast as possible."
     ],
-    "tips": ["The ultimate calorie burner"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "The ultimate calorie burner"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1160-dK9394r.gif"
   },
   {
     "id": "sprint-high-intensity",
@@ -539,9 +805,21 @@ export const cardioExercises = [
     "muscleTarget": "Leg Power, Cardio",
     "difficulty": "advanced",
     "levels": {
-      "beginner": { "sets": 4, "reps": "50m", "focus": "Stride" },
-      "intermediate": { "sets": 6, "reps": "100m", "focus": "Speed" },
-      "advanced": { "sets": 10, "reps": "100m", "focus": "Recovery" }
+      "beginner": {
+        "sets": 4,
+        "reps": "50m",
+        "focus": "Stride"
+      },
+      "intermediate": {
+        "sets": 6,
+        "reps": "100m",
+        "focus": "Speed"
+      },
+      "advanced": {
+        "sets": 10,
+        "reps": "100m",
+        "focus": "Recovery"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=sprint+training+basics",
     "instructions": [
@@ -549,7 +827,9 @@ export const cardioExercises = [
       "Full arm drive.",
       "Stay on balls of feet."
     ],
-    "tips": ["Explosive leg drive is key"],
+    "tips": [
+      "Explosive leg drive is key"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   }
 ];

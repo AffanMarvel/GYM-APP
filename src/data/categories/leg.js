@@ -124,7 +124,7 @@ export const legExercises = [
       "Knees outward rakho.",
       "Tempo: 2 sec down → 1 sec pause → 1 sec up"
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1760-yn8yg1r.gif"
   },
   {
     "name": "Bulgarian Split Squat",
@@ -275,8 +275,10 @@ export const legExercises = [
       "Pull leg across body.",
       "Controlled return."
     ],
-    "tips": ["Keep your core stable"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Keep your core stable"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0168-hBGWILP.gif"
   },
   {
     "name": "Cable Hip Extension",
@@ -288,7 +290,9 @@ export const legExercises = [
       "Kick leg back, squeezing glute.",
       "Return slow."
     ],
-    "tips": ["Don't arch your lower back"],
+    "tips": [
+      "Don't arch your lower back"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -301,7 +305,9 @@ export const legExercises = [
       "Step forward into lunge.",
       "Push back to start."
     ],
-    "tips": ["Maintains constant tension on legs"],
+    "tips": [
+      "Maintains constant tension on legs"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -314,8 +320,10 @@ export const legExercises = [
       "Hinge at hips, reach back.",
       "Thrust hips forward, squeeze glutes."
     ],
-    "tips": ["Excellent for posterior chain"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Excellent for posterior chain"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0196-OM46QHm.gif"
   },
   {
     "name": "Cable Reverse Lunges",
@@ -327,7 +335,9 @@ export const legExercises = [
       "Lower knee toward floor.",
       "Return to standing."
     ],
-    "tips": ["Easier on the knees than forward lunges"],
+    "tips": [
+      "Easier on the knees than forward lunges"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -340,7 +350,9 @@ export const legExercises = [
       "Drive through heel.",
       "Step down controlled."
     ],
-    "tips": ["Keep your chest upright"],
+    "tips": [
+      "Keep your chest upright"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -353,7 +365,9 @@ export const legExercises = [
       "Step forward and lower.",
       "Return to start."
     ],
-    "tips": ["Challenges core and balance"],
+    "tips": [
+      "Challenges core and balance"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -366,8 +380,10 @@ export const legExercises = [
       "Squat down deep.",
       "Push back up."
     ],
-    "tips": ["Great for improving squat depth"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Great for improving squat depth"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0534-ZA8b5hc.gif"
   },
   {
     "name": "Dumbbell High Box Step Up",
@@ -379,7 +395,9 @@ export const legExercises = [
       "Drive through the leading leg.",
       "Lower with control."
     ],
-    "tips": ["High box targets glutes more"],
+    "tips": [
+      "High box targets glutes more"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -392,7 +410,9 @@ export const legExercises = [
       "Lower slowly.",
       "Don't lock knees at top."
     ],
-    "tips": ["Controlled and safe for lower back"],
+    "tips": [
+      "Controlled and safe for lower back"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   }
 ];

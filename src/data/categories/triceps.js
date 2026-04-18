@@ -245,9 +245,21 @@ export const tricepsExercises = [
     "muscleTarget": "Lateral Head",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Unilateral" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Isolation" },
-      "advanced": { "sets": 5, "reps": "15", "focus": "Burn" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Unilateral"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Isolation"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "15",
+        "focus": "Burn"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=cable+one+arm+tricep+extension",
     "instructions": [
@@ -255,8 +267,10 @@ export const tricepsExercises = [
       "Push handle down until arm is straight.",
       "Side focus on triceps."
     ],
-    "tips": ["Keep elbow tucked in"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Keep elbow tucked in"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0231-sYCcnon.gif"
   },
   {
     "id": "cable-vbar-pushdown",
@@ -265,9 +279,21 @@ export const tricepsExercises = [
     "muscleTarget": "Medial + Lateral Head",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Strength" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Load" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Strength"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Load"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=cable+vbar+pushdown",
     "instructions": [
@@ -275,8 +301,10 @@ export const tricepsExercises = [
       "Push down until arms locked.",
       "Controlled return."
     ],
-    "tips": ["V-bar allows for heavy weights"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "V-bar allows for heavy weights"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0241-gAwDzB3.gif"
   },
   {
     "id": "cable-rev-overhead",
@@ -285,9 +313,21 @@ export const tricepsExercises = [
     "muscleTarget": "Long Head",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Stretch" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Thickness" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Stability" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Stretch"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Thickness"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Stability"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=cable+reverse+overhead+tricep",
     "instructions": [
@@ -295,7 +335,9 @@ export const tricepsExercises = [
       "Extend arms overhead.",
       "Keep elbows high."
     ],
-    "tips": ["Targets the long head uniquely"],
+    "tips": [
+      "Targets the long head uniquely"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -305,9 +347,21 @@ export const tricepsExercises = [
     "muscleTarget": "Medial Head",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Depth" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Load" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Power" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Depth"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Load"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Power"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=weighted+bench+dips",
     "instructions": [
@@ -315,7 +369,9 @@ export const tricepsExercises = [
       "Lower body between benches.",
       "Push back up."
     ],
-    "tips": ["Keep your back close to the bench"],
+    "tips": [
+      "Keep your back close to the bench"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -325,9 +381,21 @@ export const tricepsExercises = [
     "muscleTarget": "Long Head",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Unilateral" },
-      "advanced": { "sets": 5, "reps": "15", "focus": "Endurance" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Unilateral"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "15",
+        "focus": "Endurance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=dumbbell+one+arm+tricep+extension",
     "instructions": [
@@ -335,8 +403,10 @@ export const tricepsExercises = [
       "Lower behind head, elbow up.",
       "Extend back to start."
     ],
-    "tips": ["Support your elbow if needed"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Support your elbow if needed"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0362-nAuHPcD.gif"
   },
   {
     "id": "ez-bar-ext",
@@ -345,9 +415,21 @@ export const tricepsExercises = [
     "muscleTarget": "All 3 Heads",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Grip" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Strength" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Density" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Grip"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Strength"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Density"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=ez+bar+tricep+extension",
     "instructions": [
@@ -355,7 +437,9 @@ export const tricepsExercises = [
       "Lower behind head, then extend.",
       "Keep upper arms still."
     ],
-    "tips": ["Use EZ-bar for wrist safety"],
+    "tips": [
+      "Use EZ-bar for wrist safety"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -365,9 +449,21 @@ export const tricepsExercises = [
     "muscleTarget": "Medial + Lateral Head",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "10", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "20", "focus": "Endurance" },
-      "advanced": { "sets": 5, "reps": "30", "focus": "Repetition" }
+      "beginner": {
+        "sets": 3,
+        "reps": "10",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "20",
+        "focus": "Endurance"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "30",
+        "focus": "Repetition"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=close+grip+pushup",
     "instructions": [
@@ -375,8 +471,10 @@ export const tricepsExercises = [
       "Keep elbows tucked to sides.",
       "Lower and push up."
     ],
-    "tips": ["Excellent tricep builder"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Excellent tricep builder"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0662-I4hDWkc.gif"
   },
   {
     "id": "assisted-tricep-dip",
@@ -385,9 +483,21 @@ export const tricepsExercises = [
     "muscleTarget": "Triceps",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Control" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Strength" },
-      "advanced": { "sets": 5, "reps": "15", "focus": "Volume" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Control"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Strength"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "15",
+        "focus": "Volume"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=assisted+tricep+dip",
     "instructions": [
@@ -395,8 +505,10 @@ export const tricepsExercises = [
       "Push down handles, keeping chest up.",
       "Squeeze triceps at bottom."
     ],
-    "tips": ["Concentrate on the push"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Concentrate on the push"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0019-J60bN17.gif"
   },
   {
     "id": "machine-seated-dip",
@@ -405,9 +517,21 @@ export const tricepsExercises = [
     "muscleTarget": "Triceps",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Isolation" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Tension" },
-      "advanced": { "sets": 5, "reps": "10 (Heavy)", "focus": "Density" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Isolation"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Tension"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10 (Heavy)",
+        "focus": "Density"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=machine+seated+dip",
     "instructions": [
@@ -415,7 +539,9 @@ export const tricepsExercises = [
       "Push handles down, locking arms.",
       "Controlled release."
     ],
-    "tips": ["Constant tension through the range"],
+    "tips": [
+      "Constant tension through the range"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -425,9 +551,21 @@ export const tricepsExercises = [
     "muscleTarget": "Lateral Head",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Pump" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Hardness" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Pump"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Hardness"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=cable+tricep+pushdown",
     "instructions": [
@@ -435,7 +573,9 @@ export const tricepsExercises = [
       "Push down until arms are straight.",
       "Squeeze triceps."
     ],
-    "tips": ["Ideal for defining the triceps"],
+    "tips": [
+      "Ideal for defining the triceps"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1269-UKWTJWR.gif"
   }
 ];

@@ -330,7 +330,10 @@ export const backExercises = [
       "Pull towards torso, retracting shoulder blades.",
       "Squeeze and return slowly."
     ],
-    "tips": ["Keep back straight", "Focus on mid-back contraction"],
+    "tips": [
+      "Keep back straight",
+      "Focus on mid-back contraction"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0213-pwt0pnM.gif"
   },
   {
@@ -343,7 +346,10 @@ export const backExercises = [
       "Pull towards body, elbow close to side.",
       "Alternate arms."
     ],
-    "tips": ["Avoid twisting torso", "Full stretch every rep"],
+    "tips": [
+      "Avoid twisting torso",
+      "Full stretch every rep"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0214-vpp9Ku2.gif"
   },
   {
@@ -356,7 +362,10 @@ export const backExercises = [
       "Shrug shoulders toward ears.",
       "Hold contraction and lower."
     ],
-    "tips": ["Don't roll shoulders", "Use controlled weight"],
+    "tips": [
+      "Don't roll shoulders",
+      "Use controlled weight"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0220-Eg98Ft9.gif"
   },
   {
@@ -370,8 +379,11 @@ export const backExercises = [
       "Pull rope towards chest while maintaining squat.",
       "Squeeze blades."
     ],
-    "tips": ["Keep core engaged", "Maintain posture"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Keep core engaged",
+      "Maintain posture"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1717-f7fnAIB.gif"
   },
   {
     "name": "Cable Thibaudeau Kayak Row",
@@ -383,8 +395,10 @@ export const backExercises = [
       "Pull down and back in an arc.",
       "Focus on the lat stretch."
     ],
-    "tips": ["Advanced mind-muscle connection required"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Advanced mind-muscle connection required"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2464-ZgwWBoC.gif"
   },
   {
     "name": "Cable Standing Row (V-Bar)",
@@ -396,7 +410,10 @@ export const backExercises = [
       "Pull towards chest, squeezing blades.",
       "Return with control."
     ],
-    "tips": ["Don't use momentum", "Keep knees slightly bent"],
+    "tips": [
+      "Don't use momentum",
+      "Keep knees slightly bent"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0234-4f8RXP8.gif"
   },
   {
@@ -410,8 +427,11 @@ export const backExercises = [
       "Pull up until chin clears bar.",
       "Lower slowly."
     ],
-    "tips": ["Keep elbows in", "Don't let the weight slam"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Keep elbows in",
+      "Don't let the weight slam"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1326-T2mxWqc.gif"
   },
   {
     "name": "Assisted Pull Up",
@@ -423,8 +443,10 @@ export const backExercises = [
       "Pull up, chest to bar.",
       "Slow eccentric (downward phase)."
     ],
-    "tips": ["Widens the back appearance"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Widens the back appearance"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0017-kiJ4Z2K.gif"
   },
   {
     "name": "Band Assisted Pull Up",
@@ -436,8 +458,10 @@ export const backExercises = [
       "Place foot or knee in band loop.",
       "Perform pull ups with assistance."
     ],
-    "tips": ["Band provides most help at the bottom"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Band provides most help at the bottom"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0970-r1XNRYB.gif"
   },
   {
     "name": "Lever Lat Pulldown (Machine)",
@@ -449,7 +473,9 @@ export const backExercises = [
       "Pull down toward chest.",
       "Controlled return."
     ],
-    "tips": ["Consistent path provided by machine"],
+    "tips": [
+      "Consistent path provided by machine"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   }
 ];

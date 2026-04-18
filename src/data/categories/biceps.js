@@ -245,9 +245,21 @@ export const bicepsExercises = [
     "muscleTarget": "Biceps",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Hypertrophy" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Squeeze" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Hypertrophy"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Squeeze"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+seated+curl",
     "instructions": [
@@ -256,7 +268,9 @@ export const bicepsExercises = [
       "Curl towards shoulders.",
       "Lower slowly."
     ],
-    "tips": ["Keep upper arms stationary"],
+    "tips": [
+      "Keep upper arms stationary"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1641-8oYqOt9.gif"
   },
   {
@@ -266,9 +280,21 @@ export const bicepsExercises = [
     "muscleTarget": "Biceps Peak",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Peak" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Isolation" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Depth" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Peak"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Isolation"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Depth"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=cable+concentration+curl",
     "instructions": [
@@ -276,7 +302,9 @@ export const bicepsExercises = [
       "Curl cable handle towards shoulder.",
       "Squeeze at top."
     ],
-    "tips": ["Full range of motion"],
+    "tips": [
+      "Full range of motion"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1642-rZ80Gbp.gif"
   },
   {
@@ -286,9 +314,21 @@ export const bicepsExercises = [
     "muscleTarget": "Biceps Peak",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Pace" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Shape" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Strength" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Pace"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Shape"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Strength"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=cable+overhead+curl",
     "instructions": [
@@ -296,7 +336,9 @@ export const bicepsExercises = [
       "Curl towards shoulders.",
       "Keep elbows close to sides."
     ],
-    "tips": ["Don't swing weights"],
+    "tips": [
+      "Don't swing weights"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1643-DpWMFP5.gif"
   },
   {
@@ -306,9 +348,21 @@ export const bicepsExercises = [
     "muscleTarget": "Biceps",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Balance" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Power" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Stability" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Balance"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Power"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Stability"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=cable+squatting+curl",
     "instructions": [
@@ -316,7 +370,9 @@ export const bicepsExercises = [
       "Curl towards shoulders while maintaining squat.",
       "Squeeze biceps."
     ],
-    "tips": ["Keep back straight"],
+    "tips": [
+      "Keep back straight"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1644-3XFdb1Z.gif"
   },
   {
@@ -326,9 +382,21 @@ export const bicepsExercises = [
     "muscleTarget": "Inner Biceps",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Pump" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Width" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Pump"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Width"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=cable+standing+inner+curl",
     "instructions": [
@@ -336,7 +404,9 @@ export const bicepsExercises = [
       "Grasp handle with underhand grip.",
       "Curl towards shoulders."
     ],
-    "tips": ["Isolate the inner head"],
+    "tips": [
+      "Isolate the inner head"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0229-YwnI4ja.gif"
   },
   {
@@ -346,9 +416,21 @@ export const bicepsExercises = [
     "muscleTarget": "Biceps, Forearms",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Grip" },
-      "intermediate": { "sets": 4, "reps": "15", "focus": "Squeeze" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Tear" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Grip"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "15",
+        "focus": "Squeeze"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Tear"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=cable+rope+pulldown+bicep",
     "instructions": [
@@ -356,7 +438,9 @@ export const bicepsExercises = [
       "Pull down towards thighs, squeezing biceps.",
       "Controlled return."
     ],
-    "tips": ["Excellent finisher exercise"],
+    "tips": [
+      "Excellent finisher exercise"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0232-CvPn9WV.gif"
   },
   {
@@ -366,9 +450,21 @@ export const bicepsExercises = [
     "muscleTarget": "Biceps",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Unilateral" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Load" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Unilateral"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Load"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=dumbbell+alternate+curl",
     "instructions": [
@@ -376,7 +472,9 @@ export const bicepsExercises = [
       "Curl one arm up, then the other.",
       "Avoid swinging."
     ],
-    "tips": ["Rotate wrists as you curl up"],
+    "tips": [
+      "Rotate wrists as you curl up"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -386,9 +484,21 @@ export const bicepsExercises = [
     "muscleTarget": "Biceps Peak",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Peak" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Isolation" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Slow" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Peak"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Isolation"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Slow"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=dumbbell+concentration+curl",
     "instructions": [
@@ -396,8 +506,10 @@ export const bicepsExercises = [
       "Curl dumbbell up towards chest.",
       "Pause and squeeze."
     ],
-    "tips": ["Keep your shoulder steady"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Keep your shoulder steady"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0297-gvsWLQw.gif"
   },
   {
     "id": "lever-preacher-curl",
@@ -406,9 +518,21 @@ export const bicepsExercises = [
     "muscleTarget": "Lower Biceps",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Constant Tension" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Burn" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Constant Tension"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Burn"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=machine+preacher+curl",
     "instructions": [
@@ -416,8 +540,10 @@ export const bicepsExercises = [
       "Grasp handles, curl upward.",
       "Full stretch at bottom."
     ],
-    "tips": ["Excellent for peak construction"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Excellent for peak construction"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0592-b6hQYMb.gif"
   },
   {
     "id": "reverse-curl-cable",
@@ -426,9 +552,21 @@ export const bicepsExercises = [
     "muscleTarget": "Brachialis, Forearms",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Grip" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Thickness" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Strength" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Grip"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Thickness"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Strength"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=reverse+curl+cable",
     "instructions": [
@@ -436,7 +574,9 @@ export const bicepsExercises = [
       "Curl towards shoulders.",
       "Keep elbows in."
     ],
-    "tips": ["Targets the outer arm thickness"],
+    "tips": [
+      "Targets the outer arm thickness"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1201-0JtKWum.gif"
   },
   {
@@ -446,9 +586,21 @@ export const bicepsExercises = [
     "muscleTarget": "Biceps",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Tension" },
-      "intermediate": { "sets": 4, "reps": "20", "focus": "Volume" },
-      "advanced": { "sets": 5, "reps": "25", "focus": "Pump" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Tension"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "20",
+        "focus": "Volume"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "25",
+        "focus": "Pump"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+band+alternating+biceps+curl",
     "instructions": [
@@ -456,8 +608,10 @@ export const bicepsExercises = [
       "Curl one arm then the other.",
       "Maintain constant tension."
     ],
-    "tips": ["Keep elbows pinned to sides"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Keep elbows pinned to sides"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0968-3omWx6P.gif"
   },
   {
     "id": "barbell-drag-curl",
@@ -466,9 +620,21 @@ export const bicepsExercises = [
     "muscleTarget": "Long Head",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "10", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Peak" },
-      "advanced": { "sets": 5, "reps": "8 (Heavy)", "focus": "Mass" }
+      "beginner": {
+        "sets": 3,
+        "reps": "10",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Peak"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8 (Heavy)",
+        "focus": "Mass"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+barbell+drag+curl",
     "instructions": [
@@ -476,8 +642,10 @@ export const bicepsExercises = [
       "Curl bar upward by dragging it up your torso.",
       "Elbows should move backward."
     ],
-    "tips": ["Don't let the bar leave your body"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Don't let the bar leave your body"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0038-IENzBdA.gif"
   },
   {
     "id": "zottman-curl",
@@ -486,9 +654,21 @@ export const bicepsExercises = [
     "muscleTarget": "Biceps, Brachioradialis",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Rotation" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Control" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Strength" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Rotation"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Control"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Strength"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+zottman+curl",
     "instructions": [
@@ -496,8 +676,10 @@ export const bicepsExercises = [
       "Rotate wrists 180 degrees at the top.",
       "Lower dumbbells with overhand grip."
     ],
-    "tips": ["Excellent for overall arm development"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Excellent for overall arm development"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0439-kXaIn5A.gif"
   },
   {
     "id": "barbell-preacher-curl",
@@ -506,9 +688,21 @@ export const bicepsExercises = [
     "muscleTarget": "Lower Biceps",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Isolation" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Depth" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Power" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Isolation"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Depth"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Power"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+barbell+preacher+curl",
     "instructions": [
@@ -516,7 +710,9 @@ export const bicepsExercises = [
       "Grasp barbell, lower until arms are extended.",
       "Curl barbell back to top."
     ],
-    "tips": ["Don't lock out elbows at bottom"],
+    "tips": [
+      "Don't lock out elbows at bottom"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0070-qOgPVf6.gif"
   },
   {
@@ -526,9 +722,21 @@ export const bicepsExercises = [
     "muscleTarget": "Short Head",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Stretch" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Peak" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Squeeze" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Stretch"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Peak"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Squeeze"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=incline+inner+bicep+curl",
     "instructions": [
@@ -536,7 +744,9 @@ export const bicepsExercises = [
       "Curl dumbbells while keeping palms out.",
       "Squeeze inner head at top."
     ],
-    "tips": ["Maximum stretch for the inner bicep"],
+    "tips": [
+      "Maximum stretch for the inner bicep"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -546,9 +756,21 @@ export const bicepsExercises = [
     "muscleTarget": "Biceps",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Unilateral" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Load" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Unilateral"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Load"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=barbell+alternate+curl",
     "instructions": [
@@ -556,8 +778,10 @@ export const bicepsExercises = [
       "Curl one side, then the other.",
       "Maintain strict form."
     ],
-    "tips": ["Focus on the mind-muscle connection"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Focus on the mind-muscle connection"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0023-Yza7XrQ.gif"
   },
   {
     "id": "lever-incline-curl",
@@ -566,9 +790,21 @@ export const bicepsExercises = [
     "muscleTarget": "Biceps",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Pace" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Hypertrophy" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Strength" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Pace"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Hypertrophy"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Strength"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=machine+incline+curl",
     "instructions": [
@@ -576,7 +812,9 @@ export const bicepsExercises = [
       "Curl handles toward shoulders.",
       "Controlled return."
     ],
-    "tips": ["Keep back against seat"],
+    "tips": [
+      "Keep back against seat"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -586,9 +824,21 @@ export const bicepsExercises = [
     "muscleTarget": "Brachialis",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Grip" },
-      "intermediate": { "sets": 4, "reps": "15", "focus": "Pump" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Thickness" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Grip"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "15",
+        "focus": "Pump"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Thickness"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=cable+hammer+curl",
     "instructions": [
@@ -596,8 +846,10 @@ export const bicepsExercises = [
       "Neutral grip, curl towards chest.",
       "Focus on the outer arm."
     ],
-    "tips": ["Excellent for building arm width"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Excellent for building arm width"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0165-HPlPoQA.gif"
   },
   {
     "id": "bodyweight-bicep-curl",
@@ -606,9 +858,21 @@ export const bicepsExercises = [
     "muscleTarget": "Biceps",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "10", "focus": "Bodyweight" },
-      "intermediate": { "sets": 4, "reps": "15", "focus": "Repetition" },
-      "advanced": { "sets": 5, "reps": "Failure", "focus": "Endurance" }
+      "beginner": {
+        "sets": 3,
+        "reps": "10",
+        "focus": "Bodyweight"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "15",
+        "focus": "Repetition"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "Failure",
+        "focus": "Endurance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=bodyweight+bicep+curl+tutorial",
     "instructions": [
@@ -616,7 +880,9 @@ export const bicepsExercises = [
       "Curl your body toward the bar.",
       "Keep body in straight line."
     ],
-    "tips": ["Harder than it looks!"],
+    "tips": [
+      "Harder than it looks!"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   }
 ];

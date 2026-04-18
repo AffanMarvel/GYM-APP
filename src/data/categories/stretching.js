@@ -159,9 +159,21 @@ export const stretchingExercises = [
     "muscleTarget": "Back, Shoulders",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "30 sec", "focus": "Relaxation" },
-      "intermediate": { "sets": 2, "reps": "45 sec", "focus": "Breath" },
-      "advanced": { "sets": 2, "reps": "60 sec", "focus": "Depth" }
+      "beginner": {
+        "sets": 1,
+        "reps": "30 sec",
+        "focus": "Relaxation"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "45 sec",
+        "focus": "Breath"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "60 sec",
+        "focus": "Depth"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+childs+pose",
     "instructions": [
@@ -169,7 +181,9 @@ export const stretchingExercises = [
       "Fold forward, arms extended.",
       "Rest forehead on floor."
     ],
-    "tips": ["Deep breaths into the back"],
+    "tips": [
+      "Deep breaths into the back"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -179,9 +193,21 @@ export const stretchingExercises = [
     "muscleTarget": "Inner Thighs, Hips",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "20 sec", "focus": "Gently" },
-      "intermediate": { "sets": 2, "reps": "30 sec", "focus": "Posture" },
-      "advanced": { "sets": 2, "reps": "45 sec", "focus": "Opening" }
+      "beginner": {
+        "sets": 1,
+        "reps": "20 sec",
+        "focus": "Gently"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "30 sec",
+        "focus": "Posture"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "45 sec",
+        "focus": "Opening"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+butterfly+stretch",
     "instructions": [
@@ -189,7 +215,9 @@ export const stretchingExercises = [
       "Pull heels toward body.",
       "Push knees down gently."
     ],
-    "tips": ["Keep your back straight"],
+    "tips": [
+      "Keep your back straight"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -199,9 +227,21 @@ export const stretchingExercises = [
     "muscleTarget": "Triceps",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "20 sec each", "focus": "Alignment" },
-      "intermediate": { "sets": 2, "reps": "30 sec each", "focus": "Push" },
-      "advanced": { "sets": 2, "reps": "45 sec each", "focus": "Hold" }
+      "beginner": {
+        "sets": 1,
+        "reps": "20 sec each",
+        "focus": "Alignment"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "30 sec each",
+        "focus": "Push"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "45 sec each",
+        "focus": "Hold"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+triceps+stretch",
     "instructions": [
@@ -209,8 +249,10 @@ export const stretchingExercises = [
       "Push elbow down with other hand.",
       "Hold and switch."
     ],
-    "tips": ["Don't arch your back"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Don't arch your back"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0817-uOV3Itw.gif"
   },
   {
     "id": "quad-stretch",
@@ -219,9 +261,21 @@ export const stretchingExercises = [
     "muscleTarget": "Quads",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "20 sec each", "focus": "Balance" },
-      "intermediate": { "sets": 2, "reps": "30 sec each", "focus": "Stability" },
-      "advanced": { "sets": 2, "reps": "45 sec each", "focus": "Pull" }
+      "beginner": {
+        "sets": 1,
+        "reps": "20 sec each",
+        "focus": "Balance"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "30 sec each",
+        "focus": "Stability"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "45 sec each",
+        "focus": "Pull"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+quad+stretch",
     "instructions": [
@@ -229,7 +283,9 @@ export const stretchingExercises = [
       "Pull heel toward glute.",
       "Keep knees together."
     ],
-    "tips": ["Hold onto a wall for balance if needed"],
+    "tips": [
+      "Hold onto a wall for balance if needed"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -239,9 +295,21 @@ export const stretchingExercises = [
     "muscleTarget": "Neck, Traps",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "15 sec each", "focus": "Gentle" },
-      "intermediate": { "sets": 1, "reps": "25 sec each", "focus": "Release" },
-      "advanced": { "sets": 1, "reps": "40 sec each", "focus": "Hold" }
+      "beginner": {
+        "sets": 1,
+        "reps": "15 sec each",
+        "focus": "Gentle"
+      },
+      "intermediate": {
+        "sets": 1,
+        "reps": "25 sec each",
+        "focus": "Release"
+      },
+      "advanced": {
+        "sets": 1,
+        "reps": "40 sec each",
+        "focus": "Hold"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+neck+side+stretch",
     "instructions": [
@@ -249,8 +317,10 @@ export const stretchingExercises = [
       "Apply light pressure with hand.",
       "Hold and switch."
     ],
-    "tips": ["Keep your shoulders down"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Keep your shoulders down"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1403-x2chWLO.gif"
   },
   {
     "id": "cross-body-shoulder",
@@ -259,9 +329,21 @@ export const stretchingExercises = [
     "muscleTarget": "Shoulders",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "20 sec each", "focus": "Arm Straight" },
-      "intermediate": { "sets": 2, "reps": "30 sec each", "focus": "Pull" },
-      "advanced": { "sets": 2, "reps": "45 sec each", "focus": "Squeeze" }
+      "beginner": {
+        "sets": 1,
+        "reps": "20 sec each",
+        "focus": "Arm Straight"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "30 sec each",
+        "focus": "Pull"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "45 sec each",
+        "focus": "Squeeze"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+shoulder+stretch",
     "instructions": [
@@ -269,7 +351,9 @@ export const stretchingExercises = [
       "Hold above or below elbow.",
       "Switch sides."
     ],
-    "tips": ["Don't pull on the elbow joint"],
+    "tips": [
+      "Don't pull on the elbow joint"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -279,9 +363,21 @@ export const stretchingExercises = [
     "muscleTarget": "Glutes",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "20 sec each", "focus": "Cross Leg" },
-      "intermediate": { "sets": 2, "reps": "30 sec each", "focus": "Leaning" },
-      "advanced": { "sets": 2, "reps": "45 sec each", "focus": "Depth" }
+      "beginner": {
+        "sets": 1,
+        "reps": "20 sec each",
+        "focus": "Cross Leg"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "30 sec each",
+        "focus": "Leaning"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "45 sec each",
+        "focus": "Depth"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+seated+glute+stretch",
     "instructions": [
@@ -289,8 +385,10 @@ export const stretchingExercises = [
       "Lean forward slightly.",
       "Hold and switch."
     ],
-    "tips": ["Excellent for releasing hip tension"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Excellent for releasing hip tension"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1424-DeDThfG.gif"
   },
   {
     "id": "wrist-extensor-stretch2",
@@ -299,9 +397,21 @@ export const stretchingExercises = [
     "muscleTarget": "Forearms",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "15 sec each", "focus": "Palms Down" },
-      "intermediate": { "sets": 1, "reps": "25 sec each", "focus": "Pull" },
-      "advanced": { "sets": 1, "reps": "40 sec each", "focus": "Hold" }
+      "beginner": {
+        "sets": 1,
+        "reps": "15 sec each",
+        "focus": "Palms Down"
+      },
+      "intermediate": {
+        "sets": 1,
+        "reps": "25 sec each",
+        "focus": "Pull"
+      },
+      "advanced": {
+        "sets": 1,
+        "reps": "40 sec each",
+        "focus": "Hold"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+wrist+stretch",
     "instructions": [
@@ -309,7 +419,9 @@ export const stretchingExercises = [
       "Pull fingers down with other hand.",
       "Keep arm straight."
     ],
-    "tips": ["Reduces wrist strain"],
+    "tips": [
+      "Reduces wrist strain"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -319,9 +431,21 @@ export const stretchingExercises = [
     "muscleTarget": "Lats",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "20 sec each", "focus": "Alignment" },
-      "intermediate": { "sets": 2, "reps": "30 sec each", "focus": "Lean" },
-      "advanced": { "sets": 2, "reps": "45 sec each", "focus": "Full Extension" }
+      "beginner": {
+        "sets": 1,
+        "reps": "20 sec each",
+        "focus": "Alignment"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "30 sec each",
+        "focus": "Lean"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "45 sec each",
+        "focus": "Full Extension"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+wall+lat+stretch",
     "instructions": [
@@ -329,7 +453,9 @@ export const stretchingExercises = [
       "Lean forward and rotate slightly away.",
       "Feel stretch in side."
     ],
-    "tips": ["Great for back mobility"],
+    "tips": [
+      "Great for back mobility"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -339,9 +465,21 @@ export const stretchingExercises = [
     "muscleTarget": "Calves",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "20 sec each", "focus": "Heel Down" },
-      "intermediate": { "sets": 2, "reps": "30 sec each", "focus": "Leaning" },
-      "advanced": { "sets": 2, "reps": "45 sec each", "focus": "Hold" }
+      "beginner": {
+        "sets": 1,
+        "reps": "20 sec each",
+        "focus": "Heel Down"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "30 sec each",
+        "focus": "Leaning"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "45 sec each",
+        "focus": "Hold"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+calf+stretch",
     "instructions": [
@@ -349,7 +487,9 @@ export const stretchingExercises = [
       "Keep back heel on ground.",
       "Lean into wall."
     ],
-    "tips": ["Prevents calf tightness"],
+    "tips": [
+      "Prevents calf tightness"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   }
 ];

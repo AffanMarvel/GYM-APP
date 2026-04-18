@@ -150,7 +150,7 @@ export const absExercises = [
       "Don't let hips drop or peak too high.",
       "Breathe consistently."
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3544-5VXmnV5.gif"
   },
   {
     "id": "bicycle-crunch",
@@ -197,9 +197,21 @@ export const absExercises = [
     "muscleTarget": "Upper Abs",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Hypertrophy" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Tension" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Hypertrophy"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Tension"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+seated+crunch",
     "instructions": [
@@ -208,7 +220,10 @@ export const absExercises = [
       "Crunch forward towards knees.",
       "Return slow."
     ],
-    "tips": ["Don't pull with arms", "Focus on core"],
+    "tips": [
+      "Don't pull with arms",
+      "Focus on core"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0212-8xUv4J7.gif"
   },
   {
@@ -218,9 +233,21 @@ export const absExercises = [
     "muscleTarget": "Upper Abs",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Control" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Thickness" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Strength" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Control"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Thickness"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Strength"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+standing+crunch",
     "instructions": [
@@ -229,7 +256,9 @@ export const absExercises = [
       "Crunch down towards knees.",
       "Return controlled."
     ],
-    "tips": ["Keep hips stable"],
+    "tips": [
+      "Keep hips stable"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0874-XU3ePuv.gif"
   },
   {
@@ -239,9 +268,21 @@ export const absExercises = [
     "muscleTarget": "Obliques",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "10", "focus": "Balance" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Power" },
-      "advanced": { "sets": 5, "reps": "15", "focus": "Stability" }
+      "beginner": {
+        "sets": 3,
+        "reps": "10",
+        "focus": "Balance"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Power"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "15",
+        "focus": "Stability"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+standing+lift",
     "instructions": [
@@ -249,7 +290,9 @@ export const absExercises = [
       "Lift handle towards opposite shoulder.",
       "Rotate torso."
     ],
-    "tips": ["Keep arms straight"],
+    "tips": [
+      "Keep arms straight"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0230-qFpAkpP.gif"
   },
   {
@@ -259,9 +302,21 @@ export const absExercises = [
     "muscleTarget": "Obliques",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Coordination" },
-      "intermediate": { "sets": 4, "reps": "15", "focus": "Squeeze" },
-      "advanced": { "sets": 5, "reps": "20", "focus": "Endurance" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Coordination"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "15",
+        "focus": "Squeeze"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "20",
+        "focus": "Endurance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+seated+twist",
     "instructions": [
@@ -269,8 +324,10 @@ export const absExercises = [
       "Hold handle in front.",
       "Rotate torso side to side."
     ],
-    "tips": ["Isolate obliques"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Isolate obliques"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2399-UEjSrKI.gif"
   },
   {
     "id": "cable-side-bend",
@@ -279,9 +336,21 @@ export const absExercises = [
     "muscleTarget": "Obliques",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Flexibility" },
-      "intermediate": { "sets": 4, "reps": "20", "focus": "Tension" },
-      "advanced": { "sets": 5, "reps": "25", "focus": "Strength" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Flexibility"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "20",
+        "focus": "Tension"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "25",
+        "focus": "Strength"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+side+bend",
     "instructions": [
@@ -290,7 +359,9 @@ export const absExercises = [
       "Bend sideways towards handle.",
       "Return to center."
     ],
-    "tips": ["Avoid leaning forward"],
+    "tips": [
+      "Avoid leaning forward"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0222-wPypxFY.gif"
   },
   {
@@ -300,9 +371,21 @@ export const absExercises = [
     "muscleTarget": "Obliques",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Squeeze" },
-      "intermediate": { "sets": 4, "reps": "15", "focus": "Detail" },
-      "advanced": { "sets": 5, "reps": "18", "focus": "Power" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Squeeze"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "15",
+        "focus": "Detail"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "18",
+        "focus": "Power"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=side+bend+crunch",
     "instructions": [
@@ -310,7 +393,9 @@ export const absExercises = [
       "Bend sideways, then crunch.",
       "Focus on oblique contraction."
     ],
-    "tips": ["Keep back straight"],
+    "tips": [
+      "Keep back straight"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0221-qatbkEd.gif"
   },
   {
@@ -320,9 +405,21 @@ export const absExercises = [
     "muscleTarget": "Obliques",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "15", "focus": "Hypertrophy" },
-      "advanced": { "sets": 5, "reps": "20", "focus": "Strict" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "15",
+        "focus": "Hypertrophy"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "20",
+        "focus": "Strict"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+side+crunch",
     "instructions": [
@@ -330,7 +427,9 @@ export const absExercises = [
       "Grasp handle, bend at waist.",
       "Lower elbow to hip."
     ],
-    "tips": ["Don't use arms to pull"],
+    "tips": [
+      "Don't use arms to pull"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0223-q2ADGqV.gif"
   },
   {
@@ -340,9 +439,21 @@ export const absExercises = [
     "muscleTarget": "Obliques, Lower Abs",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "20", "focus": "Pace" },
-      "intermediate": { "sets": 4, "reps": "30", "focus": "Coordination" },
-      "advanced": { "sets": 5, "reps": "40", "focus": "Sprints" }
+      "beginner": {
+        "sets": 3,
+        "reps": "20",
+        "focus": "Pace"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "30",
+        "focus": "Coordination"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "40",
+        "focus": "Sprints"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+air+bike+abs",
     "instructions": [
@@ -350,8 +461,10 @@ export const absExercises = [
       "Bring elbow to opposite knee.",
       "Switch in cycling motion."
     ],
-    "tips": ["Reach for the knees"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Reach for the knees"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0003-1ZFqTDN.gif"
   },
   {
     "id": "cable-twist-row",
@@ -360,9 +473,21 @@ export const absExercises = [
     "muscleTarget": "Obliques, Lower Back",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "10", "focus": "Twist" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Core" },
-      "advanced": { "sets": 5, "reps": "15", "focus": "Stability" }
+      "beginner": {
+        "sets": 3,
+        "reps": "10",
+        "focus": "Twist"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Core"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "15",
+        "focus": "Stability"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+twist+row+abs",
     "instructions": [
@@ -370,7 +495,9 @@ export const absExercises = [
       "Pull and twist away.",
       "Keep core tight."
     ],
-    "tips": ["Focus on the rotation"],
+    "tips": [
+      "Focus on the rotation"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0236-JOZhu2h.gif"
   },
   {
@@ -380,9 +507,21 @@ export const absExercises = [
     "muscleTarget": "Lower Abs",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "15", "focus": "Strength" },
-      "advanced": { "sets": 5, "reps": "20", "focus": "Control" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "15",
+        "focus": "Strength"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "20",
+        "focus": "Control"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+leg+raise",
     "instructions": [
@@ -390,8 +529,10 @@ export const absExercises = [
       "Raise legs together to 90 degrees.",
       "Lower slowly without touching ground."
     ],
-    "tips": ["Keep lower back flat"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Keep lower back flat"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0012-UGhRD1A.gif"
   },
   {
     "id": "3-4-sit-up",
@@ -400,9 +541,21 @@ export const absExercises = [
     "muscleTarget": "Upper Abs",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "15", "focus": "Upper Core" },
-      "advanced": { "sets": 5, "reps": "20+", "focus": "Endurance" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "15",
+        "focus": "Upper Core"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "20+",
+        "focus": "Endurance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+3/4+sit-up",
     "instructions": [
@@ -411,7 +564,10 @@ export const absExercises = [
       "Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle.",
       "Pause for a moment at the top, then slowly lower back down."
     ],
-    "tips": ["Don't pull on your neck", "Keep feet flat"],
+    "tips": [
+      "Don't pull on your neck",
+      "Keep feet flat"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0001-2gPfomN.gif"
   },
   {
@@ -421,9 +577,21 @@ export const absExercises = [
     "muscleTarget": "Obliques",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "20", "focus": "Side Flex" },
-      "intermediate": { "sets": 4, "reps": "30", "focus": "Oblique Burn" },
-      "advanced": { "sets": 5, "reps": "50", "focus": "Core Endurance" }
+      "beginner": {
+        "sets": 3,
+        "reps": "20",
+        "focus": "Side Flex"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "30",
+        "focus": "Oblique Burn"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "50",
+        "focus": "Core Endurance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+alternate+heel+touchers",
     "instructions": [
@@ -432,7 +600,10 @@ export const absExercises = [
       "Return and reach your left hand towards your left heel.",
       "Continue alternating sides."
     ],
-    "tips": ["Keep core tight", "Maintain shoulder elevation"],
+    "tips": [
+      "Keep core tight",
+      "Maintain shoulder elevation"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0006-qaZVsGk.gif"
   },
   {
@@ -442,9 +613,21 @@ export const absExercises = [
     "muscleTarget": "Full Core, Shoulders",
     "difficulty": "advanced",
     "levels": {
-      "beginner": { "sets": 2, "reps": "8", "focus": "Grip" },
-      "intermediate": { "sets": 3, "reps": "12", "focus": "Swing Control" },
-      "advanced": { "sets": 4, "reps": "15", "focus": "Dynamic Stability" }
+      "beginner": {
+        "sets": 2,
+        "reps": "8",
+        "focus": "Grip"
+      },
+      "intermediate": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Swing Control"
+      },
+      "advanced": {
+        "sets": 4,
+        "reps": "15",
+        "focus": "Dynamic Stability"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+arm+slingers+hanging",
     "instructions": [
@@ -453,8 +636,11 @@ export const absExercises = [
       "Slowly lower your legs back down with control.",
       "Focus on stability throughout the move."
     ],
-    "tips": ["Avoid excessive swinging", "Keep elbows slightly bent if needed"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Avoid excessive swinging",
+      "Keep elbows slightly bent if needed"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2355-uWpxD4v.gif"
   },
   {
     "id": "assisted-motion-russian-twist",
@@ -463,9 +649,21 @@ export const absExercises = [
     "muscleTarget": "Obliques",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "10", "focus": "Rotation" },
-      "intermediate": { "sets": 4, "reps": "15", "focus": "Weighted Twist" },
-      "advanced": { "sets": 5, "reps": "20", "focus": "Core Power" }
+      "beginner": {
+        "sets": 3,
+        "reps": "10",
+        "focus": "Rotation"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "15",
+        "focus": "Weighted Twist"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "20",
+        "focus": "Core Power"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+russian+twist+with+ball",
     "instructions": [
@@ -474,8 +672,11 @@ export const absExercises = [
       "Slowly twist your torso to the right, then to the left.",
       "Repeat for the desired repetitions."
     ],
-    "tips": ["Keep your back straight", "Twist from the core, not just arms"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Keep your back straight",
+      "Twist from the core, not just arms"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0014-r7cT9YD.gif"
   },
   {
     "id": "dead-bug",
@@ -484,9 +685,21 @@ export const absExercises = [
     "muscleTarget": "Deep Core Stability",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "10", "focus": "Coordination" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Stability" },
-      "advanced": { "sets": 5, "reps": "15", "focus": "Slow Control" }
+      "beginner": {
+        "sets": 3,
+        "reps": "10",
+        "focus": "Coordination"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Stability"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "15",
+        "focus": "Slow Control"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+dead+bug+exercise",
     "instructions": [
@@ -495,8 +708,11 @@ export const absExercises = [
       "Return to start and repeat on opposite side.",
       "Maintain flat lower back throughout."
     ],
-    "tips": ["Push lower back into the floor", "Exhale as you lower limbs"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Push lower back into the floor",
+      "Exhale as you lower limbs"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0276-iny3m5y.gif"
   },
   {
     "id": "v-sit-hold",
@@ -505,9 +721,21 @@ export const absExercises = [
     "muscleTarget": "Full Core, Hip Flexors",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "20 sec", "focus": "Balance" },
-      "intermediate": { "sets": 4, "reps": "45 sec", "focus": "Core Strength" },
-      "advanced": { "sets": 5, "reps": "60 sec", "focus": "Stability" }
+      "beginner": {
+        "sets": 3,
+        "reps": "20 sec",
+        "focus": "Balance"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "45 sec",
+        "focus": "Core Strength"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "60 sec",
+        "focus": "Stability"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+v-sit+hold",
     "instructions": [
@@ -516,7 +744,10 @@ export const absExercises = [
       "Hold the position with a straight back.",
       "Keep core tight and breathe."
     ],
-    "tips": ["Don't round your back", "Keep legs straight for harder variant"],
+    "tips": [
+      "Don't round your back",
+      "Keep legs straight for harder variant"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0003-1ZFqTDN.gif"
   },
   {
@@ -526,9 +757,21 @@ export const absExercises = [
     "muscleTarget": "Obliques, Core",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "10 total", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "16 total", "focus": "Squeeze" },
-      "advanced": { "sets": 5, "reps": "20 total", "focus": "Endurance" }
+      "beginner": {
+        "sets": 3,
+        "reps": "10 total",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "16 total",
+        "focus": "Squeeze"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "20 total",
+        "focus": "Endurance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+knee+to+elbow+plank",
     "instructions": [
@@ -537,7 +780,10 @@ export const absExercises = [
       "Return and repeat with left knee to left elbow.",
       "Keep hips level throughout."
     ],
-    "tips": ["Exhale as knee moves to elbow", "Don't let hips sag"],
+    "tips": [
+      "Exhale as knee moves to elbow",
+      "Don't let hips sag"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0011-03lzqwk.gif"
   }
 ];

@@ -161,9 +161,21 @@ export const forearmExercises = [
     "muscleTarget": "Wrist Flexors",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Isolation" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Strength" },
-      "advanced": { "sets": 5, "reps": "20", "focus": "Endurance" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Isolation"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Strength"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "20",
+        "focus": "Endurance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=cable+seated+wrist+curl",
     "instructions": [
@@ -171,7 +183,9 @@ export const forearmExercises = [
       "Grasp cable handle, curl wrist upward.",
       "Squeeze and return slow."
     ],
-    "tips": ["Full range of motion"],
+    "tips": [
+      "Full range of motion"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -181,9 +195,21 @@ export const forearmExercises = [
     "muscleTarget": "Wrist Extensors",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Squeeze" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Power" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Squeeze"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Power"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=cable+back+wrist+curl",
     "instructions": [
@@ -191,8 +217,10 @@ export const forearmExercises = [
       "Grasp handle, curl wrist upward.",
       "Controlled return."
     ],
-    "tips": ["Good for forearm thickness"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Good for forearm thickness"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0224-VhX2JdE.gif"
   },
   {
     "id": "cable-standing-wrist-curl",
@@ -201,9 +229,21 @@ export const forearmExercises = [
     "muscleTarget": "Wrist Flexors",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Contraction" },
-      "intermediate": { "sets": 4, "reps": "20", "focus": "Pump" },
-      "advanced": { "sets": 5, "reps": "25", "focus": "Endurance" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Contraction"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "20",
+        "focus": "Pump"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "25",
+        "focus": "Endurance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=cable+standing+wrist+curl",
     "instructions": [
@@ -211,7 +251,9 @@ export const forearmExercises = [
       "Curl wrists upward toward forearms.",
       "Lower slowly."
     ],
-    "tips": ["Maintain arm extension"],
+    "tips": [
+      "Maintain arm extension"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -221,9 +263,21 @@ export const forearmExercises = [
     "muscleTarget": "Wrist Extensors",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "15", "focus": "Repetition" },
-      "advanced": { "sets": 5, "reps": "20", "focus": "Strict" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "15",
+        "focus": "Repetition"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "20",
+        "focus": "Strict"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=dumbbell+reverse+wrist+curl",
     "instructions": [
@@ -231,8 +285,10 @@ export const forearmExercises = [
       "Curl wrist upward with dumbbell.",
       "Focus on top contraction."
     ],
-    "tips": ["Strengthens the top of the forearm"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Strengthens the top of the forearm"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0358-BwSNDGt.gif"
   },
   {
     "id": "db-over-bench-wrist",
@@ -241,9 +297,21 @@ export const forearmExercises = [
     "muscleTarget": "Wrist Flexors",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Stretch" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Squeeze" },
-      "advanced": { "sets": 5, "reps": "20", "focus": "Burn" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Stretch"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Squeeze"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "20",
+        "focus": "Burn"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=dumbbell+wrist+curl+over+bench",
     "instructions": [
@@ -251,8 +319,10 @@ export const forearmExercises = [
       "Curl wrist upward, let it roll to fingers.",
       "Squeeze at top."
     ],
-    "tips": ["Allows for great isolation"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Allows for great isolation"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0367-KI1DjNN.gif"
   },
   {
     "id": "db-over-bench-rev-wrist",
@@ -261,9 +331,21 @@ export const forearmExercises = [
     "muscleTarget": "Wrist Extensors",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Control" },
-      "intermediate": { "sets": 4, "reps": "15", "focus": "Strength" },
-      "advanced": { "sets": 5, "reps": "18", "focus": "Power" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Control"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "15",
+        "focus": "Strength"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "18",
+        "focus": "Power"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=db+reverse+wrist+curl+over+bench",
     "instructions": [
@@ -271,7 +353,9 @@ export const forearmExercises = [
       "Curl upward.",
       "Return slow."
     ],
-    "tips": ["Excellent for forearm symmetry"],
+    "tips": [
+      "Excellent for forearm symmetry"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -281,9 +365,21 @@ export const forearmExercises = [
     "muscleTarget": "Wrist Flexors",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Pump" },
-      "intermediate": { "sets": 4, "reps": "20", "focus": "Mass" },
-      "advanced": { "sets": 5, "reps": "25", "focus": "Conditioning" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Pump"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "20",
+        "focus": "Mass"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "25",
+        "focus": "Conditioning"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=db+wrist+curl+over+bench",
     "instructions": [
@@ -291,8 +387,10 @@ export const forearmExercises = [
       "Curl dumbbells toward face.",
       "Full range."
     ],
-    "tips": ["High volume works best"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "High volume works best"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0369-D1xYJAU.gif"
   },
   {
     "id": "reverse-barbell-curl",
@@ -301,9 +399,21 @@ export const forearmExercises = [
     "muscleTarget": "Brachioradialis",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Grip" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Thickness" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Strength" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Grip"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Thickness"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Strength"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=reverse+barbell+curl",
     "instructions": [
@@ -311,8 +421,10 @@ export const forearmExercises = [
       "Curl towards shoulders.",
       "Keep wrists straight."
     ],
-    "tips": ["Targets the top of the forearm and biceps"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Targets the top of the forearm and biceps"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0031-25GPyDY.gif"
   },
   {
     "id": "reverse-cable-curl",
@@ -321,9 +433,21 @@ export const forearmExercises = [
     "muscleTarget": "Forearms",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Pump" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Constant Tension" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Vascularity" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Pump"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Constant Tension"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Vascularity"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=reverse+cable+curl",
     "instructions": [
@@ -331,8 +455,10 @@ export const forearmExercises = [
       "Curl towards shoulders.",
       "Hold peak."
     ],
-    "tips": ["Maintain tension at bottom"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Maintain tension at bottom"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0868-G08RZcQ.gif"
   },
   {
     "id": "wrist-roller",
@@ -341,9 +467,21 @@ export const forearmExercises = [
     "muscleTarget": "Forearms & Grip",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "3 Rolls", "focus": "Control" },
-      "intermediate": { "sets": 4, "reps": "5 Rolls", "focus": "Burn" },
-      "advanced": { "sets": 5, "reps": "To Failure", "focus": "Stamina" }
+      "beginner": {
+        "sets": 3,
+        "reps": "3 Rolls",
+        "focus": "Control"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "5 Rolls",
+        "focus": "Burn"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "To Failure",
+        "focus": "Stamina"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+wrist+roller",
     "instructions": [
@@ -351,7 +489,9 @@ export const forearmExercises = [
       "Roll weight up using wrists.",
       "Slowly unroll back down."
     ],
-    "tips": ["Ultimate forearm finisher"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Ultimate forearm finisher"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0859-bd5b860.gif"
   }
 ];

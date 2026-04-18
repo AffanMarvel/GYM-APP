@@ -339,9 +339,21 @@ export const chestExercises = [
     "muscleTarget": "Pectorals",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "8-10", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "10-12", "focus": "Hypertrophy" },
-      "advanced": { "sets": 5, "reps": "12-15", "focus": "Strength" }
+      "beginner": {
+        "sets": 3,
+        "reps": "8-10",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10-12",
+        "focus": "Hypertrophy"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "12-15",
+        "focus": "Strength"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+archer+push+up",
     "instructions": [
@@ -352,8 +364,12 @@ export const chestExercises = [
       "Repeat on the other side, extending the opposite arm out to the side.",
       "Continue alternating sides for the desired number of repetitions."
     ],
-    "tips": ["Keep your core tight", "Control the descent", "Focus on chest"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Keep your core tight",
+      "Control the descent",
+      "Focus on chest"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3294-A9qxk2F.gif"
   },
   {
     "id": "0009-assisted-chest-dip",
@@ -362,9 +378,21 @@ export const chestExercises = [
     "muscleTarget": "Pectorals",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "10-12", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "12-15", "focus": "Hypertrophy" },
-      "advanced": { "sets": 5, "reps": "6-10", "focus": "Weighted equivalent" }
+      "beginner": {
+        "sets": 3,
+        "reps": "10-12",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12-15",
+        "focus": "Hypertrophy"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "6-10",
+        "focus": "Weighted equivalent"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+assisted+chest+dip",
     "instructions": [
@@ -373,7 +401,10 @@ export const chestExercises = [
       "Lower body until upper arms are parallel to floor.",
       "Push back up to starting position."
     ],
-    "tips": ["Lean forward to target chest", "Control the descent"],
+    "tips": [
+      "Lean forward to target chest",
+      "Control the descent"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0009-PAgTVaK.gif"
   },
   {
@@ -383,14 +414,32 @@ export const chestExercises = [
     "muscleTarget": "Pectorals",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "10", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Stretch" },
-      "advanced": { "sets": 5, "reps": "15", "focus": "Power" }
+      "beginner": {
+        "sets": 3,
+        "reps": "10",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Stretch"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "15",
+        "focus": "Power"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=wide+grip+chest+dip",
-    "instructions": ["Set wide grip", "Lower slowly", "Push explosive"],
-    "tips": ["Wide grip targets outer chest"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "instructions": [
+      "Set wide grip",
+      "Lower slowly",
+      "Push explosive"
+    ],
+    "tips": [
+      "Wide grip targets outer chest"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2364-PnZJIrk.gif"
   },
   {
     "id": "1254-band-bench",
@@ -399,13 +448,31 @@ export const chestExercises = [
     "muscleTarget": "Pectorals",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Tension" },
-      "intermediate": { "sets": 4, "reps": "20", "focus": "Pump" },
-      "advanced": { "sets": 5, "reps": "25", "focus": "Fatigue" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Tension"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "20",
+        "focus": "Pump"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "25",
+        "focus": "Fatigue"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=band+bench+press",
-    "instructions": ["Lie on bench", "Hold band handles", "Press upward"],
-    "tips": ["Keep band tension consistent"],
+    "instructions": [
+      "Lie on bench",
+      "Hold band handles",
+      "Press upward"
+    ],
+    "tips": [
+      "Keep band tension consistent"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1254-khlHMqs.gif"
   },
   {
@@ -415,13 +482,31 @@ export const chestExercises = [
     "muscleTarget": "Pectorals",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "10", "focus": "Twist" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Core" },
-      "advanced": { "sets": 5, "reps": "15", "focus": "Power" }
+      "beginner": {
+        "sets": 3,
+        "reps": "10",
+        "focus": "Twist"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Core"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "15",
+        "focus": "Power"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=band+twisting+chest+press",
-    "instructions": ["Stand sideways to anchor", "Press across body", "Twist torso"],
-    "tips": ["Great for inner chest and core"],
+    "instructions": [
+      "Stand sideways to anchor",
+      "Press across body",
+      "Twist torso"
+    ],
+    "tips": [
+      "Great for inner chest and core"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0989-c16nYGA.gif"
   },
   {
@@ -431,9 +516,21 @@ export const chestExercises = [
     "muscleTarget": "Pectorals",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "15", "focus": "Pump" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Slow Negatives" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "15",
+        "focus": "Pump"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Slow Negatives"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+standing+fly",
     "instructions": [
@@ -441,7 +538,9 @@ export const chestExercises = [
       "Step forward and push handles together.",
       "Control the return motion."
     ],
-    "tips": ["Don't let the handles go too far back"],
+    "tips": [
+      "Don't let the handles go too far back"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0227-Pr9Rhf4.gif"
   },
   {
@@ -451,9 +550,21 @@ export const chestExercises = [
     "muscleTarget": "Pectorals",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Contraction" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Shape" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Isolation" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Contraction"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Shape"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Isolation"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+straight+crossovers",
     "instructions": [
@@ -461,7 +572,9 @@ export const chestExercises = [
       "Bring hands together in front, crossing them.",
       "Return slowly."
     ],
-    "tips": ["Keep elbows slightly bent"],
+    "tips": [
+      "Keep elbows slightly bent"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1269-UKWTJWR.gif"
   },
   {
@@ -471,9 +584,21 @@ export const chestExercises = [
     "muscleTarget": "Pectorals",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Stretch" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Tension" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Stretch"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Tension"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+dumbbell+fly",
     "instructions": [
@@ -481,8 +606,10 @@ export const chestExercises = [
       "Lower dumbbells in arc motion.",
       "Hug the tree motion to return."
     ],
-    "tips": ["Don't overstretch shoulders"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Don't overstretch shoulders"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0308-yz9nUhF.gif"
   },
   {
     "id": "0151-cable-bench-press",
@@ -491,9 +618,21 @@ export const chestExercises = [
     "muscleTarget": "Pectorals",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Control" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Power" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Stability" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Control"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Power"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Stability"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+bench+press",
     "instructions": [
@@ -501,8 +640,10 @@ export const chestExercises = [
       "Press handles upward.",
       "Constant tension throughout."
     ],
-    "tips": ["Great for stability training"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Great for stability training"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0151-7xI5MXA.gif"
   },
   {
     "id": "barbell-decline-pullover",
@@ -511,9 +652,21 @@ export const chestExercises = [
     "muscleTarget": "Lower Chest, Lats",
     "difficulty": "advanced",
     "levels": {
-      "beginner": { "sets": 2, "reps": "12", "focus": "Stretch" },
-      "intermediate": { "sets": 3, "reps": "10", "focus": "Feel" },
-      "advanced": { "sets": 4, "reps": "8", "focus": "Mass" }
+      "beginner": {
+        "sets": 2,
+        "reps": "12",
+        "focus": "Stretch"
+      },
+      "intermediate": {
+        "sets": 3,
+        "reps": "10",
+        "focus": "Feel"
+      },
+      "advanced": {
+        "sets": 4,
+        "reps": "8",
+        "focus": "Mass"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+barbell+decline+pullover",
     "instructions": [
@@ -521,8 +674,10 @@ export const chestExercises = [
       "Lower barbell behind head with slight elbow bend.",
       "Pull bar back to chest height."
     ],
-    "tips": ["Excellent for lower chest definition"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Excellent for lower chest definition"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1255-9sgNE2O.gif"
   },
   {
     "id": "barbell-decline-wide-grip-press",
@@ -531,9 +686,21 @@ export const chestExercises = [
     "muscleTarget": "Outer Lower Chest",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Thickness" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Power" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Thickness"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Power"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+decline+wide+grip+press",
     "instructions": [
@@ -541,7 +708,9 @@ export const chestExercises = [
       "Lower to lower chest area.",
       "Press upward aggressively."
     ],
-    "tips": ["Targets the lower outer sweep of the pecs"],
+    "tips": [
+      "Targets the lower outer sweep of the pecs"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0033-GrO65fd.gif"
   },
   {
@@ -551,9 +720,21 @@ export const chestExercises = [
     "muscleTarget": "Pectorals, Shoulders",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Mobility" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Control" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Depth" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Mobility"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Control"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Depth"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=barbell+front+raise+pullover",
     "instructions": [
@@ -561,8 +742,10 @@ export const chestExercises = [
       "Keep arms slightly bent.",
       "Control the eccentric phase."
     ],
-    "tips": ["Combined move for upper body expansion"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Combined move for upper body expansion"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0040-33AzZeV.gif"
   },
   {
     "id": "cable-decline-fly",
@@ -571,9 +754,21 @@ export const chestExercises = [
     "muscleTarget": "Lower Pecs",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Squeeze" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Detail" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Strict" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Squeeze"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Detail"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Strict"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+cable+decline+fly",
     "instructions": [
@@ -581,8 +776,10 @@ export const chestExercises = [
       "Bring handles together in downward arc.",
       "Feel the lower pec contraction."
     ],
-    "tips": ["Don't let handles go above shoulder height"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Don't let handles go above shoulder height"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0158-7saC5zz.gif"
   },
   {
     "id": "cable-decline-one-arm-press",
@@ -591,9 +788,21 @@ export const chestExercises = [
     "muscleTarget": "Lower Chest, Core Stability",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Balance" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Unilateral Power" },
-      "advanced": { "sets": 5, "reps": "15", "focus": "Strength" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Balance"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Unilateral Power"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "15",
+        "focus": "Strength"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=cable+one+arm+chest+press",
     "instructions": [
@@ -601,8 +810,10 @@ export const chestExercises = [
       "Press handle across chest with one arm.",
       "Isolate the lower chest."
     ],
-    "tips": ["Engage core to prevent rotation"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Engage core to prevent rotation"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1260-KHGNa16.gif"
   },
   {
     "id": "db-around-the-world",
@@ -611,9 +822,21 @@ export const chestExercises = [
     "muscleTarget": "Pectorals, Shoulders",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "10", "focus": "ROM" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Stretch" },
-      "advanced": { "sets": 5, "reps": "15", "focus": "Muscle Endurance" }
+      "beginner": {
+        "sets": 3,
+        "reps": "10",
+        "focus": "ROM"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Stretch"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "15",
+        "focus": "Muscle Endurance"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+db+around+the+world",
     "instructions": [
@@ -621,7 +844,9 @@ export const chestExercises = [
       "Move dumbbells in circular arc from hips to overhead.",
       "Maintain contact with bench."
     ],
-    "tips": ["Excellent for overall chest flexibility"],
+    "tips": [
+      "Excellent for overall chest flexibility"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -631,9 +856,21 @@ export const chestExercises = [
     "muscleTarget": "Full Chest",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "12", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "10", "focus": "Repetition" },
-      "advanced": { "sets": 5, "reps": "8", "focus": "Strength" }
+      "beginner": {
+        "sets": 3,
+        "reps": "12",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "10",
+        "focus": "Repetition"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "8",
+        "focus": "Strength"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=medium+grip+bench+press",
     "instructions": [
@@ -641,8 +878,10 @@ export const chestExercises = [
       "Grip bar slightly wider than shoulder width.",
       "Press weight up evenly."
     ],
-    "tips": ["Less shoulder strain than wide grip"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Less shoulder strain than wide grip"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0025-EIeI8Vf.gif"
   },
   {
     "id": "incline-cable-fly",
@@ -651,9 +890,21 @@ export const chestExercises = [
     "muscleTarget": "Upper Pecs",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Activation" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Squeeze" },
-      "advanced": { "sets": 5, "reps": "10 (Slow)", "focus": "Hypertrophy" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Activation"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Squeeze"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10 (Slow)",
+        "focus": "Hypertrophy"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+incline+cable+fly",
     "instructions": [
@@ -661,7 +912,9 @@ export const chestExercises = [
       "Fly cables up and together at chest level.",
       "Control the eccentric."
     ],
-    "tips": ["Focus on the upper inner pec intersection"],
+    "tips": [
+      "Focus on the upper inner pec intersection"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -671,9 +924,21 @@ export const chestExercises = [
     "muscleTarget": "Pectorals",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 3, "reps": "15", "focus": "Form" },
-      "intermediate": { "sets": 4, "reps": "12", "focus": "Balance" },
-      "advanced": { "sets": 5, "reps": "10", "focus": "Isolation" }
+      "beginner": {
+        "sets": 3,
+        "reps": "15",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 4,
+        "reps": "12",
+        "focus": "Balance"
+      },
+      "advanced": {
+        "sets": 5,
+        "reps": "10",
+        "focus": "Isolation"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=machine+unilateral+chest+press",
     "instructions": [
@@ -681,7 +946,9 @@ export const chestExercises = [
       "Press handle forward with one arm.",
       "Isolate the side fully."
     ],
-    "tips": ["Great for fixing muscle imbalances"],
+    "tips": [
+      "Great for fixing muscle imbalances"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   }
 ];

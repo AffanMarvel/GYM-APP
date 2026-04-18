@@ -58,7 +58,7 @@ export const shoulderExercises = [
       "Mind-muscle connection is key here.",
       "3–4 sets of 10–12 reps."
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2137-Xy4jlWA.gif"
   },
   {
     "name": "Front Plate Raise",
@@ -170,7 +170,7 @@ export const shoulderExercises = [
       "Engage core to avoid back bending.",
       "3–4 sets of 6–8 reps."
     ],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1700-FS63wTN.gif"
   },
   {
     "name": "Barbell Z Press",
@@ -436,8 +436,10 @@ export const shoulderExercises = [
       "Pull towards chest, elbows high.",
       "Squeeze rear delts."
     ],
-    "tips": ["Keep core tight"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Keep core tight"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0233-ZfyAGhK.gif"
   },
   {
     "name": "Cable Standing Shoulder Press",
@@ -449,7 +451,9 @@ export const shoulderExercises = [
       "Press upward until arms extended.",
       "Controlled return."
     ],
-    "tips": ["Excellent for stability"],
+    "tips": [
+      "Excellent for stability"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -462,8 +466,10 @@ export const shoulderExercises = [
       "Raise arms out to side.",
       "Squeeze and return slow."
     ],
-    "tips": ["Constant tension machine path"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Constant tension machine path"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0584-dRTfGZT.gif"
   },
   {
     "name": "Lever Military Press (Machine)",
@@ -475,8 +481,10 @@ export const shoulderExercises = [
       "Press upward.",
       "Slow negative."
     ],
-    "tips": ["Great for mass builder"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Great for mass builder"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0587-CggQhII.gif"
   },
   {
     "name": "Reverse Fly (Machine)",
@@ -488,7 +496,9 @@ export const shoulderExercises = [
       "Open arms wide, squeeze blades.",
       "Return slow."
     ],
-    "tips": ["Maintain slight elbow bend"],
+    "tips": [
+      "Maintain slight elbow bend"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -501,7 +511,9 @@ export const shoulderExercises = [
       "Press one up, then the other.",
       "Stable core."
     ],
-    "tips": ["Kettlebells challenge stability"],
+    "tips": [
+      "Kettlebells challenge stability"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -514,7 +526,9 @@ export const shoulderExercises = [
       "Press up vertically.",
       "Lower controlled."
     ],
-    "tips": ["Focus on the side being worked"],
+    "tips": [
+      "Focus on the side being worked"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -527,7 +541,9 @@ export const shoulderExercises = [
       "Alternate arms.",
       "Keep palms down."
     ],
-    "tips": ["Excellent for lateral head"],
+    "tips": [
+      "Excellent for lateral head"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -540,7 +556,9 @@ export const shoulderExercises = [
       "Rotate dumbbell away from body.",
       "Shoulder health focus."
     ],
-    "tips": ["Essential for shoulder health"],
+    "tips": [
+      "Essential for shoulder health"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -553,7 +571,9 @@ export const shoulderExercises = [
       "Cross handles, pull back.",
       "Squeeze rear delts."
     ],
-    "tips": ["Keep your chest against the support"],
+    "tips": [
+      "Keep your chest against the support"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   }
 ];

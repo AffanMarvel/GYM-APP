@@ -160,9 +160,21 @@ export const warmupExercises = [
     "muscleTarget": "Neck Mobility",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "10 each side", "focus": "Slow" },
-      "intermediate": { "sets": 1, "reps": "15 each side", "focus": "Mobility" },
-      "advanced": { "sets": 1, "reps": "20 each side", "focus": "Range" }
+      "beginner": {
+        "sets": 1,
+        "reps": "10 each side",
+        "focus": "Slow"
+      },
+      "intermediate": {
+        "sets": 1,
+        "reps": "15 each side",
+        "focus": "Mobility"
+      },
+      "advanced": {
+        "sets": 1,
+        "reps": "20 each side",
+        "focus": "Range"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+neck+circles",
     "instructions": [
@@ -170,7 +182,9 @@ export const warmupExercises = [
       "Go both directions.",
       "Keep shoulders down."
     ],
-    "tips": ["Move slowly to avoid dizziness"],
+    "tips": [
+      "Move slowly to avoid dizziness"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1403-x2chWLO.gif"
   },
   {
@@ -180,9 +194,21 @@ export const warmupExercises = [
     "muscleTarget": "Shoulders",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "15", "focus": "Form" },
-      "intermediate": { "sets": 2, "reps": "20", "focus": "Squeeze" },
-      "advanced": { "sets": 2, "reps": "30", "focus": "Mobility" }
+      "beginner": {
+        "sets": 1,
+        "reps": "15",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "20",
+        "focus": "Squeeze"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "30",
+        "focus": "Mobility"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+shoulder+rolls",
     "instructions": [
@@ -190,7 +216,9 @@ export const warmupExercises = [
       "Repeat the motion.",
       "Reverse direction after 15 reps."
     ],
-    "tips": ["Warms up the traps and delts"],
+    "tips": [
+      "Warms up the traps and delts"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0864-x306lCW.gif"
   },
   {
@@ -200,9 +228,21 @@ export const warmupExercises = [
     "muscleTarget": "Hips",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "15 each way", "focus": "Rotation" },
-      "intermediate": { "sets": 2, "reps": "20 each way", "focus": "Full Range" },
-      "advanced": { "sets": 2, "reps": "30 each way", "focus": "Fluidity" }
+      "beginner": {
+        "sets": 1,
+        "reps": "15 each way",
+        "focus": "Rotation"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "20 each way",
+        "focus": "Full Range"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "30 each way",
+        "focus": "Fluidity"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+hip+circles",
     "instructions": [
@@ -210,7 +250,9 @@ export const warmupExercises = [
       "Rotate hips in a large circle.",
       "Reverse direction."
     ],
-    "tips": ["Loosens the lower back and hips"],
+    "tips": [
+      "Loosens the lower back and hips"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0257-X7jbxra.gif"
   },
   {
@@ -220,9 +262,21 @@ export const warmupExercises = [
     "muscleTarget": "Hamstrings, Hip Flexors",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "15 per leg", "focus": "Stretch" },
-      "intermediate": { "sets": 2, "reps": "20 per leg", "focus": "Form" },
-      "advanced": { "sets": 2, "reps": "25 per leg", "focus": "Drive" }
+      "beginner": {
+        "sets": 1,
+        "reps": "15 per leg",
+        "focus": "Stretch"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "20 per leg",
+        "focus": "Form"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "25 per leg",
+        "focus": "Drive"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+leg+swings",
     "instructions": [
@@ -230,7 +284,9 @@ export const warmupExercises = [
       "Swing one leg forward and backward.",
       "Keep body upright."
     ],
-    "tips": ["Excellent for lower body prep"],
+    "tips": [
+      "Excellent for lower body prep"
+    ],
     "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0549-UHJlbu3.gif"
   },
   {
@@ -240,9 +296,21 @@ export const warmupExercises = [
     "muscleTarget": "Adductors, Abductors",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "15 per leg", "focus": "Balance" },
-      "intermediate": { "sets": 2, "reps": "20 per leg", "focus": "Mobility" },
-      "advanced": { "sets": 2, "reps": "25 per leg", "focus": "Extension" }
+      "beginner": {
+        "sets": 1,
+        "reps": "15 per leg",
+        "focus": "Balance"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "20 per leg",
+        "focus": "Mobility"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "25 per leg",
+        "focus": "Extension"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+side+leg+swings",
     "instructions": [
@@ -250,7 +318,9 @@ export const warmupExercises = [
       "Swing leg side to side.",
       "Keep toes forward."
     ],
-    "tips": ["Focus on hip mobility"],
+    "tips": [
+      "Focus on hip mobility"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -260,9 +330,21 @@ export const warmupExercises = [
     "muscleTarget": "Core, Spine",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "20 total", "focus": "Slow" },
-      "intermediate": { "sets": 2, "reps": "30 total", "focus": "Rhythm" },
-      "advanced": { "sets": 2, "reps": "40 total", "focus": "Deep" }
+      "beginner": {
+        "sets": 1,
+        "reps": "20 total",
+        "focus": "Slow"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "30 total",
+        "focus": "Rhythm"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "40 total",
+        "focus": "Deep"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+torso+twist",
     "instructions": [
@@ -270,7 +352,9 @@ export const warmupExercises = [
       "Rotate torso from side to side.",
       "Allow heels to lift slightly."
     ],
-    "tips": ["Warms up the obliques and spine"],
+    "tips": [
+      "Warms up the obliques and spine"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -280,9 +364,21 @@ export const warmupExercises = [
     "muscleTarget": "Chest, Shoulders",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "15", "focus": "Open" },
-      "intermediate": { "sets": 2, "reps": "20", "focus": "Flow" },
-      "advanced": { "sets": 2, "reps": "25", "focus": "Stretch" }
+      "beginner": {
+        "sets": 1,
+        "reps": "15",
+        "focus": "Open"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "20",
+        "focus": "Flow"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "25",
+        "focus": "Stretch"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+dynamic+chest+stretch",
     "instructions": [
@@ -290,8 +386,10 @@ export const warmupExercises = [
       "Cross arms in front of body.",
       "Repeat rhythmically."
     ],
-    "tips": ["Perfect before chest day"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Perfect before chest day"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1167-3uj0Ozg.gif"
   },
   {
     "id": "ankle-circles",
@@ -300,9 +398,21 @@ export const warmupExercises = [
     "muscleTarget": "Ankles",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "15 each way", "focus": "Slow" },
-      "intermediate": { "sets": 1, "reps": "20 each way", "focus": "Full ROM" },
-      "advanced": { "sets": 1, "reps": "30 each way", "focus": "Fluidity" }
+      "beginner": {
+        "sets": 1,
+        "reps": "15 each way",
+        "focus": "Slow"
+      },
+      "intermediate": {
+        "sets": 1,
+        "reps": "20 each way",
+        "focus": "Full ROM"
+      },
+      "advanced": {
+        "sets": 1,
+        "reps": "30 each way",
+        "focus": "Fluidity"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+ankle+circles",
     "instructions": [
@@ -310,8 +420,10 @@ export const warmupExercises = [
       "Rotate ankle in circles.",
       "Repeat on other side."
     ],
-    "tips": ["Prevents ankle strains"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Prevents ankle strains"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1368-uL9CsKm.gif"
   },
   {
     "id": "bird-dog",
@@ -320,9 +432,21 @@ export const warmupExercises = [
     "muscleTarget": "Core, Balance",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "10 each side", "focus": "Form" },
-      "intermediate": { "sets": 2, "reps": "12 each side", "focus": "Stability" },
-      "advanced": { "sets": 2, "reps": "15 each side", "focus": "Control" }
+      "beginner": {
+        "sets": 1,
+        "reps": "10 each side",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "12 each side",
+        "focus": "Stability"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "15 each side",
+        "focus": "Control"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+bird+dog",
     "instructions": [
@@ -330,7 +454,9 @@ export const warmupExercises = [
       "Extend opposite arm and leg.",
       "Keep back flat and hips level."
     ],
-    "tips": ["Engages the deep core muscles"],
+    "tips": [
+      "Engages the deep core muscles"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -340,9 +466,21 @@ export const warmupExercises = [
     "muscleTarget": "Hamstrings",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "30 sec", "focus": "Rhythm" },
-      "intermediate": { "sets": 2, "reps": "45 sec", "focus": "Speed" },
-      "advanced": { "sets": 2, "reps": "60 sec", "focus": "Intensity" }
+      "beginner": {
+        "sets": 1,
+        "reps": "30 sec",
+        "focus": "Rhythm"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "45 sec",
+        "focus": "Speed"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "60 sec",
+        "focus": "Intensity"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+butt+kicks+warmup",
     "instructions": [
@@ -350,7 +488,9 @@ export const warmupExercises = [
       "Touch heels to glutes.",
       "Maintain upright posture."
     ],
-    "tips": ["Warms up the hamstrings dynamically"],
+    "tips": [
+      "Warms up the hamstrings dynamically"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -360,9 +500,21 @@ export const warmupExercises = [
     "muscleTarget": "Shoulders, Chest",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "15", "focus": "Range" },
-      "intermediate": { "sets": 2, "reps": "20", "focus": "Fluidity" },
-      "advanced": { "sets": 2, "reps": "30", "focus": "Mobility" }
+      "beginner": {
+        "sets": 1,
+        "reps": "15",
+        "focus": "Range"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "20",
+        "focus": "Fluidity"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "30",
+        "focus": "Mobility"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+arm+swings+warmup",
     "instructions": [
@@ -370,7 +522,9 @@ export const warmupExercises = [
       "Cross arms in front of body.",
       "Gradually increase range of motion."
     ],
-    "tips": ["Great for shoulder joint lubrication"],
+    "tips": [
+      "Great for shoulder joint lubrication"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -380,9 +534,21 @@ export const warmupExercises = [
     "muscleTarget": "Hips",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "15 each way", "focus": "Control" },
-      "intermediate": { "sets": 2, "reps": "20 each way", "focus": "ROM" },
-      "advanced": { "sets": 2, "reps": "30 each way", "focus": "Rotation" }
+      "beginner": {
+        "sets": 1,
+        "reps": "15 each way",
+        "focus": "Control"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "20 each way",
+        "focus": "ROM"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "30 each way",
+        "focus": "Rotation"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+side+hip+circles",
     "instructions": [
@@ -390,7 +556,9 @@ export const warmupExercises = [
       "Rotate hips in a large circular motion.",
       "Focus on the outer edges."
     ],
-    "tips": ["Relieves tension in the pelvic area"],
+    "tips": [
+      "Relieves tension in the pelvic area"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -400,9 +568,21 @@ export const warmupExercises = [
     "muscleTarget": "Knees",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "15 each way", "focus": "Gentle" },
-      "intermediate": { "sets": 1, "reps": "20 each way", "focus": "Mobility" },
-      "advanced": { "sets": 1, "reps": "25 each way", "focus": "Joint Health" }
+      "beginner": {
+        "sets": 1,
+        "reps": "15 each way",
+        "focus": "Gentle"
+      },
+      "intermediate": {
+        "sets": 1,
+        "reps": "20 each way",
+        "focus": "Mobility"
+      },
+      "advanced": {
+        "sets": 1,
+        "reps": "25 each way",
+        "focus": "Joint Health"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+knee+rotation",
     "instructions": [
@@ -410,7 +590,9 @@ export const warmupExercises = [
       "Rotate knees in a circle.",
       "Reverse direction."
     ],
-    "tips": ["Essential prep for squats and lunges"],
+    "tips": [
+      "Essential prep for squats and lunges"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -420,9 +602,21 @@ export const warmupExercises = [
     "muscleTarget": "Scapula, Rotator Cuff",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 1, "reps": "8", "focus": "Hang" },
-      "intermediate": { "sets": 2, "reps": "12", "focus": "Retraction" },
-      "advanced": { "sets": 2, "reps": "15", "focus": "Strength" }
+      "beginner": {
+        "sets": 1,
+        "reps": "8",
+        "focus": "Hang"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "12",
+        "focus": "Retraction"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "15",
+        "focus": "Strength"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=scapular+pull+ups+form",
     "instructions": [
@@ -430,8 +624,10 @@ export const warmupExercises = [
       "Pull shoulder blades down and back without bending elbows.",
       "Return to dead hang."
     ],
-    "tips": ["Prepares the shoulders for heavy pulling"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Prepares the shoulders for heavy pulling"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0652-lBDjFxJ.gif"
   },
   {
     "id": "dynamic-overhead-reach",
@@ -440,9 +636,21 @@ export const warmupExercises = [
     "muscleTarget": "Lats, Obliques",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "15", "focus": "Length" },
-      "intermediate": { "sets": 2, "reps": "20", "focus": "Stretch" },
-      "advanced": { "sets": 2, "reps": "25", "focus": "Mobility" }
+      "beginner": {
+        "sets": 1,
+        "reps": "15",
+        "focus": "Length"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "20",
+        "focus": "Stretch"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "25",
+        "focus": "Mobility"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=dynamic+overhead+stretch+tutorial",
     "instructions": [
@@ -450,7 +658,9 @@ export const warmupExercises = [
       "Switch sides rhythmically.",
       "Breathe through the stretch."
     ],
-    "tips": ["Warms up the entire side body"],
+    "tips": [
+      "Warms up the entire side body"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -460,9 +670,21 @@ export const warmupExercises = [
     "muscleTarget": "Glutes, Hips",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "10 per leg", "focus": "Balance" },
-      "intermediate": { "sets": 2, "reps": "12 per leg", "focus": "Stretch" },
-      "advanced": { "sets": 2, "reps": "15 per leg", "focus": "Drive" }
+      "beginner": {
+        "sets": 1,
+        "reps": "10 per leg",
+        "focus": "Balance"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "12 per leg",
+        "focus": "Stretch"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "15 per leg",
+        "focus": "Drive"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+do+walking+knee+hugs",
     "instructions": [
@@ -470,7 +692,9 @@ export const warmupExercises = [
       "Hug knee with both hands and pull close.",
       "Release and step forward with other leg."
     ],
-    "tips": ["Great for glute activation and balance"],
+    "tips": [
+      "Great for glute activation and balance"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -480,9 +704,21 @@ export const warmupExercises = [
     "muscleTarget": "Thoracic Spine, Shoulders",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "10 each side", "focus": "Form" },
-      "intermediate": { "sets": 2, "reps": "12 each side", "focus": "Mobility" },
-      "advanced": { "sets": 2, "reps": "15 each side", "focus": "Opening" }
+      "beginner": {
+        "sets": 1,
+        "reps": "10 each side",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "12 each side",
+        "focus": "Mobility"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "15 each side",
+        "focus": "Opening"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=thoracic+spine+rotations+dynamic",
     "instructions": [
@@ -490,7 +726,9 @@ export const warmupExercises = [
       "Place one hand behind head.",
       "Rotate elbow toward ceiling, then toward opposite wrist."
     ],
-    "tips": ["Crucial for upper back health and mobility"],
+    "tips": [
+      "Crucial for upper back health and mobility"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -500,9 +738,21 @@ export const warmupExercises = [
     "muscleTarget": "Full Body, Hips",
     "difficulty": "intermediate",
     "levels": {
-      "beginner": { "sets": 1, "reps": "5 each side", "focus": "Form" },
-      "intermediate": { "sets": 2, "reps": "8 each side", "focus": "Flow" },
-      "advanced": { "sets": 2, "reps": "10 each side", "focus": "Depth" }
+      "beginner": {
+        "sets": 1,
+        "reps": "5 each side",
+        "focus": "Form"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "8 each side",
+        "focus": "Flow"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "10 each side",
+        "focus": "Depth"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=world+greatest+stretch+tutorial",
     "instructions": [
@@ -510,7 +760,9 @@ export const warmupExercises = [
       "Place inside elbow to ground beside foot.",
       "Rotate torso toward ceiling."
     ],
-    "tips": ["The all-in-one dynamic warmup move"],
+    "tips": [
+      "The all-in-one dynamic warmup move"
+    ],
     "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
@@ -520,9 +772,21 @@ export const warmupExercises = [
     "muscleTarget": "Quads",
     "difficulty": "beginner",
     "levels": {
-      "beginner": { "sets": 1, "reps": "10 per leg", "focus": "Balance" },
-      "intermediate": { "sets": 2, "reps": "12 per leg", "focus": "Stretch" },
-      "advanced": { "sets": 2, "reps": "15 per leg", "focus": "Drive" }
+      "beginner": {
+        "sets": 1,
+        "reps": "10 per leg",
+        "focus": "Balance"
+      },
+      "intermediate": {
+        "sets": 2,
+        "reps": "12 per leg",
+        "focus": "Stretch"
+      },
+      "advanced": {
+        "sets": 2,
+        "reps": "15 per leg",
+        "focus": "Drive"
+      }
     },
     "tutorialUrl": "https://www.youtube.com/results?search_query=how+to+dynamic+quad+stretch",
     "instructions": [
@@ -530,7 +794,9 @@ export const warmupExercises = [
       "Hold for 1 sec, then step forward.",
       "Repeat on other side."
     ],
-    "tips": ["Prepares the quads for squats and jumps"],
-    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
+    "tips": [
+      "Prepares the quads for squats and jumps"
+    ],
+    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3533-6YUfHPL.gif"
   }
 ];

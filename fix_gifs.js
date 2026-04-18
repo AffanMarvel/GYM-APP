@@ -4,9 +4,9 @@ const https = require('https');
 
 const datasetUrl = 'https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/data/exercises.json';
 const categoriesDir = path.join(__dirname, 'src', 'data', 'categories');
-const placeholderUrl = 'https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available';
 const baseUrl = 'https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/';
 
+// Safely normalize names to help fuzzy match
 function normalizeName(name) {
     if (!name) return '';
     return name.toLowerCase()
@@ -37,60 +37,73 @@ https.get(datasetUrl, (res) => {
 });
 
 function processFiles(exercisesData) {
+    // Read all js files
     fs.readdir(categoriesDir, (err, files) => {
-        if (err) {
-            return console.error('Unable to scan directory: ' + err);
-        }
+        if (err) return console.error('Unable to scan directory: ' + err);
         
+        let totalFixed = 0;
+
         files.forEach((file) => {
             if (!file.endsWith('.js')) return;
             const filePath = path.join(categoriesDir, file);
             let content = fs.readFileSync(filePath, 'utf8');
-            let updatedContent = content;
-            let changes = 0;
 
-            // Simple regex to iteratively find exercises
-            // This relies on the structure:
-            // "name": "...",
-            // ...
-            // "image": "https://placehold.co/..."
-            const blockRegex = /"name"\s*:\s*"([^"]+)"[\s\S]*?"image"\s*:\s*"https:\/\/placehold\.co[^"]+"/g;
+            // Find the array name (e.g. export const chestExercises = ...)
+            const exportMatch = content.match(/export\s+const\s+(\w+)\s*=\s*/);
+            if (!exportMatch) return;
 
-            let match;
-            while ((match = blockRegex.exec(content)) !== null) {
-                const originalBlock = match[0];
-                const exerciseName = match[1];
-                
-                const normName = normalizeName(exerciseName);
-                
-                // Find in dataset
-                let foundExercise = exercisesData.find(ex => normalizeName(ex.name) === normName);
-                
-                // Try looser matching if exact fails
-                if (!foundExercise) {
-                    foundExercise = exercisesData.find(ex => {
-                        const exName = normalizeName(ex.name);
-                        return exName.includes(normName) || normName.includes(exName);
-                    });
-                }
+            const arrayName = exportMatch[1];
 
-                if (foundExercise && foundExercise.gif_url) {
-                    const newImageUrl = `${baseUrl}${foundExercise.gif_url}`;
-                    const replacedBlock = originalBlock.replace(placeholderUrl, newImageUrl);
-                    updatedContent = updatedContent.replace(originalBlock, replacedBlock);
-                    console.log(`[${file}] Fixed: ${exerciseName} -> ${newImageUrl}`);
-                    changes++;
-                } else {
-                    console.log(`[${file}] Warning: Could not find GIF for '${exerciseName}'`);
-                }
+            // Extract the actual array literal
+            let jsonStr = content.replace(/export\s+const\s+\w+\s*=\s*/, '');
+            // Strip trailing semi-colon
+            jsonStr = jsonStr.trim();
+            if (jsonStr.endsWith(';')) jsonStr = jsonStr.slice(0, -1);
+
+            let arr;
+            try {
+                // Using eval because the objects might have JS-specific trailing commas
+                arr = eval('(' + jsonStr + ')');
+            } catch(e) {
+                console.error(`Skipping ${file}: couldn't parse array.`);
+                return;
             }
 
-            if (changes > 0) {
-                fs.writeFileSync(filePath, updatedContent, 'utf8');
-                console.log(`Updated ${file} with ${changes} new GIFs.`);
+            let modified = false;
+
+            arr.forEach(ex => {
+                if (ex.image && ex.image.includes('placehold.co')) {
+                    const normName = normalizeName(ex.name);
+                    
+                    // Priority 1: Exact match on normalized name
+                    let foundExercise = exercisesData.find(d => normalizeName(d.name) === normName);
+                    
+                    // Priority 2: Contains Match
+                    if (!foundExercise) {
+                        foundExercise = exercisesData.find(d => {
+                            const dName = normalizeName(d.name);
+                            return dName.includes(normName) || normName.includes(dName);
+                        });
+                    }
+
+                    if (foundExercise && foundExercise.gif_url) {
+                        ex.image = `${baseUrl}${foundExercise.gif_url}`;
+                        modified = true;
+                        totalFixed++;
+                        console.log(`[Fixed]: ${ex.name} -> ${foundExercise.gif_url}`);
+                    } else {
+                        console.log(`[Not Found]: Could not find a dataset match for '${ex.name}'`);
+                    }
+                }
+            });
+
+            if (modified) {
+                // Reconstruct the file contents
+                const finalStr = `export const ${arrayName} = ${JSON.stringify(arr, null, 2)};\n`;
+                fs.writeFileSync(filePath, finalStr, 'utf8');
             }
         });
         
-        console.log("Finished processing all categories.");
+        console.log(`\nDONE! Replaced ${totalFixed} missing GIFs.`);
     });
 }
