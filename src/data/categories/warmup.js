@@ -34,7 +34,7 @@ export const warmupExercises = [
       "Keep core tight and shoulders relaxed.",
       "Slow and controlled movement is key."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2333-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "wrist-circles",
@@ -111,7 +111,7 @@ export const warmupExercises = [
       "Soft landing is mandatory to protect joints.",
       "Maintain a steady rhythmic pace."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3224-1g5bPpA.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "cat-cow-stretch",
@@ -151,7 +151,7 @@ export const warmupExercises = [
       "Exhale on Cat, inhale on Cow.",
       "Reduces lower back stiffness."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3147-NKJ8o6x.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "neck-circles",
@@ -251,7 +251,7 @@ export const warmupExercises = [
       "Keep toes forward."
     ],
     "tips": ["Focus on hip mobility"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1403-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "torso-twist",
@@ -271,7 +271,7 @@ export const warmupExercises = [
       "Allow heels to lift slightly."
     ],
     "tips": ["Warms up the obliques and spine"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1411-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "dynamic-chest-stretch",
@@ -291,7 +291,7 @@ export const warmupExercises = [
       "Repeat rhythmically."
     ],
     "tips": ["Perfect before chest day"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1410-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "ankle-circles",
@@ -311,7 +311,7 @@ export const warmupExercises = [
       "Repeat on other side."
     ],
     "tips": ["Prevents ankle strains"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1425-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "bird-dog",
@@ -331,7 +331,7 @@ export const warmupExercises = [
       "Keep back flat and hips level."
     ],
     "tips": ["Engages the deep core muscles"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1406-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "butt-kicks-warmup",
@@ -351,7 +351,7 @@ export const warmupExercises = [
       "Maintain upright posture."
     ],
     "tips": ["Warms up the hamstrings dynamically"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3655-J9zIWig.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "dynamic-arm-swings",
@@ -371,7 +371,7 @@ export const warmupExercises = [
       "Gradually increase range of motion."
     ],
     "tips": ["Great for shoulder joint lubrication"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0858-SaDOwk7.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "side-hip-circles",
@@ -391,7 +391,7 @@ export const warmupExercises = [
       "Focus on the outer edges."
     ],
     "tips": ["Relieves tension in the pelvic area"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3230-RJgzwny.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "knee-rotation-warmup",
@@ -411,7 +411,7 @@ export const warmupExercises = [
       "Reverse direction."
     ],
     "tips": ["Essential prep for squats and lunges"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3231-SaDOwk7.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "scapular-pull-up-warmup",
@@ -431,7 +431,7 @@ export const warmupExercises = [
       "Return to dead hang."
     ],
     "tips": ["Prepares the shoulders for heavy pulling"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0725-rYOWIqS.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "dynamic-overhead-reach",
@@ -451,7 +451,7 @@ export const warmupExercises = [
       "Breathe through the stretch."
     ],
     "tips": ["Warms up the entire side body"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0155-YwnI4ja.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "walking-knee-hugs",
@@ -471,7 +471,7 @@ export const warmupExercises = [
       "Release and step forward with other leg."
     ],
     "tips": ["Great for glute activation and balance"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3655-J9zIWig.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "t-spine-rotations-warmup",
@@ -491,7 +491,7 @@ export const warmupExercises = [
       "Rotate elbow toward ceiling, then toward opposite wrist."
     ],
     "tips": ["Crucial for upper back health and mobility"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1411-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "world-greatest-stretch-warmup",
@@ -511,7 +511,7 @@ export const warmupExercises = [
       "Rotate torso toward ceiling."
     ],
     "tips": ["The all-in-one dynamic warmup move"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1410-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "dynamic-quad-stretch-warmup",
@@ -531,6 +531,6 @@ export const warmupExercises = [
       "Repeat on other side."
     ],
     "tips": ["Prepares the quads for squats and jumps"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3655-J9zIWig.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   }
 ];

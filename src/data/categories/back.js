@@ -80,7 +80,7 @@ export const backExercises = [
       "Pull with elbows, not hands.",
       "Full stretch = better lat activation."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2330-LEprlgG.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "name": "Neutral Grip Lat Pulldown (aka V-Grip Pulldown)",
@@ -100,7 +100,7 @@ export const backExercises = [
       "Focus on the stretch and contraction — not speed.",
       "Keep elbows pointing down and slightly back."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2330-LEprlgG.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "name": "Reverse Grip Lat Pulldown",
@@ -120,7 +120,7 @@ export const backExercises = [
       "Focus on lower part of lats — pull slightly toward sternum.",
       "Maintain controlled tempo."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2330-LEprlgG.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "name": "Dumbbell Single-Arm Row",
@@ -178,7 +178,7 @@ export const backExercises = [
       "Pull smoothly; don’t jerk weight.",
       "Keep neck neutral."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3200-LuBEORI.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "name": "Seated Cable Row (Close Grip)",
@@ -371,7 +371,7 @@ export const backExercises = [
       "Squeeze blades."
     ],
     "tips": ["Keep core engaged", "Maintain posture"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1717-f7fnAIB.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "name": "Cable Thibaudeau Kayak Row",
@@ -384,7 +384,7 @@ export const backExercises = [
       "Focus on the lat stretch."
     ],
     "tips": ["Advanced mind-muscle connection required"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2464-ZgwWBoC.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "name": "Cable Standing Row (V-Bar)",
@@ -411,7 +411,7 @@ export const backExercises = [
       "Lower slowly."
     ],
     "tips": ["Keep elbows in", "Don't let the weight slam"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0008-p7fJOnA.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "name": "Assisted Pull Up",
@@ -424,7 +424,7 @@ export const backExercises = [
       "Slow eccentric (downward phase)."
     ],
     "tips": ["Widens the back appearance"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0015-o9R7fnO.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "name": "Band Assisted Pull Up",
@@ -437,7 +437,7 @@ export const backExercises = [
       "Perform pull ups with assistance."
     ],
     "tips": ["Band provides most help at the bottom"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0967-n7fJOnA.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "name": "Lever Lat Pulldown (Machine)",
@@ -450,6 +450,6 @@ export const backExercises = [
       "Controlled return."
     ],
     "tips": ["Consistent path provided by machine"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0575-Pwt0pnM.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   }
 ];

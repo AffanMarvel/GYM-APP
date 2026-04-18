@@ -116,7 +116,7 @@ export const bicepsExercises = [
       "Short head grow = width increase.",
       "Tempo: 1–2 sec up → 2 sec squeeze → 3 sec down"
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2741-OVTZ65k.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "incline-dumbbell-curl",
@@ -377,7 +377,7 @@ export const bicepsExercises = [
       "Avoid swinging."
     ],
     "tips": ["Rotate wrists as you curl up"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0286-BfPgnOn.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "db-concentration-curl",
@@ -397,7 +397,7 @@ export const bicepsExercises = [
       "Pause and squeeze."
     ],
     "tips": ["Keep your shoulder steady"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0309-8xUv4J7.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "lever-preacher-curl",
@@ -417,7 +417,7 @@ export const bicepsExercises = [
       "Full stretch at bottom."
     ],
     "tips": ["Excellent for peak construction"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0651-OVTZ65k.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "reverse-curl-cable",
@@ -457,7 +457,7 @@ export const bicepsExercises = [
       "Maintain constant tension."
     ],
     "tips": ["Keep elbows pinned to sides"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0096-U0p9KjG.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "barbell-drag-curl",
@@ -477,7 +477,7 @@ export const bicepsExercises = [
       "Elbows should move backward."
     ],
     "tips": ["Don't let the bar leave your body"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0038-p2qXy8A.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "zottman-curl",
@@ -497,7 +497,7 @@ export const bicepsExercises = [
       "Lower dumbbells with overhand grip."
     ],
     "tips": ["Excellent for overall arm development"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0286-BfPgnOn.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "barbell-preacher-curl",
@@ -537,7 +537,7 @@ export const bicepsExercises = [
       "Squeeze inner head at top."
     ],
     "tips": ["Maximum stretch for the inner bicep"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0343-OVTZ65k.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "barbell-alternate-biceps-curl",
@@ -557,7 +557,7 @@ export const bicepsExercises = [
       "Maintain strict form."
     ],
     "tips": ["Focus on the mind-muscle connection"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0023-BfPgnOn.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "lever-incline-curl",
@@ -577,7 +577,7 @@ export const bicepsExercises = [
       "Controlled return."
     ],
     "tips": ["Keep back against seat"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0649-6xX9pX2.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "cable-hammer-curl",
@@ -597,7 +597,7 @@ export const bicepsExercises = [
       "Focus on the outer arm."
     ],
     "tips": ["Excellent for building arm width"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1645-U0p9KjG.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "bodyweight-bicep-curl",
@@ -617,6 +617,6 @@ export const bicepsExercises = [
       "Keep body in straight line."
     ],
     "tips": ["Harder than it looks!"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3229-p2qXy8A.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   }
 ];

@@ -170,7 +170,7 @@ export const stretchingExercises = [
       "Rest forehead on floor."
     ],
     "tips": ["Deep breaths into the back"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1407-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "butterfly-stretch",
@@ -190,7 +190,7 @@ export const stretchingExercises = [
       "Push knees down gently."
     ],
     "tips": ["Keep your back straight"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1301-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "triceps-stretch",
@@ -210,7 +210,7 @@ export const stretchingExercises = [
       "Hold and switch."
     ],
     "tips": ["Don't arch your back"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1399-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "quad-stretch",
@@ -230,7 +230,7 @@ export const stretchingExercises = [
       "Keep knees together."
     ],
     "tips": ["Hold onto a wall for balance if needed"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1332-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "neck-side-stretch",
@@ -250,7 +250,7 @@ export const stretchingExercises = [
       "Hold and switch."
     ],
     "tips": ["Keep your shoulders down"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1435-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "cross-body-shoulder",
@@ -270,7 +270,7 @@ export const stretchingExercises = [
       "Switch sides."
     ],
     "tips": ["Don't pull on the elbow joint"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1216-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "seated-glute-stretch",
@@ -290,7 +290,7 @@ export const stretchingExercises = [
       "Hold and switch."
     ],
     "tips": ["Excellent for releasing hip tension"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1323-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "wrist-extensor-stretch2",
@@ -310,7 +310,7 @@ export const stretchingExercises = [
       "Keep arm straight."
     ],
     "tips": ["Reduces wrist strain"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1409-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "wall-lat-stretch",
@@ -330,7 +330,7 @@ export const stretchingExercises = [
       "Feel stretch in side."
     ],
     "tips": ["Great for back mobility"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1333-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "standing-calf-stretch2",
@@ -350,6 +350,6 @@ export const stretchingExercises = [
       "Lean into wall."
     ],
     "tips": ["Prevents calf tightness"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1371-PXTIwgu.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   }
 ];

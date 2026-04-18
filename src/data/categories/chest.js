@@ -148,7 +148,7 @@ export const chestExercises = [
       "Don’t lock elbows completely.",
       "Imagine “bringing the dumbbells together” by chest squeeze."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3545-TVdivgY.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "decline-barbell-bench-press",
@@ -330,7 +330,7 @@ export const chestExercises = [
       "Don’t slam weights.",
       "Keep shoulders down and chest up."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0644-8O8pA7O.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "3294-archer-push-up",
@@ -353,7 +353,7 @@ export const chestExercises = [
       "Continue alternating sides for the desired number of repetitions."
     ],
     "tips": ["Keep your core tight", "Control the descent", "Focus on chest"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3294-A9qxk2F.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "0009-assisted-chest-dip",
@@ -390,7 +390,7 @@ export const chestExercises = [
     "tutorialUrl": "https://www.youtube.com/results?search_query=wide+grip+chest+dip",
     "instructions": ["Set wide grip", "Lower slowly", "Push explosive"],
     "tips": ["Wide grip targets outer chest"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2364-PnZJIrk.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "1254-band-bench",
@@ -482,7 +482,7 @@ export const chestExercises = [
       "Hug the tree motion to return."
     ],
     "tips": ["Don't overstretch shoulders"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0308-H0nJInS.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "0151-cable-bench-press",
@@ -502,7 +502,7 @@ export const chestExercises = [
       "Constant tension throughout."
     ],
     "tips": ["Great for stability training"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0151-D9T1P0n.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "barbell-decline-pullover",
@@ -522,7 +522,7 @@ export const chestExercises = [
       "Pull bar back to chest height."
     ],
     "tips": ["Excellent for lower chest definition"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0036-z1fAD3a.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "barbell-decline-wide-grip-press",
@@ -562,7 +562,7 @@ export const chestExercises = [
       "Control the eccentric phase."
     ],
     "tips": ["Combined move for upper body expansion"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0040-3TZduzM.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "cable-decline-fly",
@@ -582,7 +582,7 @@ export const chestExercises = [
       "Feel the lower pec contraction."
     ],
     "tips": ["Don't let handles go above shoulder height"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0158-PAgTVaK.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "cable-decline-one-arm-press",
@@ -602,7 +602,7 @@ export const chestExercises = [
       "Isolate the lower chest."
     ],
     "tips": ["Engage core to prevent rotation"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1260-rYOWIqS.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "db-around-the-world",
@@ -622,7 +622,7 @@ export const chestExercises = [
       "Maintain contact with bench."
     ],
     "tips": ["Excellent for overall chest flexibility"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0288-SpYC0Kp.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "barbell-medium-grip-bench-press",
@@ -642,7 +642,7 @@ export const chestExercises = [
       "Press weight up evenly."
     ],
     "tips": ["Less shoulder strain than wide grip"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0025-p2qXy8A.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "incline-cable-fly",
@@ -662,7 +662,7 @@ export const chestExercises = [
       "Control the eccentric."
     ],
     "tips": ["Focus on the upper inner pec intersection"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1265-DpWMFP5.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "machine-chest-press-unilateral",
@@ -682,6 +682,6 @@ export const chestExercises = [
       "Isolate the side fully."
     ],
     "tips": ["Great for fixing muscle imbalances"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0644-8O8pA7O.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   }
 ];

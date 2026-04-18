@@ -150,7 +150,7 @@ export const absExercises = [
       "Don't let hips drop or peak too high.",
       "Breathe consistently."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3665-hCjGsRQ.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "bicycle-crunch",
@@ -270,7 +270,7 @@ export const absExercises = [
       "Rotate torso side to side."
     ],
     "tips": ["Isolate obliques"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2399-UEjSrKI.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "cable-side-bend",
@@ -351,7 +351,7 @@ export const absExercises = [
       "Switch in cycling motion."
     ],
     "tips": ["Reach for the knees"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0002-U0p9KjG.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "cable-twist-row",
@@ -391,7 +391,7 @@ export const absExercises = [
       "Lower slowly without touching ground."
     ],
     "tips": ["Keep lower back flat"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0558-Pwt0pnM.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "3-4-sit-up",
@@ -454,7 +454,7 @@ export const absExercises = [
       "Focus on stability throughout the move."
     ],
     "tips": ["Avoid excessive swinging", "Keep elbows slightly bent if needed"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/2355-uWpxD4v.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "assisted-motion-russian-twist",
@@ -475,7 +475,7 @@ export const absExercises = [
       "Repeat for the desired repetitions."
     ],
     "tips": ["Keep your back straight", "Twist from the core, not just arms"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0014-vW9pX2A.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "dead-bug",
@@ -496,7 +496,7 @@ export const absExercises = [
       "Maintain flat lower back throughout."
     ],
     "tips": ["Push lower back into the floor", "Exhale as you lower limbs"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1205-BfPgnOn.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "v-sit-hold",

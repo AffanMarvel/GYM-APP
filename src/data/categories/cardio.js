@@ -38,7 +38,7 @@ export const cardioExercises = [
       "Belly tight rakho for extra lower abs activation.",
       "Duration: 45 sec ON, 15 sec REST."
     ],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3655-J9zIWig.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "mountain-climbers",
@@ -170,7 +170,7 @@ export const cardioExercises = [
       "Jump back to start."
     ],
     "tips": ["Keep a steady pace"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0492-4jT7fDq.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "butt-kicks",
@@ -190,7 +190,7 @@ export const cardioExercises = [
       "Pump arms."
     ],
     "tips": ["Warm up the hamstrings"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0810-p7fJOnA.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "shadow-boxing",
@@ -210,7 +210,7 @@ export const cardioExercises = [
       "Stay light on feet."
     ],
     "tips": ["Keep your core tight"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3647-RJgzwny.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "skip-rope",
@@ -230,7 +230,7 @@ export const cardioExercises = [
       "Repeat."
     ],
     "tips": ["Land on your toes"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0711-UKWTJWR.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "bear-crawl",
@@ -250,7 +250,7 @@ export const cardioExercises = [
       "Stay active throughout."
     ],
     "tips": ["Excellent full body stability"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3646-SaDOwk7.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "skate-jump",
@@ -270,7 +270,7 @@ export const cardioExercises = [
       "Land soft."
     ],
     "tips": ["Great for lateral agility"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/1780-yn8yg1r.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "kettlebell-swing",
@@ -290,7 +290,7 @@ export const cardioExercises = [
       "Keep back straight."
     ],
     "tips": ["Power comes from the hips"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0526-0JtKWum.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "battle-ropes",
@@ -310,7 +310,7 @@ export const cardioExercises = [
       "Stay in squat position."
     ],
     "tips": ["Excellent high-intensity calorie burner"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3645-hCjGsRQ.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "treadmill-run",
@@ -330,7 +330,7 @@ export const cardioExercises = [
       "Breathe rhythmically."
     ],
     "tips": ["Intermittent incline for challenge"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0810-p7fJOnA.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "elliptical-trainer",
@@ -350,7 +350,7 @@ export const cardioExercises = [
       "Use arms for full body work."
     ],
     "tips": ["Lower impact on joints"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0430-DpWMFP5.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "astride-jump",
@@ -370,7 +370,7 @@ export const cardioExercises = [
       "Maintain a bouncy rhythm."
     ],
     "tips": ["Great for warming up the whole body"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3220-NUnK3xS.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "running-high-knee",
@@ -390,7 +390,7 @@ export const cardioExercises = [
       "Land soft on the balls of your feet."
     ],
     "tips": ["Engage your core for better balance"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0480-hCjGsRQ.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "jumping-jack-male",
@@ -410,7 +410,7 @@ export const cardioExercises = [
       "Continuous movement."
     ],
     "tips": ["Classic for a reason—keeps heart rate up"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3222-S0E5L8q.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "mountain-climber-fast",
@@ -430,7 +430,7 @@ export const cardioExercises = [
       "Maintain a flat back."
     ],
     "tips": ["Keep your hips level throughout"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0005-RJgzwny.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "rope-jumping-male",
@@ -450,7 +450,7 @@ export const cardioExercises = [
       "Use wrist flick for rope speed."
     ],
     "tips": ["Excellent for coordination and stamina"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3223-DpWMFP5.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "running-male",
@@ -470,7 +470,7 @@ export const cardioExercises = [
       "Breathe through nose and mouth."
     ],
     "tips": ["The simplest and most effective cardio"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3224-DpWMFP5.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "side-reaching-jump",
@@ -490,7 +490,7 @@ export const cardioExercises = [
       "Continue alternating sides."
     ],
     "tips": ["Improves lateral agility and balance"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3225-yn8yg1r.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "walking-male",
@@ -510,7 +510,7 @@ export const cardioExercises = [
       "Maintain upright posture."
     ],
     "tips": ["Great low-impact option for active recovery"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3226-DpWMFP5.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "burpee-power",
@@ -530,7 +530,7 @@ export const cardioExercises = [
       "Move transition as fast as possible."
     ],
     "tips": ["The ultimate calorie burner"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/0145-TVdivgY.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   },
   {
     "id": "sprint-high-intensity",
@@ -550,6 +550,6 @@ export const cardioExercises = [
       "Stay on balls of feet."
     ],
     "tips": ["Explosive leg drive is key"],
-    "image": "https://raw.githubusercontent.com/hasaneyldrm/exercises-dataset/master/videos/3224-DpWMFP5.gif"
+    "image": "https://placehold.co/600x400/101014/9d4edd?text=Demonstration+Not+Available"
   }
 ];
