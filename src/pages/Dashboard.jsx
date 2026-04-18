@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { useWorkout, formatTime } from '../context/WorkoutContext';
 import { Link, useNavigate } from 'react-router-dom';
-import { Play, Trash2, Zap, Flame, ChevronRight, ClipboardCheck, Plus, Dumbbell, Clock, Activity, Shield } from 'lucide-react';
+import { Play, Trash2, Zap, Flame, ChevronRight, ChevronLeft, ClipboardCheck, Plus, Dumbbell, Clock, Activity, Shield } from 'lucide-react';
 import { getAssetPath } from '../utils/assetPath';
 
 const NEON = '#818cf8';
@@ -17,37 +17,45 @@ export default function Dashboard() {
   
   // Date State Setup
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [viewDate, setViewDate] = useState(new Date()); // The center of the visible window
   const selectedStr = selectedDate.toLocaleDateString();
   const selectedDisplayStr = selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
   const todayStr = new Date().toLocaleDateString();
 
-  // Generate sliding calendar dates (-14 days to +7 days)
+  // Generate sliding calendar dates centered around viewDate
   const calendarDates = useMemo(() => {
     const list = [];
-    const baseDate = new Date();
+    const baseDate = new Date(viewDate);
     baseDate.setHours(0,0,0,0);
-    for (let i = -14; i <= 7; i++) {
+    // Show 21 days (3 weeks) centered on the viewDate
+    for (let i = -10; i <= 10; i++) {
         const d = new Date(baseDate);
         d.setDate(d.getDate() + i);
         list.push(d);
     }
     return list;
-  }, []);
+  }, [viewDate]);
 
   const scrollRef = useRef(null);
   
-  // Auto-scroll to "Today" immediately on mount
+  // Auto-scroll to center (viewDate index 10) on mount or view change
   useEffect(() => {
     if (scrollRef.current) {
-      const todayIndex = 14; // Day 0 in the -14 to +7 array
-      const childWidth = 72; // Approximate width + gap of each calendar pill
+      const centerIndex = 10; 
+      const childWidth = 72; 
       const centerOffset = (scrollRef.current.clientWidth / 2) - (childWidth / 2);
       scrollRef.current.scrollTo({
-        left: (todayIndex * childWidth) - centerOffset,
+        left: (centerIndex * childWidth) - centerOffset,
         behavior: 'smooth'
       });
     }
-  }, []);
+  }, [viewDate]);
+
+  const navigateWeek = (days) => {
+    const nextView = new Date(viewDate);
+    nextView.setDate(nextView.getDate() + days);
+    setViewDate(nextView);
+  };
 
   // Filter sessions exactly by the tapped date
   const filteredSessions = (history || []).filter(h => h.date === selectedStr);
@@ -73,11 +81,18 @@ export default function Dashboard() {
           </button>
         </header>
 
-        {/* Horizontal Scrolling Calendar Strip */}
-        <div className="relative -mx-5 px-5">
+        {/* Horizontal Scrolling Calendar Strip with Nav Arrows */}
+        <div className="relative -mx-5 px-5 flex items-center gap-2">
+          <button 
+            onClick={() => navigateWeek(-7)} 
+            className="shrink-0 w-8 h-[76px] flex items-center justify-center bg-white/5 rounded-xl border border-white/5 active:scale-90 transition-all text-white/40 hover:text-white"
+          >
+            <ChevronLeft size={18} />
+          </button>
+
           <div 
             ref={scrollRef}
-            className="flex overflow-x-auto gap-3 pb-4 snap-x"
+            className="flex-1 flex overflow-x-auto gap-3 pb-2 snap-x scroll-smooth"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {calendarDates.map((dateObj, i) => {
@@ -102,6 +117,13 @@ export default function Dashboard() {
               );
             })}
           </div>
+
+          <button 
+            onClick={() => navigateWeek(7)} 
+            className="shrink-0 w-8 h-[76px] flex items-center justify-center bg-white/5 rounded-xl border border-white/5 active:scale-90 transition-all text-white/40 hover:text-white"
+          >
+            <ChevronRight size={18} />
+          </button>
         </div>
 
         {/* 4-Stat Performance Grid specific to the tapped date */}
