@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useWorkout } from '../context/WorkoutContext';
 import { 
   Target, Flame, Trophy, Check, Calendar, 
-  TrendingUp, ChevronUp, ChevronDown, Dumbbell, Star, AlertTriangle, Plus, Minus, Save
+  TrendingUp, ChevronUp, ChevronDown, Dumbbell, Star, AlertTriangle, Plus, Minus, Save, X 
 } from 'lucide-react';
 
 const NEON = '#818cf8';
@@ -22,6 +22,7 @@ const DEFAULT_EXERCISES = [
   { name: 'Crunches', icon: '🔥', defaultTarget: 100, unit: 'reps' },
   { name: 'Deadlifts', icon: '⚡', defaultTarget: 50, unit: 'reps' },
   { name: 'Plank', icon: '🧘', defaultTarget: 120, unit: 'sec' },
+  { name: 'Running', icon: '🏃', defaultTarget: 5, unit: 'km' },
 ];
 
 const GOALS_KEY = 'gym_target_goals';
@@ -65,6 +66,8 @@ export default function Goals() {
   const [editingTarget, setEditingTarget] = useState(null); // index of exercise being edited
   const [tempTarget, setTempTarget] = useState('');
   const [inputValues, setInputValues] = useState({}); // current input values for today
+  const [isAdding, setIsAdding] = useState(false);
+  const [newGoal, setNewGoal] = useState({ name: '', icon: '🔥', target: 50, unit: 'reps' });
   const todayKey = getTodayKey();
 
   // Load today's performed values into input state
@@ -105,6 +108,25 @@ export default function Goals() {
     updated.exercises[index].target = num;
     updateGoals(updated);
     setEditingTarget(null);
+  };
+
+  const addNewGoal = () => {
+    if (!newGoal.name.trim()) return alert('Name required!');
+    const updated = { ...goals };
+    updated.exercises.push({
+      ...newGoal,
+      target: parseInt(newGoal.target) || 50
+    });
+    updateGoals(updated);
+    setIsAdding(false);
+    setNewGoal({ name: '', icon: '🔥', target: 50, unit: 'reps' });
+  };
+
+  const removeGoal = (index) => {
+    if (!window.confirm('Remove this goal? History for today will be kept.')) return;
+    const updated = { ...goals };
+    updated.exercises = updated.exercises.filter((_, i) => i !== index);
+    updateGoals(updated);
   };
 
   // Quick increment/decrement target
@@ -268,10 +290,16 @@ export default function Goals() {
 
         {/* Exercise Target Cards */}
         <div className="space-y-3">
-          <h2 className="text-[10px] font-black uppercase tracking-widest px-1 flex items-center gap-2" style={{ color: 'rgba(255,255,255,0.3)' }}>
-            <Dumbbell size={12} style={{ color: NEON }} />
-            Today's Exercise Targets
-          </h2>
+          <div className="flex items-center justify-between px-1">
+            <h2 className="text-[10px] font-black uppercase tracking-widest flex items-center gap-2" style={{ color: 'rgba(255,255,255,0.3)' }}>
+              <Dumbbell size={12} style={{ color: NEON }} />
+              Today's Exercise Targets
+            </h2>
+            <button onClick={() => setIsAdding(true)} className="p-1 px-2.5 rounded-lg bg-gym-neon/10 border border-gym-neon/20 hover:bg-gym-neon/20 transition-all active:scale-95 flex items-center gap-1.5">
+              <Plus size={12} style={{ color: NEON }} />
+              <span className="text-[9px] font-black uppercase tracking-widest" style={{ color: NEON }}>Add Goal</span>
+            </button>
+          </div>
 
           {exerciseStats.map((ex, i) => (
             <div 
@@ -291,7 +319,14 @@ export default function Goals() {
                     {ex.isComplete ? <Check size={24} style={{ color: SUCCESS }} /> : ex.icon}
                   </div>
                   <div>
-                    <p className="text-sm font-black text-white">{ex.name}</p>
+                    <h3 className="text-sm font-black text-white flex items-center gap-2">
+                       {ex.name}
+                       {!DEFAULT_EXERCISES.find(d => d.name === ex.name) && (
+                         <button onClick={() => removeGoal(i)} className="p-1 text-red-500/40 hover:text-red-500 transition-colors">
+                           <X size={12} />
+                         </button>
+                       )}
+                    </h3>
                     <p className="text-[10px] font-bold" style={{ color: ex.isComplete ? SUCCESS : ex.isPartial ? WARN : '#6b7280' }}>
                       {ex.isComplete ? '✅ Target hit!' : ex.isPartial ? `⚠️ ${ex.remaining} ${ex.unit} remaining` : `Target: ${ex.target} ${ex.unit}`}
                     </p>
@@ -434,6 +469,86 @@ export default function Goals() {
             </div>
           </div>
         </div>
+
+        {/* Add Goal Modal */}
+        {isAdding && (
+          <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md p-5 flex items-end animate-in fade-in transition-all">
+            <div className="w-full max-w-lg mx-auto bg-[#141425] rounded-t-[40px] border-t border-x border-white/10 p-8 space-y-8 slide-up scrollbar-hide">
+              <div className="flex items-center justify-between border-b border-white/5 pb-5">
+                <div>
+                  <h2 className="text-2xl font-black text-white">Forge New Goal</h2>
+                  <p className="text-[10px] text-gym-muted font-bold tracking-widest uppercase">Expand your targets</p>
+                </div>
+                <button onClick={() => setIsAdding(false)} className="p-3 bg-white/5 rounded-full text-gym-muted hover:text-white transition-all"><X size={20} /></button>
+              </div>
+
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-[#818cf8]">Exercise Identity</label>
+                  <div className="flex gap-4">
+                    <input 
+                      type="text" 
+                      placeholder="Icon (e.g. 🏃)" 
+                      value={newGoal.icon} 
+                      onChange={(e) => setNewGoal({...newGoal, icon: e.target.value})}
+                      className="w-16 h-14 bg-black/40 border border-white/10 rounded-2xl text-center text-xl focus:border-[#818cf8]/50 outline-none transition-all"
+                    />
+                    <input 
+                      type="text" 
+                      placeholder="Goal Name (e.g. Running)" 
+                      value={newGoal.name} 
+                      onChange={(e) => setNewGoal({...newGoal, name: e.target.value})}
+                      className="flex-1 h-14 bg-black/40 border border-white/10 rounded-2xl px-5 text-white font-bold focus:border-[#818cf8]/50 outline-none transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-3">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-[#818cf8]">Daily Target</label>
+                    <input 
+                      type="number" 
+                      value={newGoal.target} 
+                      onChange={(e) => setNewGoal({...newGoal, target: e.target.value})}
+                      className="w-full h-14 bg-black/40 border border-white/10 rounded-2xl px-5 text-white font-bold focus:border-[#818cf8]/50 outline-none transition-all"
+                    />
+                  </div>
+                  <div className="space-y-3">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-[#818cf8]">Metric</label>
+                    <select 
+                      value={newGoal.unit} 
+                      onChange={(e) => setNewGoal({...newGoal, unit: e.target.value})}
+                      className="w-full h-14 bg-black/40 border border-white/10 rounded-2xl px-5 text-white font-bold focus:border-[#818cf8]/50 outline-none transition-all appearance-none"
+                    >
+                      <option value="km">km</option>
+                      <option value="meters">meters</option>
+                      <option value="reps">reps</option>
+                      <option value="sets">sets</option>
+                      <option value="sec">seconds</option>
+                      <option value="min">minutes</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="pt-4 flex gap-3">
+                  <button onClick={() => setNewGoal({...newGoal, name: 'Running', icon: '🏃', target: 5, unit: 'km'})} className="flex-1 py-3 bg-white/5 rounded-xl border border-white/5 text-[9px] font-black uppercase tracking-widest text-gym-muted hover:text-[#818cf8] transition-all">
+                    Load Running
+                  </button>
+                  <button onClick={() => setNewGoal({...newGoal, name: 'Cycling', icon: '🚴', target: 15, unit: 'km'})} className="flex-1 py-3 bg-white/5 rounded-xl border border-white/5 text-[9px] font-black uppercase tracking-widest text-gym-muted hover:text-[#818cf8] transition-all">
+                    Load Cycling
+                  </button>
+                </div>
+
+                <button 
+                  onClick={addNewGoal}
+                  className="w-full py-5 bg-gradient-to-r from-[#818cf8] to-[#a855f7] text-white font-black text-sm uppercase tracking-widest rounded-3xl shadow-xl shadow-[#818cf8]/20 active:scale-95 transition-all mt-4"
+                >
+                  Activate Goal
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
