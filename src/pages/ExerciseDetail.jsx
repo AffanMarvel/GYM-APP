@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useWorkout } from '../context/WorkoutContext';
-import { ChevronLeft, Plus, PlayCircle, Info, Zap, Target, HelpCircle } from 'lucide-react';
+import { ChevronLeft, Plus, PlayCircle, Info, Zap, Target, HelpCircle, Trophy, Activity, Flame, TrendingUp } from 'lucide-react';
 import { getAssetPath } from '../utils/assetPath';
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 
 export default function ExerciseDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { exercises, addToPlan } = useWorkout();
+  const { exercises, addToPlan, history = [] } = useWorkout();
   const [exercise, setExercise] = useState(null);
   const [activeTab, setActiveTab] = useState('instructions');
 
@@ -19,6 +20,67 @@ export default function ExerciseDetail() {
     });
     setExercise(found);
   }, [id, exercises]);
+
+  const [chartMetric, setChartMetric] = useState('maxWeight');
+
+  // Compute history for the specific exercise
+  const exerciseHistory = useMemo(() => {
+    if (!exercise) return [];
+    const data = [];
+    [...history].reverse().forEach(session => {
+      const exLog = session.logs?.find(log => log.id === id || log.name?.toLowerCase() === exercise.name?.toLowerCase());
+      if (exLog && exLog.sets && exLog.sets.length > 0) {
+        const weights = exLog.sets.map(s => Number(s.weight) || 0);
+        const reps = exLog.sets.map(s => Number(s.reps) || 0);
+        const maxWeight = Math.max(...weights);
+        const maxReps = Math.max(...reps);
+        const totalVolume = exLog.sets.reduce((sum, s) => sum + (Number(s.weight) || 0) * (Number(s.reps) || 0), 0);
+        
+        const oneRepMaxes = exLog.sets.map(s => {
+          const w = Number(s.weight) || 0;
+          const r = Number(s.reps) || 0;
+          if (r <= 1) return w;
+          return Math.round(w * (1 + r / 30));
+        });
+        const max1RM = Math.max(...oneRepMaxes, 0);
+
+        let dateLabel = session.date;
+        try {
+          const parts = session.date.split('/');
+          if (parts.length >= 2) {
+            dateLabel = `${parts[1]}/${parts[0]}`;
+          } else {
+            const d = new Date(session.date);
+            if (!isNaN(d.getTime())) {
+              dateLabel = d.toLocaleDateString([], { month: 'short', day: 'numeric' });
+            }
+          }
+        } catch (e) {
+          // ignore
+        }
+
+        data.push({
+          date: dateLabel,
+          timestamp: session.id || new Date(session.date).getTime(),
+          maxWeight,
+          maxReps,
+          max1RM,
+          volume: totalVolume,
+        });
+      }
+    });
+    return data.sort((a, b) => a.timestamp - b.timestamp);
+  }, [history, id, exercise]);
+
+  const prStats = useMemo(() => {
+    if (exerciseHistory.length === 0) return { maxWeight: 0, maxReps: 0, maxVolume: 0, max1RM: 0 };
+    return {
+      maxWeight: Math.max(...exerciseHistory.map(d => d.maxWeight)),
+      maxReps: Math.max(...exerciseHistory.map(d => d.maxReps)),
+      maxVolume: Math.max(...exerciseHistory.map(d => d.volume)),
+      max1RM: Math.max(...exerciseHistory.map(d => d.max1RM)),
+    };
+  }, [exerciseHistory]);
 
   if (!exercise) return <div className="p-10 text-center text-white">Exercise not found</div>;
 
@@ -105,10 +167,106 @@ export default function ExerciseDetail() {
               Pro Tips
               {activeTab === 'tips' && <div className="absolute bottom-0 left-0 right-0 h-1 bg-gym-neon rounded-full" />}
             </button>
+            <button onClick={() => setActiveTab('progress')}
+              className={`text-[10px] font-black uppercase tracking-widest pb-3 relative transition-colors ${activeTab === 'progress' ? 'text-white' : 'text-gym-muted'}`}>
+              Progression
+              {activeTab === 'progress' && <div className="absolute bottom-0 left-0 right-0 h-1 bg-gym-neon rounded-full" />}
+            </button>
           </div>
 
           <div className="min-h-[200px]">
-            {activeTab === 'instructions' ? (
+            {activeTab === 'progress' ? (
+              <div className="space-y-6 animate-fade-in">
+                {exerciseHistory.length > 0 ? (
+                  <>
+                    {/* PR Stats Grid */}
+                    <div className="grid grid-cols-2 gap-3">
+                      {[
+                        { label: 'Max Weight', val: `${prStats.maxWeight} kg`, icon: <Trophy size={16} className="text-gym-neon" />, bg: 'bg-gym-neon/5 border-gym-neon/10' },
+                        { label: 'Max Reps', val: `${prStats.maxReps} reps`, icon: <Activity size={16} className="text-gym-cyan" />, bg: 'bg-gym-cyan/5 border-gym-cyan/10' },
+                        { label: 'Est. 1-Rep Max', val: `${prStats.max1RM} kg`, icon: <Flame size={16} className="text-gym-fire" />, bg: 'bg-gym-fire/5 border-gym-fire/10' },
+                        { label: 'Peak Volume', val: `${prStats.maxVolume} kg`, icon: <TrendingUp size={16} className="text-gym-gold" />, bg: 'bg-gym-gold/5 border-gym-gold/10' },
+                      ].map((item, i) => (
+                        <div key={i} className={`p-4 rounded-2xl border ${item.bg} flex items-center justify-between`}>
+                          <div>
+                            <p className="text-[8px] font-black uppercase tracking-widest text-gym-muted/80">{item.label}</p>
+                            <p className="text-lg font-black text-white mt-1">{item.val}</p>
+                          </div>
+                          <div className="p-2.5 rounded-xl bg-white/[0.03]">
+                            {item.icon}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Chart Metric Selector */}
+                    <div className="glass-beast p-1 rounded-2xl border-white/5 flex">
+                      {[
+                        { id: 'maxWeight', label: 'Max Weight' },
+                        { id: 'max1RM', label: 'Est. 1RM' },
+                        { id: 'volume', label: 'Volume' }
+                      ].map(m => (
+                        <button
+                          key={m.id}
+                          onClick={() => setChartMetric(m.id)}
+                          className={`flex-1 py-2 text-[9px] font-black uppercase tracking-widest rounded-xl transition-all ${
+                            chartMetric === m.id ? 'bg-gym-neon text-gym-dark shadow-md font-black' : 'text-gym-muted hover:text-white'
+                          }`}
+                        >
+                          {m.label}
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Progression Chart */}
+                    <div className="glass-beast p-5 rounded-3xl border-white/5 shadow-beast h-64 w-full">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <LineChart data={exerciseHistory} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.03)" />
+                          <XAxis 
+                            dataKey="date" 
+                            stroke="rgba(255,255,255,0.3)" 
+                            fontSize={8} 
+                            tickLine={false} 
+                            axisLine={false}
+                          />
+                          <YAxis 
+                            stroke="rgba(255,255,255,0.3)" 
+                            fontSize={8} 
+                            tickLine={false} 
+                            axisLine={false}
+                          />
+                          <Tooltip
+                            contentStyle={{ background: '#141425', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px' }}
+                            labelStyle={{ color: '#818cf8', fontWeight: 'bold', fontSize: '10px' }}
+                            itemStyle={{ color: '#fff', fontSize: '10px' }}
+                          />
+                          <Line 
+                            type="monotone" 
+                            dataKey={chartMetric} 
+                            name={chartMetric === 'maxWeight' ? 'Max Weight (kg)' : chartMetric === 'max1RM' ? 'Est. 1RM (kg)' : 'Volume (kg)'}
+                            stroke="#818cf8" 
+                            strokeWidth={3} 
+                            dot={{ fill: '#818cf8', strokeWidth: 2, r: 4 }} 
+                            activeDot={{ r: 6, strokeWidth: 0, fill: '#22d3ee' }}
+                          />
+                        </LineChart>
+                      </ResponsiveContainer>
+                    </div>
+                  </>
+                ) : (
+                  <div className="p-10 text-center bg-white/5 rounded-[2rem] border border-dashed border-white/10 space-y-4">
+                    <Trophy size={40} className="mx-auto text-gym-muted opacity-25" />
+                    <div className="space-y-1">
+                      <p className="text-xs font-black text-white uppercase tracking-wider">No progression data</p>
+                      <p className="text-[10px] font-bold text-gym-muted leading-relaxed uppercase">
+                        Complete this exercise in a logged workout to generate progression telemetry.
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : activeTab === 'instructions' ? (
               <ul className="space-y-4">
                 {(exercise.instructions || []).map((step, i) => (
                   <li key={i} className="flex gap-4 p-5 bg-[#141425]/50 rounded-3xl border border-white/[0.03] group hover:border-gym-neon/30 transition-all">

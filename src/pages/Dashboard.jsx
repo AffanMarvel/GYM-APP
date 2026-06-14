@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { useWorkout, formatTime } from '../context/WorkoutContext';
 import { useAuth } from '../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
-import { Play, Trash2, Zap, Flame, ChevronRight, ChevronLeft, ClipboardCheck, Plus, Dumbbell, Clock, Activity, Shield } from 'lucide-react';
+import { Play, Trash2, Zap, Flame, ChevronRight, ChevronLeft, ClipboardCheck, Plus, Dumbbell, Clock, Activity, Shield, Trophy, ArrowUp, ArrowDown } from 'lucide-react';
 import { getAssetPath } from '../utils/assetPath';
 
 const NEON = '#818cf8';
@@ -12,7 +12,10 @@ const GOLD = '#fbbf24';
 const ACCENT = '#a855f7';
 
 export default function Dashboard() {
-  const { history = [], plannedExercises = [], removeFromPlan, dataLoading } = useWorkout() || {};
+  const { 
+    history = [], plannedExercises = [], removeFromPlan, reorderPlan, dataLoading,
+    streak = 0, logWater, dailyGoals, goals
+  } = useWorkout() || {};
   const { user, userProfile, isAdmin } = useAuth();
   const navigate = useNavigate();
 
@@ -48,7 +51,6 @@ export default function Dashboard() {
     nextMonday.setDate(diff);
     nextMonday.setHours(0, 0, 0, 0);
     setViewDate(nextMonday);
-    // Don't auto-select Monday — keep selection if it falls in the new week
   };
 
   const filteredSessions = (history || []).filter(h => h.date === selectedStr);
@@ -56,6 +58,25 @@ export default function Dashboard() {
   const activeDuration = filteredSessions.reduce((s, h) => s + (h.durationSeconds || 0), 0);
   const activeSets = filteredSessions.reduce((s, h) => s + (h.totalSets || 0), 0);
   const activeExercises = filteredSessions.reduce((s, h) => s + (h.exercisesCompleted || 0), 0);
+
+  // Weekly stats
+  const workoutsThisWeek = useMemo(() => {
+    const d = new Date();
+    const day = d.getDay();
+    const diff = d.getDate() - (day === 0 ? 6 : day - 1);
+    const monday = new Date(d);
+    monday.setDate(diff);
+    monday.setHours(0, 0, 0, 0);
+
+    return (history || []).filter(h => {
+      const hDate = new Date(h.date);
+      return hDate >= monday;
+    }).length;
+  }, [history]);
+
+  const waterLogged = (dailyGoals?.waterDate === todayStr) ? (dailyGoals?.waterLogged || 0) : 0;
+  const waterTarget = goals?.waterIntake || 2500;
+  const weeklyTarget = goals?.workoutsPerWeek || 4;
 
   return (
     <div className="min-h-screen pb-36">
@@ -67,15 +88,25 @@ export default function Dashboard() {
             <p className="text-[10px] font-bold uppercase tracking-[0.3em]" style={{ color: NEON + '80' }}>
               {selectedDisplayStr}
             </p>
-            <h1 className="text-4xl font-black text-white italic tracking-tighter" style={{ transform: 'rotateX(5deg)' }}>
-              HEY, <span className="text-gym-neon text-glow-beast">{firstName.toUpperCase()}</span>
-            </h1>
+            <div className="flex items-center gap-3">
+              <h1 className="text-4xl font-black text-white italic tracking-tighter" style={{ transform: 'rotateX(5deg)' }}>
+                HEY, <span className="text-gym-neon text-glow-beast">{firstName.toUpperCase()}</span>
+              </h1>
+              {streak > 0 && (
+                <div className="flex items-center gap-1 bg-gym-fire/15 border border-gym-fire/20 px-2.5 py-1 rounded-full text-gym-fire font-black text-[9px] shadow-[0_0_15px_rgba(249,115,22,0.3)] animate-pulse">
+                  <Flame size={11} fill="currentColor" />
+                  <span>{streak} DAY STREAK</span>
+                </div>
+              )}
+            </div>
           </div>
-          {isAdmin && (
-            <button onClick={() => navigate('/admin')} className="p-4 rounded-2xl glass-beast border-white/10 hover:border-gym-neon/40 transition-all shadow-beast tap-3d">
-              <Shield size={22} className="text-gym-neon" />
-            </button>
-          )}
+          <div className="flex items-center gap-2">
+            {isAdmin && (
+              <button onClick={() => navigate('/admin')} className="p-4 rounded-2xl glass-beast border-white/10 hover:border-gym-neon/40 transition-all shadow-beast tap-3d">
+                <Shield size={22} className="text-gym-neon" />
+              </button>
+            )}
+          </div>
         </header>
 
         {/* 7-Day Calendar Strip */}
@@ -148,6 +179,67 @@ export default function Dashboard() {
           </div>
         )}
 
+        {/* Weekly Goals Summary Progress Widget */}
+        <section className="space-y-4 preserve-3d">
+          <div className="glass-beast p-5 rounded-[2rem] border-white/5 shadow-beast flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl glass-beast flex items-center justify-center bg-gym-neon/15" style={{ boxShadow: '0 0 10px rgba(129,140,248,0.1)' }}>
+                <Trophy size={18} className="text-gym-neon" />
+              </div>
+              <div>
+                <h3 className="font-black text-white text-xs uppercase tracking-wider">Weekly Target</h3>
+                <p className="text-[9px] text-gym-muted mt-0.5 uppercase tracking-widest font-semibold">{workoutsThisWeek} of {weeklyTarget} workouts logged</p>
+              </div>
+            </div>
+            
+            <div className="relative w-12 h-12 flex items-center justify-center shrink-0">
+              <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                <path className="text-white/5" strokeWidth="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path className="text-gym-neon" strokeWidth="3.5" strokeDasharray={`${Math.min(100, (workoutsThisWeek / weeklyTarget) * 100)}, 100`} strokeLinecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              </svg>
+              <div className="absolute font-black text-[9px] text-white italic">{Math.round((workoutsThisWeek / weeklyTarget) * 100)}%</div>
+            </div>
+          </div>
+        </section>
+
+        {/* Water Hydration Tracker Widget */}
+        <section className="space-y-4 preserve-3d">
+          <div className="flex items-center gap-3 px-2">
+            <div className="w-8 h-8 rounded-full bg-gym-cyan/10 flex items-center justify-center">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" strokeWidth="2.5"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"/></svg>
+            </div>
+            <h2 className="text-xs font-black uppercase tracking-[0.4em] text-white/50">Hydration Tracker</h2>
+          </div>
+
+          <div className="glass-beast p-5 rounded-[2rem] border-white/5 shadow-beast flex items-center justify-between gap-4">
+            <div className="flex items-center gap-4 flex-1">
+              <div className="relative w-12 h-12 rounded-xl bg-[#141425] border border-white/5 overflow-hidden flex items-center justify-center shrink-0">
+                <div className="absolute bottom-0 inset-x-0 bg-gym-cyan/20 transition-all duration-500" style={{ height: `${Math.min(100, (waterLogged / waterTarget) * 100)}%` }} />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" strokeWidth="2" className="relative z-10"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"/></svg>
+              </div>
+              <div className="flex-1">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-xl font-black text-white">{waterLogged}</span>
+                  <span className="text-[10px] text-gym-muted">/ {waterTarget} ml</span>
+                </div>
+                {/* ProgressBar */}
+                <div className="w-full bg-white/5 h-1 rounded-full mt-2 overflow-hidden">
+                  <div className="bg-gym-cyan h-full transition-all duration-500" style={{ width: `${Math.min(100, (waterLogged / waterTarget) * 100)}%` }} />
+                </div>
+              </div>
+            </div>
+
+            <div className="flex gap-2">
+              <button onClick={() => logWater(250)} className="px-3 py-2 bg-white/5 border border-white/5 hover:border-gym-cyan/30 text-white rounded-xl text-[9px] font-black uppercase tracking-wider active:scale-95 transition-all">
+                +250ml
+              </button>
+              <button onClick={() => logWater(500)} className="px-3 py-2 bg-white/5 border border-white/5 hover:border-gym-cyan/30 text-white rounded-xl text-[9px] font-black uppercase tracking-wider active:scale-95 transition-all">
+                +500ml
+              </button>
+            </div>
+          </div>
+        </section>
+
         {/* Today's Mission */}
         <section className="space-y-4 preserve-3d">
           <div className="flex items-center gap-3 px-2">
@@ -180,9 +272,39 @@ export default function Dashboard() {
                         <p className="text-[9px] text-gym-muted uppercase font-bold tracking-widest mt-1 opacity-60">{ex.muscleTarget || ex.muscle}</p>
                       </div>
                     </Link>
-                    <button onClick={() => removeFromPlan(ex.id)} className="p-3 text-gym-muted hover:text-red-400 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
-                      <Trash2 size={18} />
-                    </button>
+                    <div className="flex items-center gap-1">
+                      <button 
+                        onClick={() => {
+                          if (i === 0) return;
+                          const next = [...plannedExercises];
+                          const temp = next[i];
+                          next[i] = next[i - 1];
+                          next[i - 1] = temp;
+                          reorderPlan(next);
+                        }} 
+                        disabled={i === 0}
+                        className="p-2 text-gym-muted hover:text-gym-neon disabled:opacity-10 active:scale-75 transition-all min-w-[36px] min-h-[36px] flex items-center justify-center rounded-xl bg-white/[0.02]"
+                      >
+                        <ArrowUp size={15} />
+                      </button>
+                      <button 
+                        onClick={() => {
+                          if (i === plannedExercises.length - 1) return;
+                          const next = [...plannedExercises];
+                          const temp = next[i];
+                          next[i] = next[i + 1];
+                          next[i + 1] = temp;
+                          reorderPlan(next);
+                        }} 
+                        disabled={i === plannedExercises.length - 1}
+                        className="p-2 text-gym-muted hover:text-gym-neon disabled:opacity-10 active:scale-75 transition-all min-w-[36px] min-h-[36px] flex items-center justify-center rounded-xl bg-white/[0.02]"
+                      >
+                        <ArrowDown size={15} />
+                      </button>
+                      <button onClick={() => removeFromPlan(ex.id)} className="p-3 text-gym-muted hover:text-red-400 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
+                        <Trash2 size={18} />
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>

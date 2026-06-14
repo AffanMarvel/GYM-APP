@@ -1,8 +1,9 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useWorkout, formatTime } from '../context/WorkoutContext';
-import { Trophy, Flame, Clock, Check, ChevronLeft, ChevronRight, Calendar, Trash2 } from 'lucide-react';
+import { Trophy, Flame, Clock, Check, ChevronLeft, ChevronRight, Calendar, Trash2, BarChart2 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAssetPath } from '../utils/assetPath';
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 
 const NEON = '#818cf8';
 const CARD = '#141425';
@@ -63,6 +64,22 @@ export default function HistoryAndProgress() {
   let dateTitleLabel = "Scheduled Activity";
   if (isToday) dateTitleLabel = "Today's Logs";
   else if (isPast) dateTitleLabel = "Ancient Logs";
+
+  // Recharts Data Prep (Last 7 workouts chronologically)
+  const chartData = useMemo(() => {
+    return [...(history || [])]
+      .slice(0, 7)
+      .reverse()
+      .map(h => {
+        const parts = h.date.split('/');
+        const dateLabel = parts.length >= 2 ? `${parts[1]}/${parts[0]}` : h.date;
+        return {
+          name: dateLabel,
+          Calories: h.totalCalories || 0,
+          Minutes: Math.round((h.durationSeconds || 0) / 60)
+        };
+      });
+  }, [history]);
 
   return (
     <div className="min-h-screen pb-32" style={{ background: '#06060d' }}>
@@ -151,6 +168,30 @@ export default function HistoryAndProgress() {
              </div>
            </div>
         </div>
+
+        {/* Calorie Analytics Chart */}
+        {history.length > 0 && (
+          <div className="glass-beast rounded-[2.5rem] p-6 border-white/5 shadow-beast space-y-4">
+            <div className="flex items-center gap-2 text-white/50">
+              <BarChart2 size={16} className="text-gym-neon" />
+              <h3 className="text-xs font-black uppercase tracking-widest">Training Volume (Calories)</h3>
+            </div>
+            <div className="h-44 w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={chartData} margin={{ top: 10, right: 0, left: -25, bottom: 0 }}>
+                  <XAxis dataKey="name" tick={{ fill: '#6b7280', fontSize: 10, fontWeight: 'bold' }} axisLine={false} tickLine={false} />
+                  <YAxis tick={{ fill: '#6b7280', fontSize: 10, fontWeight: 'bold' }} axisLine={false} tickLine={false} />
+                  <Tooltip 
+                    contentStyle={{ background: '#141425', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px' }}
+                    labelStyle={{ color: '#818cf8', fontWeight: 'bold', fontSize: '11px' }}
+                    itemStyle={{ color: '#fff', fontSize: '12px', fontWeight: 'bold' }}
+                  />
+                  <Bar dataKey="Calories" fill="#818cf8" radius={[8, 8, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+        )}
 
         {/* Advanced Timeline UI */}
         <div className="pt-4 pb-10">

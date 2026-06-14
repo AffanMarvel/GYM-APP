@@ -26,8 +26,41 @@ export default function ActiveWorkout() {
   const [showSummary, setShowSummary] = useState(false);
   const [summary, setSummary] = useState(null);
   const [restTimer, setRestTimer] = useState(0);
+  const [initialRestTime, setInitialRestTime] = useState(60);
   const [isResting, setIsResting] = useState(false);
   const restRef = useRef(null);
+
+  const playBuzzer = () => {
+    try {
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      
+      // Beep 1
+      const osc1 = audioCtx.createOscillator();
+      const gain1 = audioCtx.createGain();
+      osc1.connect(gain1);
+      gain1.connect(audioCtx.destination);
+      osc1.type = 'sine';
+      osc1.frequency.setValueAtTime(880, audioCtx.currentTime);
+      gain1.gain.setValueAtTime(0.1, audioCtx.currentTime);
+      gain1.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.15);
+      osc1.start(audioCtx.currentTime);
+      osc1.stop(audioCtx.currentTime + 0.15);
+
+      // Beep 2 (delayed by 200ms)
+      const osc2 = audioCtx.createOscillator();
+      const gain2 = audioCtx.createGain();
+      osc2.connect(gain2);
+      gain2.connect(audioCtx.destination);
+      osc2.type = 'sine';
+      osc2.frequency.setValueAtTime(1200, audioCtx.currentTime + 0.2);
+      gain2.gain.setValueAtTime(0.1, audioCtx.currentTime + 0.2);
+      gain2.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.35);
+      osc2.start(audioCtx.currentTime + 0.2);
+      osc2.stop(audioCtx.currentTime + 0.35);
+    } catch (err) {
+      console.warn('Web Audio API not supported or blocked by browser policy:', err);
+    }
+  };
 
   useEffect(() => {
     if (!activeSession && plannedExercises.length > 0) {
@@ -43,6 +76,7 @@ export default function ActiveWorkout() {
       restRef.current = setTimeout(() => setRestTimer(r => r - 1), 1000);
     } else if (restTimer === 0 && isResting) {
       setIsResting(false);
+      playBuzzer();
     }
     return () => clearTimeout(restRef.current);
   }, [isResting, restTimer]);
@@ -71,6 +105,7 @@ export default function ActiveWorkout() {
     logSetInSession(currentIdx, weight, reps);
     setIsResting(true);
     setRestTimer(60);
+    setInitialRestTime(60);
   };
 
   const handleCompleteExercise = () => {
@@ -239,12 +274,49 @@ export default function ActiveWorkout() {
               {isResting && (
                 <div className="glass-beast-floating p-5 rounded-[2rem] border-gym-accent/20 text-center animate-beast-float relative overflow-hidden">
                   <div className="absolute inset-0 shimmer-beast opacity-20" />
-                  <p className="text-[10px] text-gym-accent font-black uppercase tracking-[0.3em] mb-2">RECUPERATION</p>
+                  <p className="text-[10px] text-gym-accent font-black uppercase tracking-[0.3em] mb-1">RECUPERATION</p>
+                  
                   <p className="text-4xl font-black text-gym-accent italic tracking-tighter">{formatTime(restTimer)}</p>
-                  <button onClick={() => { setIsResting(false); setRestTimer(0); }}
-                    className="mt-3 px-5 py-2 glass-beast rounded-xl text-[9px] text-white/40 font-black uppercase tracking-widest hover:text-white transition-colors">
-                    SKIP REST
-                  </button>
+                  
+                  {/* Sleek horizontal progress bar */}
+                  <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden mt-3 mb-2">
+                    <div 
+                      className="bg-gym-accent h-full transition-all duration-1000 ease-linear shadow-[0_0_8px_rgba(245,158,11,0.5)]"
+                      style={{ width: `${Math.min(100, Math.max(0, (restTimer / initialRestTime) * 100))}%` }}
+                    />
+                  </div>
+
+                  {/* Rest Adjusters and Skip */}
+                  <div className="flex justify-center items-center gap-3 mt-4 relative z-10">
+                    <button 
+                      onClick={() => {
+                        setRestTimer(prev => Math.max(0, prev - 15));
+                      }}
+                      className="px-3 py-2 glass-beast border border-white/5 rounded-xl text-[9px] text-white/50 font-black uppercase tracking-wider active:scale-90 transition-all"
+                    >
+                      -15s
+                    </button>
+                    <button 
+                      onClick={() => { setIsResting(false); setRestTimer(0); }}
+                      className="px-4 py-2 bg-gym-accent/15 border border-gym-accent/20 text-gym-accent rounded-xl text-[9px] font-black uppercase tracking-wider active:scale-95 transition-all shadow-md shadow-gym-accent/10"
+                    >
+                      SKIP
+                    </button>
+                    <button 
+                      onClick={() => {
+                        setRestTimer(prev => {
+                          const next = prev + 15;
+                          if (next > initialRestTime) {
+                            setInitialRestTime(next);
+                          }
+                          return next;
+                        });
+                      }}
+                      className="px-3 py-2 glass-beast border border-white/5 rounded-xl text-[9px] text-white/50 font-black uppercase tracking-wider active:scale-90 transition-all"
+                    >
+                      +15s
+                    </button>
+                  </div>
                 </div>
               )}
 

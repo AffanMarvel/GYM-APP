@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import { useWorkout, formatTime } from '../context/WorkoutContext';
 import { useNavigate } from 'react-router-dom';
 import {
-  User, Mail, Weight, LogOut, Flame, Clock, Dumbbell,
+  User, Mail, LogOut, Flame, Clock, Dumbbell,
   Activity, ChevronLeft, Edit2, Check, X, Shield,
   Database, DownloadCloud, UploadCloud, RefreshCw
 } from 'lucide-react';
@@ -32,8 +32,12 @@ export default function Profile() {
 
   const [editingName, setEditingName] = useState(false);
   const [editingWeight, setEditingWeight] = useState(false);
+  const [editingHeight, setEditingHeight] = useState(false);
+  
   const [tempName, setTempName] = useState(userProfile?.displayName || user?.displayName || '');
   const [tempWeight, setTempWeight] = useState(String(userProfile?.weight || 75));
+  const [tempHeight, setTempHeight] = useState(String(userProfile?.height || 175));
+  
   const [saving, setSaving] = useState(false);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
 
@@ -41,6 +45,57 @@ export default function Profile() {
   const [dataStatus, setDataStatus] = useState(null); // null | 'exporting' | 'importing' | 'success' | 'error'
   const [errorMsg, setErrorMsg] = useState('');
   const fileInputRef = useRef(null);
+
+  // Lifetime stats
+  const totalWorkouts = history.length;
+  const totalCalories = history.reduce((s, h) => s + (h.totalCalories || 0), 0);
+  const totalSeconds = history.reduce((s, h) => s + (h.durationSeconds || 0), 0);
+  const totalSets = history.reduce((s, h) => s + (h.totalSets || 0), 0);
+
+  // BMI calculation variables
+  const heightVal = userProfile?.height || 175;
+  const weightVal = userProfile?.weight || 75;
+  const heightInMeters = heightVal / 100;
+  const bmi = (weightVal / (heightInMeters * heightInMeters)).toFixed(1);
+
+  let bmiCategory = 'Healthy Weight';
+  let bmiColor = '#10b981'; // Green
+  if (bmi < 18.5) {
+    bmiCategory = 'Underweight';
+    bmiColor = '#22d3ee'; // Cyan
+  } else if (bmi >= 25 && bmi < 30) {
+    bmiCategory = 'Overweight';
+    bmiColor = '#f97316'; // Orange
+  } else if (bmi >= 30) {
+    bmiCategory = 'Obese';
+    bmiColor = '#ef4444'; // Red
+  }
+
+  const saveName = async () => {
+    if (!tempName.trim()) return;
+    setSaving(true);
+    await saveProfile({ displayName: tempName.trim() });
+    setSaving(false);
+    setEditingName(false);
+  };
+
+  const saveWeight = async () => {
+    const w = parseFloat(tempWeight);
+    if (isNaN(w) || w < 20 || w > 300) return;
+    setSaving(true);
+    await saveProfile({ weight: w });
+    setSaving(false);
+    setEditingWeight(false);
+  };
+
+  const saveHeight = async () => {
+    const h = parseFloat(tempHeight);
+    if (isNaN(h) || h < 100 || h > 250) return;
+    setSaving(true);
+    await saveProfile({ height: h });
+    setSaving(false);
+    setEditingHeight(false);
+  };
 
   const handleExport = async () => {
     if (!user?.uid) return;
@@ -108,29 +163,6 @@ export default function Profile() {
       setDataStatus('error');
     };
     reader.readAsText(file);
-  };
-
-  // Lifetime stats
-  const totalWorkouts = history.length;
-  const totalCalories = history.reduce((s, h) => s + (h.totalCalories || 0), 0);
-  const totalSeconds = history.reduce((s, h) => s + (h.durationSeconds || 0), 0);
-  const totalSets = history.reduce((s, h) => s + (h.totalSets || 0), 0);
-
-  const saveName = async () => {
-    if (!tempName.trim()) return;
-    setSaving(true);
-    await saveProfile({ displayName: tempName.trim() });
-    setSaving(false);
-    setEditingName(false);
-  };
-
-  const saveWeight = async () => {
-    const w = parseFloat(tempWeight);
-    if (isNaN(w) || w < 20 || w > 300) return;
-    setSaving(true);
-    await saveProfile({ weight: w });
-    setSaving(false);
-    setEditingWeight(false);
   };
 
   return (
@@ -250,6 +282,78 @@ export default function Profile() {
                   <Edit2 size={15} />
                 </button>
               )}
+            </div>
+
+            {/* Height (cm) */}
+            <div className="flex items-center justify-between p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
+              <div className="flex items-center gap-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="2"><path d="M5 3h14M5 21h14M12 3v18M12 9l-3 3M12 15l-3 3M12 9l3 3M12 15l3 3"/></svg>
+                <div>
+                  <p className="text-[9px] font-bold uppercase tracking-widest" style={{ color: '#6b7280' }}>Height (cm)</p>
+                  {editingHeight ? (
+                    <input autoFocus type="number" value={tempHeight} onChange={e => setTempHeight(e.target.value)}
+                      onKeyDown={e => e.key === 'Enter' && saveHeight()}
+                      inputMode="numeric" min="100" max="250"
+                      className="text-sm font-bold text-white bg-transparent outline-none border-b border-gym-neon/40 mt-0.5 w-20" />
+                  ) : (
+                    <p className="text-sm font-bold text-white mt-0.5">{userProfile?.height || 175} cm</p>
+                  )}
+                </div>
+              </div>
+              {editingHeight ? (
+                <div className="flex gap-2">
+                  <button onClick={saveHeight} disabled={saving} className="p-2 rounded-xl" style={{ background: 'rgba(16,185,129,0.15)', color: '#10b981' }}>
+                    {saving ? <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" /> : <Check size={16} />}
+                  </button>
+                  <button onClick={() => setEditingHeight(false)} className="p-2 rounded-xl" style={{ background: 'rgba(239,68,68,0.1)', color: '#ef4444' }}>
+                    <X size={16} />
+                  </button>
+                </div>
+              ) : (
+                <button onClick={() => { setEditingHeight(true); setTempHeight(String(userProfile?.height || 175)); }}
+                  className="p-2 rounded-xl opacity-50 hover:opacity-100 transition-opacity" style={{ background: 'rgba(255,255,255,0.05)', color: 'white' }}>
+                  <Edit2 size={15} />
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* BMI Calculator Widget */}
+        <div className="glass-beast rounded-[2.5rem] p-6 border-white/5 shadow-beast relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-24 h-24 rounded-full opacity-5 blur-2xl pointer-events-none" style={{ background: bmiColor }} />
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl glass-beast flex items-center justify-center bg-[#141425]" style={{ boxShadow: `0 0 10px ${bmiColor}20` }}>
+                <Activity size={18} style={{ color: bmiColor }} />
+              </div>
+              <div>
+                <h3 className="font-black text-white text-xs uppercase tracking-wider">BMI Status Analysis</h3>
+                <p className="text-[9px] text-gym-muted mt-0.5 uppercase tracking-widest font-semibold font-black">Body Mass Index Calculator</p>
+              </div>
+            </div>
+            
+            <div className="text-right">
+              <span className="text-2xl font-black italic" style={{ color: bmiColor }}>{bmi}</span>
+              <span className="text-[10px] text-gym-muted ml-1 font-bold">BMI</span>
+            </div>
+          </div>
+
+          <div className="bg-white/5 p-4 rounded-2xl border border-white/5 space-y-3">
+            <div className="flex justify-between items-center text-xs">
+              <span className="font-bold text-gym-muted">Classification</span>
+              <span className="font-black uppercase tracking-wider" style={{ color: bmiColor }}>{bmiCategory}</span>
+            </div>
+            
+            {/* Visual meter bar */}
+            <div className="relative w-full h-2 bg-white/10 rounded-full overflow-hidden flex">
+              <div className="w-[18.5%] h-full bg-gym-cyan" title="Underweight" />
+              <div className="w-[6.5%] h-full bg-green-500" title="Normal" />
+              <div className="w-[5%] h-full bg-orange-500" title="Overweight" />
+              <div className="w-[70%] h-full bg-red-500" title="Obese" />
+              
+              {/* BMI needle overlay */}
+              <div className="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_8px_white]" style={{ left: `${Math.min(100, Math.max(0, ((bmi - 15) / 20) * 100))}%` }} />
             </div>
           </div>
         </div>

@@ -168,6 +168,11 @@ export const WorkoutProvider = ({ children }) => {
     if (uid) debouncedSync('plan', () => updateActivePlan(uid, next));
   };
 
+  const reorderPlan = (nextPlan) => {
+    setPlannedExercises(nextPlan);
+    if (uid) debouncedSync('plan', () => updateActivePlan(uid, nextPlan));
+  };
+
   // ─── Goals ──────────────────────────────────────────────────────────────────
   const updateGoals = (newGoals) => {
     const merged = { ...goals, ...newGoals };
@@ -267,15 +272,79 @@ export const WorkoutProvider = ({ children }) => {
     });
   };
 
+  const streak = useMemo(() => {
+    if (!history || history.length === 0) return 0;
+    const dates = Array.from(new Set(history.map(h => h.date)))
+      .map(dStr => new Date(dStr))
+      .filter(d => !isNaN(d.getTime()))
+      .sort((a, b) => b - a);
+
+    if (dates.length === 0) return 0;
+
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+
+    const latestWorkoutDate = new Date(dates[0]);
+    latestWorkoutDate.setHours(0,0,0,0);
+
+    if (latestWorkoutDate.getTime() !== today.getTime() && latestWorkoutDate.getTime() !== yesterday.getTime()) {
+      return 0;
+    }
+
+    let streakCount = 1;
+    let current = latestWorkoutDate;
+
+    for (let i = 1; i < dates.length; i++) {
+      const nextDate = new Date(dates[i]);
+      nextDate.setHours(0,0,0,0);
+
+      const diffTime = current.getTime() - nextDate.getTime();
+      const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+
+      if (diffDays === 1) {
+        streakCount++;
+        current = nextDate;
+      } else if (diffDays > 1) {
+        break;
+      }
+    }
+    return streakCount;
+  }, [history]);
+
+  const logWater = (ml) => {
+    const todayStr = new Date().toLocaleDateString();
+    const currentWater = (dailyGoals?.waterDate === todayStr) ? (dailyGoals?.waterLogged || 0) : 0;
+    const nextDaily = {
+      ...dailyGoals,
+      waterLogged: currentWater + ml,
+      waterDate: todayStr
+    };
+    setDailyGoals(nextDaily);
+    if (uid) debouncedSync('dailyGoals', () => fsUpdateDailyGoals(uid, nextDaily));
+  };
+
   const finishSession = async () => {
     if (!activeSession) return null;
 
     const durationSec = activeSession.elapsedSeconds || 0;
     const durationMin = durationSec / 60;
 
-    // Calculate calories using MET from the most-used category
-    const categoryMet = MET_BY_CATEGORY['chest']; // fallback
-    const totalCalories = calcCalories(categoryMet, durationMin, userWeight);
+    // Calculate calories dynamically by averaging the MET of logged exercise categories
+    const loggedExercises = activeSession.logs || [];
+    let totalMet = 0;
+    let exerciseCount = 0;
+
+    loggedExercises.forEach(log => {
+      const cat = log.category || 'warmup';
+      const met = MET_BY_CATEGORY[cat] || 4.0;
+      totalMet += met;
+      exerciseCount++;
+    });
+
+    const avgMet = exerciseCount > 0 ? (totalMet / exerciseCount) : 4.0;
+    const totalCalories = calcCalories(avgMet, durationMin, userWeight);
 
     let exercisesCompleted = 0;
     let totalSets = 0;
@@ -305,7 +374,6 @@ export const WorkoutProvider = ({ children }) => {
 
     if (uid) {
       const newId = await addHistoryEntry(uid, newSession);
-      // Update local state item with its actual Firestore ID for potential immediate delete actions
       setHistory(prev => prev.map((h, i) => i === 0 ? { ...h, firestoreId: newId } : h));
       await clearActiveSession(uid);
       await updateActivePlan(uid, []);
@@ -363,10 +431,11 @@ export const WorkoutProvider = ({ children }) => {
     <WorkoutContext.Provider value={{
       exercises, history, goals, dailyGoals, plannedExercises, activeSession,
       dataLoading, userWeight, calcCalories, MET_BY_CATEGORY,
-      addToPlan, removeFromPlan, updateGoals, updateDailyGoals,
+      addToPlan, removeFromPlan, reorderPlan, updateGoals, updateDailyGoals,
       startSession, pauseSession, resumeSession, finishSession,
       logSetInSession, completeExerciseInSession, removeSetFromLog,
-      customExercises, addCustomExercise, deleteCustomExercise, deleteHistory
+      customExercises, addCustomExercise, deleteCustomExercise, deleteHistory,
+      streak, logWater
     }}>
       {children}
     </WorkoutContext.Provider>
