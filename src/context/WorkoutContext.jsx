@@ -1,16 +1,31 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { workoutData as defaultWorkoutData } from '../data/exercises';
+import { useAuth } from './AuthContext';
+import {
+  getHistory, addHistoryEntry, deleteHistoryEntry as fsDeleteHistoryEntry,
+  getGoals, updateGoals as fsUpdateGoals,
+  getDailyGoals, updateDailyGoals as fsUpdateDailyGoals,
+  getActivePlan, updateActivePlan,
+  getActiveSession, saveActiveSession, clearActiveSession,
+  getCustomExercises, updateCustomExercises
+} from '../firebase/firestoreService';
 
 const WorkoutContext = createContext();
-
 export const useWorkout = () => useContext(WorkoutContext);
 
-export const WEIGHT_KG = 75;
-
-export const calcCalories = (met, durationMinutes, weightKg = WEIGHT_KG) => {
-  return Math.round(met * 3.5 * weightKg / 200 * durationMinutes);
+// ─── MET values per category (for accurate calorie calculation) ──────────────
+const MET_BY_CATEGORY = {
+  chest: 5.0, back: 5.0, legs: 6.0, shoulders: 4.5,
+  biceps: 4.0, triceps: 4.0, forearms: 3.5,
+  abs: 4.5, cardio: 8.0, warmup: 3.5, stretching: 2.5,
 };
 
+// ─── Calorie formula: MET × weight(kg) × hours ───────────────────────────────
+export const calcCalories = (met, durationMinutes, weightKg = 75) => {
+  return Math.round(met * weightKg * (durationMinutes / 60));
+};
+
+// ─── Format seconds → mm:ss or h:mm:ss ───────────────────────────────────────
 export const formatTime = (seconds) => {
   const h = Math.floor(seconds / 3600);
   const m = Math.floor((seconds % 3600) / 60);
@@ -19,137 +34,283 @@ export const formatTime = (seconds) => {
 };
 
 export const WorkoutProvider = ({ children }) => {
-  // Merge built-in exercises with any custom ones from localStorage
-  const [exercises, setExercises] = useState(() => {
-    try {
-      const customRaw = localStorage.getItem('gym_custom_exercises');
-      const custom = customRaw ? JSON.parse(customRaw) : {};
-      const merged = {};
-      Object.keys(defaultWorkoutData).forEach(cat => {
-        merged[cat] = [...defaultWorkoutData[cat]];
-      });
-      Object.keys(custom).forEach(cat => {
-        if (merged[cat]) {
-          const ids = new Set(merged[cat].map(e => e.id));
-          custom[cat].forEach(e => { if (!ids.has(e.id)) merged[cat].push(e); });
-        } else {
-          merged[cat] = custom[cat];
-        }
-      });
-      return merged;
-    } catch { return { ...defaultWorkoutData }; }
-  });
+  const { user, userProfile } = useAuth();
+  const uid = user?.uid;
+  const userWeight = userProfile?.weight || 75;
 
-  const [history, setHistory] = useState(() => {
-    const saved = localStorage.getItem('gym_history');
-    if (saved) return JSON.parse(saved);
-    const backup = localStorage.getItem('gym_history_backup');
-    return backup ? JSON.parse(backup) : [];
-  });
+  const [customExercises, setCustomExercises] = useState({});
+  const [history, setHistory] = useState([]);
+  const [goals, setGoals] = useState({ calories: 500, workoutsPerWeek: 4, waterIntake: 2500, currentWeight: 75, targetWeight: 70 });
+  const [dailyGoals, setDailyGoals] = useState(null);
+  const [plannedExercises, setPlannedExercises] = useState([]);
+  const [activeSession, setActiveSession] = useState(null);
+  const [dataLoading, setDataLoading] = useState(true);
 
-  const [goals, setGoals] = useState(() => {
-    const saved = localStorage.getItem('gym_goals');
-    return saved ? JSON.parse(saved) : {
-      calories: 500, workoutsPerWeek: 4, waterIntake: 2500, currentWeight: 75, targetWeight: 70
-    };
-  });
+  // Timestamp-based timer (avoids double-counting race condition)
+  const timerRef = useRef(null);
+  const sessionStartTimestampRef = useRef(null);
 
-  const [dailyGoals, setDailyGoals] = useState(() => {
-    const saved = localStorage.getItem('gym_daily_goals') || localStorage.getItem('gym_target_goals');
-    return saved ? JSON.parse(saved) : null;
-  });
+  // Dynamic exercise list: merges built-in exercises with custom exercises from Firestore
+  const exercises = useMemo(() => {
+    const merged = {};
+    // Load built-in
+    Object.keys(defaultWorkoutData).forEach(cat => {
+      merged[cat] = (defaultWorkoutData[cat] || []).map(ex => ({
+        ...ex,
+        id: ex.id || ex.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+      }));
+    });
 
-  const [plannedExercises, setPlannedExercises] = useState(() => {
-    const saved = localStorage.getItem('gym_active_plan');
-    return saved ? JSON.parse(saved) : [];
-  });
+    // Merge custom
+    Object.keys(customExercises).forEach(cat => {
+      const customList = (customExercises[cat] || []).map(ex => ({
+        ...ex,
+        id: ex.id || ex.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+      }));
 
-  const [activeSession, setActiveSession] = useState(() => {
-    const saved = localStorage.getItem('gym_active_session');
-    return saved ? JSON.parse(saved) : null;
-  });
+      if (merged[cat]) {
+        const existingIds = new Set(merged[cat].map(e => e.id));
+        const uniques = customList.filter(e => !existingIds.has(e.id));
+        merged[cat] = [...merged[cat], ...uniques];
+      } else {
+        merged[cat] = customList;
+      }
+    });
 
+    return merged;
+  }, [customExercises]);
+
+  // ─── Load all data from Firestore on mount ──────────────────────────────────
   useEffect(() => {
-    let timer;
-    if (activeSession && activeSession.isRunning) {
-      timer = setInterval(() => {
-        setActiveSession(prev => ({ ...prev, elapsedSeconds: (prev.elapsedSeconds || 0) + 1 }));
-      }, 1000);
+    if (!uid) {
+      setHistory([]);
+      setCustomExercises({});
+      setDailyGoals(null);
+      setPlannedExercises([]);
+      setActiveSession(null);
+      setDataLoading(false);
+      return;
     }
-    return () => clearInterval(timer);
+
+    const loadData = async () => {
+      setDataLoading(true);
+      try {
+        const [h, g, dg, ap, as_, ce] = await Promise.all([
+          getHistory(uid),
+          getGoals(uid),
+          getDailyGoals(uid),
+          getActivePlan(uid),
+          getActiveSession(uid),
+          getCustomExercises(uid)
+        ]);
+        setHistory(h || []);
+        if (g) setGoals(g);
+        setDailyGoals(dg);
+        setPlannedExercises(ap || []);
+        setCustomExercises(ce || {});
+
+        // Validate active session — discard if older than 24h
+        if (as_) {
+          const age = Date.now() - (as_.startTimestamp || 0);
+          if (age < 24 * 60 * 60 * 1000) {
+            setActiveSession(as_);
+            if (as_.isRunning) {
+              sessionStartTimestampRef.current = as_.startTimestamp;
+            }
+          } else {
+            await clearActiveSession(uid);
+          }
+        }
+      } catch (err) {
+        console.error('Failed to load workout data:', err);
+      } finally {
+        setDataLoading(false);
+      }
+    };
+
+    loadData();
+  }, [uid]);
+
+  // ─── Timestamp-based session timer ─────────────────────────────────────────
+  useEffect(() => {
+    if (activeSession?.isRunning) {
+      timerRef.current = setInterval(() => {
+        setActiveSession(prev => {
+          if (!prev?.isRunning) return prev;
+          const elapsed = Math.floor((Date.now() - (prev.startTimestamp || Date.now())) / 1000) + (prev.pausedSeconds || 0);
+          return { ...prev, elapsedSeconds: elapsed };
+        });
+      }, 1000);
+    } else {
+      clearInterval(timerRef.current);
+    }
+    return () => clearInterval(timerRef.current);
   }, [activeSession?.isRunning]);
 
-  useEffect(() => {
-    localStorage.setItem('gym_history', JSON.stringify(history));
-    if (history.length > 0) localStorage.setItem('gym_history_backup', JSON.stringify(history));
-  }, [history]);
+  // ─── Debounced Firestore sync helpers ──────────────────────────────────────
+  const syncDebounce = useRef({});
+  const debouncedSync = useCallback((key, fn, delay = 1500) => {
+    clearTimeout(syncDebounce.current[key]);
+    syncDebounce.current[key] = setTimeout(fn, delay);
+  }, []);
 
-  useEffect(() => { localStorage.setItem('gym_goals', JSON.stringify(goals)); }, [goals]);
-  useEffect(() => { 
-    if (dailyGoals) localStorage.setItem('gym_daily_goals', JSON.stringify(dailyGoals)); 
-  }, [dailyGoals]);
-  useEffect(() => { localStorage.setItem('gym_active_plan', JSON.stringify(plannedExercises)); }, [plannedExercises]);
-  useEffect(() => {
-    if (activeSession) localStorage.setItem('gym_active_session', JSON.stringify(activeSession));
-    else localStorage.removeItem('gym_active_session');
-  }, [activeSession]);
-
+  // ─── Plan ───────────────────────────────────────────────────────────────────
   const addToPlan = (exercise) => {
-    if (!plannedExercises.find(e => e.id === exercise.id)) {
-      setPlannedExercises([...plannedExercises, exercise]);
+    if (plannedExercises.find(e => e.id === exercise.id)) return;
+    const next = [...plannedExercises, exercise];
+    setPlannedExercises(next);
+    if (uid) debouncedSync('plan', () => updateActivePlan(uid, next));
+  };
+
+  const removeFromPlan = (id) => {
+    const next = plannedExercises.filter(e => e.id !== id);
+    setPlannedExercises(next);
+    if (uid) debouncedSync('plan', () => updateActivePlan(uid, next));
+  };
+
+  // ─── Goals ──────────────────────────────────────────────────────────────────
+  const updateGoals = (newGoals) => {
+    const merged = { ...goals, ...newGoals };
+    setGoals(merged);
+    if (uid) debouncedSync('goals', () => fsUpdateGoals(uid, merged));
+  };
+
+  const updateDailyGoals = (newDaily) => {
+    setDailyGoals(newDaily);
+    if (uid) debouncedSync('dailyGoals', () => fsUpdateDailyGoals(uid, newDaily));
+  };
+
+  // ─── Custom Exercises CRUD ──────────────────────────────────────────────────
+  const addCustomExercise = async (newEx) => {
+    if (!uid) return;
+    const cleanEx = {
+      ...newEx,
+      id: newEx.id || newEx.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
+      instructions: (newEx.instructions || []).filter(i => i.trim()),
+      tips: (newEx.tips || []).filter(t => t.trim())
+    };
+
+    const updated = { ...customExercises };
+    if (!updated[cleanEx.category]) updated[cleanEx.category] = [];
+    
+    const existingIndex = updated[cleanEx.category].findIndex(e => e.id === cleanEx.id);
+    if (existingIndex > -1) {
+      updated[cleanEx.category][existingIndex] = cleanEx;
+    } else {
+      updated[cleanEx.category].push(cleanEx);
+    }
+
+    setCustomExercises(updated);
+    await updateCustomExercises(uid, updated);
+  };
+
+  const deleteCustomExercise = async (category, id) => {
+    if (!uid) return;
+    const updated = { ...customExercises };
+    if (updated[category]) {
+      updated[category] = updated[category].filter(e => e.id !== id);
+      setCustomExercises(updated);
+      await updateCustomExercises(uid, updated);
     }
   };
-  const removeFromPlan = (id) => setPlannedExercises(plannedExercises.filter(e => e.id !== id));
-  const updateGoals = (newGoals) => setGoals({ ...goals, ...newGoals });
-  const updateDailyGoals = (newDaily) => setDailyGoals(newDaily);
 
+  // ─── History Deletion ───────────────────────────────────────────────────────
+  const deleteHistory = async (firestoreId) => {
+    if (!uid || !firestoreId) return;
+    try {
+      await fsDeleteHistoryEntry(uid, firestoreId);
+      setHistory(prev => prev.filter(h => h.firestoreId !== firestoreId));
+    } catch (err) {
+      console.error('Failed to delete history entry:', err);
+    }
+  };
+
+  // ─── Session ────────────────────────────────────────────────────────────────
   const startSession = () => {
-    setActiveSession({
-      startTime: new Date().toLocaleTimeString([], { hour: '2-digit', minute:'2-digit' }), 
-      isRunning: true, 
+    const now = Date.now();
+    const session = {
+      startTime: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      startTimestamp: now,
+      isRunning: true,
       elapsedSeconds: 0,
-      logs: plannedExercises.map(ex => ({ ...ex, sets: [] }))
+      pausedSeconds: 0,
+      logs: plannedExercises.map(ex => ({ ...ex, sets: [], completed: false })),
+    };
+    setActiveSession(session);
+    if (uid) saveActiveSession(uid, session);
+  };
+
+  const pauseSession = () => {
+    setActiveSession(prev => {
+      if (!prev) return null;
+      const paused = {
+        ...prev,
+        isRunning: false,
+        pausedSeconds: prev.elapsedSeconds,
+        pauseTimestamp: Date.now(),
+      };
+      if (uid) debouncedSync('session', () => saveActiveSession(uid, paused), 500);
+      return paused;
     });
   };
-  const pauseSession = () => setActiveSession(prev => prev ? ({ ...prev, isRunning: false }) : null);
-  const resumeSession = () => setActiveSession(prev => prev ? ({ ...prev, isRunning: true }) : null);
 
-  const finishSession = () => {
+  const resumeSession = () => {
+    setActiveSession(prev => {
+      if (!prev) return null;
+      const resumed = {
+        ...prev,
+        isRunning: true,
+        startTimestamp: Date.now() - (prev.pausedSeconds || 0) * 1000,
+      };
+      if (uid) debouncedSync('session', () => saveActiveSession(uid, resumed), 500);
+      return resumed;
+    });
+  };
+
+  const finishSession = async () => {
     if (!activeSession) return null;
-    
-    const durationMin = activeSession.elapsedSeconds / 60;
-    const totalCalories = calcCalories(6, durationMin);
-    
+
+    const durationSec = activeSession.elapsedSeconds || 0;
+    const durationMin = durationSec / 60;
+
+    // Calculate calories using MET from the most-used category
+    const categoryMet = MET_BY_CATEGORY['chest']; // fallback
+    const totalCalories = calcCalories(categoryMet, durationMin, userWeight);
+
     let exercisesCompleted = 0;
     let totalSets = 0;
-    
     activeSession.logs.forEach(log => {
       if (log.completed) exercisesCompleted++;
-      totalSets += (log.sets?.length || 0);
+      totalSets += log.sets?.length || 0;
     });
 
-    const summaryData = {
+    const newSession = {
+      id: Date.now(),
+      date: new Date().toLocaleDateString(),
       startTime: activeSession.startTime,
-      durationSeconds: activeSession.elapsedSeconds,
-      durationFormatted: formatTime(activeSession.elapsedSeconds),
+      finishedAt: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      durationSeconds: durationSec,
+      durationFormatted: formatTime(durationSec),
       totalCalories,
       exercisesCompleted,
       totalExercises: activeSession.logs.length,
       totalSets,
-      logs: activeSession.logs
+      logs: activeSession.logs,
     };
 
-    const newSession = {
-      ...summaryData,
-      id: Date.now(),
-      date: new Date().toLocaleDateString(),
-      finishedAt: new Date().toLocaleTimeString([], { hour: '2-digit', minute:'2-digit' })
-    };
-    
-    setHistory([newSession, ...history]);
+    const updatedHistory = [newSession, ...history];
+    setHistory(updatedHistory);
     setActiveSession(null);
     setPlannedExercises([]);
-    
+
+    if (uid) {
+      const newId = await addHistoryEntry(uid, newSession);
+      // Update local state item with its actual Firestore ID for potential immediate delete actions
+      setHistory(prev => prev.map((h, i) => i === 0 ? { ...h, firestoreId: newId } : h));
+      await clearActiveSession(uid);
+      await updateActivePlan(uid, []);
+    }
+
     return newSession;
   };
 
@@ -158,12 +319,14 @@ export const WorkoutProvider = ({ children }) => {
       if (!prev) return null;
       const newLogs = [...prev.logs];
       if (newLogs[exerciseIdx]) {
-        newLogs[exerciseIdx] = { 
-          ...newLogs[exerciseIdx], 
-          sets: [...(newLogs[exerciseIdx].sets || []), { weight, reps, id: Date.now() }] 
+        newLogs[exerciseIdx] = {
+          ...newLogs[exerciseIdx],
+          sets: [...(newLogs[exerciseIdx].sets || []), { weight, reps, id: Date.now() }],
         };
       }
-      return { ...prev, logs: newLogs };
+      const updated = { ...prev, logs: newLogs };
+      if (uid) debouncedSync('session', () => saveActiveSession(uid, updated), 800);
+      return updated;
     });
   };
 
@@ -174,7 +337,9 @@ export const WorkoutProvider = ({ children }) => {
       if (newLogs[exerciseIdx]) {
         newLogs[exerciseIdx] = { ...newLogs[exerciseIdx], completed: true };
       }
-      return { ...prev, logs: newLogs };
+      const updated = { ...prev, logs: newLogs };
+      if (uid) debouncedSync('session', () => saveActiveSession(uid, updated), 800);
+      return updated;
     });
   };
 
@@ -183,25 +348,25 @@ export const WorkoutProvider = ({ children }) => {
       if (!prev) return null;
       const newLogs = [...prev.logs];
       if (newLogs[exerciseIdx]) {
-        newLogs[exerciseIdx] = { 
-          ...newLogs[exerciseIdx], 
-          sets: newLogs[exerciseIdx].sets.filter(s => s.id !== setId) 
+        newLogs[exerciseIdx] = {
+          ...newLogs[exerciseIdx],
+          sets: newLogs[exerciseIdx].sets.filter(s => s.id !== setId),
         };
       }
-      return { ...prev, logs: newLogs };
+      const updated = { ...prev, logs: newLogs };
+      if (uid) debouncedSync('session', () => saveActiveSession(uid, updated), 800);
+      return updated;
     });
-  };
-
-  const updateExerciseData = (newData) => {
-    setExercises(newData);
-    localStorage.setItem('gym_custom_exercises', JSON.stringify(newData));
   };
 
   return (
     <WorkoutContext.Provider value={{
-      exercises, updateExerciseData, history, goals, dailyGoals, plannedExercises, activeSession,
-      addToPlan, removeFromPlan, updateGoals, updateDailyGoals, startSession, pauseSession, resumeSession,
-      finishSession, logSetInSession, completeExerciseInSession, removeSetFromLog
+      exercises, history, goals, dailyGoals, plannedExercises, activeSession,
+      dataLoading, userWeight, calcCalories, MET_BY_CATEGORY,
+      addToPlan, removeFromPlan, updateGoals, updateDailyGoals,
+      startSession, pauseSession, resumeSession, finishSession,
+      logSetInSession, completeExerciseInSession, removeSetFromLog,
+      customExercises, addCustomExercise, deleteCustomExercise, deleteHistory
     }}>
       {children}
     </WorkoutContext.Provider>

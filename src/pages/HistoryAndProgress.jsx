@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useWorkout, formatTime } from '../context/WorkoutContext';
-import { Trophy, Flame, Clock, Check, ChevronLeft, ChevronRight, Calendar } from 'lucide-react';
+import { Trophy, Flame, Clock, Check, ChevronLeft, ChevronRight, Calendar, Trash2 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAssetPath } from '../utils/assetPath';
 
@@ -8,7 +8,7 @@ const NEON = '#818cf8';
 const CARD = '#141425';
 
 export default function HistoryAndProgress() {
-  const { history = [] } = useWorkout() || {};
+  const { history = [], deleteHistory } = useWorkout() || {};
   const navigate = useNavigate();
 
   // Date State Setup
@@ -17,6 +17,9 @@ export default function HistoryAndProgress() {
   const selectedStr = selectedDate.toLocaleDateString();
   const todayStr = new Date().toLocaleDateString();
   const selectedDisplayStr = selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
+
+  // History deletion state
+  const [deletingSessionId, setDeletingSessionId] = useState(null);
 
   // Generate strictly Monday to Sunday (7 days)
   const calendarDates = useMemo(() => {
@@ -179,9 +182,20 @@ export default function HistoryAndProgress() {
                         <p className="text-[11px] font-black text-gym-neon uppercase tracking-widest">Workout Session</p>
                         <p className="text-sm font-black text-white mt-0.5">{session.finishedAt || 'Finished'}</p>
                       </div>
-                      <div className="text-right">
-                        <p className="text-sm font-black text-gym-fire">{session.totalCalories || 0} Cal</p>
-                        <p className="text-[10px] text-gym-cyan font-bold mt-1 uppercase tracking-widest">{session.durationFormatted}</p>
+                      <div className="flex items-center gap-4">
+                        <div className="text-right">
+                          <p className="text-sm font-black text-gym-fire">{session.totalCalories || 0} Cal</p>
+                          <p className="text-[10px] text-gym-cyan font-bold mt-1 uppercase tracking-widest">{session.durationFormatted}</p>
+                        </div>
+                        {session.firestoreId && (
+                          <button
+                            onClick={() => setDeletingSessionId(session.firestoreId)}
+                            className="p-2.5 bg-white/5 hover:bg-gym-danger/10 border border-white/5 rounded-xl text-gym-muted hover:text-gym-danger transition-all active:scale-90"
+                            title="Delete Session"
+                          >
+                            <Trash2 size={16} />
+                          </button>
+                        )}
                       </div>
                     </div>
                     
@@ -211,6 +225,34 @@ export default function HistoryAndProgress() {
           )}
         </div>
       </div>
+
+      {/* Delete Confirmation Modal */}
+      {deletingSessionId && (
+        <div className="fixed inset-0 z-[300] bg-black/80 backdrop-blur-md flex items-end p-5 animate-in fade-in">
+          <div className="w-full max-w-lg mx-auto glass-beast-floating rounded-[2.5rem] p-8 border border-white/10 shadow-beast-heavy slide-up">
+            <div className="w-16 h-16 rounded-full bg-gym-danger/15 flex items-center justify-center mx-auto border border-gym-danger/25 mb-4 animate-pulse">
+              <Trash2 size={28} className="text-gym-danger" />
+            </div>
+            <p className="text-xl font-black text-white text-center mb-2">Delete Session?</p>
+            <p className="text-xs text-center mb-8 font-medium text-gym-muted">This workout session will be deleted from your cloud legacy forever. This action cannot be undone.</p>
+            <div className="flex gap-3">
+              <button onClick={() => setDeletingSessionId(null)}
+                className="flex-1 py-4 rounded-2xl font-black text-sm text-white/60 glass-beast border-white/10 transition-all active:scale-95">
+                Cancel
+              </button>
+              <button 
+                onClick={async () => {
+                  await deleteHistory(deletingSessionId);
+                  setDeletingSessionId(null);
+                }}
+                className="flex-1 py-4 rounded-2xl font-black text-sm text-white transition-all active:scale-95"
+                style={{ background: 'linear-gradient(135deg, #ef4444, #dc2626)', boxShadow: '0 8px 20px rgba(239,68,68,0.3)' }}>
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,16 +1,28 @@
 import { useState, useRef } from 'react';
-import { Plus, Search, Trash2, X, Image as ImageIcon, ChevronLeft, AlertCircle, Dumbbell, Shield, Download, Upload, Clock, RotateCcw, Zap, Share2 } from 'lucide-react';
+import { Plus, Search, Trash2, X, Image as ImageIcon, ChevronLeft, AlertCircle, Dumbbell, Shield, Zap, Share2, Upload, DownloadCloud, Check, RefreshCw } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useWorkout } from '../context/WorkoutContext';
+import { useAuth } from '../context/AuthContext';
 import { getAssetPath } from '../utils/assetPath';
+import { exportUserData, importUserData } from '../firebase/firestoreService';
 
 const CATEGORIES = ['chest','back','legs','shoulders','biceps','triceps','abs','cardio','forearms','stretching','warmup'];
 
 export default function AdminPanel() {
   const navigate = useNavigate();
-  const { exercises } = useWorkout();
+  const { user } = useAuth();
+  const { customExercises, addCustomExercise, deleteCustomExercise } = useWorkout();
+  
   const [isAdding, setIsAdding] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  
+  // Custom modals/errors states
+  const [deletingEx, setDeletingEx] = useState(null); // null | { category, id, name }
+  const [errorMsg, setErrorMsg] = useState('');
+  const [saving, setSaving] = useState(false);
+  const [dataStatus, setDataStatus] = useState(null); // null | 'exporting' | 'importing' | 'success' | 'error'
+  const [fileErrorMsg, setFileErrorMsg] = useState('');
+
   const [newEx, setNewEx] = useState({ 
     name: '', 
     category: 'chest', 
@@ -24,170 +36,108 @@ export default function AdminPanel() {
 
   const fileInputRef = useRef(null);
 
-  const handleSave = () => {
-    if (!newEx.name || !newEx.muscleTarget) return alert('Name and Muscle Target required!');
-    const customRaw = localStorage.getItem('gym_custom_exercises');
-    const custom = customRaw ? JSON.parse(customRaw) : {};
-    if (!custom[newEx.category]) custom[newEx.category] = [];
-    
-    // Clean up empty instructions and tips
-    const cleanEx = {
-      ...newEx,
-      id: newEx.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
-      instructions: newEx.instructions.filter(i => i.trim()),
-      tips: newEx.tips.filter(t => t.trim())
-    };
-
-    // Check if ID already exists to avoid duplication
-    const existingIndex = custom[newEx.category].findIndex(e => e.id === cleanEx.id);
-    if (existingIndex > -1) {
-      custom[newEx.category][existingIndex] = cleanEx;
-    } else {
-      custom[newEx.category].push(cleanEx);
+  const handleSave = async () => {
+    if (!newEx.name || !newEx.muscleTarget) {
+      setErrorMsg('Name and Muscle Target required!');
+      return;
     }
-
-    localStorage.setItem('gym_custom_exercises', JSON.stringify(custom));
-    setIsAdding(false);
-    setNewEx({ name: '', category: 'chest', muscleTarget: '', image: '', difficulty: 'beginner', tutorialUrl: '', instructions: [''], tips: [''] });
-    window.location.reload();
-  };
-
-  const handleDelete = (category, id) => {
-    if (!window.confirm('Delete this custom exercise?')) return;
-    const customRaw = localStorage.getItem('gym_custom_exercises');
-    const custom = customRaw ? JSON.parse(customRaw) : {};
-    if (custom[category]) {
-      custom[category] = custom[category].filter(e => e.id !== id);
-      localStorage.setItem('gym_custom_exercises', JSON.stringify(custom));
-      window.location.reload();
+    setSaving(true);
+    setErrorMsg('');
+    try {
+      await addCustomExercise(newEx);
+      setIsAdding(false);
+      setNewEx({ name: '', category: 'chest', muscleTarget: '', image: '', difficulty: 'beginner', tutorialUrl: '', instructions: [''], tips: [''] });
+    } catch (err) {
+      console.error(err);
+      setErrorMsg('Failed to save custom exercise to cloud.');
+    } finally {
+      setSaving(false);
     }
   };
-// ... rest of the component logic stays similar ...
 
-  // --- Internal Backup History System (Android Friendly) ---
-  const getBackups = () => {
-    const raw = localStorage.getItem('gym_backups');
-    return raw ? JSON.parse(raw) : [];
-  };
-
-  const createBackup = () => {
-    const currentData = {
-      timestamp: new Date().getTime(),
-      label: new Date().toLocaleString(),
-      payload: {
-        history: localStorage.getItem('gym_history'),
-        goals: localStorage.getItem('gym_goals'),
-        dailyGoals: localStorage.getItem('gym_daily_goals') || localStorage.getItem('gym_target_goals'),
-        custom: localStorage.getItem('gym_custom_exercises'),
-        plan: localStorage.getItem('gym_active_plan'),
-        session: localStorage.getItem('gym_active_session')
-      }
-    };
-    
-    const backups = getBackups();
-    // Keep only last 7 backups to save storage
-    const updatedBackups = [currentData, ...backups].slice(0, 7);
-    localStorage.setItem('gym_backups', JSON.stringify(updatedBackups));
-    alert('System state captured in backup history!');
-    window.location.reload();
-  };
-
-  const restoreBackup = (backup) => {
-    if (!window.confirm(`Restore data from ${backup.label}? Current data will be overwritten.`)) return;
-    
-    const { payload } = backup;
-    if (payload.history) localStorage.setItem('gym_history', payload.history);
-    if (payload.goals) localStorage.setItem('gym_goals', payload.goals);
-    if (payload.dailyGoals) localStorage.setItem('gym_daily_goals', payload.dailyGoals);
-    else if (payload.goals && payload.goals.includes('dailyLogs')) localStorage.setItem('gym_daily_goals', payload.goals);
-    if (payload.custom) localStorage.setItem('gym_custom_exercises', payload.custom);
-    if (payload.plan) localStorage.setItem('gym_active_plan', payload.plan);
-    if (payload.session) {
-      localStorage.setItem('gym_active_session', payload.session);
-    } else {
-      localStorage.removeItem('gym_active_session');
+  const confirmDelete = async () => {
+    if (!deletingEx) return;
+    try {
+      await deleteCustomExercise(deletingEx.category, deletingEx.id);
+      setDeletingEx(null);
+    } catch (err) {
+      console.error(err);
     }
-    
-    alert('Data restored successfully!');
-    window.location.reload();
   };
 
-  const deleteBackup = (timestamp) => {
-    const backups = getBackups().filter(b => b.timestamp !== timestamp);
-    localStorage.setItem('gym_backups', JSON.stringify(backups));
-    window.location.reload();
-  };
-
-  // --- External File Transfer (Android & Web) ---
   const handleFileExport = async () => {
-    const backupData = {
-      history: localStorage.getItem('gym_history'),
-      goals: localStorage.getItem('gym_goals'),
-      dailyGoals: localStorage.getItem('gym_daily_goals') || localStorage.getItem('gym_target_goals'),
-      custom: localStorage.getItem('gym_custom_exercises'),
-      plan: localStorage.getItem('gym_active_plan'),
-      session: localStorage.getItem('gym_active_session')
-    };
-    
-    const fileName = `gym_backup_${new Date().toISOString().split('T')[0]}.json`;
-    const jsonString = JSON.stringify(backupData, null, 2);
+    if (!user?.uid) return;
+    setDataStatus('exporting');
+    setFileErrorMsg('');
+    try {
+      const data = await exportUserData(user.uid);
+      const jsonString = JSON.stringify(data, null, 2);
+      const fileName = `gym_backup_${new Date().toISOString().split('T')[0]}.json`;
 
-    // Try Web Share API (Best for Android/iOS APKs)
-    if (navigator.share) {
-      try {
-        const file = new File([jsonString], fileName, { type: 'application/json' });
-        await navigator.share({
-          files: [file],
-          title: 'Gym Tracker Backup',
-          text: 'My workout data backup file.'
-        });
-        return;
-      } catch (err) {
-        if (err.name === 'AbortError') return;
-        // Fallback to link download if share fails
+      if (navigator.share) {
+        try {
+          const file = new File([jsonString], fileName, { type: 'application/json' });
+          await navigator.share({
+            files: [file],
+            title: 'Gym Tracker Backup',
+            text: 'My workout data backup file.'
+          });
+          setDataStatus(null);
+          return;
+        } catch (err) {
+          if (err.name === 'AbortError') {
+            setDataStatus(null);
+            return;
+          }
+        }
       }
-    }
 
-    // Fallback for Web/PC
-    const blob = new Blob([jsonString], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = fileName;
-    a.click();
-    URL.revokeObjectURL(url);
+      const blob = new Blob([jsonString], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileName;
+      a.click();
+      URL.revokeObjectURL(url);
+      setDataStatus(null);
+    } catch (err) {
+      console.error(err);
+      setFileErrorMsg('Failed to package cloud data.');
+      setDataStatus('error');
+    }
   };
 
   const handleFileImport = (e) => {
     const file = e.target.files[0];
-    if (!file) return;
+    if (!file || !user?.uid) return;
+    setDataStatus('importing');
+    setFileErrorMsg('');
+
     const reader = new FileReader();
-    reader.onload = (event) => {
+    reader.onload = async (event) => {
       try {
-        const data = JSON.parse(event.target.result);
-        if (data.history) localStorage.setItem('gym_history', data.history);
-        if (data.goals) localStorage.setItem('gym_goals', data.goals);
-        if (data.dailyGoals) localStorage.setItem('gym_daily_goals', data.dailyGoals);
-        if (data.custom) localStorage.setItem('gym_custom_exercises', data.custom);
-        if (data.plan) localStorage.setItem('gym_active_plan', data.plan);
-        if (data.session) localStorage.setItem('gym_active_session', data.session);
-        alert('External backup restored successfully!');
-        window.location.reload();
+        const parsed = JSON.parse(event.target.result);
+        await importUserData(user.uid, parsed);
+        setDataStatus('success');
       } catch (err) {
-        alert('Invalid backup file');
+        console.error(err);
+        setFileErrorMsg(err.message || 'Invalid or corrupt backup JSON file.');
+        setDataStatus('error');
       }
+    };
+    reader.onerror = () => {
+      setFileErrorMsg('Failed to read the selected backup file.');
+      setDataStatus('error');
     };
     reader.readAsText(file);
   };
 
-  const backups = getBackups();
-
-  const customRaw = localStorage.getItem('gym_custom_exercises');
-  const customData = customRaw ? JSON.parse(customRaw) : {};
   const customList = [];
-  Object.keys(customData).forEach(cat => {
-    customData[cat].forEach(ex => {
-      if (ex.name.toLowerCase().includes(searchTerm.toLowerCase())) customList.push({ ...ex, category: cat });
+  Object.keys(customExercises || {}).forEach(cat => {
+    (customExercises[cat] || []).forEach(ex => {
+      if (ex.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+        customList.push({ ...ex, category: cat });
+      }
     });
   });
 
@@ -206,55 +156,20 @@ export default function AdminPanel() {
           </div>
         </header>
 
-        {/* New Android-Friendly Backup Timeline */}
+        {/* Global Transfer Section (Cross-Device Cloud Sync) */}
         <div className="p-5 rounded-3xl bg-gym-card border border-white/5 space-y-4">
            <h2 className="text-[10px] font-black uppercase tracking-widest text-white/40 flex items-center gap-2">
-             <Clock size={14} className="text-gym-neon" /> Device Snapshots
+             <Share2 size={14} className="text-gym-neon" /> Cloud Backup Transfer
            </h2>
-           <p className="text-[10px] font-medium text-gym-muted">Save your current progress to the local history timeline for quick reverting.</p>
-           
-           <button onClick={createBackup} className="w-full py-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/5 flex items-center justify-center gap-2 transition-all">
-             <Plus size={16} className="text-gym-neon" />
-             <span className="text-[10px] font-black uppercase tracking-widest text-white">New Local Snapshot</span>
-           </button>
-
-           {backups.length > 0 && (
-             <div className="space-y-2 pt-2">
-               {backups.map((b) => (
-                 <div key={b.timestamp} className="p-3 bg-white/5 rounded-xl border border-white/5 flex items-center justify-between gap-3 group animate-in fade-in slide-in-from-top-2">
-                   <div className="flex items-center gap-3">
-                     <div className="w-8 h-8 rounded-lg bg-gym-dark flex items-center justify-center">
-                       <RotateCcw size={14} className="text-gym-cyan" />
-                     </div>
-                     <div>
-                       <p className="text-[10px] font-black text-white leading-none">{b.label.split(',')[0]}</p>
-                       <p className="text-[8px] font-bold text-gym-muted uppercase mt-1 tracking-tighter">{b.label.split(',')[1]}</p>
-                     </div>
-                   </div>
-                   <div className="flex gap-2">
-                     <button onClick={() => restoreBackup(b)} className="px-3 py-1.5 bg-gym-cyan/10 text-gym-cyan text-[8px] font-bold uppercase rounded-lg border border-gym-cyan/20">Restore</button>
-                     <button onClick={() => deleteBackup(b.timestamp)} className="p-1.5 text-gym-danger hover:bg-gym-danger/10 rounded-lg"><Trash2 size={14} /></button>
-                   </div>
-                 </div>
-               ))}
-             </div>
-           )}
-        </div>
-
-        {/* Global Transfer Section (Cross-Device) */}
-        <div className="p-5 rounded-3xl bg-gym-card border border-white/5 space-y-4">
-           <h2 className="text-[10px] font-black uppercase tracking-widest text-white/40 flex items-center gap-2">
-             <Share2 size={14} className="text-gym-neon" /> Cross-Device Transfer
-           </h2>
-           <p className="text-[10px] font-medium text-gym-muted">Export your data as a file to move it to another phone or tablet.</p>
+           <p className="text-[10px] font-medium text-gym-muted">Export your cloud backup or import legacy data (support both localStorage and firestore formats).</p>
            
            <div className="flex gap-3">
-             <button onClick={handleFileExport} className="flex-1 py-4 bg-gym-neon/10 hover:bg-gym-neon/20 rounded-2xl border border-gym-neon/20 flex flex-col items-center justify-center gap-2 transition-all group">
+             <button onClick={handleFileExport} className="flex-1 py-4 bg-gym-neon/10 hover:bg-gym-neon/20 rounded-2xl border border-gym-neon/20 flex flex-col items-center justify-center gap-2 transition-all group active:scale-95">
                <Share2 size={20} className="text-gym-neon group-hover:scale-110 transition-transform" />
                <span className="text-[9px] font-black uppercase tracking-widest text-white">Share Backup</span>
              </button>
              
-             <button onClick={() => fileInputRef.current.click()} className="flex-1 py-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/5 flex flex-col items-center justify-center gap-2 transition-all group">
+             <button onClick={() => fileInputRef.current?.click()} className="flex-1 py-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/5 flex flex-col items-center justify-center gap-2 transition-all group active:scale-95">
                <Upload size={20} className="text-gym-muted group-hover:text-white transition-colors" />
                <span className="text-[9px] font-black uppercase tracking-widest text-white">Import File</span>
              </button>
@@ -268,7 +183,7 @@ export default function AdminPanel() {
             <input type="text" placeholder="Search custom..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full bg-gym-card border border-white/5 rounded-2xl py-3.5 pl-12 pr-4 text-white text-xs font-bold focus:outline-none" />
           </div>
-          <button onClick={() => setIsAdding(true)} className="p-4 bg-gym-neon rounded-2xl text-gym-dark active:scale-95 shadow-[0_0_15px_rgba(129,140,248,0.3)]">
+          <button onClick={() => { setIsAdding(true); setErrorMsg(''); }} className="p-4 bg-gym-neon rounded-2xl text-gym-dark active:scale-95 shadow-[0_0_15px_rgba(129,140,248,0.3)]">
             <Plus size={20} />
           </button>
         </div>
@@ -283,7 +198,7 @@ export default function AdminPanel() {
               <p className="text-xs font-bold uppercase tracking-widest text-gym-muted">No custom exercises yet</p>
             </div>
           ) : customList.map((ex, i) => (
-            <div key={i} className="bg-gym-card rounded-2xl border border-white/5 p-4 flex flex-col gap-3 group">
+            <div key={ex.id || i} className="bg-gym-card rounded-2xl border border-white/5 p-4 flex flex-col gap-3 group">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-gym-dark border border-white/5 overflow-hidden flex items-center justify-center relative">
@@ -294,10 +209,9 @@ export default function AdminPanel() {
                     <p className="text-[10px] font-bold text-gym-neon uppercase tracking-widest">{ex.category}</p>
                   </div>
                 </div>
-                <button onClick={() => handleDelete(ex.category, ex.id)} className="p-2.5 bg-white/5 rounded-xl text-gym-muted hover:text-gym-danger hover:bg-gym-danger/10 transition-colors"><Trash2 size={16} /></button>
+                <button onClick={() => setDeletingEx({ category: ex.category, id: ex.id, name: ex.name })} className="p-2.5 bg-white/5 rounded-xl text-gym-muted hover:text-gym-danger hover:bg-gym-danger/10 transition-colors"><Trash2 size={16} /></button>
               </div>
               
-              {/* Added Detail Expansion in UI */}
               <div className="bg-gym-dark/50 p-3 rounded-xl border border-white/[0.02]">
                 <p className="text-[10px] font-bold text-gym-muted/80">{ex.instructions?.length || 0} Theory Steps Logged</p>
               </div>
@@ -306,6 +220,7 @@ export default function AdminPanel() {
         </div>
       </div>
 
+      {/* Advanced Builder Drawer Modal */}
       {isAdding && (
         <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md p-5 flex items-end">
           <div className="w-full max-w-lg mx-auto bg-gym-card rounded-t-3xl border-t border-x border-white/10 p-6 space-y-6 max-h-[90vh] overflow-y-auto slide-up scrollbar-hide">
@@ -318,6 +233,13 @@ export default function AdminPanel() {
             </div>
             
             <div className="space-y-5">
+              {errorMsg && (
+                <div className="flex items-center gap-2.5 p-3.5 rounded-2xl text-xs font-semibold" style={{ background: 'rgba(239,68,68,0.08)', color: '#f87171', border: '1px solid rgba(239,68,68,0.18)' }}>
+                  <AlertCircle size={16} className="shrink-0" />
+                  <span>{errorMsg}</span>
+                </div>
+              )}
+
               <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase tracking-widest text-gym-neon">Core Details</label>
                 <input type="text" value={newEx.name} onChange={(e) => setNewEx({...newEx, name: e.target.value})}
@@ -404,10 +326,104 @@ export default function AdminPanel() {
                 </button>
               </div>
 
-              <button onClick={handleSave} className="w-full py-5 bg-gradient-to-r from-gym-neon to-gym-accent text-white font-black text-sm uppercase tracking-widest rounded-3xl shadow-[0_0_20px_rgba(129,140,248,0.3)] mt-6 active:scale-95 transition-all">
-                Publish Master Exercise
+              <button onClick={handleSave} disabled={saving} className="w-full py-5 bg-gradient-to-r from-gym-neon to-gym-accent text-white font-black text-sm uppercase tracking-widest rounded-3xl shadow-[0_0_20px_rgba(129,140,248,0.3)] mt-6 active:scale-95 transition-all flex items-center justify-center gap-2">
+                {saving && <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin shrink-0" />}
+                <span>Publish Master Exercise</span>
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Delete Custom Exercise Confirmation Modal */}
+      {deletingEx && (
+        <div className="fixed inset-0 z-[300] bg-black/80 backdrop-blur-md flex items-end p-5 animate-in fade-in">
+          <div className="w-full max-w-lg mx-auto glass-beast-floating rounded-[2.5rem] p-8 border border-white/10 shadow-beast-heavy slide-up">
+            <div className="w-16 h-16 rounded-full bg-gym-danger/15 flex items-center justify-center mx-auto border border-gym-danger/25 mb-4 animate-pulse">
+              <Trash2 size={28} className="text-gym-danger" />
+            </div>
+            <p className="text-xl font-black text-white text-center mb-2">Delete Custom Exercise?</p>
+            <p className="text-xs text-center mb-8 font-medium text-gym-muted">Are you sure you want to delete "{deletingEx.name}"? This will remove it from all training libraries.</p>
+            <div className="flex gap-3">
+              <button onClick={() => setDeletingEx(null)}
+                className="flex-1 py-4 rounded-2xl font-black text-sm text-white/60 glass-beast border-white/10 transition-all active:scale-95">
+                Cancel
+              </button>
+              <button onClick={confirmDelete}
+                className="flex-1 py-4 rounded-2xl font-black text-sm text-white transition-all active:scale-95"
+                style={{ background: 'linear-gradient(135deg, #ef4444, #dc2626)', boxShadow: '0 8px 20px rgba(239,68,68,0.3)' }}>
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Data Status Modal */}
+      {dataStatus && (
+        <div className="fixed inset-0 z-[300] bg-black/80 backdrop-blur-md flex items-center justify-center p-6 animate-in fade-in">
+          <div className="w-full max-w-sm glass-beast-floating rounded-[2.5rem] p-8 border border-white/10 shadow-beast-heavy text-center space-y-6">
+            
+            {dataStatus === 'exporting' && (
+              <>
+                <div className="w-16 h-16 rounded-full bg-gym-cyan/15 flex items-center justify-center mx-auto border border-gym-cyan/25 animate-pulse">
+                  <DownloadCloud size={28} className="text-gym-cyan" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-black text-white">Exporting Backup</h3>
+                  <p className="text-xs text-gym-muted">Compiling cloud data...</p>
+                </div>
+              </>
+            )}
+
+            {dataStatus === 'importing' && (
+              <>
+                <div className="w-16 h-16 rounded-full bg-gym-cyan/15 flex items-center justify-center mx-auto border border-gym-cyan/25">
+                  <RefreshCw size={28} className="text-gym-cyan animate-spin" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-black text-white">Importing Backup File</h3>
+                  <p className="text-xs text-gym-muted">Merging workouts and cloud variables. Please wait...</p>
+                </div>
+              </>
+            )}
+
+            {dataStatus === 'success' && (
+              <>
+                <div className="w-16 h-16 rounded-full bg-green-500/15 flex items-center justify-center mx-auto border border-green-500/25">
+                  <Check size={28} className="text-green-400" strokeWidth={3} />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-black text-white">Import Success!</h3>
+                  <p className="text-xs text-gym-muted">Your database has been successfully restored.</p>
+                </div>
+                <button
+                  onClick={() => window.location.reload()}
+                  className="w-full py-3.5 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-black text-xs uppercase tracking-widest rounded-xl shadow-lg active:scale-95 transition-all"
+                >
+                  Reload Application
+                </button>
+              </>
+            )}
+
+            {dataStatus === 'error' && (
+              <>
+                <div className="w-16 h-16 rounded-full bg-red-500/15 flex items-center justify-center mx-auto border border-red-500/25">
+                  <X size={28} className="text-red-400" strokeWidth={3} />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-black text-white">Sync Failed</h3>
+                  <p className="text-xs text-red-400 font-semibold">{fileErrorMsg || 'The selected backup file is invalid.'}</p>
+                </div>
+                <button
+                  onClick={() => setDataStatus(null)}
+                  className="w-full py-3.5 bg-white/5 border border-white/5 text-white font-black text-xs uppercase tracking-widest rounded-xl hover:bg-white/10 active:scale-95 transition-all"
+                >
+                  Close Window
+                </button>
+              </>
+            )}
+
           </div>
         </div>
       )}

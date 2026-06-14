@@ -1,14 +1,14 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useCallback } from 'react';
 import { useWorkout } from '../context/WorkoutContext';
 import { 
   Target, Flame, Trophy, Check, Calendar, 
-  TrendingUp, ChevronUp, ChevronDown, Dumbbell, Star, AlertTriangle, Plus, Minus, Save, X, ChevronLeft, ChevronRight, History
+  TrendingUp, Dumbbell, Star, Plus, Minus, Save, X, ChevronLeft, ChevronRight, History, AlertTriangle
 } from 'lucide-react';
 
+const SUCCESS = '#10b981';
 const NEON = '#818cf8';
 const ACCENT = '#a855f7';
 const FIRE = '#f97316';
-const SUCCESS = '#10b981';
 const WARN = '#f59e0b';
 const CARD = '#141425';
 const CYAN = '#22d3ee';
@@ -45,6 +45,8 @@ export default function Goals() {
     return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
   }, []);
 
+  const [confirmDeleteIdx, setConfirmDeleteIdx] = useState(null);
+
   // Initialize dailyGoals if empty
   useEffect(() => {
     if (!dailyGoals) {
@@ -58,7 +60,8 @@ export default function Goals() {
         dailyLogs: {}
       });
     }
-  }, [dailyGoals]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Load selected day's values into input state
   useEffect(() => {
@@ -121,10 +124,10 @@ export default function Goals() {
   };
 
   const removeGoal = (index) => {
-    if (!window.confirm('Remove this goal?')) return;
     const updated = { ...dailyGoals };
     updated.exercises = updated.exercises.filter((_, i) => i !== index);
     handleUpdateDailyGoals(updated);
+    setConfirmDeleteIdx(null);
   };
 
   // Stats Logic
@@ -268,25 +271,24 @@ export default function Goals() {
             {exerciseStats.map((ex, i) => (
               <div 
                 key={i} 
-                className={`glass-beast rounded-[2.5rem] border transition-all duration-500 shadow-beast overflow-hidden preserve-3d ${
-                  ex.isComplete ? 'border-SUCCESS/30 shadow-SUCCESS/5' : 'border-white/5'
-                }`}
+                className="glass-beast rounded-[2.5rem] border transition-all duration-500 shadow-beast overflow-hidden preserve-3d"
+                style={{ borderColor: ex.isComplete ? 'rgba(16,185,129,0.25)' : 'rgba(255,255,255,0.05)' }}
               >
                 <div className="p-6 flex items-center justify-between">
                    <div className="flex items-center gap-5">
                       <div className="w-14 h-14 rounded-2xl glass-beast flex items-center justify-center text-2xl shadow-beast relative">
-                        {ex.isComplete ? <Check size={28} className="text-SUCCESS" strokeWidth={3} /> : <span className="animate-beast-float">{ex.icon}</span>}
+                        {ex.isComplete ? <Check size={28} strokeWidth={3} style={{ color: SUCCESS }} /> : <span className="animate-beast-float">{ex.icon}</span>}
                       </div>
                       <div className="space-y-1">
                         <h3 className="text-sm font-black text-white italic uppercase tracking-wider flex items-center gap-2">
                           {ex.name}
                           {activeTab === 'today' && !DEFAULT_EXERCISES.find(d => d.name === ex.name) && (
-                            <button onClick={() => removeGoal(i)} className="p-1 opacity-20 hover:opacity-100 text-gym-danger transition-all">
+                            <button onClick={() => setConfirmDeleteIdx(i)} className="p-1 opacity-20 hover:opacity-100 text-gym-danger transition-all">
                               <X size={12} />
                             </button>
                           )}
                         </h3>
-                        <p className={`text-[9px] font-black uppercase tracking-[0.2em] ${ex.isComplete ? 'text-SUCCESS' : 'text-white/30'}`}>
+                        <p className="text-[9px] font-black uppercase tracking-[0.2em]" style={{ color: ex.isComplete ? SUCCESS : 'rgba(255,255,255,0.3)' }}>
                           {ex.isComplete ? 'Target Smashed' : `Objective: ${ex.target} ${ex.unit}`}
                         </p>
                       </div>
@@ -301,7 +303,7 @@ export default function Goals() {
                 <div className="px-6 pb-2">
                    <div className="h-1.5 w-full glass-beast rounded-full overflow-hidden">
                       <div 
-                        className="h-full bg-gradient-beast transition-all duration-1000"
+                        className="h-full transition-all duration-1000"
                         style={{ width: `${ex.progress}%`, background: ex.isComplete ? SUCCESS : '#fbbf24' }}
                       />
                    </div>
@@ -439,11 +441,37 @@ export default function Goals() {
                    <div className="absolute inset-0 shimmer-beast opacity-30" />
                    AUTHENTICATE GOAL
                  </button>
-              </div>
+               </div>
             </div>
           </div>
         )}
       </div>
+
+      {/* Custom Delete Confirmation Modal */}
+      {confirmDeleteIdx !== null && (
+        <div className="fixed inset-0 z-[300] bg-black/70 backdrop-blur-md flex items-end p-5 animate-in fade-in">
+          <div className="w-full max-w-lg mx-auto glass-beast-floating rounded-[2.5rem] p-8 border-white/10 shadow-beast-heavy slide-up">
+            <div className="flex items-center gap-3 mb-3">
+              <AlertTriangle size={22} style={{ color: '#f59e0b' }} />
+              <p className="text-xl font-black text-white">Remove Goal?</p>
+            </div>
+            <p className="text-sm mb-8 font-medium" style={{ color: '#9ca3af' }}>
+              Remove <strong className="text-white">{dailyGoals?.exercises?.[confirmDeleteIdx]?.name}</strong> from your active goals?
+            </p>
+            <div className="flex gap-3">
+              <button onClick={() => setConfirmDeleteIdx(null)}
+                className="flex-1 py-4 rounded-2xl font-black text-sm text-white/60 glass-beast border-white/10 transition-all active:scale-95">
+                Cancel
+              </button>
+              <button onClick={() => removeGoal(confirmDeleteIdx)}
+                className="flex-1 py-4 rounded-2xl font-black text-sm text-white transition-all active:scale-95"
+                style={{ background: 'linear-gradient(135deg, #ef4444, #dc2626)', boxShadow: '0 8px 20px rgba(239,68,68,0.25)' }}>
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -13,12 +13,16 @@
   --gym-dark: #06060d;
   --gym-surface: #0e0e1a;
   --gym-card: #141425;
+  --gym-success: #10b981;
+  --gym-danger: #ef4444;
 }
 
 @layer base {
   html {
     height: -webkit-fill-available;
     scroll-behavior: smooth;
+    /* Android: prevent double-tap zoom */
+    touch-action: manipulation;
   }
 
   body {
@@ -30,40 +34,61 @@
     min-height: 100svh;
     width: 100%;
     overflow-x: hidden;
-    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+    /* Bottom padding accounts for nav + Android gesture bar */
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
     text-rendering: optimizeLegibility;
+    /* Android: enable momentum scrolling */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
   }
 
-  /* Force override Tailwind's gym-neon to purple/indigo regardless of cache */
+  /* Safe area padding for pages */
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  /* Android: minimum 48px touch targets (Material Design standard) */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Override for small decorative elements */
+  button.touch-compact, a.touch-compact {
+    min-height: unset;
+    min-width: unset;
+  }
+
+  /* Force override Tailwind's gym-neon to purple/indigo */
   .text-gym-neon { color: #818cf8 !important; }
   .bg-gym-neon { background-color: #818cf8 !important; }
   .border-gym-neon { border-color: #818cf8 !important; }
-  
+
   .bg-gym-neon\/5 { background-color: rgba(129,140,248,0.05) !important; }
   .bg-gym-neon\/10 { background-color: rgba(129,140,248,0.1) !important; }
   .bg-gym-neon\/15 { background-color: rgba(129,140,248,0.15) !important; }
   .bg-gym-neon\/20 { background-color: rgba(129,140,248,0.2) !important; }
   .bg-gym-neon\/80 { background-color: rgba(129,140,248,0.8) !important; }
-  
+
   .border-gym-neon\/10 { border-color: rgba(129,140,248,0.1) !important; }
   .border-gym-neon\/15 { border-color: rgba(129,140,248,0.15) !important; }
   .border-gym-neon\/20 { border-color: rgba(129,140,248,0.2) !important; }
   .border-gym-neon\/30 { border-color: rgba(129,140,248,0.3) !important; }
   .border-gym-neon\/40 { border-color: rgba(129,140,248,0.4) !important; }
-  
+
   .text-gym-neon\/70 { color: rgba(129,140,248,0.7) !important; }
-  
+
   .shadow-gym-neon\/20 { --tw-shadow-color: rgba(129,140,248,0.2) !important; }
   .shadow-gym-neon\/30 { --tw-shadow-color: rgba(129,140,248,0.3) !important; }
-  
+
   .hover\:text-gym-neon:hover { color: #818cf8 !important; }
   .hover\:bg-gym-neon:hover { background-color: #818cf8 !important; }
   .hover\:bg-gym-neon\/20:hover { background-color: rgba(129,140,248,0.2) !important; }
   .hover\:border-gym-neon\/30:hover { border-color: rgba(129,140,248,0.3) !important; }
-  
+
   .group-hover\:text-gym-neon:is(:where(.group):hover *) { color: #818cf8 !important; }
 
-  /* Force accent to purple */
+  /* Accent */
   .text-gym-accent { color: #a855f7 !important; }
   .bg-gym-accent { background-color: #a855f7 !important; }
   .border-gym-accent { border-color: #a855f7 !important; }
@@ -72,67 +97,93 @@
   .border-gym-accent\/10 { border-color: rgba(168,85,247,0.1) !important; }
   .border-gym-accent\/20 { border-color: rgba(168,85,247,0.2) !important; }
   .text-gym-accent\/80 { color: rgba(168,85,247,0.8) !important; }
+
+  /* Fire */
+  .text-gym-fire { color: #f97316 !important; }
+  .bg-gym-fire { background-color: #f97316 !important; }
+
+  /* Success */
+  .text-gym-success { color: #10b981 !important; }
+  .bg-gym-success { background-color: #10b981 !important; }
+  .border-gym-success { border-color: #10b981 !important; }
+  .bg-gym-success\/10 { background-color: rgba(16,185,129,0.1) !important; }
+  .border-gym-success\/30 { border-color: rgba(16,185,129,0.3) !important; }
+
+  /* Danger */
+  .text-gym-danger { color: #ef4444 !important; }
+  .bg-gym-danger { background-color: #ef4444 !important; }
+
+  /* Gold */
+  .text-gym-gold { color: #fbbf24 !important; }
+  .text-gym-cyan { color: #22d3ee !important; }
+  .bg-gym-cyan { background-color: #22d3ee !important; }
+  .bg-gym-cyan\/10 { background-color: rgba(34,211,238,0.1) !important; }
+
+  /* Muted */
+  .text-gym-muted { color: #4b5563 !important; }
+  .bg-gym-dark { background-color: #06060d !important; }
+  .bg-gym-card { background-color: #141425 !important; }
 }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 4px; }
+/* ─── Scrollbar ─────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: #06060d; }
 ::-webkit-scrollbar-thumb { background: #818cf8; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #a855f7; }
 
-/* 3D Engine */
+/* ─── 3D Engine ─────────────────────────────────────────────────── */
 .preserve-3d { transform-style: preserve-3d; }
 .perspective-1000 { perspective: 1000px; }
 .backface-hidden { backface-visibility: hidden; }
 
-/* Beast Depth */
+/* ─── Depth Shadows ─────────────────────────────────────────────── */
 .shadow-beast {
-  box-shadow: 
+  box-shadow:
     0 4px 6px -1px rgba(0, 0, 0, 0.4),
     0 2px 4px -1px rgba(0, 0, 0, 0.2),
     0 10px 15px -3px rgba(0, 0, 0, 0.5),
-    0 0 20px rgba(129, 140, 248, 0.1);
+    0 0 20px rgba(129, 140, 248, 0.08);
 }
 
 .shadow-beast-heavy {
-  box-shadow: 
+  box-shadow:
     0 20px 25px -5px rgba(0, 0, 0, 0.6),
     0 10px 10px -5px rgba(0, 0, 0, 0.4),
-    0 0 40px rgba(129, 140, 248, 0.15);
+    0 0 40px rgba(129, 140, 248, 0.12);
 }
 
-/* Glass Beast */
+/* ─── Glassmorphism ─────────────────────────────────────────────── */
 .glass-beast {
-  background: rgba(20, 20, 37, 0.4);
-  backdrop-filter: blur(25px) saturate(180%);
-  -webkit-backdrop-filter: blur(25px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(20, 20, 37, 0.45);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02);
 }
 
 .glass-beast-floating {
-  background: rgba(30, 30, 50, 0.6);
+  background: rgba(30, 30, 50, 0.65);
   backdrop-filter: blur(35px) saturate(200%);
   -webkit-backdrop-filter: blur(35px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
     0 15px 35px rgba(0, 0, 0, 0.4),
-    inset 0 0 30px rgba(255, 255, 255, 0.03);
+    inset 0 0 30px rgba(255, 255, 255, 0.02);
 }
 
-/* Animations */
+/* ─── Animations ────────────────────────────────────────────────── */
 .slide-up {
-  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px) scale(0.95); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  from { opacity: 0; transform: translateY(30px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0) rotateX(0); }
-  50% { transform: translateY(-10px) rotateX(2deg); }
+  50%       { transform: translateY(-8px) rotateX(2deg); }
 }
 
 .animate-beast-float {
@@ -140,29 +191,30 @@
 }
 
 @keyframes mesh-move {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(-5%, 5%) rotate(5deg); }
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  50%  { transform: translate(-5%, 5%) rotate(5deg); }
   100% { transform: translate(0, 0) rotate(0deg); }
 }
 
+/* ─── Background Mesh ───────────────────────────────────────────── */
 .beast-bg-mesh {
-  position: absolute;
+  position: fixed;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: 
-    radial-gradient(at 0% 0%, rgba(129, 140, 248, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(34, 211, 238, 0.1) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(249, 115, 22, 0.1) 0px, transparent 50%);
+  background:
+    radial-gradient(at 0% 0%,   rgba(129, 140, 248, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.12)  0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(34, 211, 238, 0.08) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(249, 115, 22, 0.08)  0px, transparent 50%);
   filter: blur(80px);
   animation: mesh-move 20s ease-in-out infinite;
   z-index: -1;
   pointer-events: none;
 }
 
-/* Gradients */
+/* ─── Gradients ─────────────────────────────────────────────────── */
 .bg-gradient-beast {
   background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%);
 }
@@ -171,27 +223,60 @@
   background: linear-gradient(160deg, #06060d 0%, #0e0e1a 40%, #1a0a2a 100%);
 }
 
-/* Glows */
-.glow-beast { box-shadow: 0 0 30px rgba(129, 140, 248, 0.3), 0 0 60px rgba(129, 140, 248, 0.1); }
-.text-glow-beast { text-shadow: 0 0 20px rgba(129, 140, 248, 0.6); }
+/* ─── Glows ─────────────────────────────────────────────────────── */
+.glow-beast {
+  box-shadow: 0 0 30px rgba(129, 140, 248, 0.3), 0 0 60px rgba(129, 140, 248, 0.1);
+}
+.text-glow-beast {
+  text-shadow: 0 0 20px rgba(129, 140, 248, 0.6);
+}
 
-/* Shimmer */
+/* ─── Shimmer ───────────────────────────────────────────────────── */
 @keyframes shimmer-fast {
-  0% { background-position: -100% 0; }
-  100% { background-position: 100% 0; }
+  0%   { background-position: -100% 0; }
+  100% { background-position:  100% 0; }
 }
 
 .shimmer-beast {
   background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
   background-size: 200% 100%;
-  animation: shimmer-fast 2s infinite linear;
+  animation: shimmer-fast 2.5s infinite linear;
 }
 
-/* Tap */
+/* ─── Android Touch ─────────────────────────────────────────────── */
+/* Remove blue tap highlight */
 * { -webkit-tap-highlight-color: transparent; }
 
-/* Tap Scale */
+/* Tap Scale (3D press effect) */
 .tap-3d:active {
-  transform: scale(0.96) translateY(2px) rotateX(-2deg);
+  transform: scale(0.95) translateY(2px);
   transition: all 0.1s ease;
+}
+
+/* Input fix for Android keyboards */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  background-color: rgba(20, 20, 37, 0.8);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  font-size: 16px; /* Prevents iOS zoom on focus */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input:focus,
+select:focus {
+  border-color: rgba(129, 140, 248, 0.4);
+  outline: none;
+}
+
+/* Select dropdown fix */
+select option {
+  background-color: #141425;
+  color: white;
 }
